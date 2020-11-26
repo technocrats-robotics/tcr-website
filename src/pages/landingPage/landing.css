@@ -55,3 +55,28 @@
     transform: rotate(8deg);
     margin-left: 15px;
 }
+
+.thirdPage{
+    height: 100vh;
+    background-color: black;
+}
+.fourthPage{
+    height: 100vh;
+    background-color: black;
+}
+
+.zoomthird {
+    transition: transform .3s;
+  }
+  
+.zoomthird:hover {
+    transform: scale(1.20);
+  }
+
+.zoomfourth {
+    transition: transform .3s;
+}
+  
+.zoomfourth:hover {
+    transform: scale(1.19);
+  }
