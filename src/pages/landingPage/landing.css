@@ -1,0 +1,14 @@
+.firstPage {
+    height: 100vh;
+    background-color: black;
+}
+.ui.medium.header.Title {
+    font-size: 6vh;
+    color: white;
+}
+.fourteen.column.row.mainRow {
+    margin-top: 15vh;
+}
+.ui.large.image {
+    margin-left: 18%;
+}
