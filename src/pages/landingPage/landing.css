@@ -12,3 +12,46 @@
 .ui.large.image {
     margin-left: 18%;
 }
+.ui.black.inverted.center.aligned.segment.introCard {
+    padding: 8%;
+    font-size: 20px;
+    border:1px solid white;
+    /* width: 20vh; */
+    height: 30vh;
+}
+
+/* .ui.small.image.matAsset1 {
+    width: 13vh;
+    height: 13vh;
+}
+.ui.small.image.matAsset4 {
+    width: 13vh;
+    height: 13vh;
+} */
+.matAsset2 {
+    width: 7vh;
+    height: 7vh;
+    /* opacity: 0.5; */
+    z-index: 5;
+    background-color: red;
+    opacity: 0.5;
+}
+.matAsset3 {
+    width: 7vh;
+    height: 7vh;
+    background-color: 'yellow';  
+    background-color: yellow;
+    margin-top: 5px;
+    margin-left: 19px;
+}
+.matAsset1,.matAsset4{
+    width: 7vh;
+    height: 7vh;
+    margin-left: 2px;
+    background-size: contain;
+    background-image: url('https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg');
+}
+.matAsset4 {
+    transform: rotate(8deg);
+    margin-left: 15px;
+}
