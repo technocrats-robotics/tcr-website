@@ -6,7 +6,7 @@ export default class ImageMat extends Component {
     return(
         <div style={{textAlign:'center'}}>
             <Grid>
-                <Grid.Row style={{transform:'scale(2.0)',marginLeft:'-50px',marginTop:'150px'}} centered columns={16}>
+                <Grid.Row style={{transform:'scale(2.0)',marginLeft:'-70px',marginTop:'150px'}} centered columns={16}>
                     <Grid.Column stretched>
                         {/* <Image className='matAsset1' size='medium' src="https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg"></Image>         */}
                         <div className='matAsset1' ></div>
