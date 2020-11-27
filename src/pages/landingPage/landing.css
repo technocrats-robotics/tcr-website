@@ -97,26 +97,33 @@
 
 
 /* DIAL             ---------- */
-.Dial {
-    width: 400px;
-    height: 400px;
-    background-image: radial-gradient(circle at -120px 200px, black 28%,grey 30%,black 31%);
-    /* border: 2px solid red; */
-    display: table;
-    margin-left: 100px;
-    transform: scale(1.5);
-}
 
+.Dial {
+    width: 200px;
+    height: 400px;
+    transition: ease-in-out 1s;
+    background-image: radial-gradient(circle at -80px 200px, black 28%,grey 30%,black 31%);
+    display: table;
+    border-radius: 100%;
+    margin-top: -70px;
+    margin-left: 20px;
+    zoom: 1.6;
+    z-index: 999;
+    background-blend-mode: color;
+}
   .dialText {
     color: grey;
     font-size: 20px;
-    transition: width 2s ;display: table-cell;
+    transition: width 2s ;
+    display: table-cell;
     vertical-align: middle;
     padding-left: 30px;
   }
   .subMenus {
       display: none;
+      transition: ease-in-out 0.2s;
       font-size: 20px;
+      text-align: right;
   }
   .dialText > ul > li {
       padding: 5%;
@@ -129,7 +136,7 @@
   
 /* DIAL EFFECTS */
 .Menu1, .Menu2, .Menu3, .Menu4, .Menu5{
-    transition: linear 0.5s;
+    transition: ease-in-out 0.5s;
     /* border: 1px solid grey; */
     /* border-radius: 2rem; */
     text-align: left;
@@ -138,11 +145,11 @@
 }
 .Menu1:hover, .Menu2:hover, .Menu3:hover, .Menu4:hover, .Menu5:hover{
     /* transform: translate(20px,0px); */
+    margin-left: 70px;
     text-align: center;
-    /* background-color: grey; */
     color: white;
+    border-radius: 1rem;
 }
-
 .Menu1{
     transform: rotate(-13deg);
 }
