@@ -101,16 +101,18 @@
     width: 400px;
     height: 400px;
     background-image: radial-gradient(circle at -120px 200px, black 28%,grey 30%,black 31%);
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: table;
+    margin-left: 100px;
+    transform: scale(1.5);
 }
 
   .dialText {
     color: grey;
-    font-size: 30px;
+    font-size: 20px;
     transition: width 2s ;display: table-cell;
     vertical-align: middle;
-    padding-left: 70px;
+    padding-left: 30px;
   }
   .subMenus {
       display: none;
@@ -124,6 +126,42 @@
       padding: 5%;
       transition: width 2s;
   }
+  
+/* DIAL EFFECTS */
+.Menu1, .Menu2, .Menu3, .Menu4, .Menu5{
+    transition: linear 0.5s;
+    /* border: 1px solid grey; */
+    /* border-radius: 2rem; */
+    text-align: left;
+    padding: 5%;
+    /* width: vh; */
+}
+.Menu1:hover, .Menu2:hover, .Menu3:hover, .Menu4:hover, .Menu5:hover{
+    /* transform: translate(20px,0px); */
+    text-align: center;
+    /* background-color: grey; */
+    color: white;
+}
+
+.Menu1{
+    transform: rotate(-13deg);
+}
+
+.Menu2{
+    transform: rotate(-8deg);
+    margin-left: 40px;
+}
+.Menu3{
+    transform: rotate(0deg);
+    margin-left: 60px;
+}
+.Menu4{
+    transform: rotate(8deg);
+    margin-left: 40px;
+}
+.Menu5{
+    transform: rotate(13deg);
+}
 
   @keyframes upAndDown {
       0% {
@@ -250,7 +288,6 @@ img.grey{
       -ms-transform:translate3d(0,100%,0);
           transform:translate3d(0,100%,0);
 }
-
 
 /*** HOVER EFFECT  **********************************************************************/
 .hexLink:hover h1, .hexLink:focus h1,
