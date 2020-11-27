@@ -4,6 +4,7 @@
 }
 .ui.medium.header.Title {
     font-size: 6vh;
+    margin-left: 10%;
     color: white;
 }
 .fourteen.column.row.mainRow {
@@ -79,4 +80,53 @@
   
 .zoomfourth:hover {
     transform: scale(1.19);
+  }
+
+
+
+/* DIAL             ---------- */
+.Dial {
+    width: 400px;
+    height: 400px;
+    background-image: radial-gradient(circle at -120px 200px, black 28%,grey 30%,black 31%);
+    border: 2px solid red;
+    display: table;
+}
+
+  .dialText {
+    color: grey;
+    font-size: 30px;
+    transition: width 2s ;display: table-cell;
+    vertical-align: middle;
+    padding-left: 70px;
+  }
+  .subMenus {
+      display: none;
+      font-size: 20px;
+  }
+  .dialText > ul > li {
+      padding: 5%;
+      transition: width 2s ;
+  }
+  .dialText > ul > li> div > ul > li{
+      padding: 5%;
+      transition: width 2s;
+  }
+
+  @keyframes upAndDown {
+      0% {
+        transform: translate(0,-10px);
+      }
+      100% {
+          transform: translate(0,10px);
+      }
+  }
+  .arrowDown {
+      animation-name: upAndDown;
+      animation-iteration-count:infinite;
+      animation-duration: 1s;
+      animation-direction: alternate;
+      animation-delay: 0ms;
+      animation-timing-function: ease-in-out;
+      margin-left: 10%;
   }

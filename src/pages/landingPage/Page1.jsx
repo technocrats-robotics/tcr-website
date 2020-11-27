@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Image, Grid, Header, Icon  } from "semantic-ui-react";
+import Dial from "../../components/Dial.jsx";
 
 export default class Page1 extends Component {
   render() {
@@ -10,13 +11,14 @@ export default class Page1 extends Component {
                 <Grid.Row className='mainRow' columns='14'>
                     <Grid.Column className='leftMain' width='6' >
                         <div style={{textAlign:'center'}}>
-                    <Image size='large' src={'https://avatars3.githubusercontent.com/u/49567419?s=200&v=4'}></Image>
+                    <Image avatar size='large' src={'https://avatars3.githubusercontent.com/u/49567419?s=200&v=4'}></Image>
                     <Header className='Title' size='medium'>Technocrats Robotics</Header>
-                    <Icon color='yellow' size='huge' name='chevron down'></Icon>                   
+                    <div className='arrowDown'>
+                    <Icon className='arrow' color='yellow' size='huge' name='chevron down'></Icon> </div>                  
                         </div>
                         </Grid.Column>
                     <Grid.Column width='4'>
-                    
+                        <Dial></Dial>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
