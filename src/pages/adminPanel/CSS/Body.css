@@ -1,0 +1,29 @@
+.admin__panel{
+
+}
+
+.ui.inverted{
+    border-radius: 0px !important;
+}
+
+.admin__body{
+    padding: 20px; 
+}
+
+.admin__membersPanel{
+   border-top: 2px solid white;
+}
+
+.admin__addMembers{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin__addMembersForm{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    padding: 20px;
+}
+
+
