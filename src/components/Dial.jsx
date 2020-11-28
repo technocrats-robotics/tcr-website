@@ -9,14 +9,22 @@ export default function Dial() {
         let subMenus = document.getElementsByClassName("subMenus");
         console.log("Submenus CHildren");
         console.log(subMenus[0]);
+
         window.addEventListener("scroll",(event)=>{
             if(window.scrollY > 800){
             dial.style.position = "fixed";
             dial.style.left = "0";
+            dial.style.top = "2";
+            dial.style.marginLeft = "-80px";
+            dial.style.borderRight = "2px solid grey";
+            dial.style.zoom = "0.8";
         }
             else if (window.scrollY<800){
             dial.style.position = "relative";
             dial.style.left = "default";
+            dial.style.marginLeft = "50px";
+            dial.style.zoom = "1.8";
+            dial.style.borderRight = "0px solid grey";
             }
         });
         for(let i=0;i<menus.length;i++){

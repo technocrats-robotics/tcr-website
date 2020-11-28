@@ -102,12 +102,12 @@
     width: 200px;
     height: 400px;
     transition: ease-in-out 1s;
-    background-image: radial-gradient(circle at -80px 200px, black 28%,grey 30%,black 31%);
+    background-image: radial-gradient(circle at -80px 200px, black 28%,rgb(189, 185, 185) 30%,black 31%);
     display: table;
     border-radius: 100%;
     margin-top: -70px;
     margin-left: 20px;
-    zoom: 1.6;
+    zoom: 1.8;
     z-index: 999;
     background-blend-mode: color;
 }
@@ -125,14 +125,6 @@
       font-size: 20px;
       text-align: right;
   }
-  .dialText > ul > li {
-      padding: 5%;
-      transition: width 2s ;
-  }
-  .dialText > ul > li> div > ul > li{
-      padding: 5%;
-      transition: width 2s;
-  }
   
 /* DIAL EFFECTS */
 .Menu1, .Menu2, .Menu3, .Menu4, .Menu5{
@@ -144,10 +136,9 @@
     /* width: vh; */
 }
 .Menu1:hover, .Menu2:hover, .Menu3:hover, .Menu4:hover, .Menu5:hover{
-    /* transform: translate(20px,0px); */
+    /* transform:translate(20px,0px); */
     margin-left: 70px;
-    text-align: center;
-    color: white;
+    color: yellow;
     border-radius: 1rem;
 }
 .Menu1{
