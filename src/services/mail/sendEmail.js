@@ -1,6 +1,17 @@
+/* using tcr-mail-utility hosted on heroku 
+
+url: https://tcr-mail-utility.herokuapp.com/sendMail
+
+endPoints: 
+
+1. GET "/" Hello World (dummy URL)
+2. POST "/sendMail" if(response.data.message=="Sent") ===> email sent successfully
+                    else ===> some error occured (maybe Login issue with gmail id or wrong email id. was given) 
+*/
+
 import axios from 'axios'
 
-const sendMessage=(data)=>{
+async function sendEmail(data) {
     axios({
         method: 'post',
         url: 'https://tcr-mail-utility.herokuapp.com/sendMail',
@@ -13,4 +24,4 @@ const sendMessage=(data)=>{
     });
 }
 
-module.exports.sendMessage
+export {sendEmail}

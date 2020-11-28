@@ -1,11 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 
-
-import axios from "axios";
-
-import sendMessage from "...../services/mail/sendEmail.js"
-
+// mail service (data) => as object
+import {sendEmail} from '../services/mail/sendEmail'
 
 function AddMembers() {
 
@@ -26,36 +23,28 @@ function AddMembers() {
     const [department, setDepartment] = useState(Departments[0]);
     const [yoj, setYoj] = useState(currentYear);
 
+
+    //alert appears after form submission
+    function showStatus(status){
+        alert(status);
+    }
+
+
+    //form submit handling
     const handleFormSubmit=(event)=>{
         event.preventDefault();
         if(name&&email&&department&&yoj){
-            console.log("Name ",name);
-            console.log("Email ",email);
-            console.log("Name ",department);
-            console.log("Year Of Joining ",yoj);
 
-            axios({
-                method: 'post',
-                url: 'https://tcr-mail-utility.herokuapp.com/sendMail',
-                data: {
-                  name: name,
-                  username:"temp@tcr.in",
-                  password:"password"
-                }
-              }).then(function (response) {
-                var recieved=response.data.message;
-              })
-              .catch(function (error) {
-                console.log(error);
-            });
-
-            //credentails generated email_content 
-            // let email_content=profile_credentials(name,department,yoj)
+            // send credentials as object 
+            if(sendEmail({data:"Shivansh"})) showStatus(`Credentials sent successfully to ${email}`);
+            else showStatus("Some error occured please try again!!")
+        
         } else{
-            console.log("Some mandatory information missing!!");
+            showStatus("Some mandatory information is missing!!");
         }
     }
 
+    //component..
     return (
         <div className="admin__addMembers">
             <div className="admin__addMembersForm">

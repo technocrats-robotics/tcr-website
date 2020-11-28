@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 // components
 import LandingPage from './pages/landingPage/LandingPage.jsx';
-import AdminPanel from './pages/adminPanel/AdminPanel';
+import AdminPanel from './adminPanel/AdminPanel';
 
 // CSS
 import './App.css';
