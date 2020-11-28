@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 
-// mail service (data) => as object
+// mail service (email,data) => email as string and data as object
 import {sendEmail} from '../services/mail/sendEmail'
 
 function AddMembers() {
@@ -36,7 +36,7 @@ function AddMembers() {
         if(name&&email&&department&&yoj){
 
             // send credentials as object 
-            if(sendEmail({data:"Shivansh"})) showStatus(`Credentials sent successfully to ${email}`);
+            if(sendEmail(email,{data:"Shivansh"})) showStatus(`Credentials sent successfully to ${email}`);
             else showStatus("Some error occured please try again!!")
         
         } else{
