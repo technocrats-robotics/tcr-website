@@ -4,11 +4,7 @@ import { useState } from 'react'
 
 import axios from "axios";
 
-//generate profile_credentials
-// import profile_credentials from ".../services/mail/messages/profile_credentials.js"
-
-// // email service 
-// import send_email from ".../services/mail/sendEmail.js"
+import sendMessage from "...../services/mail/sendEmail.js"
 
 
 function AddMembers() {
@@ -40,13 +36,14 @@ function AddMembers() {
 
             axios({
                 method: 'post',
-                url: 'https://tcr-mail-utility.herokuapp.com/',
+                url: 'https://tcr-mail-utility.herokuapp.com/sendMail',
                 data: {
-                  firstName: 'Fred',
-                  lastName: 'Flintstone'
+                  name: name,
+                  username:"temp@tcr.in",
+                  password:"password"
                 }
               }).then(function (response) {
-                console.log(response);
+                var recieved=response.data.message;
               })
               .catch(function (error) {
                 console.log(error);

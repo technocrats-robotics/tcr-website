@@ -1,15 +1,16 @@
-import axios from "axios";
+import axios from 'axios'
 
-axios({
-    method: 'post',
-    url: 'https://tcr-mail-utility.herokuapp.com/',
-    data: {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-    }
-  }).then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-});
+const sendMessage=(data)=>{
+    axios({
+        method: 'post',
+        url: 'https://tcr-mail-utility.herokuapp.com/sendMail',
+        data: data
+      }).then(function (response) {
+        return response.data.message;
+      })
+      .catch(function (error) {
+        return error;
+    });
+}
+
+module.exports.sendMessage
