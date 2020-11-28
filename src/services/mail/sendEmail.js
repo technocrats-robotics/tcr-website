@@ -1,9 +1,8 @@
 import axios from "axios";
 
-
 axios({
     method: 'post',
-    url: 'http://localhost:5000/',
+    url: 'https://tcr-mail-utility.herokuapp.com/',
     data: {
       firstName: 'Fred',
       lastName: 'Flintstone'

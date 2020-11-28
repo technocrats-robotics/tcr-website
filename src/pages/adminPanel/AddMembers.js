@@ -1,6 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 
+
+import axios from "axios";
+
 //generate profile_credentials
 // import profile_credentials from ".../services/mail/messages/profile_credentials.js"
 
@@ -34,6 +37,20 @@ function AddMembers() {
             console.log("Email ",email);
             console.log("Name ",department);
             console.log("Year Of Joining ",yoj);
+
+            axios({
+                method: 'post',
+                url: 'https://tcr-mail-utility.herokuapp.com/',
+                data: {
+                  firstName: 'Fred',
+                  lastName: 'Flintstone'
+                }
+              }).then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+            });
 
             //credentails generated email_content 
             // let email_content=profile_credentials(name,department,yoj)
