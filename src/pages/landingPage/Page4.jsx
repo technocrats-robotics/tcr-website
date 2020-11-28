@@ -7,7 +7,7 @@ import {Grid, GridColumn, GridRow,Card,Icon, Image,Header} from 'semantic-ui-rea
 * @author
 * @function Page3
 **/
-/*
+/**** 
 export default class Page3 extends Component {
     render(){
   return(
@@ -82,6 +82,7 @@ export default class Page3 extends Component {
   }
 }
 */
+/*
 import  React  from  'react';
 import  Carousel  from  'semantic-ui-carousel-react';
 import { Image, Button,Card,Icon } from  'semantic-ui-react'
@@ -151,6 +152,26 @@ const  Page3  = () => {
 
 }
 export  default  Page3;
+*/
 
+import { render } from '@testing-library/react'
+import React, { Component } from 'react';
+import Carousel from './../../components/Carousel';
+import {Grid, GridColumn, GridRow,Card,Icon, Image,Header} from 'semantic-ui-react';
 
+/**
+* @author
+* @function Page3
+**/
+
+export default class Page3 extends Component {
+    render(){
+  return(
+    <div className="fourthPage">
+            <Carousel />
+    </div>
+    
+   )
+  }
+}
 
