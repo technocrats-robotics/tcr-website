@@ -1,8 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 
-function AddMembers() {
+//generate profile_credentials
+// import profile_credentials from ".../services/mail/messages/profile_credentials.js"
 
+// // email service 
+// import send_email from ".../services/mail/sendEmail.js"
+
+
+function AddMembers() {
 
     // dropdown menu parameters
     const Departments = ["Programming", "Electrical", "Mechanical", "Management"];
@@ -28,6 +34,9 @@ function AddMembers() {
             console.log("Email ",email);
             console.log("Name ",department);
             console.log("Year Of Joining ",yoj);
+
+            //credentails generated email_content 
+            // let email_content=profile_credentials(name,department,yoj)
         } else{
             console.log("Some mandatory information missing!!");
         }
