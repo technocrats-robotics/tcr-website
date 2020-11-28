@@ -31,14 +31,16 @@ export default function Dial() {
             menus[i].addEventListener("mouseenter",function(event){
                 try{
                     let submenu = event.target.children[0]
-                    submenu.style.display = 'block';
+                    submenu.style.height = 'auto';
+                    event.target.children[0].style.opacity = "1.0";
                 }
                 catch(e){
                     console.log(e);
                 }})
             menus[i].addEventListener("mouseleave",function(event){
                 try{
-                    event.target.children[0].style.display = 'none';
+                    event.target.children[0].style.height = '0px';
+                    event.target.children[0].style.opacity = "0.0";
                 }
                 catch(e){
                     console.log(e);
@@ -48,12 +50,29 @@ export default function Dial() {
     )
     return(
         <div className="Dial">
+            <div>
+                
+            <Image className="arc" src={'arc.png'}>
+                </Image>
+            </div>
             <div className="dialText">
+                
             <List>
                 <List.Item active>
-                    <div className='Menu Menu1' >Home</div>
-                <div className='subMenus subMenu1'>
-                </div>
+                    <div className='Menu Menu1' >Home
+                    <div className='subMenus subMenu1'>
+                        <List.List>
+                            <List.Item as='a'>
+                                Team
+                            </List.Item>
+                            <List.Item as='a'>
+                                Contact Us
+                            </List.Item>
+                            <List.Item as='a'>
+                                Alumni
+                            </List.Item>
+                        </List.List>
+                    </div></div>
                 </List.Item>
                 <List.Item active>
                 <div className='Menu Menu2' >
@@ -91,12 +110,33 @@ export default function Dial() {
                 <List.Item active>
                 <div className='Menu Menu4' >
                     Contact Us
+                    <div className='subMenus subMenu4'>
+                        <List.List>
+                            <List.Item as='a'>
+                                Team
+                            </List.Item>
+                            <List.Item as='a'>
+                                Contact Us
+                            </List.Item>
+                            <List.Item as='a'>
+                                Alumni
+                            </List.Item>
+                        </List.List>
+                    </div>
                 </div>
                 </List.Item>
                 
                 <List.Item active>
                 <div className='Menu Menu5' >
                     Contact Us
+                    <div className='subMenus subMenu5'>
+                        <List.List>
+                            <List.Item as='a'>
+                                Team
+                            </List.Item>
+                            
+                        </List.List>
+                    </div>
                 </div>
                 </List.Item>
             </List>
