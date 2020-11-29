@@ -64,7 +64,10 @@
 .fourthPage{
     height: 100vh;
     background-color: black;
-    padding-left: ;
+    margin: auto;
+    padding-top: 7%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .zoomthird {

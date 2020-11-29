@@ -1,23 +1,23 @@
 import PropTypes from "prop-types";
 import { Slide } from "pure-react-carousel";
 import React from "react";
-import { Card,Image,Grid, GridColumn, CardContent } from "semantic-ui-react";
+import { Card,Image,Grid, GridColumn, CardContent,Segment, GridRow,Header } from "semantic-ui-react";
 
 const CustomCardSlide = ({ index, ...cardProps }) => (
   <Slide index={index}>
-    <div style={{ padding: 10 }}>
-    <Card fluid>
-        <Grid columns={5}>
-        <GridColumn width={3}>
-            <Image size='medium' src={cardProps.image} />
+    <div>
+    <Segment fluid inverted color='black'>
+        <Grid columns={16}>
+        <GridRow>
+        <GridColumn width={4}>
+            <Image size='big' src={cardProps.image} />
+            <Header style={{color: 'white'}}>{cardProps.header} - {cardProps.meta}</Header>
         </GridColumn>
-        <GridColumn width={2}>
-            <CardContent>
-                {cardProps.header}
-            </CardContent>
+        <GridColumn width={12}>
         </GridColumn>
+        </GridRow>
         </Grid>
-    </Card>
+    </Segment>
     </div>
   </Slide>
 );
