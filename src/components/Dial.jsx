@@ -7,45 +7,62 @@ export default function Dial() {
         let menus = document.getElementsByClassName("Menu");
         let dial = document.getElementsByClassName('Dial')[0];
         let subMenus = document.getElementsByClassName("subMenus");
-        console.log("Submenus CHildren");
-        console.log(subMenus[0]);
-
+    //     console.log("Submenus CHildren");
+    //     console.log(subMenus[0]);
+        
+        let zoomDialLeave = () => {
+            dial.style.zoom = "0.8";        
+        }
+        let zoomDialOver = () => {
+            dial.style.zoom = "1.2";  
+        }
         window.addEventListener("scroll",(event)=>{
             if(window.scrollY > 800){
             dial.style.position = "fixed";
             dial.style.left = "0";
             dial.style.top = "2";
-            dial.style.marginLeft = "-80px";
+            dial.style.marginLeft = "-68px";
             dial.style.borderRight = "2px solid grey";
             dial.style.zoom = "0.8";
+            dial.addEventListener("mouseover",zoomDialOver)
+            dial.addEventListener("mouseleave",zoomDialLeave);
         }
             else if (window.scrollY<800){
             dial.style.position = "relative";
             dial.style.left = "default";
             dial.style.marginLeft = "50px";
             dial.style.zoom = "1.8";
+            dial.removeEventListener("mouseover",zoomDialOver);
+            dial.removeEventListener("mouseleave",zoomDialLeave);
             dial.style.borderRight = "0px solid grey";
             }
         });
-        for(let i=0;i<menus.length;i++){
-            menus[i].addEventListener("mouseenter",function(event){
-                try{
-                    let submenu = event.target.children[0]
-                    submenu.style.height = 'auto';
-                    event.target.children[0].style.opacity = "1.0";
-                }
-                catch(e){
-                    console.log(e);
-                }})
-            menus[i].addEventListener("mouseleave",function(event){
-                try{
-                    event.target.children[0].style.height = '0px';
-                    event.target.children[0].style.opacity = "0.0";
-                }
-                catch(e){
-                    console.log(e);
-                }})
-        }
+        // for(let i=0;i<menus.length;i++){
+        //     menus[i].addEventListener("mouseenter",function(event){
+        //         try{
+        //             let submenu = event.target.children[0];
+        //             setTimeout(()=>{
+        //                 submenu.style.height = 'auto';
+        //                 submenu.style.opacity = "1.0";
+        //                 console.log('mouseenter');
+        //             },200);
+        //         }
+        //         catch(e){
+        //             console.log(e);
+        //         }})
+        //     menus[i].addEventListener("mouseleave",function(event){
+        //         try{
+        //             let submenu = event.target.children[0];
+        //             setTimeout(()=>{
+        //             submenu.style.height = '0px';
+        //             submenu.style.opacity = "0.0";
+        //             console.log('mouseleave');
+        //         },200);
+        //         }
+        //         catch(e){
+        //             console.log(e);
+        //         }})
+        // }
         }
     )
     return(
