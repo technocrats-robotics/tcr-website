@@ -1,6 +1,11 @@
 .firstPage {
     height: 100vh;
     background-color: black;
+    margin-bottom: 100px;
+}
+.secondPage {
+  height: 100vh;
+  background-color: black;
 }
 .ui.medium.header.Title {
     font-size: 6vh;

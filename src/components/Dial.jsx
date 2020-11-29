@@ -3,6 +3,19 @@ import React, { Component } from 'react';
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";
 
 export default function Dial() {
+    let scrollToTwo = () => {
+        document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'});
+        
+    }
+    let scrollToThree = () => {
+        document.getElementsByClassName('thirdPage')[0].scrollIntoView({behavior:'smooth'});
+        
+    }
+    let scrollToFour = () => {
+        document.getElementsByClassName('fourthPage')[0].scrollIntoView({behavior:'smooth'});
+        
+        console.log(document.getElementsByClassName('secondPage')[0].scrollIntoView);
+    }
     React.useEffect(()=>{
         let menus = document.getElementsByClassName("Menu");
         let dial = document.getElementsByClassName('Dial')[0];
@@ -37,32 +50,6 @@ export default function Dial() {
             dial.style.borderRight = "0px solid grey";
             }
         });
-        // for(let i=0;i<menus.length;i++){
-        //     menus[i].addEventListener("mouseenter",function(event){
-        //         try{
-        //             let submenu = event.target.children[0];
-        //             setTimeout(()=>{
-        //                 submenu.style.height = 'auto';
-        //                 submenu.style.opacity = "1.0";
-        //                 console.log('mouseenter');
-        //             },200);
-        //         }
-        //         catch(e){
-        //             console.log(e);
-        //         }})
-        //     menus[i].addEventListener("mouseleave",function(event){
-        //         try{
-        //             let submenu = event.target.children[0];
-        //             setTimeout(()=>{
-        //             submenu.style.height = '0px';
-        //             submenu.style.opacity = "0.0";
-        //             console.log('mouseleave');
-        //         },200);
-        //         }
-        //         catch(e){
-        //             console.log(e);
-        //         }})
-        // }
         }
     )
     return(
@@ -79,14 +66,14 @@ export default function Dial() {
                     <div className='Menu Menu1' >Home
                     <div className='subMenus subMenu1'>
                         <List.List>
-                            <List.Item as='a'>
-                                Team
+                            <List.Item as='a' onClick={scrollToTwo}>
+                                Who are we?
                             </List.Item>
-                            <List.Item as='a'>
-                                Contact Us
+                            <List.Item as='a' onClick={scrollToThree}>
+                                Gallery
                             </List.Item>
-                            <List.Item as='a'>
-                                Alumni
+                            <List.Item as='a' onClick={scrollToFour}>
+                                Testinomials
                             </List.Item>
                         </List.List>
                     </div></div>

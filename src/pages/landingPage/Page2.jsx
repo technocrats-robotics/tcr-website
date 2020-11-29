@@ -5,7 +5,7 @@ import ImageMat from '../../components/landingPage/ImageMat';
 export default class Page2 extends Component {
   render() {
     return(
-        <div className="firstPage">
+        <div className="secondPage">
             <Grid centered>
                 <Grid.Row textAlign='center'>
                     <Grid.Column width='6'>
