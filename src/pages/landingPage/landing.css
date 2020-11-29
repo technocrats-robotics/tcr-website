@@ -58,12 +58,16 @@
 }
 
 .thirdPage{
-    height: 100vh;
+    height: 110vh;
     background-color: black;
 }
 .fourthPage{
     height: 100vh;
     background-color: black;
+    margin: auto;
+    padding-top: 7%;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 .zoomthird {
