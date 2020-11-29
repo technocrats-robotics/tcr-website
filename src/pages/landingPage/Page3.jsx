@@ -11,7 +11,8 @@ export default class Page3 extends Component {
     render(){
   return(
     <div className="thirdPage">
-
+      <div className="ui grid centered">
+        <div className="twelve wide column">
     <ul id="hexGrid">
       <li class="hex">
         <div class="hexIn">
@@ -123,14 +124,24 @@ export default class Page3 extends Component {
       </li>
       <li class="hex">
         <div class="hexIn">
-          <a class="hexLink" href="#">
+          <a class="hexLink">
             <img className='grey' src="" alt="" />
             <h1>This is a title</h1>
             <p>Some sample text about the article this hexagon leads to</p>
           </a>
         </div>
       </li>
+      <li class="hex">
+        <div class="hexIn" style={{backgroundColor:'grey'}}>
+          
+        <a class="hexLink"></a>
+        </div>
+        </li>
+        
     </ul>
+    
+    </div>
+    </div>
     </div>
    )
   }
