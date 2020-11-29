@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 // mail service (email,data) => email as string and data as object
-import {sendEmail} from '../services/mail/sendEmail'
+import { sendEmail } from '../services/mail/sendEmail'
 
 function AddMembers() {
 
@@ -25,21 +25,21 @@ function AddMembers() {
 
 
     //alert appears after form submission
-    function showStatus(status){
+    function showStatus(status) {
         alert(status);
     }
 
 
     //form submit handling
-    const handleFormSubmit=(event)=>{
+    const handleFormSubmit = (event) => {
         event.preventDefault();
-        if(name&&email&&department&&yoj){
+        if (name && email && department && yoj) {
 
             // send credentials as object 
-            if(sendEmail(email,{data:"Shivansh"})) showStatus(`Credentials sent successfully to ${email}`);
-            else showStatus("Some error occured please try again!!")
-        
-        } else{
+            if (sendEmail(email, { data: "Shivansh" })) showStatus(`Credentials sent successfully to ${email}`);
+            else showStatus("Some error occured please try again!! (maybe wrong email id)")
+
+        } else {
             showStatus("Some mandatory information is missing!!");
         }
     }
@@ -48,42 +48,41 @@ function AddMembers() {
     return (
         <div className="admin__addMembers">
             <div className="admin__addMembersForm">
-                <form onSubmit={handleFormSubmit}>
-                    <div class="ui form">
-                        <div class="two fields">
-                            <div class="field">
-                                <label>Name</label>
-                                <input type="text" placeholder="First Name" onChange={(event) => setName(event.target.value)} required/>
-                            </div>
-                            <div class="field">
-                                <label>Email</label>
-                                <input type="text" placeholder="Email" onChange={(event) => setEmail(event.target.value)} required/>
-                            </div>
+                <div>
+                    <h1><u>Add New Member</u></h1>
+                </div>
+                <form class="ui container" onSubmit={handleFormSubmit}>
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                            <input type="text" placeholder="Name *" onChange={(event) => setName(event.target.value)} required />
                         </div>
-                        <div class="two fields">
-                            <div class="field">
-                                <label>Department</label>
-                                <select class="ui dropdown" onChange={(event) => setDepartment(event.target.value)} required>
-                                    {
-                                        Departments.map((department) => {
-                                            return <option value={department}>{department}</option>
-                                        })
-                                    }
-                                </select>
-                            </div>
-                            <div class="field">
-                                <label>Year Of Joining</label>
-                                <select class="ui dropdown" onChange={(event) => setYoj(event.target.value)} required>
-                                    {
-                                        yearOfJoining().map((year) => {
-                                            return <option value={year}>{year}</option>
-                                        })
-                                    }
-                                </select>
-                            </div>
-                        </div>
-                        <button class="ui secondary button" type="submit">Add</button>
                     </div>
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                            <input type="text" placeholder="Email *" onChange={(event) => setEmail(event.target.value)} required />
+                        </div>
+                    </div>    
+                        <div class="field">
+                            <select class="ui fluid selection dropdown" onChange={(event) => setDepartment(event.target.value)} required>
+                                {
+                                    Departments.map((department) => {
+                                        return <option value={department}>{department}</option>
+                                    })
+                                }
+                            </select>
+                        </div>
+                        <div class="field">
+                            <select class="ui fluid selection dropdown" onChange={(event) => setYoj(event.target.value)} required>
+                                {
+                                    yearOfJoining().map((year) => {
+                                        return <option value={year}>{year}</option>
+                                    })
+                                }
+                            </select>
+                        </div>
+                       <div class="field">
+                            <button class="ui secondary button" type="submit">Add</button>
+                    </div> 
                 </form>
             </div>
         </div>
