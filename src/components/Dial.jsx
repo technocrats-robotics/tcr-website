@@ -3,18 +3,17 @@ import React, { Component } from 'react';
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";
 
 export default function Dial() {
+    let scrollToOne = () => {
+        document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});   
+    }
     let scrollToTwo = () => {
-        document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'});
-        
+        document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'});   
     }
     let scrollToThree = () => {
-        document.getElementsByClassName('thirdPage')[0].scrollIntoView({behavior:'smooth'});
-        
+        document.getElementsByClassName('thirdPage')[0].scrollIntoView({behavior:'smooth'});    
     }
     let scrollToFour = () => {
         document.getElementsByClassName('fourthPage')[0].scrollIntoView({behavior:'smooth'});
-        
-        console.log(document.getElementsByClassName('secondPage')[0].scrollIntoView);
     }
     React.useEffect(()=>{
         let menus = document.getElementsByClassName("Menu");
@@ -54,6 +53,7 @@ export default function Dial() {
     )
     return(
         <div className="Dial">
+            
             <div>
                 
             <Image className="arc" src={'arc.png'}>
@@ -66,6 +66,10 @@ export default function Dial() {
                     <div className='Menu Menu1' >Home
                     <div className='subMenus subMenu1'>
                         <List.List>
+                            
+                            <List.Item as='a' onClick={scrollToOne}>
+                                Home
+                            </List.Item>
                             <List.Item as='a' onClick={scrollToTwo}>
                                 Who are we?
                             </List.Item>
