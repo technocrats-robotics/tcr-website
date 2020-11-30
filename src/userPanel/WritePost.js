@@ -1,10 +1,23 @@
 import React from 'react'
+import {useState} from 'react'
+
+//editor
+import EditorPlugin from "./EditorPlugin.js"
+
+
+//CSS
+import "./CSS/writePost.css"
 
 function WritePost() {
-    return (
-        <div>
-            <h1>Write Blog Post from User Profile</h1>
-            <p>Under Developemnt !!</p>
+
+    const [title,setTitle]=useState("");
+
+    return(
+        <div className="blogPostPage">
+            <div className="blogPostPage__editor">
+                <EditorPlugin/> 
+            </div>
+            
         </div>
     )
 }

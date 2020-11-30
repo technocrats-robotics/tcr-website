@@ -6,6 +6,7 @@ import "./CSS/body.css"
 
 
 //components
+import UserPanelNav from "./UserPanelNav"
 import UserProfile from "./UserProfile";
 import WritePost from "./WritePost";
 
@@ -49,9 +50,11 @@ function UserPanel() {
                 <Router>
                     <Switch>
                         <Route exact path="/userPanel/profile">
+                            <UserPanelNav/>
                             <UserProfile/>
                         </Route>
                         <Route exact path="/userPanel/writePost">
+                            <UserPanelNav/>
                             <WritePost/>
                         </Route>
                     </Switch>

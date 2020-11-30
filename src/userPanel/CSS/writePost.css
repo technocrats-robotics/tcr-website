@@ -1,0 +1,16 @@
+.blogPostPage{
+    background-color: black;
+    color: white;
+}
+
+.ui .massive .menu{
+    margin-bottom: 0px !important;
+}
+
+.blogPostPage__editor{
+    padding: 50px;
+}
+
+.blogPostPage > .titleBox{
+    padding: 40px;
+}
