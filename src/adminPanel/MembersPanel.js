@@ -14,6 +14,7 @@ function MembersPanel() {
                         <th>User Name @tcr.in</th>
                         <th>Registered Email Id</th>
                         <th>Role</th>
+                        <th>Blog Access</th>
                         <th>Profile Status</th>
                     </tr>
                 </thead>
@@ -26,6 +27,11 @@ function MembersPanel() {
                         <td>rahul.bera2018@tcr.in</td>
                         <td>rahul.bera2018@gmail.com</td>
                         <td>Senior</td>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox" /> <label></label>
+                            </div>
+                        </td>
                         <td class="collapsing">
                             <div class="ui fitted slider checkbox">
                                 <input type="checkbox" /> <label></label>
@@ -45,6 +51,11 @@ function MembersPanel() {
                                 <input type="checkbox" /> <label></label>
                             </div>
                         </td>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox" /> <label></label>
+                            </div>
+                        </td>
                     </tr>
                     <tr>
                         <td>3.</td>
@@ -54,6 +65,11 @@ function MembersPanel() {
                         <td>kys.2019@tcr.in</td>
                         <td>karanysingh@gmail.com</td>
                         <td>Junior</td>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox" /> <label></label>
+                            </div>
+                        </td>
                         <td class="collapsing">
                             <div class="ui fitted slider checkbox">
                                 <input type="checkbox" /> <label></label>
@@ -74,6 +90,11 @@ function MembersPanel() {
                                 <input type="checkbox" /> <label></label>
                             </div>
                         </td>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox" /> <label></label>
+                            </div>
+                        </td>
                     </tr>
 
                     <tr>
@@ -84,6 +105,11 @@ function MembersPanel() {
                         <td>dwij.sheth2016@tcr.in</td>
                         <td>dwijsheth@gmail.com</td>
                         <td>Alumni</td>
+                        <td class="collapsing">
+                            <div class="ui fitted slider checkbox">
+                                <input type="checkbox" /> <label></label>
+                            </div>
+                        </td>
                         <td class="collapsing">
                         <div class="ui fitted slider checkbox">
                             <input type="checkbox" /> <label></label>

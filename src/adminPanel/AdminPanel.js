@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
 import AdminLogin from "./AdminLogin"
@@ -15,13 +15,13 @@ import "./CSS/Body.css"
 
 function adminPanel() {
 
-    const user="Shivansh" // get this from context api
+    const user = "Shivansh" // get this from context api
 
-    const loggedIn=()=>{
+    const loggedIn = () => {
         return (
             <div className="admin__panel">
-                <Navigation />
                 <Router>
+                    <Navigation />
                     <Switch>
                         <Route exact path="/adminPanel">
                             <MembersPanel />
@@ -44,14 +44,14 @@ function adminPanel() {
         )
     }
 
-    const logIn=()=>{
-        return <AdminLogin/>
+    const logIn = () => {
+        return <AdminLogin />
     }
 
     return (
-       <Router>
-        {(!user)?logIn():loggedIn()}
-       </Router>
+        <Router>
+            {(!user) ? logIn() : loggedIn()}
+        </Router>
     )
 }
 

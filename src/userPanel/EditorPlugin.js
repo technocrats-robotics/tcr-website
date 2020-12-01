@@ -27,7 +27,7 @@ function EditorPlugin() {
                         'insertdatetime media table paste wordcount'
                     ],
                     toolbar:
-                        'undo redo | formatselect | bold italic | \
+                        'undo redo | formatselect | bold italic underline | \
                          alignleft aligncenter alignright | \
                          bullist numlist outdent indent | help'
                 }}

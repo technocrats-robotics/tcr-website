@@ -1,5 +1,24 @@
+/* Patrick Hand font */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+
 .ui.massive.menu {
     margin-bottom: 0px;
     background-color: black !important;
     border-radius: 0rem !important;
+}
+
+.item > a{
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Patrick Hand', cursive;
+}
+
+
+.item > a:hover{
+    text-decoration: underline;
+}
+
+.active_link{
+    text-decoration: underline;
 }
