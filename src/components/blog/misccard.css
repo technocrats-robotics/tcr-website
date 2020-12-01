@@ -1,0 +1,40 @@
+
+.postlayer1 {
+    width:40vh;
+    height: 20vh;
+    transform:rotate(5deg);
+    border: 1px solid grey;
+    /* zoom:2; */
+}
+.postlayer2 {
+    width:40vh;
+    height: 20vh;
+    transform:rotate(-5deg);
+    border: 1px solid grey;
+    
+}
+.postlayer3 {
+    width:40vh;
+    height: 20vh;
+    transform:rotate(2deg);
+    border: 1px solid grey;   
+}
+.mainLayerFront{
+    height: 20vh;
+}
+.mainLayerBack{
+    background-color: #B32D2D;
+    height: 20vh;
+    z-index: 999;
+    display: none;
+}
+.postlayer1:hover .mainLayerFront{
+    display: none;
+} 
+
+.postlayer1:hover .mainLayerBack{
+    display: block;
+} 
+.ui.card.customBlogCard{
+    background-color: transparent;
+}
