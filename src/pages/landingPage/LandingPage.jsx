@@ -4,9 +4,10 @@ import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
 import Page4 from './Page4';
+import BlogPage from '../blog/Blog';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
 export default class LandingPage extends Component {
-    state = { percent: 33 }
+    state = { percent: 0 }
     componentDidMount(){
         window.onscroll = () => {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -25,6 +26,7 @@ export default class LandingPage extends Component {
             <Page2></Page2>
             <Page3></Page3>
             <Page4></Page4>
+            <BlogPage></BlogPage>
         </div>
     );
     }
