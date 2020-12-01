@@ -18,13 +18,6 @@
 .ui.large.image {
     margin-left: 18%;
 }
-.ui.black.inverted.center.aligned.segment.introCard {
-    padding: 8%;
-    font-size: 15px;
-    border:1px solid white;
-    /* width: 20vh; */
-    height: 30vh;
-}
 
 /* .ui.small.image.matAsset1 {
     width: 13vh;

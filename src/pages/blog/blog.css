@@ -1,3 +1,24 @@
 .blogPage{
     height:100vh;
 }
+.postlayer1 {
+    width:20vh;
+    height: 10vh;
+    transform:rotate(5deg);
+    border: 1px solid grey;
+    zoom:2;
+}
+.postlayer2 {
+    width:20vh;
+    height: 10vh;
+    transform:rotate(-5deg);
+    border: 1px solid grey;
+    
+}
+.postlayer3 {
+    width:20vh;
+    height: 10vh;
+    transform:rotate(2deg);
+    border: 1px solid grey;
+    
+}

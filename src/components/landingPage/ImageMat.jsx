@@ -10,7 +10,6 @@ export default class ImageMat extends Component {
                     <Grid.Column stretched>
                         {/* <Image className='matAsset1' size='medium' src="https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg"></Image>         */}
                         <div className='matAsset1' ></div>
-
                         <div className='matAsset2'></div> 
                     </Grid.Column>
                     <Grid.Column stretched>
