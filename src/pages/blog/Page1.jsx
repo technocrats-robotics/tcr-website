@@ -11,7 +11,6 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     const { activeItem } = this.state
     return(
         <div>
-            <MiscCard></MiscCard>
             <Grid columns={16}>
             <GridRow centered>
             <Header as='h1' inverted textAlign='left'>
@@ -23,11 +22,45 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
             </Header>
             </GridRow>
                 <GridRow>
-                <GridColumn width={12}>
-                    <a style={{color:'white;'}}>The components will go here</a>
+                <GridColumn width={13}>
+                    <Grid columns={16} color='red' centered >
+                        <GridRow color='purple'>
+                            <GridColumn width={4} color='teal'>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4} color='violet'>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4} color='yellow'>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                        </GridRow>
+                        <GridRow>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                        </GridRow>
+                        <GridRow>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                            <GridColumn width={4}>
+                            <MiscCard></MiscCard>
+                            </GridColumn>
+                        </GridRow>
+                    </Grid>
                 </GridColumn>
-                <GridColumn width={4}>
-                <Menu inverted pointing secondary vertical size='huge'>
+                <GridColumn width={3}>
+                <Menu inverted pointing secondary vertical size='large'>
                     <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
