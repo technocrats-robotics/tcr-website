@@ -18,7 +18,8 @@ function AddMembers() {
     }
 
     //state variables
-    const [name, setName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [department, setDepartment] = useState(Departments[0]);
     const [yoj, setYoj] = useState(currentYear);
@@ -33,7 +34,7 @@ function AddMembers() {
     //form submit handling
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        if (name && email && department && yoj) {
+        if (firstName && lastName && email && department && yoj) {
 
             // send credentials as object 
             if (sendEmail(email, { data: "Shivansh" })) showStatus(`Credentials sent successfully to ${email}`);
@@ -54,7 +55,12 @@ function AddMembers() {
                 <form class="ui container" onSubmit={handleFormSubmit}>
                     <div class="field">
                         <div class="ui fluid icon input">
-                            <input type="text" placeholder="Name *" onChange={(event) => setName(event.target.value)} required />
+                            <input type="text" placeholder="First Name *" onChange={(event) => setFirstName(event.target.value)} required />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui fluid icon input">
+                            <input type="text" placeholder="Last Name *" onChange={(event) => setLastName(event.target.value)} required />
                         </div>
                     </div>
                     <div class="field">

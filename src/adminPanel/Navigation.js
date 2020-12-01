@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {NavLink} from 'react-router-dom'
 //CSS
 import "./CSS/Navigation.css"
 
@@ -16,10 +16,10 @@ function Navigation() {
                 <div class="header item">
                    <h2>Technocrats Robotics</h2>
                 </div>
-                <a class="item" href="/adminPanel/addMembers"> Add Members</a>
-                <a class="item" href="/adminPanel/manageMembers"> Manage Members </a>
-                <a class="item" href="/adminPanel/sendBulkMails"> Send Bulk Emails </a>
-                <a class="item" href="/adminPanel/makeAnnouncement"> Make Announcement </a>
+                <NavLink exact className="nav item" to="/adminPanel/addMembers"> Add Members</NavLink>
+                <NavLink exact className="nav item" to="/adminPanel/manageMembers"> Manage Members </NavLink>
+                <NavLink exact className="nav item" to="/adminPanel/sendBulkMails">Send Emails </NavLink>
+                <NavLink exact className="nav item" to="/adminPanel/makeAnnouncement">Make Announcement </NavLink>    
                 <div class="right menu">
                     <div class="item">
                         <div class="ui primary button" onClick={handleSignOut}>Sign Out</div>
@@ -30,4 +30,4 @@ function Navigation() {
     )
 }
 
-export default Navigation
+export default Navigation;
