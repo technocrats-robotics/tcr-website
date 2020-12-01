@@ -6,7 +6,7 @@ export default class BlogCard extends Component {
   render() {
     return(
         <div>
-            <Grid centered columns={3} divided>
+            <Grid stackable relaxed centered columns={3} divided>
               <Grid.Row>
                   <MiscCard></MiscCard>
                   <MiscCard></MiscCard>
