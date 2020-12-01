@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header,Image, GridColumn,Menu, GridRow,Icon} from 'semantic-ui-react';
+import { Grid, Segment, Header,Image, GridColumn,Menu, GridRow,Icon,Input} from 'semantic-ui-react';
 import BlogCards from '../../components/blog/BlogCards';
+import BlogMenuTop from '../../components/blog/BlogMenuTop';
 export default class ImageMat extends Component {
 
 state = { activeItem: 'home' }
@@ -21,9 +22,9 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
                 </Header.Content>
             </Header>
             </GridRow>
-
+            <BlogMenuTop></BlogMenuTop>
             <GridRow>
-                <GridColumn width={10} style={{backgroundColor:'red'}}>
+                <GridColumn width={10}>
                         <BlogCards></BlogCards>
                 </GridColumn>
                 <GridColumn width={4}>

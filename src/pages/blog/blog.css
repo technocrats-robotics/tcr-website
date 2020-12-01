@@ -8,3 +8,7 @@
 a.item {
     text-align: right;
 }
+
+div.ui.inverted.transparent.icon.input{
+    margin-left: 100vh;
+}
