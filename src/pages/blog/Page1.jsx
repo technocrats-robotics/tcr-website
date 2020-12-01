@@ -23,7 +23,7 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
             </GridRow>
 
             <GridRow>
-                <GridColumn width={10} style={{backgroundColor:'red'}}>
+                <GridColumn width={10}>
                         <BlogCards></BlogCards>
                 </GridColumn>
                 <GridColumn width={4}>

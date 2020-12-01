@@ -22,6 +22,8 @@
 }
 .mainLayerFront{
     height: 20vh;
+    color: gray;
+    padding: 5%;
 }
 .mainLayerBack{
     background-color: #B32D2D;
@@ -38,4 +40,6 @@
 } 
 .ui.card.customBlogCard{
     background-color: transparent;
+    border: 0px solid white;
+    box-shadow: none;
 }

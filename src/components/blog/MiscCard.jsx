@@ -10,30 +10,31 @@ export default class MiscCard extends Component {
                 <div className="postlayer3">
                     <div className="mainLayerFront">
                         {this.props.mainContent}
-                        This is the front.
+                        By the same illusion which lis the
+                        horizon of the sea to the level of
+                        the spectator on a hil.lside, the
+                        sable.
+
                     </div>
                     <div className="mainLayerBack" >
                         <Card className='customBlogCard'>
                         <Card.Content>
                             <Image
-                            floated='right'
-                            size='mini'
+                            floated='left'
+                            size='large'
+                            avatar
                             src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
                             />
                             <Card.Header>Steve Sanders</Card.Header>
                             <Card.Meta>Friends of Elliot</Card.Meta>
-                            <Card.Description>
-                            Steve wants to add you to the group <strong>best friends</strong>
-                            </Card.Description>
                         </Card.Content>
                         <Card.Content extra>
                             <div className='ui two buttons'>
-                            <Button basic color='green'>
-                                Approve
-                            </Button>
-                            <Button basic color='red'>
-                                Decline
-                            </Button>
+                            <Button.Group style={{marginLeft:'35px'}}>
+                            <Button>Cancel</Button>
+                            <Button.Or />
+                            <Button color='black'>Save</Button>
+                            </Button.Group>
                             </div>
                         </Card.Content>
                         </Card>
