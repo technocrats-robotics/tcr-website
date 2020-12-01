@@ -24,20 +24,15 @@
     height: 20vh;
     color: gray;
     padding: 5%;
+    background-color: black;
+    border: 1px solid grey;
 }
-.mainLayerBack{
+.mainLayer{
     background-color: #B32D2D;
     height: 20vh;
     z-index: 999;
     display: none;
 }
-.postlayer1:hover .mainLayerFront{
-    display: none;
-} 
-
-.postlayer1:hover .mainLayerBack{
-    display: block;
-} 
 .ui.card.customBlogCard{
     background-color: transparent;
     border: 0px solid white;
