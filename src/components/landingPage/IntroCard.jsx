@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Grid, Segment, Header,Image, Icon } from 'semantic-ui-react';
+import './introcard.css';
 
 export default class introCard extends Component {
   render() {
     return(
-        <div className="postlayer1">
-            <div className="postlayer2">
-                <div className="postlayer3">
-                    <div className="mainpostlayer">
+        <div className="introlayer1">
+            <div className="introlayer2">
+                <div className="introlayer3">
+                    <div className="mainintrolayer">
                         <Header size="small" color='green'>{this.props.Introhead}</Header>
                         {this.props.mainContent}
                     </div>
