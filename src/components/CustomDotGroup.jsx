@@ -4,10 +4,10 @@ import React from "react";
 import { Button, Container } from "semantic-ui-react";
 
 const CustomDotGroup = ({ slides, size }) => (
-  <Container textAlign="center">
-    <Button.Group size={size}>
+  <Container textAlign="center" inverted>
+    <Button.Group size={size} inverted>
       {[...Array(slides).keys()].map(slide => (
-        <Button as={Dot} key={slide} icon="circle" slide={slide} />
+        <Button as={Dot} key={slide} icon="circle" slide={slide} inverted/>
       ))}
     </Button.Group>
   </Container>
