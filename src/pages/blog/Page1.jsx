@@ -12,6 +12,7 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     return(
         <div>
             <Grid columns={16}>
+
             <GridRow centered>
             <Header as='h1' inverted textAlign='left'>
                 <Icon name='book' />
@@ -21,17 +22,18 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
                 </Header.Content>
             </Header>
             </GridRow>
-                <GridRow>
-                <GridColumn width={13}>
-                    <Grid columns={16} color='red' centered >
-                        <GridRow color='purple'>
-                            <GridColumn width={4} color='teal'>
+
+            <GridRow>
+                <GridColumn width={12}>
+                    <Grid columns={16} centered>
+                        <GridRow>
+                            <GridColumn width={4} textAlign='center'>
                             <MiscCard></MiscCard>
                             </GridColumn>
-                            <GridColumn width={4} color='violet'>
+                            <GridColumn width={4}>
                             <MiscCard></MiscCard>
                             </GridColumn>
-                            <GridColumn width={4} color='yellow'>
+                            <GridColumn width={4}>
                             <MiscCard></MiscCard>
                             </GridColumn>
                         </GridRow>
@@ -59,8 +61,8 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
                         </GridRow>
                     </Grid>
                 </GridColumn>
-                <GridColumn width={3}>
-                <Menu inverted pointing secondary vertical size='large'>
+                <GridColumn width={4}>
+                <Menu secondary inverted vertical pointing size='huge'>
                     <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
