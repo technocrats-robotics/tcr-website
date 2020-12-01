@@ -1,20 +1,21 @@
 
 .postlayer1 {
-    width:40vh;
+    width:35vh;
     height: 20vh;
     transform:rotate(5deg);
     border: 1px solid grey;
     /* zoom:2; */
+    margin-right: 20px;
 }
 .postlayer2 {
-    width:40vh;
+    width:35vh;
     height: 20vh;
     transform:rotate(-5deg);
     border: 1px solid grey;
     
 }
 .postlayer3 {
-    width:40vh;
+    width:35vh;
     height: 20vh;
     transform:rotate(2deg);
     border: 1px solid grey;   

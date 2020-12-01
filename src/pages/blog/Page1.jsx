@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Segment, Header,Image, GridColumn,Menu, GridRow,Icon} from 'semantic-ui-react';
-import MiscCard from '../../components/blog/MiscCard';
-
+import BlogCards from '../../components/blog/BlogCards';
 export default class ImageMat extends Component {
 
 state = { activeItem: 'home' }
@@ -11,9 +10,9 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     const { activeItem } = this.state
     return(
         <div>
-            <Grid columns={16}>
+            <Grid columns={12} centered>
 
-            <GridRow centered>
+            <GridRow>
             <Header as='h1' inverted textAlign='left'>
                 <Icon name='book' />
                 <Header.Content>
@@ -24,45 +23,11 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
             </GridRow>
 
             <GridRow>
-                <GridColumn width={12}>
-                    <Grid columns={16} centered>
-                        <GridRow>
-                            <GridColumn width={4} textAlign='center'>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                        </GridRow>
-                        <GridRow>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                        </GridRow>
-                        <GridRow>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                            <GridColumn width={4}>
-                            <MiscCard></MiscCard>
-                            </GridColumn>
-                        </GridRow>
-                    </Grid>
+                <GridColumn width={10} style={{backgroundColor:'red'}}>
+                        <BlogCards></BlogCards>
                 </GridColumn>
                 <GridColumn width={4}>
-                <Menu secondary inverted vertical pointing size='huge'>
+                <Menu secondary inverted vertical pointing size='massive'>
                     <Menu.Item
                     name='home'
                     active={activeItem === 'home'}
