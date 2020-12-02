@@ -7,13 +7,13 @@ const CustomCardSlide = ({ index, ...cardProps }) => (
   <Slide index={index}>
     <div>
     <Segment fluid inverted color='black'>
-        <Grid columns={16}>
+        <Grid stackable>
         <GridRow>
-        <GridColumn width={4}>
+        <GridColumn mobile={16} tablet={8} computer={4} color='red'>
             <Image size='big' src={cardProps.image} />
             <Header style={{color: 'white'}}>{cardProps.header} - {cardProps.meta}</Header>
         </GridColumn>
-        <GridColumn width={12}>
+        <GridColumn mobile={16} tablet={8} computer={4} color='pink'>
         </GridColumn>
         </GridRow>
         </Grid>

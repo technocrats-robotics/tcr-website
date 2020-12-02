@@ -7,10 +7,9 @@ import CustomDotGroup from "./CustomDotGroup";
 
 const Carousel = () => (
   <CarouselProvider
-    naturalSlideWidth={16}
-    naturalSlideHeight={5}
+    naturalSlideWidth={1}
+    naturalSlideHeight={1}
     totalSlides={3}
-    style={{ width: "150vh" }}
   >
     <Slider>
       <CustomCardSlide
