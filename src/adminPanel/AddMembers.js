@@ -46,8 +46,8 @@ function AddMembers() {
                 username: new_user['username'], // pull this from create new user function
                 password: new_user['password'], // pull this from create new user function 
             }
-            
-            if (sendEmail(email,data)) showStatus(`Credentials sent successfully to ${email}`);
+            let api_msg = await sendEmail(email, data);
+            if (api_msg) showStatus(`Credentials sent successfully to ${email}`);
             else showStatus("Some error occured please try again!! (maybe wrong email id)")
 
         } else {
