@@ -8,7 +8,7 @@ export default class MiscCard extends Component {
         <div className="postlayer1">
             <div className="postlayer2">
                 <div className="postlayer3">
-                <Reveal animated='move'>
+                <Reveal animated='small fade'>
                                 <Reveal.Content visible>
                                 <div className="mainLayerFront">
                                     <div className="cardContent">
@@ -30,7 +30,7 @@ export default class MiscCard extends Component {
                                         avatar
                                         src='https://react.semantic-ui.com/images/avatar/large/steve.jpg'
                                         />
-                                        <Card.Header>Steve Sanders</Card.Header>
+                                        <Card.Header >Steve Sanders</Card.Header>
                                         <Card.Meta>Friends of Elliot</Card.Meta>
                                         
                                     </Card.Content>
