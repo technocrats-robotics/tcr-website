@@ -10,3 +10,4 @@ firebase.initializeApp(firebaseConfig);
 
 // Firebase product objects
 export var auth = firebase.auth();
+export var db = firebase.firestore();

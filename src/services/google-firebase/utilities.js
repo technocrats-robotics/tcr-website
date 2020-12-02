@@ -5,8 +5,6 @@ import { auth } from './setup';
 // Import helper functions
 import { generatePassword, convertDec2CustomBase26 } from './helper';
 
-var db=firebase.firestore();
-
 /**
  * Create a new member account.
  * @param {string} first_name The first name of the user.
@@ -41,6 +39,3 @@ export async function addNewUser(first_name, last_name, year_of_joining){
     });
 
 };
-
-export default db;
-export {auth};
