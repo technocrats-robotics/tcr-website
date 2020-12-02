@@ -7,15 +7,14 @@ const CustomCardSlide = ({ index, ...cardProps }) => (
   <Slide index={index}>
     <div>
     <Segment fluid inverted color='black'>
-        <Grid stackable>
-        <GridRow>
-        <GridColumn mobile={16} tablet={8} computer={4} color='red'>
-            <Image size='big' src={cardProps.image} />
+        <Grid columns={2} doubling>
+        <GridColumn color='red'>
+            <Image src={cardProps.image} />
             <Header style={{color: 'white'}}>{cardProps.header} - {cardProps.meta}</Header>
         </GridColumn>
-        <GridColumn mobile={16} tablet={8} computer={4} color='pink'>
+        <GridColumn color='pink'>
+        By the same illusion which lis the horizon of the sea to the level of the spectator on a hillside, the sable cloud beneath was dished out, and the car seemed to float in the middle of an immense dark sphere, whose upper half was strewn with silver.
         </GridColumn>
-        </GridRow>
         </Grid>
     </Segment>
     </div>
