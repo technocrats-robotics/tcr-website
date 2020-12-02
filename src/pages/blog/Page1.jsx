@@ -27,8 +27,8 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
                 <GridColumn width={10}>
                         <BlogCards></BlogCards>
                 </GridColumn>
-                <GridColumn width={4}>
-                <Menu secondary inverted vertical pointing size='massive'>
+                <GridColumn only='computer' width={4}>
+                <Menu secondary  inverted vertical pointing size='massive'>
                     <Menu.Item
                     name='home'
                     active={activeItem === 'home'}

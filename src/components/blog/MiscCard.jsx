@@ -11,11 +11,13 @@ export default class MiscCard extends Component {
                 <Reveal animated='move'>
                                 <Reveal.Content visible>
                                 <div className="mainLayerFront">
+                                    <div className="cardContent">
                                     {this.props.mainContent}
                                     By the same illusion which lis the
                                     horizon of the sea to the level of
                                     the spectator on a hil.lside, the
                                     sable.
+                                    </div>
 
                                 </div>
                                 </Reveal.Content>

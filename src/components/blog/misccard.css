@@ -14,6 +14,10 @@
     border: 1px solid grey;
     
 }
+.cardContent{
+    
+    transform: rotate(-1deg);
+}
 .postlayer3 {
     width:35vh;
     height: 20vh;
@@ -22,7 +26,7 @@
 }
 .mainLayerFront{
     height: 20vh;
-    color: gray;
+    color: rgb(204, 203, 203);
     padding: 5%;
     background-color: black;
     border: 1px solid grey;
