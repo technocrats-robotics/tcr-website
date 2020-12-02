@@ -12,7 +12,7 @@ export default class Page1 extends Component {
         <div className="firstPage">
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
-                    <Grid.Column className='leftMain' width='6' >
+                    <Grid.Column mobile='12' className='leftMain' width='6' >
                         <div style={{textAlign:'center'}}>
                     <Image avatar size='large' src={'https://avatars3.githubusercontent.com/u/49567419?s=200&v=4'}></Image>
                     <Header className='Title' size='medium'>Technocrats Robotics</Header>
@@ -20,7 +20,7 @@ export default class Page1 extends Component {
                     <Icon className='arrow' color='yellow' size='huge' name='chevron down'></Icon> </div>                  
                         </div>
                         </Grid.Column>
-                    <Grid.Column width='4'>
+                    <Grid.Column only='computer'  width='4'>
                         <Dial></Dial>
                     </Grid.Column>
                 </Grid.Row>

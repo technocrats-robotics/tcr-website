@@ -7,18 +7,36 @@
   height: 100vh;
   background-color: black;
 }
-.ui.medium.header.Title {
-    font-size: 6vh;
-    margin-left: 10%;
-    color: white;
-}
 .fourteen.column.row.mainRow {
     margin-top: 15vh;
 }
-.ui.large.image {
-    margin-left: 18%;
-}
+@media only screen and (min-width: 768px) {
+        .ui.large.image {
+            margin-left: 18%;
+           }
 
+        .ui.medium.header.Title {
+            font-size: 6vh;
+            margin-left: 10%;
+            }
+} 
+@media only screen and (max-width: 900px) {
+          .arrowDown{
+            padding-top: 80px;
+          }
+
+          .ui.medium.header.Title {
+              font-size: 2vh;
+              /* text-align: left; */
+              }
+          .six.wide.column.leftMain{
+                zoom:1.5;
+              }
+} 
+
+.ui.medium.header.Title {
+  color: white;
+}
 /* .ui.small.image.matAsset1 {
     width: 13vh;
     height: 13vh;

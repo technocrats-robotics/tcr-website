@@ -168,14 +168,19 @@ export default class Page3 extends Component {
     render(){
   return(
     <div className="fourthPage">
-        <Header as='h1' icon textAlign='center' inverted color='grey'>
-            <Icon inverted name='users' circular />
-            <Header.Content >Testimonials</Header.Content>
-        </Header>
-        <Carousel />
+        <Grid>
+            <Grid.Row>
+                <Grid.Column>
+                    <Header as='h1' icon textAlign='center' inverted color='grey'>
+                        <Icon inverted name='users' circular />
+                        <Header.Content >Testimonials</Header.Content>
+                    </Header>
+                    <Carousel />
+                </Grid.Column>
+            </Grid.Row>
+        </Grid>
     </div>
     
    )
   }
 }
-
