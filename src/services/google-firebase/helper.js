@@ -39,6 +39,17 @@ export function convertDec2CustomBase26(number){
 }
 
 
+/**
+ * Convert given string to title case
+ * @param {string} str The string to be converted to Title Case
+ */
+export function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+      return word.replace(word[0], word[0].toUpperCase());
+    }).join(' ');
+}
+
+
 /*
 ** References:
  * Password Generator:
@@ -50,4 +61,6 @@ export function convertDec2CustomBase26(number){
  * https://stackoverflow.com/questions/4228356/integer-division-with-remainder-in-javascript
  * https://www.geeksforgeeks.org/convert-base-decimal-vice-versa/
  * https://www.geeksforgeeks.org/reverse-a-string-in-javascript/
+ * Title Case:
+ * https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
 */
