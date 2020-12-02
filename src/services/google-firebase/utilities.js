@@ -1,17 +1,9 @@
-import firebase from "firebase/app";
+// General functions related to Firebase
 
-// Add the Firebase products that you want to use
-import "firebase/auth";
-import "firebase/firestore";
+// Import firebase product objects
+import { auth } from './setup';
 // Import helper functions
-import { generatePassword, convertDec2CustomBase26 } from './helper'
-
-// Firebase Setup
-const firebaseConfig = require('./firebase_config.json');
-firebase.initializeApp(firebaseConfig);
-
-// Firebase product objects
-var auth = firebase.auth();
+import { generatePassword, convertDec2CustomBase26 } from './helper';
 
 /**
  * Create a new member account.
