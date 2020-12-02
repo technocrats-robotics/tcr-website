@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
-import db from '../services/google-firebase/utilities'
+import { db } from '../services/google-firebase/setup'
 
 function MembersPanel() {
 
