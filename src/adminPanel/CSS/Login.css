@@ -1,0 +1,38 @@
+.admin__panel{
+
+}
+
+.ui.inverted{
+    border-radius: 0px !important;
+}
+
+.admin__body{
+    padding: 20px; 
+}
+
+.admin__membersPanel{
+   border-top: 2px solid white;
+}
+
+.admin__login{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin__loginForm{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    padding: 50px;
+}
+
+.field{
+    margin: 10px;
+
+}
+
+select.ui.dropdown {
+    height: 45px !important;
+}
+
+

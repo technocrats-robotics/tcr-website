@@ -10,12 +10,14 @@ import SendMails from './SendMails';
 import MakeAnnouncement from './MakeAnnouncements'
 
 
+
+
 //CSS
 import "./CSS/Body.css"
 
 function adminPanel() {
 
-    const user = "Shivansh" // get this from context api
+    const user = null // get this from context api
 
     const loggedIn = () => {
         return (
