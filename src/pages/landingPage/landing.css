@@ -143,6 +143,7 @@
     margin-top: -50px;
     zoom: 2;
     z-index: 999;
+    margin-left: -100px;
 }
   .dialText {
     color: grey;

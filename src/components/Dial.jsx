@@ -42,7 +42,7 @@ export default function Dial() {
             else if (window.scrollY<800){
             dial.style.position = "relative";
             dial.style.left = "default";
-            dial.style.marginLeft = "50px";
+            dial.style.marginLeft = "-100px";
             dial.style.zoom = "1.8";
             dial.removeEventListener("mouseover",zoomDialOver);
             dial.removeEventListener("mouseleave",zoomDialLeave);
