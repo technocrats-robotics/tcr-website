@@ -37,7 +37,12 @@ function AddMembers() {
         if (firstName && lastName && email && department && yoj) {
 
             // send credentials as object 
-            if (sendEmail(email, { data: "Shivansh" })) showStatus(`Credentials sent successfully to ${email}`);
+            let data={
+                username:"shivansh@tcr.in", // pull this from create new user function
+                password:"shivansh"         // pull this from create new user function 
+            }
+            
+            if (sendEmail(email,data)) showStatus(`Credentials sent successfully to ${email}`);
             else showStatus("Some error occured please try again!! (maybe wrong email id)")
 
         } else {

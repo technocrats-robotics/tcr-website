@@ -12,16 +12,21 @@ endPoints:
 import axios from 'axios'
 
 async function sendEmail(email,data) {
-    axios({
-        method: 'post',
-        url: 'https://tcr-mail-utility.herokuapp.com/sendMail',
-        data: data
-      }).then(function (response) {
+    axios.post('https://tcr-mail-utility.herokuapp.com/sendMail',{
+          email:email,
+          data:data
+        }).then(function (response) {
+        console.log("Response",response);
         return response.data.message;
       })
       .catch(function (error) {
+        console.log("Error Occured",error);
         return error;
     });
+      
+
+
+     
 }
 
 export {sendEmail}
