@@ -1,16 +1,16 @@
 .firstPage {
-    height: 100vh;
+    height: 120vh;
     background-color: black;
-    margin-bottom: 100px;
 }
 .secondPage {
-  height: 100vh;
+  height: 120vh;
   background-color: black;
 }
 .fourteen.column.row.mainRow {
     margin-top: 15vh;
 }
 @media only screen and (min-width: 768px) {
+  /* computer */
         .ui.large.image {
             margin-left: 18%;
            }
@@ -19,8 +19,18 @@
             font-size: 6vh;
             margin-left: 10%;
             }
+            .ui.yellow.large.statistic{
+              margin-top: 120px;
+              margin-left: 50px;
+            }
+            
+            .ui.red.large.statistic{
+              margin-left: 350px;
+              margin-top: 120px; 
+            }
 } 
 @media only screen and (max-width: 900px) {
+  /* Mobile */
           .arrowDown{
             padding-top: 80px;
           }
@@ -32,6 +42,7 @@
           .six.wide.column.leftMain{
                 zoom:1.5;
               }
+            
 } 
 
 .ui.medium.header.Title {
@@ -74,14 +85,13 @@
 }
 
 .thirdPage{
-    height: 100vh;
+    height: 120vh;
     background-color: black;
 }
 .fourthPage{
-    height: 100vh;
+    height: 120vh;
     background-color: black;
     margin: auto;
-    padding-top: 7%;
     padding-left: 15%;
     padding-right: 15%;
 }
