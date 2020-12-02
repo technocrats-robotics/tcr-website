@@ -1,11 +1,7 @@
 .App {
   text-align: center;
   background-color: black;
-<<<<<<< Updated upstream
   overflow-x: hidden;
-=======
-  overflow: hidden;
->>>>>>> Stashed changes
 }
 
 .App-logo {
