@@ -4,10 +4,8 @@ import { Image, Grid, Header, Icon  } from "semantic-ui-react";
 import Dial from "../../components/Dial.jsx";
 
 export default class Page1 extends Component {
+
   render() {
-    // let scrollToOne = () => {
-    //     document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});   
-    // }
     return(
         <div className="firstPage">
             <Grid centered>
