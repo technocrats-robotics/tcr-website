@@ -1,16 +1,19 @@
 import { CarouselProvider, Slider } from "pure-react-carousel";
 import React from "react";
 import "pure-react-carousel/dist/react-carousel.es.css";
+import CustomDotGroup from './CustomDotGroup';
 
 import CustomCardSlide from "./CustomCardSlide";
-import CustomDotGroup from "./CustomDotGroup";
+
 
 const Carousel = () => (
+  <div>
   <CarouselProvider
     naturalSlideWidth={1}
-    naturalSlideHeight={1}
+    naturalSlideHeight={2}
     totalSlides={3}
   >
+    <CustomDotGroup slides={3} />
     <Slider>
       <CustomCardSlide
         image="https://place-hold.it/800x800&text=Matthew&fontsize=32"
@@ -31,9 +34,9 @@ const Carousel = () => (
         meta="Friend"
       />
     </Slider>
-
-    <CustomDotGroup slides={3} />
   </CarouselProvider>
+  
+  </div>
 );
 
 export default Carousel;

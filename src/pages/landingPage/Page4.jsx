@@ -157,6 +157,7 @@ export  default  Page3;
 import { render } from '@testing-library/react'
 import React, { Component } from 'react';
 import Carousel from '../../components/Carousel';
+import CustomDotGroup from "./../../components/CustomDotGroup";
 import {Grid, GridColumn, GridRow,Card,Icon, Image,Header} from 'semantic-ui-react';
 
 /**

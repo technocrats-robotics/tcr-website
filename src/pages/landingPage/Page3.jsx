@@ -11,8 +11,8 @@ export default class Page3 extends Component {
     render(){
   return(
     <div className="thirdPage">
-      <div className="ui grid centered">
-        <div className="twelve wide column">
+    <Grid centered>
+        <GridColumn width={14}>
     <ul id="hexGrid">
       <li class="hex">
         <div class="hexIn">
@@ -140,8 +140,8 @@ export default class Page3 extends Component {
         
     </ul>
     
-    </div>
-    </div>
+    </GridColumn>
+    </Grid>
     </div>
    )
   }
