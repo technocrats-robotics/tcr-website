@@ -10,7 +10,7 @@ import Member from './models/members/member';
 
 
 /**
- * Create a new member account.
+ * Create a new member account & return the status of the process, email & password.
  * @param {string} first_name The first name of the user.
  * @param {string} last_name The last name or surname of the user.
  * @param {string} registered_email A valid email that the user would like be contacted through.
@@ -35,7 +35,7 @@ export async function addNewUser(first_name, last_name, registered_email, branch
     // Generate Password
     let password = await generatePassword();
     // Create User
-    auth.createUserWithEmailAndPassword(email, password)
+    return auth.createUserWithEmailAndPassword(email, password)
     .then(async (currentUser) => {
         // console.log(currentUser.user.uid);   // Debugging
         let newMember = new Member(currentUser.user.uid);
@@ -46,10 +46,13 @@ export async function addNewUser(first_name, last_name, registered_email, branch
             titleCase(branch),
             year_of_joining
         );
-        if(!isCreated)
-            console.error('Something went wrong in addNewUser');
         auth.signOut();
         console.log('Success'); // Debugging
+        return {
+            status: isCreated,
+            username: email,
+            password: password,
+        };
     })
     .catch((error) => {
         var errorCode = error.code;
@@ -57,6 +60,7 @@ export async function addNewUser(first_name, last_name, registered_email, branch
         console.error('Error in addNewUser');
         console.error(errorCode);
         console.error(errorMessage);
+        return {status: false,};
     });
 
 };
