@@ -19,9 +19,7 @@ export default function Dial() {
         let menus = document.getElementsByClassName("Menu");
         let dial = document.getElementsByClassName('Dial')[0];
         let subMenus = document.getElementsByClassName("subMenus");
-    //     console.log("Submenus CHildren");
-    //     console.log(subMenus[0]);
-        
+
         let zoomDialLeave = () => {
             dial.style.zoom = "0.8";        
         }
@@ -29,7 +27,8 @@ export default function Dial() {
             dial.style.zoom = "1.2";  
         }
         window.addEventListener("scroll",(event)=>{
-            if(window.scrollY > 800){
+
+            if(window.scrollY > 10){
             dial.style.position = "fixed";
             dial.style.left = "0";
             dial.style.top = "2";
@@ -39,7 +38,7 @@ export default function Dial() {
             dial.addEventListener("mouseover",zoomDialOver)
             dial.addEventListener("mouseleave",zoomDialLeave);
         }
-            else if (window.scrollY<800){
+            else if (window.scrollY < 10){
             dial.style.position = "relative";
             dial.style.left = "default";
             dial.style.marginLeft = "-100px";

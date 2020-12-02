@@ -21,11 +21,9 @@
             }
             .ui.yellow.large.statistic{
               margin-top: 120px;
-              margin-left: 50px;
             }
             
             .ui.red.large.statistic{
-              margin-left: 350px;
               margin-top: 120px; 
             }
 } 
@@ -42,6 +40,9 @@
           .six.wide.column.leftMain{
                 zoom:1.5;
               }
+            .ui.grid.ImageMatrix {
+                margin-top: -62px;
+            }
             
 } 
 

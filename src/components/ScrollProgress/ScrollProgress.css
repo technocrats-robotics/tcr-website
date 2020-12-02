@@ -1,5 +1,6 @@
-.ui.active.indicating.progress {
+.ui.yellow.progress {
     position: fixed;
     width: 100%;
+    opacity: 0.8;
     z-index: 999;
 }

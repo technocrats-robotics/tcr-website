@@ -7,7 +7,7 @@ import Page4 from './Page4';
 import BlogPage from '../blog/Blog';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
 export default class LandingPage extends Component {
-    state = { percent: 0 }
+    state = { percent: 5 }
     componentDidMount(){
         window.onscroll = () => {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
