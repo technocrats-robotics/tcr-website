@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
-import { db } from '../services/google-firebase/setup'
+import {db} from '../services/google-firebase/setup'
 
 function MembersPanel() {
 
@@ -16,6 +16,13 @@ function MembersPanel() {
             }))
         })
     }, [])
+
+    // update given field of member with given id to newValue
+    function updateValue(field,id,currentValue){
+        db.collection('members').doc(id).update({[field] : !currentValue}).then(
+            console.log("Done")
+        )
+    }
 
     return (
         <div class="admin__membersPanel">
@@ -36,7 +43,6 @@ function MembersPanel() {
                 <tbody>
                 {
                     details.map((detail,index)=>{
-                        console.log(detail.id)
                         let member=detail.data();
                         return(    
                             <tr>
@@ -51,14 +57,14 @@ function MembersPanel() {
                                     <div class="ui fitted slider checkbox">
                                         <input type="checkbox" checked={
                                             (member.blogAccess)?(true):(false)
-                                        } onChange={(event)=>event.target.value} /> <label></label>
+                                        } onChange={()=>{updateValue("blogAccess",detail.id,member.blogAccess)}}/> <label></label>
                                     </div>
                                 </td>
                                 <td class="collapsing">
                                 <div class="ui fitted slider checkbox">
                                     <input type="checkbox" checked={
                                         (member.isActive)?(true):(false)
-                                    } /> <label></label>
+                                    } onChange={()=>{updateValue("isActive",detail.id,member.isActive)}} /> <label></label>
                                 </div>
                                 </td>
                             </tr>

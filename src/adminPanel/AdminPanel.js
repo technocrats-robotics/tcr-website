@@ -17,7 +17,7 @@ import "./CSS/Body.css"
 
 function adminPanel() {
 
-    const user = null // get this from context api
+    const user = "Shivansh" // get this from context api
 
     const loggedIn = () => {
         return (
