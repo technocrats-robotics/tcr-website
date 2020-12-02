@@ -12,7 +12,6 @@ handleItemClick = (e, { name }) => this.setState({ activeItem: name })
     return(
         <div>
             <Grid columns={12} centered>
-
             <GridRow>
             <Header as='h1' inverted textAlign='left'>
                 <Icon name='book' />

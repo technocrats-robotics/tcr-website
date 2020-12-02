@@ -12,6 +12,7 @@ export default class Page1 extends Component {
         <div className="firstPage">
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
+                    {/* <div className='firstpagebackdiv'></div> */}
                     <Grid.Column mobile='12' className='leftMain' width='6' >
                         <div style={{textAlign:'center'}}>
                     <Image avatar size='large' src={'https://avatars3.githubusercontent.com/u/49567419?s=200&v=4'}></Image>

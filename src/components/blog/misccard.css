@@ -37,7 +37,7 @@
     background-color: #B32D2D;
     height: 20vh;
     z-index: 999;
-    display: block;
+    display: none;
 }
 .ui.card.customBlogCard{
     background-color: transparent;
