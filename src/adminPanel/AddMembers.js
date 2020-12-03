@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 // mail service (email,data) => email as string and data as object
 import { sendEmail } from '../services/mail/sendEmail'
+import { addNewUser } from '../services/google-firebase/utilities'
 
 function AddMembers() {
 
@@ -32,19 +33,23 @@ function AddMembers() {
 
 
     //form submit handling
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         if (firstName && lastName && email && department && yoj) {
-
+            let new_user = await addNewUser(firstName, lastName, email, department, yoj);
+            if(!new_user["status"]) {
+                console.error(`New user creation status ${new_user['status']}`);
+                return;
+            }
             // send credentials as object 
             let data={
-                username:"shivansh@tcr.in", // pull this from create new user function
-                password:"shivansh"         // pull this from create new user function 
+                username: new_user['username'], // pull this from create new user function
+                password: new_user['password'], // pull this from create new user function 
             }
-            
-            if (sendEmail(email,data)) showStatus(`Credentials sent successfully to ${email}`);
-            else showStatus("Some error occured please try again!! (maybe wrong email id)");
-            
+            let api_msg = await sendEmail(email, data);
+            if (api_msg) showStatus(`Credentials sent successfully to ${email}`);
+            else showStatus("Some error occured please try again!! (maybe wrong email id)")
+
         } else {
             showStatus("Some mandatory information is missing!!");
         }
