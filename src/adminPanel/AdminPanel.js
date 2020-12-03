@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
@@ -10,14 +10,26 @@ import SendMails from './SendMails';
 import MakeAnnouncement from './MakeAnnouncements'
 
 
-
+// firebase auth
+import {auth} from "../services/google-firebase/setup"
 
 //CSS
 import "./CSS/Body.css"
 
-function adminPanel() {
 
-    const user = "Shivansh" // get this from context api
+function AdminPanel() {
+
+    const[User,setUser]=useState(null);
+
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+          console.log(user);
+          setUser(user);
+        } else {
+          console.log("User Is not logged In");
+          setUser(user);
+        }
+    });
 
     const loggedIn = () => {
         return (
@@ -52,9 +64,9 @@ function adminPanel() {
 
     return (
         <Router>
-            {(!user) ? logIn() : loggedIn()}
+            {(!User) ? logIn() : loggedIn()}
         </Router>
     )
 }
 
-export default adminPanel
+export default AdminPanel

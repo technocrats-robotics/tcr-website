@@ -5,42 +5,35 @@ import { useState } from 'react'
 import "./CSS/body.css"
 
 
+//auth from services/google-firebase
+import {auth} from "../services/google-firebase/setup"
+
+
 //components
 import UserPanelNav from "./UserPanelNav"
 import UserProfile from "./UserProfile";
+import UserLogin from "./UserLogin"
 import MyPosts from "./MyPosts";
 import WritePost from "./WritePost";
 
 function UserPanel() {
-    const user = "Shivansh"; // get this from context api
 
-    //state variables for login form
-    const [userName, setUserName] = useState("");
-    const [password, setPassword] = useState("");
-
-    // form submission handling
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(userName);
-        console.log(password);
-    }
+    const[User,setUser]=useState(null);
+    
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            //Sign In
+            setUser(user);
+        } else {
+            //Sign Out
+            setUser(null);
+        }
+    });
 
     function logIn() {
         return (
             <div className="userLogIn">
-                <form className="ui form" onSubmit={handleSubmit} method="POST">
-                    <img class="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" />
-                    <div className="field">
-                        <label>Username</label>
-                        <input type="text" name="userName" placeholder="@tcr.in" onChange={(event) => setUserName(event.target.value)} required />
-                    </div>
-                    <div className="field">
-                        <label>Password</label>
-                        <input type="password" name="Password" placeholder="********" onChange={(event) => setPassword(event.target.value)} required />
-                    </div>
-                    <button class="ui button" type="submit">Login</button>
-                </form>
-
+                <UserLogin/>
             </div>
         )
     }
@@ -66,11 +59,10 @@ function UserPanel() {
         )
     }
 
-
     return (
         <Router>
             {
-                (!user) ? logIn() : loggedIn()
+                (!User) ? logIn() : loggedIn()
             }
         </Router>
     )

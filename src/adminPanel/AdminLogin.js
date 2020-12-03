@@ -1,7 +1,11 @@
-import React from 'react'
+import React,{createContext} from 'react'
 import {useState} from 'react'
 
 import "./CSS/Login.css"
+
+import {auth} from "../services/google-firebase/setup"
+
+const User=createContext();
 
 function AdminLogin() {
 
@@ -12,7 +16,20 @@ function AdminLogin() {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         if (userName && password) {
-            //login 
+            //login
+            auth.signInWithEmailAndPassword(userName, password)
+            .then((user) => {
+                <User.provider value={user}>
+                    <AdminLogin/>
+                </User.provider>
+                console.log("User Signed In");
+            })
+            .catch((error) => {
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              console.log("Error Code",errorCode);
+              console.log("Error Message",errorMessage);
+            });
         }
     }
 
@@ -42,4 +59,5 @@ function AdminLogin() {
     )
 }
 
-export default AdminLogin
+export {User};
+export default AdminLogin;

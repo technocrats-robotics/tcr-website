@@ -1,12 +1,19 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import {NavLink} from 'react-router-dom'
 //CSS
 import "./CSS/Navigation.css"
 
+import {auth} from "../services/google-firebase/setup"
+
+
 function Navigation() {
 
     const handleSignOut=()=>{
-        console.log("Clicked Admin Logout")
+        auth.signOut().then(function() {
+            return true;
+        }).catch(function(error) {
+            return false;
+        });
     }
 
     return (
@@ -21,6 +28,9 @@ function Navigation() {
                 <NavLink exact className="nav item" to="/adminPanel/sendBulkMails">Send Emails </NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/makeAnnouncement">Make Announcement </NavLink>    
                 <div class="right menu">
+                    <div class="item">
+                        <div> Welcome Admin !!</div>
+                    </div>
                     <div class="item">
                         <div class="ui primary button" onClick={handleSignOut}>Sign Out</div>
                     </div>
