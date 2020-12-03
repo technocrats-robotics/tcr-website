@@ -42,7 +42,7 @@ export async function addNewUser(first_name, last_name, registered_email, branch
         let isCreated = await newMember.createMemberDocument(
             username.toLowerCase(),
             titleCase(full_name),
-            registered_email.toLowerCase(),
+            registered_email.toLowerCase().replace(email_domain,''),
             titleCase(branch),
             year_of_joining
         );
