@@ -61,6 +61,31 @@ class Member {
             return false;
         });
     };
+
+    /**
+     * Updates the field value of the given field in the document
+     * @param {string} field_name The field that needs to altered
+     * @param {any} field_data The data that needs to be placed
+     * @returns 
+     * Promise representing the status of the process in boolean
+     * @example
+     * let updateStatus = await updateMemberDetail('blogAccess', true);
+     * let updateStatus = await updateMemberDetail('about.experience', 'Excelsior!');
+     */
+    async updateMemberDetail(field_name, field_data){
+        return db.collection(this.collectionName)
+        .doc(this.memberID)
+        .update({[field_name]: field_data})
+        .then(() => true)
+        .catch((error) => {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.error("Error in updateMemberDetail in member.js")
+            console.error(errorCode);
+            console.error(errorMessage);
+            return false;
+        });
+    }
 }
 
 export default Member;
