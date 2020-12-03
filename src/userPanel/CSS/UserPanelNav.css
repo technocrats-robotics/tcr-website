@@ -6,6 +6,7 @@
     margin-bottom: 0px;
     background-color: black !important;
     border-radius: 0rem !important;
+    border-bottom: 1px solid white;
 }
 
 .item > a{

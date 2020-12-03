@@ -43,8 +43,8 @@ function AddMembers() {
             }
             
             if (sendEmail(email,data)) showStatus(`Credentials sent successfully to ${email}`);
-            else showStatus("Some error occured please try again!! (maybe wrong email id)")
-
+            else showStatus("Some error occured please try again!! (maybe wrong email id)");
+            
         } else {
             showStatus("Some mandatory information is missing!!");
         }
