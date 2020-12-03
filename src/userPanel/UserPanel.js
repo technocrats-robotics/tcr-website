@@ -1,9 +1,9 @@
-import React from 'react'
+import React,{createContext} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
+
 //CSS
 import "./CSS/body.css"
-
 
 //auth from services/google-firebase
 import {auth} from "../services/google-firebase/setup"
@@ -15,6 +15,8 @@ import UserProfile from "./UserProfile";
 import UserLogin from "./UserLogin"
 import MyPosts from "./MyPosts";
 import WritePost from "./WritePost";
+
+const GlobalUser=createContext(null);
 
 function UserPanel() {
 
@@ -39,23 +41,26 @@ function UserPanel() {
     }
 
     function loggedIn() {
+
         return (
-            <div className="userProfileBox">
-                <Router>
-                    <UserPanelNav />
-                    <Switch>
-                        <Route exact path="/userPanel">
-                            <UserProfile />
-                        </Route>
-                        <Route exact path="/userPanel/myPosts">
-                            <MyPosts />
-                        </Route>
-                        <Route exact path="/userPanel/writePost">
-                            <WritePost />
-                        </Route>
-                    </Switch>
-                </Router>
-            </div>
+                <div className="userProfileBox">
+                    <GlobalUser.Provider value={User.uid}>
+                        <Router>
+                            <UserPanelNav />
+                            <Switch>
+                                <Route exact path="/userPanel">
+                                    <UserProfile />
+                                </Route>
+                                <Route exact path="/userPanel/myPosts">
+                                    <MyPosts />
+                                </Route>
+                                <Route exact path="/userPanel/writePost">
+                                    <WritePost />
+                                </Route>
+                            </Switch>
+                        </Router>
+                    </GlobalUser.Provider>
+                </div>
         )
     }
 
@@ -68,4 +73,5 @@ function UserPanel() {
     )
 }
 
+export {GlobalUser}
 export default UserPanel
