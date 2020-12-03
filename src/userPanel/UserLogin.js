@@ -1,11 +1,7 @@
-import React,{useState,createContext} from 'react'
+import React,{useState} from 'react'
 
 //auth from firebase setup
 import {auth} from "../services/google-firebase/setup"
-import UserProfile from "./UserPanel"
-
-
-const User=createContext();
 
 function UserLogin() {
 
@@ -18,10 +14,7 @@ function UserLogin() {
         event.preventDefault();
         auth.signInWithEmailAndPassword(userName, password)
         .then((user) => {
-            console.log("User Signed in ",user);
-            <User.Provider user={user}>
-                    <UserProfile />
-            </User.Provider>
+            console.log("User Signed in ",user.user.uid);
           return true;
         })
         .catch((error) => {
@@ -48,5 +41,4 @@ function UserLogin() {
 }
 
 
-export {User}
 export default UserLogin
