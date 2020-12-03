@@ -40,9 +40,9 @@ export async function addNewUser(first_name, last_name, registered_email, branch
         // console.log(currentUser.user.uid);   // Debugging
         let newMember = new Member(currentUser.user.uid);
         let isCreated = await newMember.createMemberDocument(
-            username.toLowerCase(),
+            email.toLowerCase().replace(email_domain,''),
             titleCase(full_name),
-            registered_email.toLowerCase().replace(email_domain,''),
+            registered_email.toLowerCase(),
             titleCase(branch),
             year_of_joining
         );
