@@ -31,7 +31,7 @@ function EditorPlugin() {
                          alignleft aligncenter alignright | \
                          bullist numlist outdent indent | help'
                 }}
-                onChange={{handleChange}}
+                onChange={handleChange}
             />
         </div>
     )
