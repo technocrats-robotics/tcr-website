@@ -24,7 +24,7 @@ function UserPanelNav() {
         db.collection('members').doc(user)
         .onSnapshot(function(doc) {
         setUser(doc.data());    
-    })})
+    })},[user])
 
     const handleSignOut=()=>{
         auth.signOut().then(function() {
