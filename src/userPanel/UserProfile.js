@@ -7,21 +7,20 @@ import {db} from "../services/google-firebase/setup"
 function UserProfile() {
 
     const user=useContext(GlobalUser);
-    const[useDetails,setUserDetails]=useState(null);
+    const[userDetails,setUserDetails]=useState(null);
 
     useEffect(() => {
         db.collection('members').doc(user)
         .onSnapshot(function(doc) {
-        console.log("Current user: ", doc.data());
-    
-    })}, [])
+        setUserDetails(doc.data());    
+    })},[user])
+
 
     return (
         <div>
             <h1>User Profile Page</h1>
             <p>Under Development !!</p>
-            <p> Welcome User id : {user} </p>
-            {console.log("Your user is ",user)}
+            <p> Welcome User : {userDetails && userDetails.name} </p>
         </div>
     )
 }
