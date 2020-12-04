@@ -25,7 +25,7 @@ function WritePost() {
         db.collection('members').doc(user)
         .onSnapshot(function(doc) {
         setUser(doc.data());    
-    })})
+    })},[user])
 
     //to be fetched from database
     const categories=["Computer Science","Robotics","General"];
@@ -48,9 +48,9 @@ function WritePost() {
                 <form onSubmit={handleSubmit}>
                     <div className="blogPostPage__title">
                         <div className="ui fluid icon input">
-                            <select class="ui compact selection dropdown" onChange={(event)=>setCategory(event.target.value)}>
+                            <select className="ui compact selection dropdown" onChange={(event)=>setCategory(event.target.value)}>
                                 {
-                                    categories.map((category)=><option value={category}>{category}</option>)
+                                    categories.map((category)=><option value={category} key={category}>{category}</option>)
                                 }
                             </select>
                             <input type="text" placeholder="Title for Blog Post" onChange={(event)=>setTitle(event.target.value)} required/>
@@ -60,7 +60,7 @@ function WritePost() {
                         <EditorPlugin/> 
                     </div>
                     <div className="blogPostPage__submit">
-                        <button type="submit" class="ui inverted button">Submit</button>
+                        <button type="submit" className="ui inverted button">Submit</button>
                     </div>
                 </form>
             ):(
