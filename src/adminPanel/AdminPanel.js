@@ -23,10 +23,8 @@ function AdminPanel() {
 
     auth.onAuthStateChanged((user) => {
         if (user) {
-          console.log(user);
           setUser(user);
         } else {
-          console.log("User Is not logged In");
           setUser(user);
         }
     });
