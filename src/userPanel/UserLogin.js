@@ -25,7 +25,7 @@ function UserLogin() {
     return (
         <div>
             <form className="ui form" onSubmit={handleSubmission} method="POST">
-                <img class="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" alt="tcr_logo" />
+                <img className="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" alt="tcr_logo" />
                 <div className="field">
                     <label>Username</label>
                     <input type="text" name="userName" placeholder="@tcr.in" onChange={(event) => setUserName(event.target.value)} required />
@@ -34,7 +34,7 @@ function UserLogin() {
                     <label>Password</label>
                     <input type="password" name="Password" placeholder="********" onChange={(event) => setPassword(event.target.value)} required />
                 </div>
-                <button class="ui button" type="submit">Login</button>
+                <button className="ui button" type="submit">Login</button>
             </form>
         </div>
     )
