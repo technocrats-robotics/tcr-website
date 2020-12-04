@@ -15,7 +15,7 @@ function MyPosts() {
         db.collection('members').doc(user)
         .onSnapshot(function(doc) {
         setUser(doc.data());    
-    })})
+    })},[user]);
 
     return (
         <div>
