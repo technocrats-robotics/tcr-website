@@ -4,6 +4,7 @@ import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
 import Page4 from './Page4';
+import About from './../about_us/About';
 import BlogPage from '../blog/Blog';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
 
@@ -28,6 +29,7 @@ export default class LandingPage extends Component {
             <Page3></Page3>
             <Page4></Page4>
             <BlogPage></BlogPage>
+            <About></About>
         </div>
     );
     }

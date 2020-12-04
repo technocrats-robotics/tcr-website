@@ -250,8 +250,7 @@
       margin-left: 10%;
   }
 img.grey{
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);
+    
 }
 
 * {
