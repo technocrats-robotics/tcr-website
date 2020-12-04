@@ -50,8 +50,8 @@ function MembersPanel() {
                                 <td>{member.name}</td>
                                 <td>{member.yearOfJoining}</td>
                                 <td>{member.branch}</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td>{member.username}</td>
+                                <td>{member.registeredEmail}</td>
                                 <td>-</td>
                                 <td className="collapsing">
                                     <div className="ui fitted slider checkbox">

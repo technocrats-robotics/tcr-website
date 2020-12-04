@@ -1,11 +1,9 @@
-import React,{createContext} from 'react'
+import React from 'react'
 import {useState} from 'react'
 
 import "./CSS/Login.css"
 
 import {auth} from "../services/google-firebase/setup"
-
-const User=createContext();
 
 function AdminLogin() {
 
@@ -19,9 +17,6 @@ function AdminLogin() {
             //login
             auth.signInWithEmailAndPassword(userName, password)
             .then((user) => {
-                <User.provider value={user}>
-                    <AdminLogin/>
-                </User.provider>
                 console.log("User Signed In");
             })
             .catch((error) => {
@@ -59,5 +54,4 @@ function AdminLogin() {
     )
 }
 
-export {User};
 export default AdminLogin;

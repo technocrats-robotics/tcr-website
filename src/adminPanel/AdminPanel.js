@@ -25,33 +25,37 @@ function AdminPanel() {
         if (user) {
           setUser(user);
         } else {
-          setUser(user);
+          setUser(null);
         }
     });
 
     const loggedIn = () => {
         return (
             <div className="admin__panel">
-                <Router>
-                    <Navigation />
-                    <Switch>
-                        <Route exact path="/adminPanel">
-                            <MembersPanel />
-                        </Route>
-                        <Route exact path="/adminPanel/manageMembers">
-                            <MembersPanel />
-                        </Route>
-                        <Route exact path="/adminPanel/addMembers">
-                            <AddMembers />
-                        </Route>
-                        <Route exact path="/adminPanel/sendBulkMails">
-                            <SendMails />
-                        </Route>
-                        <Route exact path="/adminPanel/makeAnnouncement">
-                            <MakeAnnouncement />
-                        </Route>
-                    </Switch>
-                </Router>
+            {
+                (User)?(
+                    <Router>
+                        <Navigation />
+                        <Switch>
+                            <Route exact path="/adminPanel">
+                                <MembersPanel />
+                            </Route>
+                            <Route exact path="/adminPanel/manageMembers">
+                                <MembersPanel />
+                            </Route>
+                            <Route exact path="/adminPanel/addMembers">
+                                <AddMembers />
+                            </Route>
+                            <Route exact path="/adminPanel/sendBulkMails">
+                                <SendMails />
+                            </Route>
+                            <Route exact path="/adminPanel/makeAnnouncement">
+                                <MakeAnnouncement />
+                            </Route>
+                        </Switch>
+                    </Router>
+                ):(<h1>Access Denied !!</h1>)
+            }
             </div>
         )
     }
