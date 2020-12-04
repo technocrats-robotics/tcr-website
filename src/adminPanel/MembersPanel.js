@@ -25,9 +25,9 @@ function MembersPanel() {
     }
 
     return (
-        <div class="admin__membersPanel">
-            <table class="ui celled definition table">
-                <thead class="full-width">
+        <div className="admin__membersPanel">
+            <table className="ui celled definition table" key="table">
+                <thead className="full-width" key="thead">
                     <tr>
                         <th>Count</th>
                         <th>Name</th>
@@ -40,12 +40,12 @@ function MembersPanel() {
                         <th>Profile Status</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody key="tbody">
                 {
                     details.map((detail,index)=>{
                         let member=detail.data();
                         return(    
-                            <tr>
+                            <tr key={index+1}>
                                 <td>{index+1}.</td>
                                 <td>{member.name}</td>
                                 <td>{member.yearOfJoining}</td>
@@ -53,15 +53,15 @@ function MembersPanel() {
                                 <td>-</td>
                                 <td>-</td>
                                 <td>-</td>
-                                <td class="collapsing">
-                                    <div class="ui fitted slider checkbox">
+                                <td className="collapsing">
+                                    <div className="ui fitted slider checkbox">
                                         <input type="checkbox" checked={
                                             (member.blogAccess)?(true):(false)
                                         } onChange={()=>{updateValue("blogAccess",detail.id,member.blogAccess)}}/> <label></label>
                                     </div>
                                 </td>
-                                <td class="collapsing">
-                                <div class="ui fitted slider checkbox">
+                                <td className="collapsing">
+                                <div className="ui fitted slider checkbox">
                                     <input type="checkbox" checked={
                                         (member.isActive)?(true):(false)
                                     } onChange={()=>{updateValue("isActive",detail.id,member.isActive)}} /> <label></label>
