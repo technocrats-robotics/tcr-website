@@ -62,42 +62,42 @@ function AddMembers() {
                 <div>
                     <h1><u>Add New Member</u></h1>
                 </div>
-                <form class="ui container" onSubmit={handleFormSubmit}>
-                    <div class="field">
-                        <div class="ui fluid icon input">
+                <form className="ui container" onSubmit={handleFormSubmit}>
+                    <div className="field">
+                        <div className="ui fluid icon input">
                             <input type="text" placeholder="First Name *" onChange={(event) => setFirstName(event.target.value)} required />
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="ui fluid icon input">
+                    <div className="field">
+                        <div className="ui fluid icon input">
                             <input type="text" placeholder="Last Name *" onChange={(event) => setLastName(event.target.value)} required />
                         </div>
                     </div>
-                    <div class="field">
-                        <div class="ui fluid icon input">
+                    <div className="field">
+                        <div className="ui fluid icon input">
                             <input type="text" placeholder="Email *" onChange={(event) => setEmail(event.target.value)} required />
                         </div>
                     </div>    
-                        <div class="field">
-                            <select class="ui fluid selection dropdown" onChange={(event) => setDepartment(event.target.value)} required>
+                        <div className="field">
+                            <select className="ui fluid selection dropdown" onChange={(event) => setDepartment(event.target.value)} required>
                                 {
                                     Departments.map((department) => {
-                                        return <option value={department}>{department}</option>
+                                        return <option value={department} key={department}>{department}</option>
                                     })
                                 }
                             </select>
                         </div>
-                        <div class="field">
-                            <select class="ui fluid selection dropdown" onChange={(event) => setYoj(event.target.value)} required>
+                        <div className="field">
+                            <select className="ui fluid selection dropdown" onChange={(event) => setYoj(event.target.value)} required>
                                 {
                                     yearOfJoining().map((year) => {
-                                        return <option value={year}>{year}</option>
+                                        return <option value={year} key={year}>{year}</option>
                                     })
                                 }
                             </select>
                         </div>
-                       <div class="field">
-                            <button class="ui secondary button" type="submit">Add</button>
+                       <div className="field">
+                            <button className="ui secondary button" type="submit">Add</button>
                     </div> 
                 </form>
             </div>
