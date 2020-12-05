@@ -1,23 +1,28 @@
 import React, { Component } from 'react';
 import { Grid, Image } from 'semantic-ui-react';
+import './Gallery.css';
 
 export default class Gallery extends Component {
   render() {
 
-const src = 'https://react.semantic-ui.com/images/wireframe/image.png';
+const src = 'https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg';
+const images = [src,src,src,src,src,src,src,src,src]
     return(
         <div>
             <Grid centered stackable>
                 <div className='mainImage'>
+                    <div className='leftDiv'></div>
+                    <div className='rightDiv'></div>
                 </div>
-                <Grid.Row columns='6'>
+                <div  className='gallerSlider'>
                 <Image.Group size='tiny'>
-                    <Image src={src} />
-                    <Image src={src} />
-                    <Image src={src} />
-                    <Image src={src} />
+                    {
+                        images.map((image)=>(        
+                            <div className='galleryImages'><Image src={image} /></div>
+                        ))
+                    }
                 </Image.Group>
-                </Grid.Row>
+                </div>
             </Grid>
         </div>
     );
