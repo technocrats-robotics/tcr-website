@@ -36,7 +36,7 @@ class Member {
             name: name,
             registeredEmail: email,
             branch: branch,
-            role: 'Junior',
+            role: 'Member',
             yearOfJoining: year_of_joining,
             isActive: isActive,
             blogAccess: blogAccess,
