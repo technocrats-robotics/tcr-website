@@ -43,7 +43,7 @@ export default class Page1 extends Component {
   render() {
     return(
         <div className='firstPage'>
-            <Grid centered>
+            <Grid centered stackable>
                 <Grid.Row columns='6'>
                 {
                 this.memberDetails.map((member)=>(
