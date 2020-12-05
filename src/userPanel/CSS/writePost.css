@@ -1,0 +1,36 @@
+.blogPostPage{
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.ui .massive .menu{
+    margin-bottom: 0px !important;
+}
+
+.dropdown{
+    border-radius: 0rem !important;
+}
+
+.blogPostPage__editor{
+    padding: 50px;
+}
+
+.blogPostPage > .titleBox{
+    padding: 40px;
+}
+
+.blogPostPage__title{
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.blogPostPage__title > .ui.fluid.icon input{
+    border-radius: 0rem !important;
+}
+
+.blogPostPage__submit > .ui.inverted.button{
+    margin-bottom: 46px;
+}
+

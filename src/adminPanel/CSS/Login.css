@@ -1,0 +1,22 @@
+.admin__login{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin__loginForm{
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.1);
+    padding: 50px;
+}
+
+.field{
+    margin: 10px;
+
+}
+
+select.ui.dropdown {
+    height: 45px !important;
+}
+
+

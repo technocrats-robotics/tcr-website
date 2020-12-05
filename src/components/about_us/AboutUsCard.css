@@ -13,8 +13,8 @@
   height: 30vh;
   color: white;
   cursor: pointer;
-  border:1px solid gray;
-  border-style: dashed;
+  border:0px solid gray;
+  /* border-style: dashed; */
   text-align: center;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
@@ -48,8 +48,8 @@
   -webkit-transform: rotateY(180deg);
         /* background-color: blue; */
           transform: rotateY(180deg);
-          border:1px solid gray;
-          border-style: dashed;
+          border:0px solid gray;
+          /* border-style: dashed; */
 }
 
 img.ui.small.avatar.image.faceimage {
