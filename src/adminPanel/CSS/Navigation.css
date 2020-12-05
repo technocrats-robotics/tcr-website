@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.admin__tcrLogo{
+    padding-left: 10px;
+}
+
+.nav{
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
