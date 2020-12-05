@@ -1,4 +1,10 @@
 .firstPage{
     background-color: black;
-    height: 120vh;
+    height: 200vh;
 }
+
+.secondPage{
+    background-color: black;
+    height: 100vh;
+}
+
