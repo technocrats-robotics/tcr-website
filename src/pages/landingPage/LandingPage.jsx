@@ -6,6 +6,7 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import About from './../about_us/About';
 import BlogPage from '../blog/Blog';
+import Gallery from '../Gallery/Gallery';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
 
 export default class LandingPage extends Component {
@@ -30,6 +31,7 @@ export default class LandingPage extends Component {
             <Page4></Page4>
             <BlogPage></BlogPage>
             <About></About>
+            <Gallery></Gallery>
         </div>
     );
     }
