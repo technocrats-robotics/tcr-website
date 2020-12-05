@@ -1,3 +1,27 @@
 .mainImage {
-    
+    height: 99vh;
+    background-image: url('https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg');
+    background-size: cover;
+    width: 100%;
+    z-index: 998;
+}
+.Dial{
+    z-index: 997;
+}
+.gallerSlider {
+    overflow-x: scroll;
+    width: 200%;
+    z-index: 999;
+    /* margin-top: -30px; */
+    position: absolute;
+}
+.galleryImages {
+    display: inline;
+    box-shadow: 0px 2px 4px 0px white;
+    /* margin-left: 2%; */
+    /* padding: -2%; */
+    cursor: pointer;
+}
+.gallerSlider:hover {
+    box-shadow:0px 2px 100px 0px rgb(0, 0, 0) inset;
 }
