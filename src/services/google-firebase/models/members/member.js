@@ -4,6 +4,7 @@ import { db } from "../../setup";
 
 
 class Member {
+    static collectionName = 'members';
     /**
      * Constructor for the Member Class
      * @param {string} uid The user id provided by Firebase Auth
@@ -48,7 +49,7 @@ class Member {
             }
         };
         // Add document to collection
-        return db.collection(this.collectionName)
+        return db.collection(Member.collectionName)
         .doc(this.memberID)
         .set(memberDetails)
         .then(() => true)
@@ -73,7 +74,7 @@ class Member {
      * let updateStatus = await updateMemberDetail('about.experience', 'Excelsior!');
      */
     async updateMemberDetail(field_name, field_data){
-        return db.collection(this.collectionName)
+        return db.collection(Member.collectionName)
         .doc(this.memberID)
         .update({[field_name]: field_data})
         .then(() => true)
