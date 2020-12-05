@@ -1,0 +1,14 @@
+.blogPage{
+    height:100vh;
+}
+.ui.massive.inverted.pointing.secondary.vertical.menu {
+    margin-left: -86px;
+    margin-top: 58px;
+}
+a.item {
+    text-align: right;
+}
+
+div.ui.inverted.transparent.icon.input{
+    margin-left: 100vh;
+}

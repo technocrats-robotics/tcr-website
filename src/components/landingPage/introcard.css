@@ -1,0 +1,40 @@
+.postlayer1 {
+}
+.introlayer1 {
+    width:50vh;
+    position: relative;
+    margin-left: 10vh;
+    height: 25vh;
+    transform:rotate(5deg);
+    border: 1px solid grey;
+    color: white;
+    /* zoom:2; */
+}
+.introlayer2 {
+    width:fit-content;
+    height: 25vh;
+    transform:rotate(-5deg);
+    border: 1px solid grey;
+    
+}
+.introlayer3 {
+    width:fit-content;
+    height: 25vh;
+    transform:rotate(2deg);
+    border: 1px solid grey;
+    
+}
+.mainintrolayer {
+    padding: 5%;
+    text-align: center;
+    font-size: auto;
+}
+@media only screen and (max-width: 900px) {
+    /* Mobile */
+     .introlayer3,.introlayer2,.introlayer1{
+         width: 44vh;
+     }
+    .introlayer1 {
+        margin-left: 0vh;
+    }
+}

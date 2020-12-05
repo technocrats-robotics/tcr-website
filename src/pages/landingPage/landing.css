@@ -1,14 +1,457 @@
 .firstPage {
-    height: 100vh;
+    height: 120vh;
     background-color: black;
-}
-.ui.medium.header.Title {
-    font-size: 6vh;
-    color: white;
+  }
+  
+.secondPage {
+  height: 120vh;
+  background-color: black;
 }
 .fourteen.column.row.mainRow {
     margin-top: 15vh;
 }
-.ui.large.image {
-    margin-left: 18%;
+@media only screen and (min-width: 768px) {
+  /* computer */
+        .ui.large.image {
+            margin-left: 18%;
+           }
+
+        .ui.medium.header.Title {
+            font-size: 6vh;
+            margin-left: 10%;
+            }
+            .ui.yellow.large.statistic{
+              margin-top: 120px;
+            }
+            
+            .ui.red.large.statistic{
+              margin-top: 120px; 
+            }
+} 
+@media only screen and (max-width: 900px) {
+  /* Mobile */
+          .arrowDown{
+            padding-top: 80px;
+          }
+
+          .ui.medium.header.Title {
+              font-size: 2vh;
+              /* text-align: left; */
+              }
+          .six.wide.column.leftMain{
+                zoom:1.5;
+              }
+            .ui.grid.ImageMatrix {
+                margin-top: -62px;
+            }
+            .ui.yellow.large.statistic{
+              margin-top: 8vh;
+            }
+            
+} 
+
+.ui.medium.header.Title {
+  color: white;
 }
+/* .ui.small.image.matAsset1 {
+    width: 13vh;
+    height: 13vh;
+}
+.ui.small.image.matAsset4 {
+    width: 13vh;
+    height: 13vh;
+} */
+.matAsset2 {
+    width: 7vh;
+    height: 7vh;
+    /* opacity: 0.5; */
+    z-index: 5;
+    background-color: red;
+    opacity: 0.5;
+}
+.matAsset3 {
+    width: 7vh;
+    height: 7vh;
+    background-color: 'yellow';  
+    background-color: yellow;
+    margin-top: 5px;
+    margin-left: 19px;
+}
+.matAsset1,.matAsset4{
+    width: 7vh;
+    height: 7vh;
+    margin-left: 2px;
+    background-size: contain;
+    background-image: url('https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg');
+}
+.matAsset4 {
+    transform: rotate(8deg);
+    margin-left: 15px;
+}
+
+.thirdPage{
+    height: 120vh;
+    background-color: black;
+}
+.fourthPage{
+    height: 120vh;
+    background-color: black;
+    margin: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.zoomthird {
+    transition: transform .3s;
+    color: white;
+    text-align: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+    padding: 1vh;
+  }
+
+.headerthird{
+    font-size: 20px;
+    margin-bottom: 1vh;
+}
+  
+.zoomthird:hover {
+    transform: scale(1.2);
+  }
+
+.zoomfourth {
+    transition: transform .4s;
+}
+  
+.zoomfourth:hover {
+    transform: scale(1.19);
+  }
+
+
+/* arc */
+
+.arc {
+  height: 40vh;
+  margin-top: 10px;
+  width: 10vh;
+  /* border: 1px solid blue; */
+}
+
+/* DIAL             ---------- */
+
+.Dial {
+    width: 200px;
+    height: 250px;
+    transition: ease-in-out 1s, margin border ease 0s;
+    /* background-image: radial-gradient(circle at -30px 100px, black 28%,rgb(189, 185, 185) 30%,black 31%); */
+    display: table;
+    /* background-image: url("http://localhost:3000/arc.png"); */
+    background-size: contain;
+    /* border: 2px solid red; */
+    background-repeat: no-repeat;
+    background-position-x: left;
+    border-radius: 100%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    margin-top: -50px;
+    zoom: 2;
+    z-index: 999;
+    margin-left: -100px;
+}
+  .dialText {
+    color: grey;
+    font-size: 15px;
+    transition: width 2s ;
+    display: table-cell;
+    vertical-align: middle;
+  
+  }
+  .subMenus {
+      display: block;
+      height: 0px;
+      /* background-color: grey; */
+      opacity: 0.0;
+      transition: ease-in-out 0s, opacity 0s ease;
+      font-size: 10px;
+      text-align: right;
+      /* border-righ  t: 1px solid grey; */
+  }
+  
+/* DIAL EFFECTS */
+.Menu {
+  /* background-color: blue; */
+  transition: padding 0s ease, font-size 0s ease, height 0s;
+  cursor: pointer;
+  width: fit-content;
+}
+.Menu1, .Menu2, .Menu3, .Menu4, .Menu5{
+    transition: ease-in-out 0s;
+    /* border: 1px solid rgba(128, 128, 128, 0.253); */
+    /* border-radius: 2rem; */
+    text-align: left;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    /* width: 15vh; */
+}
+
+.Menu1:hover .subMenu1, .Menu2:hover .subMenu2, .Menu3:hover .subMenu3, .Menu4:hover .subMenu4, .Menu5:hover .subMenu5{
+    transform:translate(20px,0px);
+    text-align: right;
+    /* width:20vh; */
+    opacity: 1.0;
+    /* color: green; */
+    height: auto;
+}
+.Menu1:hover , .Menu2:hover , .Menu3:hover , .Menu4:hover , .Menu5:hover .subMenu5{
+  /* transform:translate(20px,0px); */
+  text-align: right;
+}
+.Menu1{
+    transform: rotate(0deg);
+    margin-left: -100px;
+}
+
+.Menu2{
+    transform: rotate(0deg);
+    margin-left: -60px;
+    
+}
+.Menu3{
+    transform: rotate(0deg);
+    margin-left: -50px;
+}
+.Menu4{
+    transform: rotate(0deg);
+    margin-left: -60px;
+    
+}
+.Menu5{
+    transform: rotate(0deg);
+    margin-left: -100px;
+}
+
+  @keyframes upAndDown {
+      0% {
+        transform: translate(0,-10px);
+      }
+      100% {
+          transform: translate(0,10px);
+      }
+  }
+  .arrowDown {
+      animation-name: upAndDown;
+      animation-iteration-count:infinite;
+      animation-duration: 1s;
+      animation-direction: alternate;
+      animation-delay: 0ms;
+      animation-timing-function: ease-in-out;
+      margin-left: 10%;
+  }
+img.grey{
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#hexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.hex {
+  position: relative;
+  visibility:hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hex::after{
+  content:'';
+  display:block;
+  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+  position: absolute;
+  width:96%;
+  padding-bottom: 110.851%; /* =  width / sin(60) */
+  margin:0 2%;
+  overflow: hidden;
+  visibility: hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+      -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+          transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+}
+.hexIn * {
+  position: absolute;
+  visibility: visible;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+    display:block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+        -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+            transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+}
+
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-transform: rotate3d(0,0,0,0deg);
+      -ms-transform: rotate3d(0,0,0,0deg);
+          transform: rotate3d(0,0,0,0deg);
+}
+
+.hex h1, .hex p {
+  width: 100%;
+  padding: 5%;
+  box-sizing:border-box;
+  color: #fff;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+          transition:          transform .2s ease-out, opacity .3s ease-out;
+}
+.hex h1 {
+  bottom: 50%;
+  padding-top:50%;
+  font-size: 1.5em;
+  z-index: 1;
+  color: #fff;
+  -webkit-transform:translate3d(0,-100%,0);
+      -ms-transform:translate3d(0,-100%,0);
+          transform:translate3d(0,-100%,0);
+}
+.hex h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+.hex p {
+  top: 50%;
+  padding-bottom:50%;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h1, .hexLink:focus h1,
+.hexLink:hover p, .hexLink:focus p{
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+@media (min-width:1201px) { /* <- 5-4  hexagons per row */
+  #hexGrid{
+    padding-bottom: 4.4%
+  }
+  .hex {
+    width: 20%; /* = 100 / 5 */
+  }
+  .hex:nth-child(9n+6){ /* first hexagon of even rows */
+    margin-left:10%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
+  #hexGrid{
+    padding-bottom: 5.5%
+  }
+  .hex {
+    width: 25%; /* = 100 / 4 */
+  }
+  .hex:nth-child(7n+5){ /* first hexagon of even rows */
+    margin-left:12.5%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+  #hexGrid{
+    padding-bottom: 7.4%
+  }
+  .hex {
+    width: 33.333%; /* = 100 / 3 */
+  }
+  .hex:nth-child(5n+4){ /* first hexagon of even rows */
+    margin-left:16.666%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 600px) { /* <- 2-1  hexagons per row */
+  #hexGrid{
+    padding-bottom: 11.2%
+  }
+  .hex {
+    width: 50%; /* = 100 / 3 */
+  }
+  .hex:nth-child(3n+3){ /* first hexagon of even rows */
+    margin-left:25%;  /* = width of .hex / 2  to indent even rows */
+  }
+}
+
+@media (max-width: 400px) {
+    #hexGrid {
+        font-size: 13px;
+    }
+}
+
+.carousel{
+    background-color: black;
+}
+
+
+/* TEST ANIMATIONS */
+.firstpagebackdiv{
+  background-image: url('data:image/png;base64,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');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 10vh;
+  width: 10vh;
+  z-index: -9;
+  opacity: 0.8;
+  animation-name: rotateSlow;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+
+}
+@keyframes rotateSlow{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
