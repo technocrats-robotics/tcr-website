@@ -32,9 +32,11 @@ class Member {
         // Schema of the 'members' collection
         let memberDetails = {
             username: username,
+            dpLink: null,
             name: name,
             registeredEmail: email,
             branch: branch,
+            role: 'Junior',
             yearOfJoining: year_of_joining,
             isActive: isActive,
             blogAccess: blogAccess,
@@ -65,7 +67,7 @@ class Member {
 
     /**
      * Updates the field value of the given field in the document
-     * @param {string} field_name The field that needs to altered
+     * @param {string} field_name The exact name field that needs to altered
      * @param {any} field_data The data that needs to be placed
      * @returns 
      * Promise representing the status of the process in boolean
