@@ -3,7 +3,7 @@ import React from 'react'
 function SendMails() {
     return (
         <div>
-            <p>This page is under construction !!</p>
+            <h3>This page is under construction !!</h3>
         </div>
     )
 }

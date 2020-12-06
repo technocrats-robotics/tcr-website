@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+/*Just the background stuff */
+span.s1 {
+  position: absolute;
+  top: 0;
+  font-size: 15rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #3C4447;
+}
+
+span.s2 {
+  font-weight: 800;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 15rem;
+  text-transform: uppercase;
+  color: #3C4447;
+}
+
+body {
+  background-color: #353B3F;
+  font-family: "Roboto", sans-serif;
+}
+
+/* The card */
+.card2 {
+  position: relative;
+  height: 80%;
+  width:80%;
+  margin: 30px auto;
+  border-radius: 10px;
+  background-color: black;
+  -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 10px blue;
+}
+
+/* Image on the left side */
+.thumbnail2 {
+  float: right;
+  position: relative;
+  right: 30px;
+  top: 10px;
+  height: 320px;
+  width: 530px;
+  -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/*object-fit: cover; */
+/*object-position: center; */
+img.right2 {
+  position: absolute;
+  
+  top: 50%;
+  height: auto;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Right side of the card */
+.left2 {
+  margin-right: 590px;
+  margin-left: 20px;
+}
+
+.title2 {
+  padding-top: 15px;
+  font-size: 3rem;
+  color: #686868;
+  text-align: left;
+}
+
+
+p {
+  text-align: justify;
+  padding-top: 10px;
+  font-size: 1.2rem;
+  line-height: 150%;
+  color: #fff;
+}
+

@@ -11,7 +11,7 @@ import MakeAnnouncement from './MakeAnnouncements'
 
 
 // firebase auth
-import {auth} from "../services/google-firebase/setup"
+import {auth} from "../services/google-firebase/admin_setup"
 
 //CSS
 import "./CSS/Body.css"
@@ -66,7 +66,9 @@ function AdminPanel() {
 
     return (
         <Router>
-            {(!User) ? logIn() : loggedIn()}
+            <div className="adminPanel__root">
+                {(!User) ? logIn() : loggedIn()}
+            </div>
         </Router>
     )
 }
