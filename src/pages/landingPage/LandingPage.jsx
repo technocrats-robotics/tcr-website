@@ -24,7 +24,7 @@ export default class LandingPage extends Component {
   render() {
     return(
         <div>
-            <ScrollProgress percent={this.state.percent}></ScrollProgress>
+            {/* <ScrollProgress percent={this.state.percent}></ScrollProgress> */}
             <Page1></Page1>
             <Page2></Page2>
             <Page3></Page3>
