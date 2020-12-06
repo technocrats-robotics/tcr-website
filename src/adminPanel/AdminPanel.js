@@ -66,7 +66,9 @@ function AdminPanel() {
 
     return (
         <Router>
-            {(!User) ? logIn() : loggedIn()}
+            <div className="adminPanel__root">
+                {(!User) ? logIn() : loggedIn()}
+            </div>
         </Router>
     )
 }

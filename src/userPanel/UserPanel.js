@@ -66,9 +66,11 @@ function UserPanel() {
 
     return (
         <Router>
+            <div className="userPanel__root">
             {
                 (!User) ? logIn() : loggedIn()
             }
+            </div>
         </Router>
     )
 }
