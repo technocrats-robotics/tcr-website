@@ -10,7 +10,6 @@ class Member {
      * @param {string} uid The user id provided by Firebase Auth
      */
     constructor(uid){
-        this.collectionName = 'members';
         this.memberID = uid;
     }
 
