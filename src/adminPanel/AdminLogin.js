@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 import "./CSS/Login.css"
 
-import {auth} from "../services/google-firebase/admin_setup"
+import { admin_auth } from "../services/google-firebase/setup"
 
 function AdminLogin() {
     //state variables
@@ -14,7 +14,7 @@ function AdminLogin() {
         event.preventDefault();
         if (userName && password) {
             //login
-            auth.signInWithEmailAndPassword(userName, password)
+            admin_auth.signInWithEmailAndPassword(userName, password)
             .then((user) => {
                 console.log("User Signed In");
             })
