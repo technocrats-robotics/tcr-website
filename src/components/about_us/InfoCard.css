@@ -31,7 +31,6 @@ body {
   width:180vh;
   margin: 30px auto;
   border-radius: 10px;
-  background-color: black;
   -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px #1875D0;
@@ -50,6 +49,8 @@ body {
   box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   overflow: hidden;
   border-radius: 10px;
+  
+
 }
 
 /*object-fit: cover; */
