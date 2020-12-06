@@ -21,7 +21,7 @@ function MyPosts() {
         <div>
         {
             (User && User.blogAccess)?(
-                <div>Success</div>
+                <h2 style={{color:"white"}}>Under Development!!</h2>
             ):(
                 <h1>Access Denied!!</h1>
             )

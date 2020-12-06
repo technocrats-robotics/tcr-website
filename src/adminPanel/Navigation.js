@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom'
 //CSS
 import "./CSS/Navigation.css"
 
-import {auth} from "../services/google-firebase/setup"
+import {auth} from "../services/google-firebase/admin_setup"
 
 
 function Navigation() {

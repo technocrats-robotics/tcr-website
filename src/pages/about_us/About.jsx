@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Segment, Header,Image } from 'semantic-ui-react';
 import Page1 from './Page1';
+import Page2 from './Page2';
 import './About.css';
 
 export default class About extends Component {
@@ -8,6 +9,7 @@ export default class About extends Component {
     return(
         <div>
             <Page1></Page1>
+            <Page2></Page2>
         </div>
     );
     }

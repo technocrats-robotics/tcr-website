@@ -1,6 +1,9 @@
 
 /* for UserPanel (main component) */
-
+.userPanel__root{
+    min-height: 100vh;
+    background-color: black;
+}
 .userLogIn{
     height: 100vh;
     padding: 100px;
