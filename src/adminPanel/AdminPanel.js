@@ -11,7 +11,7 @@ import MakeAnnouncement from './MakeAnnouncements'
 
 
 // firebase auth
-import {auth} from "../services/google-firebase/setup"
+import {auth} from "../services/google-firebase/admin_setup"
 
 //CSS
 import "./CSS/Body.css"

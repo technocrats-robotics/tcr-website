@@ -3,10 +3,9 @@ import {useState} from 'react'
 
 import "./CSS/Login.css"
 
-import {auth} from "../services/google-firebase/setup"
+import {auth} from "../services/google-firebase/admin_setup"
 
 function AdminLogin() {
-
     //state variables
     const [userName, setUsername] = useState("");
     const [password, setPassword] = useState("");
