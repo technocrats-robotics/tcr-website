@@ -6,8 +6,11 @@ import "firebase/firestore";
 
 // Firebase Setup
 const firebaseConfig = require('./firebase_config.json');
-firebase.initializeApp(firebaseConfig);
+var defaultApp = firebase.initializeApp(firebaseConfig);
+var adminApp = firebase.initializeApp(firebaseConfig, 'admin')
 
 // Firebase product objects
-export var auth = firebase.auth();
-export var db = firebase.firestore();
+export var auth = defaultApp.auth();
+export var db = defaultApp.firestore();
+export var admin_auth = adminApp.auth();
+export var admin_db = adminApp.firestore();
