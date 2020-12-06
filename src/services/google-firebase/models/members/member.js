@@ -1,6 +1,6 @@
 // Schema & methods for 'members' collection
 
-import { db } from "../../setup";
+import { db, admin_db } from "../../setup";
 
 
 class Member {
@@ -51,7 +51,7 @@ class Member {
             }
         };
         // Add document to collection
-        return db.collection(Member.collectionName)
+        return admin_db.collection(Member.collectionName)
         .doc(this.memberID)
         .set(memberDetails)
         .then(() => true)
