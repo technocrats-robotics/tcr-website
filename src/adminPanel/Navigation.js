@@ -3,13 +3,13 @@ import {NavLink} from 'react-router-dom'
 //CSS
 import "./CSS/Navigation.css"
 
-import {auth} from "../services/google-firebase/admin_setup"
+import { admin_auth } from "../services/google-firebase/setup"
 
 
 function Navigation() {
 
     const handleSignOut=()=>{
-        auth.signOut().then(function() {
+        admin_auth.signOut().then(function() {
             return true;
         }).catch(function(error) {
             return false;

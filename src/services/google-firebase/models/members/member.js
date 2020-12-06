@@ -1,6 +1,6 @@
 // Schema & methods for 'members' collection
 
-import { db } from "../../setup";
+import { db, admin_db } from "../../setup";
 
 
 class Member {
@@ -10,7 +10,6 @@ class Member {
      * @param {string} uid The user id provided by Firebase Auth
      */
     constructor(uid){
-        this.collectionName = 'members';
         this.memberID = uid;
     }
 
@@ -51,7 +50,7 @@ class Member {
             }
         };
         // Add document to collection
-        return db.collection(Member.collectionName)
+        return admin_db.collection(Member.collectionName)
         .doc(this.memberID)
         .set(memberDetails)
         .then(() => true)
