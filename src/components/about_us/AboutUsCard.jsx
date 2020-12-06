@@ -15,7 +15,7 @@ export default class AboutUsCard extends Component {
                         </Header>
                     </div>
                     <div class="card__face card__face--back">
-                    <Header color='red' inverted>
+                    <Header inverted>
                             Daniel
                             <Header.Subheader className='blue'>2017 CSE</Header.Subheader>
                             <Header.Content as={'h6'} >

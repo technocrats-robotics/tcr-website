@@ -5,6 +5,8 @@
 
 .secondPage{
     background-color: black;
-    height: 100vh;
+    height: 200vh;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 

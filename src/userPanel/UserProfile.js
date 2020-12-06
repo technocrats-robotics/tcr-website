@@ -5,7 +5,7 @@ import { GlobalUser } from "./UserPanel"
 import { db } from "../services/google-firebase/setup"
 
 //CSS
-import "./CSS/UserProfile.css"
+//import "./CSS/UserProfile.css"
 
 function UserProfile() {
 
