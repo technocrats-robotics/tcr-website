@@ -79,14 +79,14 @@ function MembersPanel() {
                                 <td>{member.role}</td>
                                 <td>
                                 <form>
-                                    <select onChange={(event)=>setNewRole(event.target.value)} key={detail.id}>
+                                    <select onChange={(event)=>setNewRole(event.target.value)} key={"role "+detail.id}>
                                         {
                                             roles.map(role=>{
                                                 return <option value={role} key={role}>{role}</option>
                                             })
                                         }
                                     </select>
-                                    <button type="submit" onClick={(event)=>updateRole(event,detail.id,member.name,member.role)} key={detail.id}>Update</button>
+                                    <button type="submit" onClick={(event)=>updateRole(event,detail.id,member.name,member.role)} key={"update"+ detail.id}>Update</button>
                                 </form>
                                 </td>
                                 <td className="collapsing">
