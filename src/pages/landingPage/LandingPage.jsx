@@ -29,9 +29,7 @@ export default class LandingPage extends Component {
             <Page2></Page2>
             <Page3></Page3>
             <Page4></Page4>
-            <BlogPage></BlogPage>
             <About></About>
-            <Gallery></Gallery>
         </div>
     );
     }
