@@ -4,6 +4,7 @@ import {useState} from 'react'
 import "./CSS/Login.css"
 
 import { admin_auth } from "../services/google-firebase/setup"
+import { admin_email } from '../constants'
 
 function AdminLogin() {
     //state variables
@@ -12,8 +13,14 @@ function AdminLogin() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        // If username & password not null
         if (userName && password) {
-            //login
+            // If username is NOT equal to admin_email
+            if(userName !== admin_email){
+                console.log('Try hacking your college websites!');
+                event.target.reset()
+                return;
+            }
             admin_auth.signInWithEmailAndPassword(userName, password)
             .then((user) => {
                 console.log("User Signed In");
@@ -25,6 +32,7 @@ function AdminLogin() {
               console.log("Error Message",errorMessage);
             });
         }
+        event.target.reset();
     }
 
     return (
