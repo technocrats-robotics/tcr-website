@@ -8,8 +8,8 @@ function EditorPlugin() {
 
     const[postContent,setPostContent]=useState("");
 
-    function handleChange(event){
-        console.log(event.target.getContent());
+    function handleChange(content){
+        console.log(content);
     }
 
 
@@ -19,7 +19,7 @@ function EditorPlugin() {
                 apiKey="xes65ohsmty1x6hgjbso8e9hp2jkodtxh4pxi3ewqq6gyxyc"
                 init={{
                     height: 500,
-                    menubar: false,
+                    menubar: true,
                     plugins: [
                         'advlist autolink lists link image',
                         'charmap print preview anchor help',
@@ -29,9 +29,9 @@ function EditorPlugin() {
                     toolbar:
                         'undo redo | formatselect | bold italic underline | \
                          alignleft aligncenter alignright | \
-                         bullist numlist outdent indent | help'
+                         bullist numlist outdent indent'
                 }}
-                onChange={handleChange}
+                onEditorChange={handleChange}
             />
         </div>
     )
