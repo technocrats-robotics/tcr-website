@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
-import {db} from '../services/google-firebase/admin_setup'
+import { admin_db } from '../services/google-firebase/setup'
+import Member from '../services/google-firebase/models/members/member';
 
 function MembersPanel() {
 
@@ -15,7 +16,7 @@ function MembersPanel() {
     const [newRole,setNewRole] = useState('Member');
 
     useEffect(() => {
-        db.collection('members').onSnapshot(snapshot => {
+        admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;
             }))
@@ -24,7 +25,7 @@ function MembersPanel() {
 
     // update given field of member with given id to newValue
     function updateValue(field,id,newValue){
-        db.collection('members').doc(id).update({[field] : newValue}).then(
+        admin_db.collection(Member.collectionName).doc(id).update({[field] : newValue}).then(
             console.log("Done")
         )
     }
@@ -38,7 +39,7 @@ function MembersPanel() {
         }
         let decision = window.confirm(`Press OK to change Role of ${name} from ${oldRole} to ${newRole}.`);
         if(decision){
-            db.collection('members').doc(id).update({role : newRole}).then(
+            admin_db.collection(Member.collectionName).doc(id).update({role : newRole}).then(
                 alert(`Now ${name} is ${newRole}`)
             )
         } else{

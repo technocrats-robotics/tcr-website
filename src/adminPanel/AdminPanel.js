@@ -11,7 +11,7 @@ import MakeAnnouncement from './MakeAnnouncements'
 
 
 // firebase auth
-import {auth} from "../services/google-firebase/admin_setup"
+import { admin_auth } from "../services/google-firebase/setup"
 
 //CSS
 import "./CSS/Body.css"
@@ -21,7 +21,7 @@ function AdminPanel() {
 
     const[User,setUser]=useState(null);
 
-    auth.onAuthStateChanged((user) => {
+    admin_auth.onAuthStateChanged((user) => {
         if (user) {
           setUser(user);
         } else {
