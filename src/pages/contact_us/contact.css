@@ -1,6 +1,7 @@
 .firstPage{
     height:120vh;
     background-color: black;
+    padding-left: 10%;
 }
 
 .title{
@@ -29,10 +30,7 @@ input {
   letter-spacing: 1.4px;
 }
 
-.background {
-  display: flex;
-  min-height: 100vh;
-}
+
 
 .container {
   flex: 0 1 700px;
@@ -42,8 +40,9 @@ input {
 
 .screen {
   position: relative;
-  background: #3e3e3e;
+  background: #202020;
   border-radius: 15px;
+  box-shadow: 10px 10px 0px 0px blue;
 }
 
 .screen:after {
@@ -63,7 +62,7 @@ input {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background: #4d4d4f;
+  background: #343436;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
@@ -123,20 +122,12 @@ input {
   display: flex;
   flex-direction: column;
   position: relative;
-  color: #ea1d6f;
+  color: blue;
   font-size: 26px;
+
 }
 
-.app-title:after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 25px;
-  height: 4px;
-  background: #ea1d6f;
-}
+
 
 .app-contact {
   margin-top: auto;
@@ -181,14 +172,15 @@ input {
 .app-form-button {
   background: none;
   border: none;
-  color: #ea1d6f;
+  color: blue;
   font-size: 14px;
   cursor: pointer;
   outline: none;
+  margin-left: 10%;
 }
 
 .app-form-button:hover {
-  color: #b9134f;
+  color: rgb(0, 0, 138);
 }
 
 .credits {
@@ -247,3 +239,5 @@ input {
     padding: 0;
   }
 }
+
+
