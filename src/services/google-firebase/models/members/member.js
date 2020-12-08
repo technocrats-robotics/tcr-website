@@ -37,8 +37,8 @@ class Member {
             registeredEmail: email,
             branch: branch,
             roles: {
-                [(year_of_joining+1)] : Role.MEMBER, 
-                [(year_of_joining+2)] : Role.MEMBER, 
+                [year_of_joining+1] : Role.MEMBER, 
+                [year_of_joining+2] : Role.MEMBER, 
                 [year_of_joining+3] : Role.ALUMNI, 
                 [year_of_joining+4] : Role.ALUMNI,
             },
