@@ -12,6 +12,9 @@ function MyPosts() {
     const[User,setUser]=useState(false);
 
     useEffect(() => {
+
+        document.title="User Panel | My Posts"
+
         db.collection('members').doc(user)
         .onSnapshot(function(doc) {
         setUser(doc.data());    

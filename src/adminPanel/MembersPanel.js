@@ -16,6 +16,8 @@ function MembersPanel() {
     const [newRole,setNewRole] = useState('Member');
 
     useEffect(() => {
+        document.title="Admin Panel | Manage Members"
+
         admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;

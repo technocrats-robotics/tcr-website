@@ -1,11 +1,15 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 // mail service (email,data) => email as string and data as object
 import { sendEmail } from '../services/mail/sendEmail'
 import { addNewUser } from '../services/google-firebase/utilities'
 
 function AddMembers() {
+
+    useEffect(()=>{
+        document.title="Admin Panel | Add Members"
+    },[])
 
     // dropdown menu parameters
     const Departments = ["Programming", "Electrical", "Mechanical", "Management"];

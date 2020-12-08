@@ -21,6 +21,7 @@ function UserLogin() {
      // form submission handling
     function handleSubmission(event) {
         event.preventDefault();
+        event.target.reset();
         showLoadingScreen();
         console.log("Submitting..");
         auth.signInWithEmailAndPassword(userName, password)
