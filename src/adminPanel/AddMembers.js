@@ -37,7 +37,7 @@ function AddMembers() {
         event.preventDefault();
         event.target.reset();
         if (firstName && lastName && email && department && yoj) {
-            let new_user = await addNewUser(firstName, lastName, email, department, yoj);
+            let new_user = await addNewUser(firstName, lastName, email, department, parseInt(yoj));
             if(!new_user["status"]) {
                 console.error(`New user creation status ${new_user['status']}`);
                 return;
