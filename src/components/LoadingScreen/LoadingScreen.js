@@ -1,8 +1,6 @@
 import React from 'react'
 import { Image, Transition } from 'semantic-ui-react'
 
-import "./LoadingScreen.css"
-
 function LoadingScreen() {
     return (
         <div className="ui active dimmer">

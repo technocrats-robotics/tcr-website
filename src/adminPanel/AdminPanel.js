@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // components
@@ -20,6 +20,10 @@ import "./CSS/Body.css"
 function AdminPanel() {
 
     const[User,setUser]=useState(null);
+
+    useEffect(()=>{
+        document.title="Technocrats | Admin Panel"
+    },[])
 
     admin_auth.onAuthStateChanged((user) => {
         if (user) {

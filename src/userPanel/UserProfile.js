@@ -20,6 +20,9 @@ function UserProfile() {
     const[misc,setMisc]=useState(null);
 
     useEffect(() => {
+
+        document.title="User Panel | User Profile"
+
         db.collection('members').doc(user)
             .onSnapshot(function (doc) {
                 setUserDetails(doc.data())

@@ -25,6 +25,8 @@ function WritePost() {
     const [User, setUser] = useState(false);
 
     useEffect(() => {
+        document.title="User Panel | New Post"
+
         db.collection('members').doc(user)
             .onSnapshot(function (doc) {
                 setUser(doc.data());
