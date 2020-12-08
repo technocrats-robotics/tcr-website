@@ -1,6 +1,7 @@
 // Schema & methods for 'members' collection
 
 import { db, admin_db } from "../../setup";
+import Role from "./role";
 
 
 class Member {
@@ -35,7 +36,12 @@ class Member {
             name: name,
             registeredEmail: email,
             branch: branch,
-            role: 'Member',
+            roles: {
+                [(year_of_joining+1)] : Role.MEMBER, 
+                [(year_of_joining+2)] : Role.MEMBER, 
+                [year_of_joining+3] : Role.ALUMNI, 
+                [year_of_joining+4] : Role.ALUMNI,
+            },
             yearOfJoining: year_of_joining,
             isActive: isActive,
             blogAccess: blogAccess,
