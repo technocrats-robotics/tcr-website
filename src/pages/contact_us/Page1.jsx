@@ -6,24 +6,7 @@ export default class Page1 extends Component {
     return(
         <div className='firstPage'>
             <Header inverted size='huge'>Contact Us</Header>
-            <Grid inverted columns={2} stackable>
-                <GridRow>
-                    <GridColumn>
-                        <Form inverted>
-                        <Form.Group widths='equal'>
-                            <Form.Input fluid label='First name' placeholder='First name' />
-                            <Form.Input fluid label='Last name' placeholder='Last name' />
-                        </Form.Group>
-                        <Form.Checkbox label='I agree to the Terms and Conditions' />
-                        <Button type='submit'>Submit</Button>
-                        </Form>
-                    </GridColumn>
-                </GridRow>
-                <GridColumn>
-                        Hi
-                </GridColumn>
-            </Grid>
-            <div class="background">
+<div class="background">
   <div class="container">
     <div class="screen">
       <div class="screen-header">
@@ -68,20 +51,7 @@ export default class Page1 extends Component {
         </div>
       </div>
     </div>
-    <div class="credits">
-      inspired by
-      <a class="credits-link" href="https://dribbble.com/shots/2666271-Contact" target="_blank">
-        <svg class="dribbble" viewBox="0 0 200 200">
-          <g stroke="#ffffff" fill="none">
-            <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
-            <path d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345" stroke-width="20"></path>
-            <path d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951" stroke-width="20"></path>
-            <path d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103" stroke-width="20"></path>
-          </g>
-        </svg>
-        Gururaj
-      </a>
-    </div>
+    
   </div>
 </div>
         </div>
