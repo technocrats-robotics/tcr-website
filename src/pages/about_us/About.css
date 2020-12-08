@@ -1,12 +1,11 @@
-.firstPage{
-    background-color: black;
-    height: 200vh;
+.firstAboutPage{
+height: 200vh;
+background-color: black;
 }
 
-.secondPage{
-    background-color: black;
-    height: 200vh;
-    padding-left: 10%;
-    padding-right: 10%;
+.secondAboutPage{
+height: 120vh;
+background-color: black;
+padding: 8%;
+text-align: center;
 }
-
