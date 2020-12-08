@@ -5,9 +5,7 @@ import Page2 from './Page2';
 import Page3 from './Page3';
 import Page4 from './Page4';
 import About from './../about_us/About';
-import BlogPage from '../blog/Blog';
-import Gallery from '../Gallery/Gallery';
-import ScrollProgress from '../../components/ScrollProgress/ScrollProgress';
+import ContactUs from '../contact_us/ContactUs';
 
 export default class LandingPage extends Component {
     state = { percent: 5 }
@@ -29,9 +27,8 @@ export default class LandingPage extends Component {
             <Page2></Page2>
             <Page3></Page3>
             <Page4></Page4>
-            <BlogPage></BlogPage>
             <About></About>
-            <Gallery></Gallery>
+            <ContactUs></ContactUs>
         </div>
     );
     }

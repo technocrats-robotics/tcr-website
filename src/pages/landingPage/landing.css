@@ -4,7 +4,7 @@
   }
   
 .secondPage {
-  height: 120vh;
+  height: 100vh;
   background-color: black;
 }
 .fourteen.column.row.mainRow {
@@ -12,7 +12,7 @@
 }
 @media only screen and (min-width: 768px) {
   /* computer */
-        .ui.large.image {
+        img.ui.large.avatar.image.TechLogoMainPage {
             margin-left: 18%;
            }
 
@@ -20,11 +20,11 @@
             font-size: 6vh;
             margin-left: 10%;
             }
-            .ui.yellow.large.statistic{
+            .ui.yellow.large.statistic.yellowStats{
               margin-top: 120px;
             }
             
-            .ui.red.large.statistic{
+            .ui.red.large.statistic.redStats{
               margin-top: 120px; 
             }
 } 
@@ -44,7 +44,7 @@
             .ui.grid.ImageMatrix {
                 margin-top: -62px;
             }
-            .ui.yellow.large.statistic{
+            .ui.yellow.large.statistic.yellowStats{
               margin-top: 8vh;
             }
             
@@ -424,6 +424,10 @@ img.grey{
     background-color: black;
 }
 
+p.IntroContent {
+  font-size: 1.8vh;
+  text-align: center;
+}
 
 /* TEST ANIMATIONS */
 .firstpagebackdiv{

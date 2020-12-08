@@ -7,8 +7,8 @@ import InfoCard2 from '../../components/about_us/InfoCard2';
 export default class Page1 extends Component {
   render() {
     return(
-        <div className='firstPage'>
-            <Grid centered>
+        <div className='firstAboutPage'>
+            <Grid centered stackable>
                 <GridRow>
                 <Header as='h1' size='huge' inverted textAlign='left'>
                 <Icon name='hand spock' />

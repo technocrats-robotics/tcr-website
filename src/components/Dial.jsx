@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";
 
 export default function Dial() {
+    
+    const history = useHistory();
+
     let scrollToOne = () => {
         document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});   
     }
@@ -14,6 +18,12 @@ export default function Dial() {
     }
     let scrollToFour = () => {
         document.getElementsByClassName('fourthPage')[0].scrollIntoView({behavior:'smooth'});
+    }
+    let jumpToBlogs = () => {
+        history.push('/blogs');
+    }
+    let jumpToGallery = () => {
+        history.push('/gallery');
     }
     React.useEffect(()=>{
         let menus = document.getElementsByClassName("Menu");
@@ -65,7 +75,6 @@ export default function Dial() {
                     <div className='Menu Menu1' >Home
                     <div className='subMenus subMenu1'>
                         <List.List>
-                            
                             <List.Item as='a' onClick={scrollToOne}>
                                 Home
                             </List.Item>
@@ -73,7 +82,7 @@ export default function Dial() {
                                 Who are we?
                             </List.Item>
                             <List.Item as='a' onClick={scrollToThree}>
-                                Gallery
+                                Images Matrix
                             </List.Item>
                             <List.Item as='a' onClick={scrollToFour}>
                                 Testinomials
@@ -86,7 +95,7 @@ export default function Dial() {
                     Blog
                     <div className='subMenus subMenu2'>
                     <List.List>
-                    <List.Item as='a'>
+                    <List.Item as='a' onClick={jumpToBlogs}>
                         Read
                     </List.Item>
                     <List.Item as='a'>
@@ -98,17 +107,11 @@ export default function Dial() {
                 </List.Item>
                 <List.Item active>
                 <div className='Menu Menu3' >
-                    About Us
+                    Gallery
                     <div className='subMenus subMenu3'>
                         <List.List>
-                            <List.Item as='a'>
-                                Team
-                            </List.Item>
-                            <List.Item as='a'>
-                                Contact Us
-                            </List.Item>
-                            <List.Item as='a'>
-                                Alumni
+                            <List.Item as='a' onClick={jumpToGallery}>
+                                Gallery
                             </List.Item>
                         </List.List>
                     </div>
@@ -116,8 +119,8 @@ export default function Dial() {
                 </List.Item>
                 <List.Item active>
                 <div className='Menu Menu4' >
-                    Contact Us
-                    <div className='subMenus subMenu4'>
+                    About Us
+                    <div className='subMenus subMenu3'>
                         <List.List>
                             <List.Item as='a'>
                                 Team

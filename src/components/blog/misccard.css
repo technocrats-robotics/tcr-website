@@ -14,11 +14,8 @@
     border: 1px solid grey;
 }
 .postlayer2:hover {
-    background-color: #B32D2D;
+    /* background-color: #B32D2D; */
     transform:rotate(-5deg);
-}
-.cardContent{
-    /* transform: rotate(-1deg); */
 }
 .postlayer3 {
     width:35vh;
@@ -26,21 +23,22 @@
     transform:rotate(2deg);
     border: 1px solid grey;   
 }
+.openBtns{
+    cursor: pointer;
+    z-index: 999;
+}
+
 .mainLayerFront{
-    height: 20vh;
+    height: 19.5vh;
     color: rgb(204, 203, 203);
     padding: 5%;
     background-color: black;
     border: 1px solid grey;
 }
-.mainLayer{
-    background-color: #B32D2D;
-    height: 20vh;
-    z-index: 999;
-    display: none;
-}
 .ui.card.customBlogCard{
-    background-color: transparent;
+    background-color: rgba(143, 31, 31, 0.856);
+    height: 19.5vh;
+    color: white;
     border: 0px solid white;
     box-shadow: none;
 }

@@ -106,7 +106,7 @@ export default class Page2 extends Component {
   render() {
     const { activeItem } = this.state
     return(
-        <div className='secondPage'>
+        <div className='secondAboutPage'>
             <Header textAlign='center' inverted size='huge'>The Team</Header>
             <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
                         <Menu.Item inverted

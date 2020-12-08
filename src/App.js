@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import LandingPage from './pages/landingPage/LandingPage.jsx';
 import AdminPanel from './adminPanel/AdminPanel';
 import UserPanel from './userPanel/UserPanel';
+import Gallery from './pages/Gallery/Gallery';
+import Blogs from './pages/blog/Blog';
 
 // CSS
 import './App.css';
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route path="/adminPanel" component={AdminPanel} />
           <Route path="/userPanel" component={UserPanel} />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/blogs" component={Blogs} />
         </Switch>
       </Router>
     </div>

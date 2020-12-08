@@ -1,5 +1,6 @@
 .blogPage{
     height:100vh;
+    background-color: black;
 }
 .ui.massive.inverted.pointing.secondary.vertical.menu {
     margin-left: -86px;
