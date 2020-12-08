@@ -35,6 +35,7 @@ function AddMembers() {
     //form submit handling
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        event.target.reset();
         if (firstName && lastName && email && department && yoj) {
             let new_user = await addNewUser(firstName, lastName, email, department, yoj);
             if(!new_user["status"]) {
