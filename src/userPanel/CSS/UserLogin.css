@@ -1,0 +1,7 @@
+.userLogin__displayMessage > p{
+    color: white;
+}
+
+.userLogin__displayMessage{
+    text-align: center;
+}
