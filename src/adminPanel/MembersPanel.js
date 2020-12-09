@@ -11,8 +11,6 @@ function MembersPanel() {
 
     // State variables
     const [details, setDetails] = useState([]);
-    const [modalOpen, setModalOpen] = React.useState(false)
-
 
     useEffect(() => {
         document.title="Admin Panel | Manage Members"
@@ -30,6 +28,35 @@ function MembersPanel() {
             console.log("Done")
         )
     }
+
+    /**
+     * Generates a table for Role modification
+     */
+    var YearlyRolesTable = (props) => {
+        let rows = [];
+        let roles = props.yearly_roles;
+        Object.keys(roles).forEach(year => {
+            rows.push(
+                <Table.Row key={year}>
+                    <Table.Cell>{year}</Table.Cell>
+                    <Table.Cell>{roles[year]}</Table.Cell>
+                </Table.Row>
+            );
+        });
+
+        // Generate the table
+        return (
+            <Table unstackable>
+            <Table.Header>
+                <Table.Row>
+                <Table.HeaderCell>Team Year</Table.HeaderCell>
+                <Table.HeaderCell>Role</Table.HeaderCell>
+                </Table.Row>
+            </Table.Header>
+            <Table.Body>{rows}</Table.Body>
+            </Table>
+        );
+    };
 
     return (
         <div className="admin__membersPanel">
@@ -63,46 +90,18 @@ function MembersPanel() {
                                 <td>
                                     <Modal
                                         closeIcon
-                                        open={modalOpen}
                                         trigger={<Button basic circular icon='edit outline'/>}
-                                        onClose={() => setModalOpen(false)}
-                                        onOpen={() => setModalOpen(true)}
                                         dimmer='blurring'
                                     >
                                         <Header icon='universal access' content='Modify Yearly Roles' />
                                         <Modal.Content>
-                                        <table class="ui unstackable table">
-                                            <thead class="">
-                                                <tr class="">
-                                                    <th class="">Year</th>
-                                                    <th class="">Role</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="">
-                                                <tr class="">
-                                                    <td class="">2018</td>
-                                                    <td class="">Approved</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td class="">2018</td>
-                                                    <td class="">Approved</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td class="">2018</td>
-                                                    <td class="">Approved</td>
-                                                </tr>
-                                                <tr class="">
-                                                    <td class="">2018</td>
-                                                    <td class="">Approved</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                            <YearlyRolesTable yearly_roles={member.roles}/>
                                         </Modal.Content>
                                         <Modal.Actions>
-                                            <Button color='red' onClick={() => setModalOpen(false)}>
+                                            <Button color='red'>
                                             <Icon name='remove' /> No
                                             </Button>
-                                            <Button color='green' onClick={() => setModalOpen(false)}>
+                                            <Button color='green'>
                                             <Icon name='checkmark' /> Yes
                                             </Button>
                                         </Modal.Actions>
