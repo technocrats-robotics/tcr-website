@@ -1,10 +1,12 @@
 // Schema & methods for 'members' collection
 
-import { db, admin_db } from "../../setup";
+import { db, admin_db, admin_auth } from "../../setup";
+import Role from "./role";
 
 
 class Member {
     static collectionName = 'members';
+    static totalYearsOfService = 4;
     /**
      * Constructor for the Member Class
      * @param {string} uid The user id provided by Firebase Auth
@@ -35,7 +37,12 @@ class Member {
             name: name,
             registeredEmail: email,
             branch: branch,
-            role: 'Member',
+            roles: {
+                [year_of_joining+1] : Role.MEMBER, 
+                [year_of_joining+2] : Role.MEMBER, 
+                [year_of_joining+3] : Role.ALUMNI, 
+                [year_of_joining+4] : Role.ALUMNI,
+            },
             yearOfJoining: year_of_joining,
             isActive: isActive,
             blogAccess: blogAccess,
@@ -75,7 +82,8 @@ class Member {
      * let updateStatus = await updateMemberDetail('about.experience', 'Excelsior!');
      */
     async updateMemberDetail(field_name, field_data){
-        return db.collection(Member.collectionName)
+        var firestore_db = admin_auth!=null ? admin_db : db;
+        return firestore_db.collection(Member.collectionName)
         .doc(this.memberID)
         .update({[field_name]: field_data})
         .then(() => true)
@@ -87,6 +95,31 @@ class Member {
             console.error(errorMessage);
             return false;
         });
+    }
+
+    /**
+     * Analyse/Deduce the exact current role of the member
+     * @param {object} yearly_roles An object/map with key: year(number) & value:Role(string)
+     * @returns string representing the current role of the member
+     */
+    static getCurrentRole(yearly_roles) {
+        let currentDate = new Date(); // Get the current Date
+        // Get the last year of service for the member
+        let last_year_of_service = Object.keys(yearly_roles)[this.totalYearsOfService-1];
+        /**
+         * Check if
+         * current year is not greater than the last year of service &
+         * the current month is not ahead of February (coz Power transfer generally happens in Feb)
+         * Easter Egg:
+         * If you are a Junior who is reading this, now you know that 
+         * Power transfer generally happens in the month of Feb :)
+         */
+        if (currentDate.getFullYear() < last_year_of_service){
+            if (currentDate.getMonth() <= 2)
+                return yearly_roles[currentDate.getFullYear()];
+            else return yearly_roles[currentDate.getFullYear()+1];
+
+        } else return yearly_roles[last_year_of_service];
     }
 }
 

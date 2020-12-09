@@ -1,21 +1,28 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Button, Header, Modal, Table, Dropdown } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
 import { admin_db } from '../services/google-firebase/setup'
 import Member from '../services/google-firebase/models/members/member';
+import Role from '../services/google-firebase/models/members/role'
+
+import Success from '../components/Messages/Success'
+import Warning from '../components/Messages/Warning'
 
 function MembersPanel() {
 
+    // State variables
     const [details, setDetails] = useState([]);
     
-
-    const roles=["Member","Alumni","HOD","Manager","Team Lead","Captain"];
-
-    const [newRole,setNewRole] = useState('Member');
+    //messages
+    const[success,showSuccess]=Success();
+    const[warning,showWarning]=Warning();
 
     useEffect(() => {
+        document.title="Admin Panel | Manage Members"
+
         admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;
@@ -23,29 +30,63 @@ function MembersPanel() {
         })
     },[]);
 
-    // update given field of member with given id to newValue
-    function updateValue(field,id,newValue){
-        admin_db.collection(Member.collectionName).doc(id).update({[field] : newValue}).then(
-            console.log("Done")
-        )
-    }
+    /**
+     * Generates a table for Role modification
+     */
+    var YearlyRolesTable = (props) => {
+        let rows = [];
+        let yearly_roles = props.yearly_roles;
+        let roleOptions = [];
+        Object.values(Role).forEach(role => {
+            roleOptions.push({
+                key: role,
+                text: role,
+                value: role,
+            });
+        });
+        Object.keys(yearly_roles).forEach(year => {
+            rows.push(
+                <Table.Row key={year}>
+                    <Table.Cell>{year}</Table.Cell>
+                    <Table.Cell>
+                        <Dropdown
+                            options={roleOptions} 
+                            placeholder='Select Role'
+                            defaultValue={yearly_roles[year]}
+                            onChange={(e,data) => {
+                                // console.log(data.value); // Debugging
+                                // Modify role in database
+                                let selectedMember = new Member(props.mid);
+                                selectedMember.updateMemberDetail('roles.'+year,data.value)
+                                .then((status) => {
+                                    // TODO: Remove console logs & replace with messages
+                                    if(status) showSuccess('Role Modified');
+                                    else showWarning('Something went wrong!');
+                                });
+                            }}
+                        />
+                    </Table.Cell>
+                </Table.Row>
+            );
+        });
 
-    //updateRole
-    function updateRole(event,id,name,oldRole){
-        event.preventDefault();
-        if(newRole===oldRole || newRole===null){
-            alert('New Role cannot be same as the current role !!');
-            return;
-        }
-        let decision = window.confirm(`Press OK to change Role of ${name} from ${oldRole} to ${newRole}.`);
-        if(decision){
-            admin_db.collection(Member.collectionName).doc(id).update({role : newRole}).then(
-                alert(`Now ${name} is ${newRole}`)
-            )
-        } else{
-            alert("Please use this Panel with care !!")
-        }
-    }
+        // Generate the table
+        return (
+            <div>
+                {success}
+                {warning}
+                <Table unstackable>
+                <Table.Header>
+                    <Table.Row>
+                    <Table.HeaderCell>Team Year</Table.HeaderCell>
+                    <Table.HeaderCell>Role</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+                <Table.Body>{rows}</Table.Body>
+                </Table>
+            </div>
+        );
+    };
 
     return (
         <div className="admin__membersPanel">
@@ -59,7 +100,6 @@ function MembersPanel() {
                         <th>User Name @tcr.in</th>
                         <th>Registered Email Id</th>
                         <th>Current Role</th>
-                        <th>Update Role</th>
                         <th>Blog Access</th>
                         <th>Profile Status</th>
                     </tr>
@@ -67,7 +107,8 @@ function MembersPanel() {
                 <tbody key="tbody">
                 {
                     details.map((detail,index)=>{
-                        let member=detail.data();
+                        let member = detail.data();
+                        let currentRole = Member.getCurrentRole(member.roles);
                         return(    
                             <tr key={index+1}>
                                 <td>{index+1}.</td>
@@ -76,31 +117,37 @@ function MembersPanel() {
                                 <td>{member.branch}</td>
                                 <td>{member.username}</td>
                                 <td>{member.registeredEmail}</td>
-                                <td>{member.role}</td>
                                 <td>
-                                <form>
-                                    <select onChange={(event)=>setNewRole(event.target.value)} key={detail.id}>
-                                        {
-                                            roles.map(role=>{
-                                                return <option value={role} key={role}>{role}</option>
-                                            })
-                                        }
-                                    </select>
-                                    <button type="submit" onClick={(event)=>updateRole(event,detail.id,member.name,member.role)} key={detail.id}>Update</button>
-                                </form>
+                                    <Modal
+                                        closeIcon
+                                        trigger={<Button basic circular icon='edit outline'/>}
+                                        dimmer='blurring'
+                                    >
+                                        <Header icon='universal access' content='Modify Yearly Roles' />
+                                        <Modal.Content>
+                                            <YearlyRolesTable yearly_roles={member.roles} mid={detail.id}/>
+                                        </Modal.Content>
+                                    </Modal>
+                                    {currentRole}
                                 </td>
                                 <td className="collapsing">
                                     <div className="ui fitted slider checkbox">
                                         <input type="checkbox" checked={
                                             (member.blogAccess)?(true):(false)
-                                        } onChange={()=>{updateValue("blogAccess",detail.id,!member.blogAccess)}}/> <label></label>
+                                        } onChange={()=>{
+                                            let selectedMember = new Member(detail.id);
+                                            selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                        }}/> <label></label>
                                     </div>
                                 </td>
                                 <td className="collapsing">
                                 <div className="ui fitted slider checkbox">
                                     <input type="checkbox" checked={
                                         (member.isActive)?(true):(false)
-                                    } onChange={()=>{updateValue("isActive",detail.id,!member.isActive)}} /> <label></label>
+                                    } onChange={()=>{
+                                        let selectedMember = new Member(detail.id);
+                                        selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                    }} /> <label></label>
                                 </div>
                                 </td>
                             </tr>
@@ -113,4 +160,9 @@ function MembersPanel() {
     )
 }
 
-export default MembersPanel
+export default MembersPanel;
+
+/**
+ * References:
+ * https://stackoverflow.com/questions/13751166/javascript-uncaught-referenceerror-keys-is-not-defined
+ */

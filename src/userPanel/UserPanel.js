@@ -1,4 +1,4 @@
-import React,{createContext} from 'react'
+import React,{createContext,useEffect} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -19,6 +19,10 @@ import WritePost from "./WritePost";
 const GlobalUser=createContext(null);
 
 function UserPanel() {
+
+    useEffect(()=>{
+        document.title="Technocrats | User Panel"
+    },[])
 
     const[User,setUser]=useState(null);
     

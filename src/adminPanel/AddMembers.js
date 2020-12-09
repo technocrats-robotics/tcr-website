@@ -1,11 +1,26 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 // mail service (email,data) => email as string and data as object
 import { sendEmail } from '../services/mail/sendEmail'
 import { addNewUser } from '../services/google-firebase/utilities'
 
+// loading screen
+import FullPageLoader from '../components/LoadingScreen/FullPageLoader'
+
+//Message (automatically disappers after 3sec)
+import Warning from '../components/Messages/Warning'
+import Success from '../components/Messages/Success'
+
 function AddMembers() {
+
+    useEffect(()=>{
+        document.title="Admin Panel | Add Members"
+    },[])
+
+    const[loadingScreen,showLoadingScreen,hideLoadingScreen]=FullPageLoader();
+    const[warning,setWarning]=Warning();
+    const[success,setSuccess]=Success();
 
     // dropdown menu parameters
     const Departments = ["Programming", "Electrical", "Mechanical", "Management"];
@@ -31,12 +46,13 @@ function AddMembers() {
         alert(status);
     }
 
-
     //form submit handling
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        event.target.reset();
         if (firstName && lastName && email && department && yoj) {
-            let new_user = await addNewUser(firstName, lastName, email, department, yoj);
+            showLoadingScreen();
+            let new_user = await addNewUser(firstName, lastName, email, department, parseInt(yoj));
             if(!new_user["status"]) {
                 console.error(`New user creation status ${new_user['status']}`);
                 return;
@@ -47,18 +63,25 @@ function AddMembers() {
                 password: new_user['password'], // pull this from create new user function 
             }
             let api_msg = await sendEmail(email, data);
-            if (api_msg) showStatus(`Credentials sent successfully to ${email}`);
-            else showStatus("Some error occured please try again!! (maybe wrong email id)")
+            
+            if (api_msg) setSuccess(`Credentials sent successfully to ${email}`);
+            
+            else setWarning("Some error occured please try again!! (maybe wrong email id)");
+            
+            hideLoadingScreen();
 
         } else {
-            showStatus("Some mandatory information is missing!!");
+            setWarning("Some mandatory information is missing!!");
         }
     }
 
     //component..
     return (
         <div className="admin__addMembers">
+            {loadingScreen}
             <div className="admin__addMembersForm">
+                {warning}
+                {success}
                 <div>
                     <h1><u>Add New Member</u></h1>
                 </div>

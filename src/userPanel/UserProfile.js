@@ -5,7 +5,7 @@ import { GlobalUser } from "./UserPanel"
 import { db } from "../services/google-firebase/setup"
 
 //CSS
-//import "./CSS/UserProfile.css"
+import "./CSS/UserProfile.css"
 
 function UserProfile() {
 
@@ -20,6 +20,9 @@ function UserProfile() {
     const[misc,setMisc]=useState(null);
 
     useEffect(() => {
+
+        document.title="User Panel | User Profile"
+
         db.collection('members').doc(user)
             .onSnapshot(function (doc) {
                 setUserDetails(doc.data())

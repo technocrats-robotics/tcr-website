@@ -1,0 +1,17 @@
+.userProfile{
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.inputBox{
+    padding: 5px;
+}
+
+.dpBox{
+    box-shadow: 0 0 10px 0 rgba(255,255,255,.9);
+}
+
+.blogPostPage__postCategories{
+    margin-top: 10px;
+}
