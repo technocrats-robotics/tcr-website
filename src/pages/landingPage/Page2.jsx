@@ -10,10 +10,14 @@ export default class Page2 extends Component {
             <Grid stackable centered>
                 <Grid.Row mobile='16' textAlign='center'>
                     <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
-                        <IntroCard Introhead={'Technocrats Robotics'} mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
-                            spectator on a hillside, the sable cloud beneath was dished out, and the
-                            car seemed to float in the middle of an immense dark sphere, whose
-                            upper half was strewn with silver.</p>}>
+                        <IntroCard Introhead={'Technocrats Robotics'} 
+                        // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
+                        //     spectator on a hillside, the sable cloud beneath was dished out, and the
+                        //     car seemed to float in the middle of an immense dark sphere, whose
+                        //     upper half was strewn with silver.</p>}>
+                        mainContent={<p className='IntroContent'>
+                            {this.props.intro}
+                        </p>}>
                         </IntroCard>
                     </Grid.Column>
                 </Grid.Row>

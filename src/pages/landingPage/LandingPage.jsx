@@ -7,9 +7,17 @@ import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
 
+import {db} from '../../services/google-firebase/setup'
+
 export default class LandingPage extends Component {
+    constructor(){
+        super()
+        this.componentDidMount = this.componentDidMount.bind(this);
+    }
     state = { percent: 5 }
-    componentDidMount(){
+    async componentDidMount(){
+        // var content = await db.collection('content').doc('landing_page').get()
+        // console.log(content);
         window.onscroll = () => {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -24,6 +32,7 @@ export default class LandingPage extends Component {
         <div>
             {/* <ScrollProgress percent={this.state.percent}></ScrollProgress> */}
             <Page1></Page1>
+            {/* <Page2 intro={this.content.intro}></Page2> */}
             <Page2></Page2>
             <Page3></Page3>
             <Page4></Page4>
