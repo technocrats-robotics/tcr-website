@@ -4,6 +4,10 @@
     color: white;
 }
 
+.userProfile__message{
+    padding: 20px;
+}
+
 .inputBox{
     padding: 5px;
 }

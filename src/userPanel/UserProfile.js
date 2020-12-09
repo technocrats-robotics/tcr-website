@@ -7,52 +7,72 @@ import { db } from "../services/google-firebase/setup"
 //CSS
 import "./CSS/UserProfile.css"
 
+//success Message
+import Success from '../components/Messages/Success'
+import Warning from '../components/Messages/Success'
+
 function UserProfile() {
 
+    // global user
     const user = useContext(GlobalUser);
-    const [userDetails, setUserDetails] = useState(null);
-
-    const[dpLink,setDpLink]=useState(null);
-    const[github,setGithub]=useState(null);
-    const[instagram,setInstagram]=useState(null);
-    const[linkedIn,setLinkedIn]=useState(null);
-    const[experience,setExperience]=useState(null);
-    const[misc,setMisc]=useState(null);
 
     useEffect(() => {
-
-        document.title="User Panel | User Profile"
-
+        // change title of document on loading page
+        document.title = "User Panel | User Profile"
+        
+        //fetch details of current user from firestore
         db.collection('members').doc(user)
-            .onSnapshot(function (doc) {
-                setUserDetails(doc.data())
-            })
+        .onSnapshot(function (doc) {
+        setUserDetails(doc.data())
+        })
+
     }, [user])
-
     
+    // user details fetched from firestore
+    const [userDetails, setUserDetails] = useState(null);
 
-    const handleSubmit=(event)=>{
+    // state variables for input fields
+    const [dpLink, setDpLink] = useState(null);
+    const [github, setGithub] = useState(null);
+    const [instagram, setInstagram] = useState(null);
+    const [linkedIn, setLinkedIn] = useState(null);
+    const [experience, setExperience] = useState(null);
+    const [misc, setMisc] = useState(null);
+
+    //message hooks
+    const [success, showSuccess] = Success();
+    const [warning, showWarning] = Warning(); 
+
+    const handleSubmit = (event) => {
         event.preventDefault();
-
         // update given field of member with given id to newValue
-        function updateValue(){
-            db.collection('members').doc(user).update({dpLink : dpLink, social_media:{github:github,instagram:instagram,linkedIn:linkedIn},about:{experience:experience,misc:misc }}).then(
-                console.log("Done")
-            ).catch((error)=>{
-                console.log("error ",error);
-            })
-        }
-        updateValue()
-        alert('Profile Updated !!')
+
+        /* if the current field is changed then take the updated value else the 
+        * corresponding state varible should be null so take value already available in database.  
+        */
+
+        db.collection('members').doc(user).update(
+            { dpLink: dpLink || userDetails.dpLink, 
+            social_media: { github: github || userDetails.social_media.github, 
+            instagram: instagram || userDetails.social_media.instagram,
+            linkedIn: linkedIn || userDetails.social_media.linkedIn }, 
+            about: { experience: experience || userDetails.about.experience, 
+            misc: misc || userDetails.about.misc } }).then(
+
+            // display success message 
+            showSuccess("Your Profile is updated Successfully!!"),
+        ).catch((error) => {
+            // display error message
+            showWarning("Something went wrong!! Please try Again..")
+        })
     }
 
 
-
-    const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png'
-    const defaultFieldAns = 'Not Available'
+    const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png';
 
     return (
         <div className="userProfile">
+
             {
                 (userDetails) ? (
                     <div className="ui internally celled grid">
@@ -67,10 +87,10 @@ function UserProfile() {
                         <div className="row">
                             <div className="three wide column">
                                 <div className="dpBox">
-                                <img className="medium ui image" src={userDetails.dpLink || defaultDpLink} />
+                                    <img className="medium ui image" src={userDetails.dpLink || defaultDpLink} />
                                 </div>
                                 <div className="inputBox">
-                                    <h3><b><u>Name:</u></b> {userDetails.name || defaultFieldAns}</h3>
+                                    <h3><b><u>Name:</u></b> {userDetails.name}</h3>
                                 </div>
                             </div>
                             <div className="thirteen wide column">
@@ -79,7 +99,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Registered Email
                                     </div>
-                                        <input type="text" value={userDetails.registeredEmail || defaultFieldAns} />
+                                        <input type="text" value={userDetails.registeredEmail} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -88,7 +108,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Current Role
                                     </div>
-                                        <input type="text" value={userDetails.role || defaultFieldAns} />
+                                        <input type="text" value={userDetails.role} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -97,7 +117,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Year of Joining
                                     </div>
-                                        <input type="text" value={userDetails.yearOfJoining || defaultFieldAns} />
+                                        <input type="text" value={userDetails.yearOfJoining} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -106,7 +126,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Department
                                     </div>
-                                        <input type="text" value={userDetails.branch || defaultFieldAns} />
+                                        <input type="text" value={userDetails.branch} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -124,7 +144,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             DP Link
                                     </div>
-                                        <input type="url"  placeholder={userDetails.dpLink || "Provide a valid link for your DP."} onChange={(event)=>setDpLink(event.target.value)} required/>
+                                        <input type="url" defaultValue={userDetails.dpLink} placeholder="Provide a valid link for your DP." onChange={(event) => setDpLink(event.target.value)} required />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -132,7 +152,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Github Username
                                     </div>
-                                        <input type="text" placeholder={userDetails.social_media.github||"Github Username (optional)"} onChange={(event)=>setGithub(event.target.value)}  />
+                                        <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -141,7 +161,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Instagram Username
                                     </div>
-                                        <input type="text" placeholder={userDetails.social_media.instagram ||"Instagram Username (optional)"} onChange={(event)=>setInstagram(event.target.value)}/>
+                                        <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -150,7 +170,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             LinkedIn Username
                                     </div>
-                                        <input type="text" placeholder={userDetails.social_media.linkedIn || "LinkedIn Username (optional)"} onChange={(event)=>setLinkedIn(event.target.value)}/>
+                                        <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -159,7 +179,7 @@ function UserProfile() {
                                         <div className="ui label">
                                             Experience
                                     </div>
-                                        <input placeholder={userDetails.about.experience||"Achievement (if Any)" }onChange={(event)=>setExperience(event.target.value)}/>
+                                        <input defaultValue={userDetails.about.experience} placeholder="Achievement (if Any)" onChange={(event) => setExperience(event.target.value)} />
                                     </div>
                                 </div>
                                 <div className="inputBox">
@@ -168,17 +188,18 @@ function UserProfile() {
                                         <div className="ui label">
                                             Miscellaneous
                                     </div>
-                                        <input placeholder={userDetails.about.misc||"Miscellaneous (if Any)" } onChange={(event)=>setMisc(event.target.value)} />
+                                        <input defaultValue={userDetails.about.misc} placeholder="Miscellaneous (if Any)" onChange={(event) => setMisc(event.target.value)} />
                                     </div>
                                 </div>
                                 <button type="submit" className="ui button" onClick={handleSubmit}>
                                     Submit
                                 </button>
+                                <div className="userProfile__message">{success}{warning}</div>
                             </div>
                         </div>
-                        
+
                     </div>
-                ) : (<h1>Loading...</h1>)
+                ) : (<h1>Loading..</h1>)
             }
         </div>
     )
