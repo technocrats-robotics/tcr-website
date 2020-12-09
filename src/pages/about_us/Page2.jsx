@@ -130,8 +130,8 @@ export default class Page2 extends Component {
                             onClick={this.handleItemClick}
                         />
             </Menu>
-            <Grid centered>
-                <Grid.Row columns='5'>
+            <Grid centered doubling stackable>
+                <Grid.Row columns={6}>
                 {
                 this.memberDetails.map((member)=>(
                     <Grid.Column>
