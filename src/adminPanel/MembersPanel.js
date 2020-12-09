@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { Button, Header, Icon, Modal, Table } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
@@ -8,12 +9,10 @@ import Member from '../services/google-firebase/models/members/member';
 
 function MembersPanel() {
 
+    // State variables
     const [details, setDetails] = useState([]);
-    
+    const [modalOpen, setModalOpen] = React.useState(false)
 
-    const roles=["Member","Alumni","HOD","Manager","Team Lead","Captain"];
-
-    const [newRole,setNewRole] = useState('Member');
 
     useEffect(() => {
         document.title="Admin Panel | Manage Members"
@@ -32,23 +31,6 @@ function MembersPanel() {
         )
     }
 
-    //updateRole
-    function updateRole(event,id,name,oldRole){
-        event.preventDefault();
-        if(newRole===oldRole || newRole===null){
-            alert('New Role cannot be same as the current role !!');
-            return;
-        }
-        let decision = window.confirm(`Press OK to change Role of ${name} from ${oldRole} to ${newRole}.`);
-        if(decision){
-            admin_db.collection(Member.collectionName).doc(id).update({role : newRole}).then(
-                alert(`Now ${name} is ${newRole}`)
-            )
-        } else{
-            alert("Please use this Panel with care !!")
-        }
-    }
-
     return (
         <div className="admin__membersPanel">
             <table className="ui celled definition table" key="table">
@@ -61,7 +43,6 @@ function MembersPanel() {
                         <th>User Name @tcr.in</th>
                         <th>Registered Email Id</th>
                         <th>Current Role</th>
-                        <th>Update Role</th>
                         <th>Blog Access</th>
                         <th>Profile Status</th>
                     </tr>
@@ -69,7 +50,8 @@ function MembersPanel() {
                 <tbody key="tbody">
                 {
                     details.map((detail,index)=>{
-                        let member=detail.data();
+                        let member = detail.data();
+                        let currentRole = Member.getCurrentRole(member.roles);
                         return(    
                             <tr key={index+1}>
                                 <td>{index+1}.</td>
@@ -78,18 +60,54 @@ function MembersPanel() {
                                 <td>{member.branch}</td>
                                 <td>{member.username}</td>
                                 <td>{member.registeredEmail}</td>
-                                <td>{member.role}</td>
                                 <td>
-                                <form>
-                                    <select onChange={(event)=>setNewRole(event.target.value)} key={"role "+detail.id}>
-                                        {
-                                            roles.map(role=>{
-                                                return <option value={role} key={role}>{role}</option>
-                                            })
-                                        }
-                                    </select>
-                                    <button type="submit" onClick={(event)=>updateRole(event,detail.id,member.name,member.role)} key={"update"+ detail.id}>Update</button>
-                                </form>
+                                    <Modal
+                                        closeIcon
+                                        open={modalOpen}
+                                        trigger={<Button basic circular icon='edit outline'/>}
+                                        onClose={() => setModalOpen(false)}
+                                        onOpen={() => setModalOpen(true)}
+                                        dimmer='blurring'
+                                    >
+                                        <Header icon='universal access' content='Modify Yearly Roles' />
+                                        <Modal.Content>
+                                        <table class="ui unstackable table">
+                                            <thead class="">
+                                                <tr class="">
+                                                    <th class="">Year</th>
+                                                    <th class="">Role</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="">
+                                                <tr class="">
+                                                    <td class="">2018</td>
+                                                    <td class="">Approved</td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td class="">2018</td>
+                                                    <td class="">Approved</td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td class="">2018</td>
+                                                    <td class="">Approved</td>
+                                                </tr>
+                                                <tr class="">
+                                                    <td class="">2018</td>
+                                                    <td class="">Approved</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </Modal.Content>
+                                        <Modal.Actions>
+                                            <Button color='red' onClick={() => setModalOpen(false)}>
+                                            <Icon name='remove' /> No
+                                            </Button>
+                                            <Button color='green' onClick={() => setModalOpen(false)}>
+                                            <Icon name='checkmark' /> Yes
+                                            </Button>
+                                        </Modal.Actions>
+                                    </Modal>
+                                    {currentRole}
                                 </td>
                                 <td className="collapsing">
                                     <div className="ui fitted slider checkbox">
@@ -115,4 +133,9 @@ function MembersPanel() {
     )
 }
 
-export default MembersPanel
+export default MembersPanel;
+
+/**
+ * References:
+ * https://stackoverflow.com/questions/13751166/javascript-uncaught-referenceerror-keys-is-not-defined
+ */
