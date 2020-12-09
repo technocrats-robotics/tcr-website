@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Button, Header, Icon, Modal, Table, Dropdown } from 'semantic-ui-react'
+import { Button, Header, Modal, Table, Dropdown } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
@@ -42,7 +42,6 @@ function MembersPanel() {
                 key: role,
                 text: role,
                 value: role,
-                // image: { avatar: true, src: '/images/avatar/small/jenny.jpg' },
             });
         });
         Object.keys(yearly_roles).forEach(year => {
@@ -124,14 +123,6 @@ function MembersPanel() {
                                         <Modal.Content>
                                             <YearlyRolesTable yearly_roles={member.roles} mid={detail.id}/>
                                         </Modal.Content>
-                                        <Modal.Actions>
-                                            <Button color='red'>
-                                            <Icon name='remove' /> No
-                                            </Button>
-                                            <Button color='green'>
-                                            <Icon name='checkmark' /> Yes
-                                            </Button>
-                                        </Modal.Actions>
                                     </Modal>
                                     {currentRole}
                                 </td>
