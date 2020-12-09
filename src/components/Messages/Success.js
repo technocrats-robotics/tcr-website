@@ -10,7 +10,7 @@ function Success() {
         return(
             <div>
                 <Transition.Group animation="fade up" duration="700">
-                    <div className="ui success message">
+                    <div className="ui green message">
                         <div className="header">
                             {success}
                         </div>

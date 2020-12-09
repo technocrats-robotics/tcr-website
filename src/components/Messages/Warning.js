@@ -10,7 +10,7 @@ function Warning() {
         return(
             <div>
                 <Transition.Group animation="fade up" duration="700">
-                    <div className="ui warning message">
+                    <div className="ui red message">
                         <div className="header">
                             {warning}
                         </div>

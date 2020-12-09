@@ -8,10 +8,17 @@ import { admin_db } from '../services/google-firebase/setup'
 import Member from '../services/google-firebase/models/members/member';
 import Role from '../services/google-firebase/models/members/role'
 
+import Success from '../components/Messages/Success'
+import Warning from '../components/Messages/Warning'
+
 function MembersPanel() {
 
     // State variables
     const [details, setDetails] = useState([]);
+    
+    //messages
+    const[success,showSuccess]=Success();
+    const[warning,showWarning]=Warning();
 
     useEffect(() => {
         document.title="Admin Panel | Manage Members"
@@ -53,8 +60,8 @@ function MembersPanel() {
                                 selectedMember.updateMemberDetail('roles.'+year,data.value)
                                 .then((status) => {
                                     // TODO: Remove console logs & replace with messages
-                                    if(status) console.log('Role Modified');
-                                    else console.log('Something went wrong!');
+                                    if(status) showSuccess('Role Modified');
+                                    else showWarning('Something went wrong!');
                                 });
                             }}
                         />
@@ -65,15 +72,19 @@ function MembersPanel() {
 
         // Generate the table
         return (
-            <Table unstackable>
-            <Table.Header>
-                <Table.Row>
-                <Table.HeaderCell>Team Year</Table.HeaderCell>
-                <Table.HeaderCell>Role</Table.HeaderCell>
-                </Table.Row>
-            </Table.Header>
-            <Table.Body>{rows}</Table.Body>
-            </Table>
+            <div>
+                {success}
+                {warning}
+                <Table unstackable>
+                <Table.Header>
+                    <Table.Row>
+                    <Table.HeaderCell>Team Year</Table.HeaderCell>
+                    <Table.HeaderCell>Role</Table.HeaderCell>
+                    </Table.Row>
+                </Table.Header>
+                <Table.Body>{rows}</Table.Body>
+                </Table>
+            </div>
         );
     };
 
