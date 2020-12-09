@@ -1,6 +1,6 @@
 // Schema & methods for 'members' collection
 
-import { db, admin_db } from "../../setup";
+import { db, admin_db, admin_auth } from "../../setup";
 import Role from "./role";
 
 
@@ -82,7 +82,8 @@ class Member {
      * let updateStatus = await updateMemberDetail('about.experience', 'Excelsior!');
      */
     async updateMemberDetail(field_name, field_data){
-        return db.collection(Member.collectionName)
+        var firestore_db = admin_auth!=null ? admin_db : db;
+        return firestore_db.collection(Member.collectionName)
         .doc(this.memberID)
         .update({[field_name]: field_data})
         .then(() => true)
