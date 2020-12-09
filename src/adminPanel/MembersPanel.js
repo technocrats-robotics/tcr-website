@@ -1,11 +1,12 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Button, Header, Icon, Modal, Table } from 'semantic-ui-react'
+import { Button, Header, Icon, Modal, Table, Dropdown } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
 import { admin_db } from '../services/google-firebase/setup'
 import Member from '../services/google-firebase/models/members/member';
+import Role from '../services/google-firebase/models/members/role'
 
 function MembersPanel() {
 
@@ -34,12 +35,38 @@ function MembersPanel() {
      */
     var YearlyRolesTable = (props) => {
         let rows = [];
-        let roles = props.yearly_roles;
-        Object.keys(roles).forEach(year => {
+        let yearly_roles = props.yearly_roles;
+        let roleOptions = [];
+        Object.values(Role).forEach(role => {
+            roleOptions.push({
+                key: role,
+                text: role,
+                value: role,
+                // image: { avatar: true, src: '/images/avatar/small/jenny.jpg' },
+            });
+        });
+        Object.keys(yearly_roles).forEach(year => {
             rows.push(
                 <Table.Row key={year}>
                     <Table.Cell>{year}</Table.Cell>
-                    <Table.Cell>{roles[year]}</Table.Cell>
+                    <Table.Cell>
+                        <Dropdown
+                            options={roleOptions} 
+                            placeholder='Select Role'
+                            defaultValue={yearly_roles[year]}
+                            onChange={(e,data) => {
+                                // console.log(data.value); // Debugging
+                                // Modify role in database
+                                let selectedMember = new Member(props.mid);
+                                selectedMember.updateMemberDetail('roles.'+year,data.value)
+                                .then((status) => {
+                                    // TODO: Remove console logs & replace with messages
+                                    if(status) console.log('Role Modified');
+                                    else console.log('Something went wrong!');
+                                });
+                            }}
+                        />
+                    </Table.Cell>
                 </Table.Row>
             );
         });
@@ -95,7 +122,7 @@ function MembersPanel() {
                                     >
                                         <Header icon='universal access' content='Modify Yearly Roles' />
                                         <Modal.Content>
-                                            <YearlyRolesTable yearly_roles={member.roles}/>
+                                            <YearlyRolesTable yearly_roles={member.roles} mid={detail.id}/>
                                         </Modal.Content>
                                         <Modal.Actions>
                                             <Button color='red'>
