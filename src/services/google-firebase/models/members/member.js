@@ -6,6 +6,7 @@ import Role from "./role";
 
 class Member {
     static collectionName = 'members';
+    static totalYearsOfService = 4;
     /**
      * Constructor for the Member Class
      * @param {string} uid The user id provided by Firebase Auth
@@ -93,6 +94,31 @@ class Member {
             console.error(errorMessage);
             return false;
         });
+    }
+
+    /**
+     * Analyse/Deduce the exact current role of the member
+     * @param {object} yearly_roles An object/map with key: year(number) & value:Role(string)
+     * @returns string representing the current role of the member
+     */
+    static getCurrentRole(yearly_roles) {
+        let currentDate = new Date(); // Get the current Date
+        // Get the last year of service for the member
+        let last_year_of_service = Object.keys(yearly_roles)[this.totalYearsOfService-1];
+        /**
+         * Check if
+         * current year is not greater than the last year of service &
+         * the current month is not ahead of February (coz Power transfer generally happens in Feb)
+         * Easter Egg:
+         * If you are a Junior who is reading this, now you know that 
+         * Power transfer generally happens in the month of Feb :)
+         */
+        if (currentDate.getFullYear() < last_year_of_service){
+            if (currentDate.getMonth() <= 2)
+                return yearly_roles[currentDate.getFullYear()];
+            else return yearly_roles[currentDate.getFullYear()+1];
+
+        } else return yearly_roles[last_year_of_service];
     }
 }
 
