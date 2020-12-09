@@ -23,13 +23,6 @@ function MembersPanel() {
         })
     },[]);
 
-    // update given field of member with given id to newValue
-    function updateValue(field,id,newValue){
-        admin_db.collection(Member.collectionName).doc(id).update({[field] : newValue}).then(
-            console.log("Done")
-        )
-    }
-
     /**
      * Generates a table for Role modification
      */
@@ -130,14 +123,20 @@ function MembersPanel() {
                                     <div className="ui fitted slider checkbox">
                                         <input type="checkbox" checked={
                                             (member.blogAccess)?(true):(false)
-                                        } onChange={()=>{updateValue("blogAccess",detail.id,!member.blogAccess)}}/> <label></label>
+                                        } onChange={()=>{
+                                            let selectedMember = new Member(detail.id);
+                                            selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                        }}/> <label></label>
                                     </div>
                                 </td>
                                 <td className="collapsing">
                                 <div className="ui fitted slider checkbox">
                                     <input type="checkbox" checked={
                                         (member.isActive)?(true):(false)
-                                    } onChange={()=>{updateValue("isActive",detail.id,!member.isActive)}} /> <label></label>
+                                    } onChange={()=>{
+                                        let selectedMember = new Member(detail.id);
+                                        selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                    }} /> <label></label>
                                 </div>
                                 </td>
                             </tr>
