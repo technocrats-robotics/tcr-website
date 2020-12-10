@@ -11,7 +11,7 @@ import Role from '../services/google-firebase/models/members/role'
 import Success from '../components/Messages/Success'
 import Warning from '../components/Messages/Warning'
 
-function MembersPanel() {
+function Memberdivel() {
 
     // State variables
     const [details, setDetails] = useState([]);
@@ -89,9 +89,9 @@ function MembersPanel() {
     };
 
     return (
-        <div className="admin__membersPanel">
-            <table className="ui celled definition table" key="table">
-                <thead className="full-width" key="thead">
+        <div className="admin__memberdivel">
+            <table className="ui definition table" key="table">
+                <thead className="full-width cardMainHead" key="thead">
                     <tr>
                         <th>Count</th>
                         <th>Name</th>
@@ -110,15 +110,17 @@ function MembersPanel() {
                         let member = detail.data();
                         let currentRole = Member.getCurrentRole(member.roles);
                         return(    
-                            <tr key={index+1}>
-                                <td>{index+1}.</td>
-                                <td>{member.name}</td>
-                                <td>{member.yearOfJoining}</td>
-                                <td>{member.branch}</td>
-                                <td>{member.username}</td>
-                                <td>{member.registeredEmail}</td>
-                                <td>
+                            <tr className='cardMainBody' key={index+1}>
+                                <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index+1}</div></td>
+                                <td className='cardData'><div className='captions'>Name</div><div className='captionContent'>{member.name}</div></td>
+                                <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
+                                <td className='cardData'><div className='captions'>Branch</div><div className='captionContent'>{member.branch}</div></td>
+                                <td className='cardData'><div className='captions'>Department</div><div className='captionContent'>{member.username}</div></td>
+                                <td className='cardData'><div className='captions'>Email</div><div className='captionContent'>{member.registeredEmail}</div></td>
+                                <td><div className='captions'>Role</div>
+                                <div className='captionContent'>
                                     <Modal
+                                        className='adminPanelModal'
                                         closeIcon
                                         trigger={<Button basic circular icon='edit outline'/>}
                                         dimmer='blurring'
@@ -129,8 +131,10 @@ function MembersPanel() {
                                         </Modal.Content>
                                     </Modal>
                                     {currentRole}
+                                    </div>
                                 </td>
                                 <td className="collapsing">
+                                <div className='captions'>Blog Access</div>
                                     <div className="ui fitted slider checkbox">
                                         <input type="checkbox" checked={
                                             (member.blogAccess)?(true):(false)
@@ -141,6 +145,7 @@ function MembersPanel() {
                                     </div>
                                 </td>
                                 <td className="collapsing">
+                                <div className='captions'>Profile Status</div>
                                 <div className="ui fitted slider checkbox">
                                     <input type="checkbox" checked={
                                         (member.isActive)?(true):(false)
@@ -160,7 +165,7 @@ function MembersPanel() {
     )
 }
 
-export default MembersPanel;
+export default Memberdivel;
 
 /**
  * References:

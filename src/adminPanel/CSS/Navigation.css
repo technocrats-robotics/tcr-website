@@ -11,5 +11,10 @@
 }
 
 .ui.inverted.vertical.labeled.icon.ui.overlay.right.thin.sidebar.sidebarAdminPanel.menu {
-    margin-top: 13vh !important;
+    padding-top:4vh;
+}
+@media only screen and (max-width: 600px) {
+h2.tcrTitle{
+    display: none;
+}
 }
