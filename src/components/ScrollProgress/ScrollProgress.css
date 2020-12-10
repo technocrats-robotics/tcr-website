@@ -1,6 +1,7 @@
 .ui.yellow.progress {
     position: fixed;
-    width: 100%;
+    width: 50%;
     opacity: 0.8;
     z-index: 999;
+    margin-left: 52vh!important;
 }

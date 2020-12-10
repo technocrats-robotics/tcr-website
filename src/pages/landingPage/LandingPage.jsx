@@ -6,6 +6,7 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
+import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 
 import {db} from '../../services/google-firebase/setup'
 
@@ -14,7 +15,7 @@ export default class LandingPage extends Component {
         super()
         this.componentDidMount = this.componentDidMount.bind(this);
     }
-    state = { percent: 5 ,intro: ' '}
+    state = { percent: 0 ,intro: ' '}
     async getPageData(){
         let content = await db.collection('content').doc('landing_page').get()
         // this.setState({intro: temp.intro})

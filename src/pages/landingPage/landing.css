@@ -153,7 +153,7 @@
     border-radius: 100%;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
-    margin-top: 0px;
+    margin-top: -30px;
     zoom: 2;
     z-index: 999;
     margin-left: -100px;
@@ -168,14 +168,14 @@
   }
   .subMenus {
       display: block;
-      height: 0px;
+      /* height: 0px; */
       /* background-color: grey; */
-      opacity: 0.0;
-      margin-left: 8vh;
+      /* opacity: 0.0; */
+      /* margin-left: 8vh; */
       /* transition: ease-in-out 0s, opacity 0s ease; */
       transition: ease-in-out 0.2s;
       font-size: 10px;
-      /* text-align: right; */
+      text-align: left !important;
       /* border-righ  t: 1px solid grey; */
   }
   

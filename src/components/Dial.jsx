@@ -43,7 +43,7 @@ export default function Dial() {
             dial.style.left = "0";
             dial.style.top = "2";
             dial.style.marginLeft = "-68px";
-            dial.style.borderRight = "2px solid grey";
+            dial.style.borderRight = "0px solid grey";
             dial.style.zoom = "0.8";
             dial.addEventListener("mouseover",zoomDialOver)
             dial.addEventListener("mouseleave",zoomDialLeave);
