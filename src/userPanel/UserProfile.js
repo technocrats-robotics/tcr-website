@@ -74,6 +74,23 @@ function UserProfile() {
 
     const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png';
 
+    const fullDate=new Date;
+
+    const roles=(yearly_roles)=>{
+        return Object.keys(userDetails.roles).map((year)=>{
+            return(
+                (year<=fullDate.getFullYear())?(
+                    <div className="ui blue label" style={{margin:"3px",width:"100px"}}>
+                        {year}
+                        <br></br>
+                        <div className="detail">{yearly_roles[year]}</div>
+                        <br></br>
+                    </div>
+                ):(null)
+        )})
+        
+    }
+
     return (
         <div className="userProfile">
 
@@ -97,23 +114,17 @@ function UserProfile() {
                                     <div className="inputBox userProfile__displayText">
                                         <h3><b><u>Name:</u></b> {userDetails.name}</h3>
                                     </div>
+                                    <div className="display__roles">     
+                                        {roles(userDetails.roles)}
+                                    </div>
                                 </div>
                                 <div className="thirteen wide column">
                                     <div className="inputBox">
                                         <div className="ui fluid disabled labeled input">
                                             <div className="ui label">
                                                 Registered Email
-                                    </div>
-                                            <input type="text" value={userDetails.registeredEmail} />
                                         </div>
-                                    </div>
-                                    <div className="inputBox">
-
-                                        <div className="ui fluid disabled labeled input">
-                                            <div className="ui label">
-                                                Current Role
-                                    </div>
-                                            <input type="text" value={userDetails.role} />
+                                            <input type="text" value={userDetails.registeredEmail} />
                                         </div>
                                     </div>
                                     <div className="inputBox">
