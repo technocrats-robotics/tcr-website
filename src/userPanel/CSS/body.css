@@ -1,8 +1,11 @@
 
 /* for UserPanel (main component) */
 .userPanel__root{
+    background-image: url("https://i.pinimg.com/originals/10/69/a7/1069a7113c399a9a9ca3185769c59134.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100vh;
-    background-color: black;
 }
 .userLogIn{
     height: 100vh;
