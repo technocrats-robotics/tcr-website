@@ -35,4 +35,43 @@ select.ui.dropdown {
     height: 45px !important;
 }
 
+.captions{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .admin__membersPanel{
+        text-align:center;
+    }
+    tr.cardMainBody {
+    }
+    tbody > tr {
+        border-radius: 2em;
+        margin-bottom: 20px;
+        margin-left: 2vh;
+        margin-right: 2vh;
+    }
+    td.cardCount {
+        border-top-right-radius: 0.4em;
+        border-top-left-radius: 0.4em;
+        display: inline;
+    }
+    .captions{
+        display: block;
+        text-align:left !important;
+        width:20vh !important;
+        /* background-color: rgba(256,256,256,0); */
+        color:green;
+        /* border-radius: 5px !important; */
+        font-weight:900 !important;
+        /* padding:; */
+        margin-top:2vh;
+    }
+    div.captionContent {
+        /* text-align:right !important; */
+    }
+    thead.full-width.cardMainHead{
+        display: none !important;
+    }
+}
+
 

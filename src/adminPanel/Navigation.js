@@ -27,14 +27,14 @@ function Navigation() {
             <div class="ui inverted segment fluid">
             <div className="ui menu inverted secondary">
                 <Image className="admin__tcrLogo" size='tiny' src="http://www.technocratsrobotics.in/images/logo21.png" />
-                <div className="header item">
-                   <h2>Technocrats Robotics</h2>
+                <div className="header item computer only">
+                   <h2 className='tcrTitle'>Technocrats Robotics</h2>
                 </div>
                 {/* <NavLink exact className="nav item" to="/adminPanel/addMembers"> Add Members</NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/manageMembers"> Manage Members </NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/sendBulkMails">Send Emails </NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/makeAnnouncement">Make Announcement </NavLink>     */}
-                <div className="right menu">
+                <div className="right menu computer only">
                     <div className="item">
                         <div className="ui primary button" onClick={handleSignOut}>Sign Out</div>
                     </div>
