@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Image,Button, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import {Menu,Sidebar,Button,Icon } from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom'
 
 const SideNav = (props) => (

@@ -1,6 +1,13 @@
 .userProfile{
-    min-height: 100vh;
-    background-color: black;
+    padding: 80px;
+}
+
+.userProfile__display{
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,1.1);
+}
+
+.userProfile__displayText{
     color: white;
 }
 

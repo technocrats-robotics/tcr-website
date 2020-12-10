@@ -1,4 +1,4 @@
-import React,{createContext,useEffect} from 'react'
+import React, { createContext, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -6,26 +6,26 @@ import { useState } from 'react'
 import "./CSS/body.css"
 
 //auth from services/google-firebase
-import {auth} from "../services/google-firebase/setup"
+import { auth } from "../services/google-firebase/setup"
 
 
 //components
-import UserPanelNav from "./UserPanelNav"
+import Navigation from "./Navigation"
 import UserProfile from "./UserProfile";
 import UserLogin from "./UserLogin"
 import MyPosts from "./MyPosts";
 import WritePost from "./WritePost";
 
-const GlobalUser=createContext(null);
+const GlobalUser = createContext(null);
 
 function UserPanel() {
 
-    useEffect(()=>{
-        document.title="Technocrats | User Panel"
-    },[])
+    useEffect(() => {
+        document.title = "Technocrats | User Panel"
+    }, [])
 
-    const[User,setUser]=useState(null);
-    
+    const [User, setUser] = useState(null);
+
     auth.onAuthStateChanged((user) => {
         if (user) {
             //Sign In
@@ -39,7 +39,7 @@ function UserPanel() {
     function logIn() {
         return (
             <div className="userLogIn">
-                <UserLogin/>
+                <UserLogin />
             </div>
         )
     }
@@ -47,37 +47,37 @@ function UserPanel() {
     function loggedIn() {
 
         return (
-                <div className="userProfileBox">
-                    <GlobalUser.Provider value={User.uid}>
-                        <Router>
-                            <UserPanelNav />
-                            <Switch>
-                                <Route exact path="/userPanel">
-                                    <UserProfile />
-                                </Route>
-                                <Route exact path="/userPanel/myPosts">
-                                    <MyPosts />
-                                </Route>
-                                <Route exact path="/userPanel/writePost">
-                                    <WritePost />
-                                </Route>
-                            </Switch>
-                        </Router>
-                    </GlobalUser.Provider>
-                </div>
+            <div className="userProfileBox">
+                <GlobalUser.Provider value={User.uid}>
+                    <Router>
+                        <Navigation />
+                        <Switch>
+                            <Route exact path="/userPanel">
+                                <UserProfile />
+                            </Route>
+                            <Route exact path="/userPanel/myPosts">
+                                <MyPosts />
+                            </Route>
+                            <Route exact path="/userPanel/writePost">
+                                <WritePost />
+                            </Route>
+                        </Switch>
+                    </Router>
+                </GlobalUser.Provider>
+            </div>
         )
     }
 
     return (
         <Router>
             <div className="userPanel__root">
-            {
-                (!User) ? logIn() : loggedIn()
-            }
+                {
+                    (!User) ? logIn() : loggedIn()
+                }
             </div>
         </Router>
     )
 }
 
-export {GlobalUser}
+export { GlobalUser }
 export default UserPanel

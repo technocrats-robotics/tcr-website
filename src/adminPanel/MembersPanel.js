@@ -151,7 +151,7 @@ function Memberdivel() {
                                         (member.isActive)?(true):(false)
                                     } onChange={()=>{
                                         let selectedMember = new Member(detail.id);
-                                        selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                        selectedMember.updateMemberDetail('isActive', !member.isActive);
                                     }} /> <label></label>
                                 </div>
                                 </td>
