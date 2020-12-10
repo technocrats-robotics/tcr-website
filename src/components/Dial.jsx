@@ -120,7 +120,7 @@ export default function Dial() {
                 <List.Item active>
                 <div className='Menu Menu4' >
                     About Us
-                    <div className='subMenus subMenu3'>
+                    <div className='subMenus subMenu4'>
                         <List.List>
                             <List.Item as='a'>
                                 Team
@@ -142,9 +142,8 @@ export default function Dial() {
                     <div className='subMenus subMenu5'>
                         <List.List>
                             <List.Item as='a'>
-                                Team
+                                Contact
                             </List.Item>
-                            
                         </List.List>
                     </div>
                 </div>

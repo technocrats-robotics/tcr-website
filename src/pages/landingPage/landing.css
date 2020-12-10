@@ -145,7 +145,7 @@
 .Dial {
     width: 200px;
     height: 250px;
-    transition: ease-in-out 1s, margin border ease 0s;
+    transition: ease-in-out 0.5s, margin border ease 0s;
     display: table;
     background-size: contain;
     background-repeat: no-repeat;
@@ -171,21 +171,24 @@
       height: 0px;
       /* background-color: grey; */
       opacity: 0.0;
-      transition: ease-in-out 0s, opacity 0s ease;
+      margin-left: 8vh;
+      /* transition: ease-in-out 0s, opacity 0s ease; */
+      transition: ease-in-out 0.2s;
       font-size: 10px;
-      text-align: right;
+      /* text-align: right; */
       /* border-righ  t: 1px solid grey; */
   }
   
 /* DIAL EFFECTS */
 .Menu {
   /* background-color: blue; */
-  transition: padding 0s ease, font-size 0s ease, height 0s;
+  /* transition: padding 0s ease, font-size 0s ease, height 0s; */
+  transition: ease-in-out 0.2s;
   cursor: pointer;
   width: fit-content;
 }
 .Menu1, .Menu2, .Menu3, .Menu4, .Menu5{
-    transition: ease-in-out 0s;
+    transition: ease-in-out 0.5s;
     /* border: 1px solid rgba(128, 128, 128, 0.253); */
     /* border-radius: 2rem; */
     text-align: left;
@@ -195,8 +198,8 @@
 }
 
 .Menu1:hover .subMenu1, .Menu2:hover .subMenu2, .Menu3:hover .subMenu3, .Menu4:hover .subMenu4, .Menu5:hover .subMenu5{
-    transform:translate(20px,0px);
-    text-align: right;
+    /* transform:translate(20px,0px); */
+    /* text-align: right; */
     /* width:20vh; */
     opacity: 1.0;
     /* color: green; */
@@ -204,31 +207,9 @@
 }
 .Menu1:hover , .Menu2:hover , .Menu3:hover , .Menu4:hover , .Menu5:hover .subMenu5{
   /* transform:translate(20px,0px); */
-  text-align: right;
-}
-.Menu1{
-    transform: rotate(0deg);
-    /* margin-left: -100px; */
+  /* text-align: right; */
 }
 
-.Menu2{
-    transform: rotate(0deg);
-    /* margin-left: -60px; */
-    
-}
-.Menu3{
-    transform: rotate(0deg);
-    /* margin-left: -50px; */
-}
-.Menu4{
-    transform: rotate(0deg);
-    /* margin-left: -60px; */
-    
-}
-.Menu5{
-    transform: rotate(0deg);
-    /* margin-left: -100px; */
-}
 
   @keyframes upAndDown {
       0% {
