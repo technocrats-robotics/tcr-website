@@ -30,10 +30,10 @@ function Navigation() {
                 <div className="header item">
                    <h2>Technocrats Robotics</h2>
                 </div>
-                <NavLink exact className="nav item" to="/adminPanel/addMembers"> Add Members</NavLink>
+                {/* <NavLink exact className="nav item" to="/adminPanel/addMembers"> Add Members</NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/manageMembers"> Manage Members </NavLink>
                 <NavLink exact className="nav item" to="/adminPanel/sendBulkMails">Send Emails </NavLink>
-                <NavLink exact className="nav item" to="/adminPanel/makeAnnouncement">Make Announcement </NavLink>    
+                <NavLink exact className="nav item" to="/adminPanel/makeAnnouncement">Make Announcement </NavLink>     */}
                 <div className="right menu">
                     <div className="item">
                         <div className="ui primary button" onClick={handleSignOut}>Sign Out</div>

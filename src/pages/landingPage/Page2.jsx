@@ -4,6 +4,9 @@ import ImageMat from '../../components/landingPage/ImageMat';
 import IntroCard from '../../components/landingPage/IntroCard';
 
 export default class Page2 extends Component {
+    componentDidMount() {
+        console.log(this.props);
+    }
   render() {
     return(
         <div className="secondPage">

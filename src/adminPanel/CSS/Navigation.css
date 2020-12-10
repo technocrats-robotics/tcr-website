@@ -9,3 +9,7 @@
     font-size: 2vh;
     font-weight: bold;
 }
+
+.ui.inverted.vertical.labeled.icon.ui.overlay.right.thin.sidebar.sidebarAdminPanel.menu {
+    margin-top: 13vh !important;
+}

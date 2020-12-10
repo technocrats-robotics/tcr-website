@@ -14,10 +14,15 @@ export default class LandingPage extends Component {
         super()
         this.componentDidMount = this.componentDidMount.bind(this);
     }
-    state = { percent: 5 }
+    state = { percent: 5 ,intro: ' '}
+    async getPageData(){
+        let content = await db.collection('content').doc('landing_page').get()
+        // this.setState({intro: temp.intro})
+        console.log(content);
+
+    }
     async componentDidMount(){
-        // var content = await db.collection('content').doc('landing_page').get()
-        // console.log(content);
+        this.getPageData()
         window.onscroll = () => {
             var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -32,8 +37,8 @@ export default class LandingPage extends Component {
         <div>
             {/* <ScrollProgress percent={this.state.percent}></ScrollProgress> */}
             <Page1></Page1>
-            {/* <Page2 intro={this.content.intro}></Page2> */}
-            <Page2></Page2>
+            <Page2 intro={this.state.intro}></Page2>
+            {/* <Page2></Page2> */}
             <Page3></Page3>
             <Page4></Page4>
             <About></About>
