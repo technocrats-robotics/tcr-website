@@ -16,7 +16,7 @@ export default class ImageMat extends Component {
                         <div className='matAsset3'></div>
                         <div className='matAsset4'></div> 
 
-                        {/* <Image className='matAsset4' size='medium' src='https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg'></Image> */} */}
+                        {/* <Image className='matAsset4' size='medium' src='https://thumbs.dreamstime.com/b/isometric-flat-d-isolated-vector-rover-standing-mars-concept-94755906.jpg'></Image> */} 
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

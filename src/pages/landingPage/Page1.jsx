@@ -13,7 +13,7 @@ export default class Page1 extends Component {
                     {/* <div className='firstpagebackdiv'></div> */}
                     <Grid.Column mobile='12' className='leftMain' width='6' >
                         <div style={{textAlign:'center'}}>
-                    <Image avatar className='TechLogoMainPage' size='large' src={'https://avatars3.githubusercontent.com/u/49567419?s=200&v=4'}></Image>
+                    <Image className='TechLogoMainPage' size='large' src={'/TcrLogoClean.png'}></Image>
                     <Header className='Title' size='medium'>Technocrats Robotics</Header>
                     <div className='arrowDown'>
                     <Icon className='arrow' color='yellow' size='huge' name='chevron down'></Icon> </div>                  

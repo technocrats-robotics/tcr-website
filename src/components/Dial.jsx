@@ -65,7 +65,7 @@ export default function Dial() {
             
             <div>
                 
-            <Image className="arc" src={'arc.png'}>
+            <Image className="arc" src={''}>
                 </Image>
             </div>
             <div className="dialText">

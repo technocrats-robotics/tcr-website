@@ -1,19 +1,20 @@
 .firstPage {
     height: 120vh;
-    background-color: black;
+    background-color: #1b1c1d;
   }
   
 .secondPage {
   height: 100vh;
-  background-color: black;
+  background-color: #1b1c1d;
 }
 .fourteen.column.row.mainRow {
     margin-top: 15vh;
 }
 @media only screen and (min-width: 768px) {
   /* computer */
-        img.ui.large.avatar.image.TechLogoMainPage {
-            margin-left: 18%;
+        img.ui.large.image.TechLogoMainPage {
+            margin-left: 38%;
+            /* zoom: 0.5; */
            }
 
         .ui.medium.header.Title {
@@ -91,11 +92,11 @@
 
 .thirdPage{
     height: 120vh;
-    background-color: black;
+    /* background-color: black; */
 }
 .fourthPage{
     height: 120vh;
-    background-color: black;
+    /* background-color: black; */
     margin: auto;
     padding-left: 15%;
     padding-right: 15%;
@@ -136,7 +137,7 @@
   height: 40vh;
   margin-top: 10px;
   width: 10vh;
-  /* border: 1px solid blue; */
+  opacity: 0;
 }
 
 /* DIAL             ---------- */
@@ -145,17 +146,14 @@
     width: 200px;
     height: 250px;
     transition: ease-in-out 1s, margin border ease 0s;
-    /* background-image: radial-gradient(circle at -30px 100px, black 28%,rgb(189, 185, 185) 30%,black 31%); */
     display: table;
-    /* background-image: url("http://localhost:3000/arc.png"); */
     background-size: contain;
-    /* border: 2px solid red; */
     background-repeat: no-repeat;
     background-position-x: left;
     border-radius: 100%;
     border-top-left-radius: 0%;
     border-bottom-left-radius: 0%;
-    margin-top: -50px;
+    margin-top: 0px;
     zoom: 2;
     z-index: 999;
     margin-left: -100px;
@@ -210,26 +208,26 @@
 }
 .Menu1{
     transform: rotate(0deg);
-    margin-left: -100px;
+    /* margin-left: -100px; */
 }
 
 .Menu2{
     transform: rotate(0deg);
-    margin-left: -60px;
+    /* margin-left: -60px; */
     
 }
 .Menu3{
     transform: rotate(0deg);
-    margin-left: -50px;
+    /* margin-left: -50px; */
 }
 .Menu4{
     transform: rotate(0deg);
-    margin-left: -60px;
+    /* margin-left: -60px; */
     
 }
 .Menu5{
     transform: rotate(0deg);
-    margin-left: -100px;
+    /* margin-left: -100px; */
 }
 
   @keyframes upAndDown {
@@ -421,7 +419,7 @@ img.grey{
 }
 
 .carousel{
-    background-color: black;
+    background-color: #1b1c1d;
 }
 
 p.IntroContent {
