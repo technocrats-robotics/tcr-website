@@ -120,6 +120,7 @@ function Memberdivel() {
                                 <td><div className='captions'>Role</div>
                                 <div className='captionContent'>
                                     <Modal
+                                        className='adminPanelModal'
                                         closeIcon
                                         trigger={<Button basic circular icon='edit outline'/>}
                                         dimmer='blurring'

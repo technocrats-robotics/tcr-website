@@ -1,7 +1,6 @@
 import React from 'react'
-import { Header, Icon, Image, Menu, Segment, Sidebar } from 'semantic-ui-react'
+import { Header, Icon, Image,Button, Menu, Segment, Sidebar } from 'semantic-ui-react'
 import {NavLink} from 'react-router-dom'
-
 
 const SideNav = (props) => (
     <Sidebar
@@ -15,6 +14,9 @@ const SideNav = (props) => (
       visible={props.visibility}
       width='thin'
     >
+      <Button color='red' onClick={props.visibilityToggle} icon circular>
+          <Icon name='arrow right' />
+      </Button>
       <NavLink exact className="nav item" to="/adminPanel/addMembers"> Add Members</NavLink>
       <NavLink exact className="nav item" to="/adminPanel/manageMembers"> Manage Members </NavLink>
       <NavLink exact className="nav item" to="/adminPanel/sendBulkMails">Send Emails </NavLink>

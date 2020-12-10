@@ -57,12 +57,12 @@ function AdminLogin() {
                 </div>
                 <form className="ui container" onSubmit={handleFormSubmit}>
                     <div className="field">
-                        <div className="ui fluid icon input">
+                        <div className="ui fluid icon input loginFields">
                             <input type="text" placeholder="Username *" onChange={(event) => setUsername(event.target.value)} required />
                         </div>
                     </div>
-                    <div className="field">
-                        <div className="ui fluid icon input">
+                    <div className="field loginFields">
+                        <div className="ui fluid icon input loginFields">
                             <input type="password" placeholder="Password *" onChange={(event) => setPassword(event.target.value)} required />
                         </div>
                     </div>

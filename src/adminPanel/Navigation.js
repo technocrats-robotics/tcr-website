@@ -44,7 +44,7 @@ function Navigation() {
                     </Button>
                     </div>
                     
-                <SideNav visibility={sidebarVisibility}></SideNav>
+                <SideNav visibility={sidebarVisibility} visibilityToggle={toggleSidebar}></SideNav>
                 </div>
             </div>
             </div>
