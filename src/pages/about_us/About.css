@@ -1,5 +1,5 @@
 .firstAboutPage{
-height: 200vh;
+height: 120vh;
 /* background-color: black; */
 }
 
@@ -8,4 +8,20 @@ height: 120vh;
 /* background-color: black; */
 padding: 8%;
 text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .firstAboutPage{
+        height: auto;
+        /* background-color: black; */
+        padding-bottom:20vh !important;
+        }
+        
+        .secondAboutPage{
+        height: auto;
+        /* background-color: black; */
+        padding: 8%;
+        text-align: center;
+        padding-bottom:20vh !important;
+        }  
 }

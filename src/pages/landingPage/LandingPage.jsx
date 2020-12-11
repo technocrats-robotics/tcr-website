@@ -17,21 +17,21 @@ export default class LandingPage extends Component {
     }
     state = { percent: 0 ,intro: ' '}
     async getPageData(){
-        let content = await db.collection('content').doc('landing_page').get()
-        // this.setState({intro: temp.intro})
-        console.log(content);
+        let content = await (await db.collection('content').doc('landing_page').get()).data()
+        this.setState({intro: content.intro})
+        // console.log(content.intro);
 
     }
     async componentDidMount(){
         this.getPageData()
-        window.onscroll = () => {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            // document.getElementById("myBar").style.width = scrolled + "%";
-            this.setState({percent: scrolled});
-            console.log(scrolled);
-            } ;
+        // window.onscroll = () => {
+        //     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        //     var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        //     var scrolled = (winScroll / height) * 100;
+        //     // document.getElementById("myBar").style.width = scrolled + "%";
+        //     this.setState({percent: scrolled});
+        //     console.log(scrolled);
+        //     } ;
     }
   render() {
     return(

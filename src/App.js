@@ -23,6 +23,7 @@ function App() {
           <Route path="/userPanel" component={UserPanel} />
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blogs" component={Blogs} />
+          <script src="/node_modules/rive-canvas/rive.js"></script> 
         </Switch>
       </Router>
     </div>

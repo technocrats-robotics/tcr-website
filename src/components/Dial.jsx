@@ -31,7 +31,7 @@ export default function Dial() {
         let subMenus = document.getElementsByClassName("subMenus");
 
         let zoomDialLeave = () => {
-            dial.style.zoom = "0.8";        
+            dial.style.zoom = "1.2";        
         }
         let zoomDialOver = () => {
             dial.style.zoom = "1.2";  
@@ -44,7 +44,7 @@ export default function Dial() {
             dial.style.top = "2";
             dial.style.marginLeft = "-68px";
             dial.style.borderRight = "0px solid grey";
-            dial.style.zoom = "0.8";
+            dial.style.zoom = "1.2";
             dial.addEventListener("mouseover",zoomDialOver)
             dial.addEventListener("mouseleave",zoomDialLeave);
         }

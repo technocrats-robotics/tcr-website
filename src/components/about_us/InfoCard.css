@@ -20,7 +20,6 @@ span.s2 {
 }
 
 body {
-  background-color: #353B3F;
   font-family: "Roboto", sans-serif;
 }
 
@@ -38,12 +37,12 @@ body {
 
 /* Image on the left side */
 .thumbnail1 {
-  float: left;
-  position: relative;
-  left: 30px;
-  top: 10px;
-  height: 320px;
-  width: 530px;
+  /* float: left; */
+  /* position: relative; */
+  /* left: 30px;
+  top: 10px; */
+  height: 32vh;
+  width: 53vh; 
   -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
@@ -80,11 +79,57 @@ img.left1 {
 
 
 
-p {
+.sub.header.paraCard {
   text-align: justify;
-  padding-top: 10px;
-  font-size: 1.2rem;
+  /* padding-top: 2vh; */
+  font-size: 2vh !important;
   line-height: 150%;
-  color: #fff;
+  color: white !important;
+  padding-top:4vh !important;
+  padding-left:1vh !important;
+  padding-right:8vh !important;
 }
 
+@media only screen and (max-width: 900px) {
+  .row.aboutCard {
+    padding-top: 4vh !important;
+    /* box-shadow: 0px 2px 6px 0px blue; */
+    margin-left:4vh !important;
+    margin-right:4vh !important;
+    transition: ease-in-out 0.5s;
+    /* padding-top:4vh !important; */
+    margin-top:6vh !important;
+    padding-bottom:6vh !important;
+    border-radius:1em !important;
+}
+  .sub.header.paraCard {
+    text-align: justify;
+    padding: 0vh 3vh 0vh 3vh !important;
+    font-size: 2vh !important;
+    line-height: 150%;
+    color: white !important;
+    /* padding-top:4vh !important;
+    padding:10% !important; */
+    /* padding-left:1vh !important;
+    padding-right:8vh !important; */
+  }
+  
+.title1 {
+  padding-top: 15px;
+  font-size: 2rem;
+  color: #686868;
+  text-align: left;
+  padding:3vh !important;
+}
+.thumbnail1 {
+  height: 32vh;
+  width: 53vh;
+  zoom: 0.7; 
+  margin-left:4%;
+  -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  border-radius: 10px;
+}
+}
