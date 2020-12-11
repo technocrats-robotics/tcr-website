@@ -11,18 +11,65 @@
     color: white;
 }
 
+
 .userProfile__message{
     padding: 20px;
 }
 
+.userProfile__messageBottom{
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
+    color: white;
+}
+
+@media only screen and (max-width: 730px) {
+    .userProfile{
+        padding: 40px;
+        zoom: 0.7;
+    }
+
+  }
+
+.userProfile__fields{
+    display: flex;
+    background: rgba(0, 0, 0, 0.7);
+    margin: 14px;
+    box-shadow: 0 0 10px 0 rgba(255,255,255,.1);
+}
+
+.userProfile__label{
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 14px;
+}
+
+.userProfile__ans{
+    margin-left: 5px;
+    color: white;
+    font-size: small;
+    padding: 14px;
+}
+
 .inputBox{
     padding: 5px;
+    margin: 8px;
 }
 
 .dpBox{
-    box-shadow: 0 0 10px 0 rgba(255,255,255,.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.blogPostPage__postCategories{
-    margin-top: 10px;
+.ui.label{
+    border-radius: 0rem !important;
+}
+
+.ui.input>input{
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    color: white !important;
+    border-radius: 0rem !important;
 }

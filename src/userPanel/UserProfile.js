@@ -77,14 +77,14 @@ function UserProfile() {
 
     const fullDate = new Date();
 
-    const roles=(yearly_roles)=>{
+    const roles = (yearly_roles) => {
         let currentRole = Member.getCurrentRole(yearly_roles);
-        return(
-            <p className="ui blue label" style={{margin:"3px",width:"100px",textAlign:"center"}}>
+        return (
+            <p className="ui blue label" style={{ margin: "3px", width: "100px", textAlign: "center" }}>
                 {currentRole[0]}<br></br>
                 {currentRole[1]}
             </p>
-        );        
+        );
     }
 
     return (
@@ -92,78 +92,61 @@ function UserProfile() {
 
             {
                 (userDetails) ? (
-                    <div className="userProfile__display">
-                        <div className="ui internally celled grid">
-                            <div className="row">
-                                <div className="three wide column">
-                                    <p className="userProfile__displayText">Display Picture</p>
-                                </div>
-                                <div className="thirteen wide column userProfile__displayText">
-                                    Fields ( Contact Admin if there's any discrepancy in first 4 fields )
-                        </div>
+                    <div className="ui grid userProfile__display">
+                        <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
+                            <div className="userProfile__messageBottom">* Contact the admin if there is any discrepancy in default fields.</div>
+                            <div className="dpBox">
+                                <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
                             </div>
-                            <div className="row">
-                                <div className="three wide column">
-                                    <div className="dpBox">
-                                        <img className="medium ui image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink}/>
-                                    </div>
-                                    <div className="inputBox userProfile__displayText">
-                                        <h3><b><u>Name:</u></b> {userDetails.name}</h3>
-                                    </div>
-                                    <div className="display__roles">     
-                                        {roles(userDetails.roles)}
-                                    </div>
-                                </div>
-                                <div className="thirteen wide column">
-                                    <div className="inputBox">
-                                        <div className="ui fluid disabled labeled input">
-                                            <div className="ui label">
-                                                Registered Email
-                                        </div>
-                                            <input type="text" value={userDetails.registeredEmail} />
-                                        </div>
-                                    </div>
-                                    <div className="inputBox">
 
-                                        <div className="ui fluid disabled labeled input">
-                                            <div className="ui label">
-                                                Year of Joining
-                                    </div>
-                                            <input type="text" value={userDetails.yearOfJoining} />
-                                        </div>
-                                    </div>
-                                    <div className="inputBox">
+                            <div className="inputBox userProfile__displayText">
+                                <h3>{userDetails.name}</h3>
+                            </div>
 
-                                        <div className="ui fluid disabled labeled input">
-                                            <div className="ui label">
-                                                Department
-                                    </div>
-                                            <input type="text" value={userDetails.branch} />
-                                        </div>
-                                    </div>
-                                    <div className="inputBox">
+                            <div className="display__roles">
+                                {roles(userDetails.roles)}
+                            </div>
 
-                                        <div className="ui fluid disabled labeled input">
-                                            <div className="ui label">
-                                                Blog Access
-                                    </div>
-                                            <input type="text" value={(userDetails.blogAccess) ? ("Yes") : ("No")} />
-                                        </div>
-                                    </div>
-                                    <div className="inputBox">
+                        </div>
 
+                        <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
+
+                            <div className="ui grid">
+                                <div className="sixteen wide column">
+                                    <div className="userProfile__fields">
+                                        <div className="userProfile__label">Email: </div>
+                                        <div className="userProfile__ans">{userDetails.registeredEmail}</div>
+                                    </div>
+
+                                    <div className="userProfile__fields">
+                                        <div className="userProfile__label">Year Of Joining : </div>
+                                        <div className="userProfile__ans">{userDetails.yearOfJoining}</div>
+                                    </div>
+
+                                    <div className="userProfile__fields">
+                                        <div className="userProfile__label">Department : </div>
+                                        <div className="userProfile__ans">{userDetails.branch}</div>
+                                    </div>
+
+                                    <div className="userProfile__fields">
+                                        <div className="userProfile__label">Blog Access : </div>
+                                        <div className="userProfile__ans">{(userDetails.blogAccess) ? ("Yes") : ("No")} </div>
+                                    </div>
+
+                                    <div className="inputBox">
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 DP Link
-                                    </div>
+                                            </div>
                                             <input type="url" defaultValue={userDetails.dpLink} placeholder="Provide a valid link for your DP." onChange={(event) => setDpLink(event.target.value)} required />
                                         </div>
                                     </div>
+
                                     <div className="inputBox">
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 Github Username
-                                    </div>
+                                            </div>
                                             <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
                                         </div>
                                     </div>
@@ -172,7 +155,7 @@ function UserProfile() {
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 Instagram Username
-                                    </div>
+                                            </div>
                                             <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
                                         </div>
                                     </div>
@@ -181,7 +164,7 @@ function UserProfile() {
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 LinkedIn Username
-                                    </div>
+                                            </div>
                                             <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
                                         </div>
                                     </div>
@@ -190,7 +173,7 @@ function UserProfile() {
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 Experience
-                                    </div>
+                                            </div>
                                             <input defaultValue={userDetails.about.experience} placeholder="Achievement (if Any)" onChange={(event) => setExperience(event.target.value)} />
                                         </div>
                                     </div>
@@ -199,14 +182,16 @@ function UserProfile() {
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 Miscellaneous
-                                    </div>
+                                            </div>
                                             <input defaultValue={userDetails.about.misc} placeholder="Miscellaneous (if Any)" onChange={(event) => setMisc(event.target.value)} />
                                         </div>
                                     </div>
+
                                     <button type="submit" className="ui button" onClick={handleSubmit}>
                                         Submit
-                                </button>
+                                    </button>
                                     <div className="userProfile__message">{success}{warning}</div>
+
                                 </div>
                             </div>
 
@@ -214,7 +199,7 @@ function UserProfile() {
                     </div>
                 ) : (<h1>Loading..</h1>)
             }
-        </div>
+        </div >
     )
 }
 
