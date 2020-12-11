@@ -108,7 +108,8 @@ function Memberdivel() {
                 {
                     details.map((detail,index)=>{
                         let member = detail.data();
-                        let currentRole = Member.getCurrentRole(member.roles);
+                        // Get only of the current role of the member
+                        let currentRole = Member.getCurrentRole(member.roles)[1];
                         return(    
                             <tr className='cardMainBody' key={index+1}>
                                 <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index+1}</div></td>
