@@ -67,8 +67,8 @@
 .ui.label{
     border-radius: 0rem !important;
 }
-
-.ui.input>input{
+ 
+.inputBox > .ui.input>input{
     background-color: rgba(0, 0, 0, 0.7) !important;
     color: white !important;
     border-radius: 0rem !important;
