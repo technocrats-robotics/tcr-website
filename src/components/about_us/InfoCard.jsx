@@ -8,25 +8,10 @@ export default class InfoCard extends Component {
     handleOnScreen = (e,{calculations}) => {
         if(x.matches){
         let aboutUsCard = document.getElementsByClassName('row aboutCard');
-            if(calculations.percentagePassed < 0.02){
-                aboutUsCard[0].style.boxShadow = "0px 2px 6px 0px blue";
-                setTimeout(()=>{
-                    aboutUsCard[0].style.boxShadow = "0px 0px 0px 0px blue";
-                },5000);
-            }
-            if(calculations.percentagePassed > 0.3 ){
-                console.log('card2');
-                aboutUsCard[1].style.boxShadow = "0px 2px 6px 0px green";
-                setTimeout(()=>{
-                    aboutUsCard[1].style.boxShadow = "0px 0px 0px 0px blue";
-                },5000);
-            }
-            if(calculations.percentagePassed > 0.5){
-                aboutUsCard[2].style.boxShadow = "0px 2px 6px 0px yellow";
-                setTimeout(()=>{
-                    aboutUsCard[2].style.boxShadow = "0px 0px 0px 0px blue";
-                },5000);
-            }
+        let passed = calculations.percentagePassed;
+            aboutUsCard[0].style.boxShadow = (passed < 0.02 &&  passed < 0.4) ? "0px 2px 6px 0px blue" : "0px 0px 0px 0px blue" ;
+            aboutUsCard[1].style.boxShadow = (passed > 0.3 && passed < 0.6 ) ? "0px 2px 6px 0px yellow" : "0px 0px 0px 0px yellow" ;
+            aboutUsCard[2].style.boxShadow = (passed > 0.5 && passed < 0.9) ? "0px 2px 6px 0px green" : "0px 0px 0px 0px green" ;
     }}
   render() {
     return(
