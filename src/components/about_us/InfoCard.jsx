@@ -19,7 +19,7 @@ export default class InfoCard extends Component {
             <Visibility continuous={true} onOnScreen={this.handleOnScreen}>
             <Grid centered stackable columns={12}>
                 <Grid.Row className='aboutCard'>
-                    <Grid.Column textAlign='center' width={4}>
+                    <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                         <Image className="thumbnail1" src={'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg'}></Image>
                     </Grid.Column>
                     <Grid.Column width={7}>
@@ -34,7 +34,7 @@ export default class InfoCard extends Component {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row className='aboutCard'>
-                <Grid.Column width={4} only={'mobile'}>
+                <Grid.Column width={4} only={'mobile'} className='justToAlignImage'>
                         <Image className="thumbnail1" src={'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg'}></Image>
                     </Grid.Column>
                     <Grid.Column width={7}>
@@ -47,7 +47,7 @@ export default class InfoCard extends Component {
                             </Header.Subheader>
                         </Header>
                     </Grid.Column>
-                    <Grid.Column width={4} only={'computer'}>
+                    <Grid.Column width={4} only={'computer'} className='justToAlignImage'>
                         <Image className="thumbnail1" src={'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg'}></Image>
                     </Grid.Column>
                 </Grid.Row>

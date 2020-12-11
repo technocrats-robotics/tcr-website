@@ -90,21 +90,24 @@ img.left1 {
   padding-right:8vh !important;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 700px) {
   .row.aboutCard {
-    padding-top: 4vh !important;
+    
+    text-align-last: center;
+    /* padding-top: 4vh !important; */
     /* box-shadow: 0px 2px 6px 0px blue; */
     margin-left:4vh !important;
     margin-right:4vh !important;
     transition: ease-in-out 0.5s;
     /* padding-top:4vh !important; */
     margin-top:6vh !important;
-    padding-bottom:6vh !important;
+    padding: 1vh 4vh 1vh 4vh !important;
+    /* padding-bottom:6vh !important; */
     border-radius:1em !important;
 }
   .sub.header.paraCard {
     text-align: justify;
-    padding: 0vh 3vh 0vh 3vh !important;
+    padding: 0vh 1vh 0vh 1vh !important;
     font-size: 2vh !important;
     line-height: 150%;
     color: white !important;
@@ -119,13 +122,16 @@ img.left1 {
   font-size: 2rem;
   color: #686868;
   text-align: left;
-  padding:3vh !important;
+  padding:2vh !important;
+}
+.column.justToAlignImage {
+  text-align: -webkit-center !important;
 }
 .thumbnail1 {
-  height: 32vh;
-  width: 53vh;
-  zoom: 0.7; 
-  margin-left:4%;
+  height:23vh;
+  width: 33vh;
+  /* zoom: 0.7;  */
+  /* margin-left:4%; */
   -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);

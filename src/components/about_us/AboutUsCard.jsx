@@ -5,7 +5,6 @@ import './AboutUsCard.css';
 export default class AboutUsCard extends Component {
   render() {
     return(
-        <div>
             <div class="aboutuscard">
                     <div class="card__face card__face--front">             
                         <Image className='faceimage' size='small' avatar src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' />
@@ -24,7 +23,6 @@ export default class AboutUsCard extends Component {
                         </Header>
                     </div>
             </div>
-        </div>
     );
     }
 }

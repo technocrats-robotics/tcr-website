@@ -134,7 +134,7 @@ export default class Page2 extends Component {
                 <Grid.Row columns={6}>
                 {
                 this.memberDetails.map((member)=>(
-                    <Grid.Column>
+                    <Grid.Column mobile={16} style={{backgroundColor:'red'}}>
                     <AboutUsCard></AboutUsCard>
                     </Grid.Column>
                 ))
