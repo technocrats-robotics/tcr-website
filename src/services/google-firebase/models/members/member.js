@@ -100,7 +100,8 @@ class Member {
     /**
      * Analyse/Deduce the exact current role of the member
      * @param {object} yearly_roles An object/map with key: year(number) & value:Role(string)
-     * @returns string representing the current role of the member
+     * @returns array with first element representing the team year
+     * & the second element representing the current role of the member
      */
     static getCurrentRole(yearly_roles) {
         let currentDate = new Date(); // Get the current Date
@@ -116,10 +117,10 @@ class Member {
          */
         if (currentDate.getFullYear() < last_year_of_service){
             if (currentDate.getMonth() <= 2)
-                return yearly_roles[currentDate.getFullYear()];
-            else return yearly_roles[currentDate.getFullYear()+1];
+                return [currentDate.getFullYear(), yearly_roles[currentDate.getFullYear()]];
+            else return [currentDate.getFullYear()+1, yearly_roles[currentDate.getFullYear()+1]];
 
-        } else return yearly_roles[last_year_of_service];
+        } else return [last_year_of_service, yearly_roles[last_year_of_service]];
     }
 }
 
