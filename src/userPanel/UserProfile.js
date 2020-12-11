@@ -9,6 +9,7 @@ import "./CSS/UserProfile.css"
 //success Message
 import Success from '../components/Messages/Success'
 import Warning from '../components/Messages/Success'
+import Member from '../services/google-firebase/models/members/member'
 
 function UserProfile() {
 
@@ -74,21 +75,16 @@ function UserProfile() {
 
     const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png';
 
-    const fullDate=new Date;
+    const fullDate = new Date();
 
     const roles=(yearly_roles)=>{
-        return Object.keys(userDetails.roles).map((year)=>{
-            return(
-                (year<=fullDate.getFullYear())?(
-                    <div className="ui blue label" style={{margin:"3px",width:"100px"}}>
-                        {year}
-                        <br></br>
-                        <div className="detail">{yearly_roles[year]}</div>
-                        <br></br>
-                    </div>
-                ):(null)
-        )})
-        
+        let currentRole = Member.getCurrentRole(yearly_roles);
+        return(
+            <p className="ui blue label" style={{margin:"3px",width:"100px",textAlign:"center"}}>
+                {currentRole[0]}<br></br>
+                {currentRole[1]}
+            </p>
+        );        
     }
 
     return (
@@ -109,7 +105,7 @@ function UserProfile() {
                             <div className="row">
                                 <div className="three wide column">
                                     <div className="dpBox">
-                                        <img className="medium ui image" src={userDetails.dpLink || defaultDpLink} />
+                                        <img className="medium ui image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink}/>
                                     </div>
                                     <div className="inputBox userProfile__displayText">
                                         <h3><b><u>Name:</u></b> {userDetails.name}</h3>
