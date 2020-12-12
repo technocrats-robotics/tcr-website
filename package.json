@@ -12,7 +12,7 @@
     "firebase-functions": "^3.11.0",
     "firebase-tools": "^8.16.2",
     "flare-react": "^1.0.7",
-    "nodemailer": "^6.4.16",
+    "nodemailer": "^6.4.17",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
