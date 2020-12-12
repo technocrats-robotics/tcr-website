@@ -12,7 +12,6 @@
     "firebase-functions": "^3.11.0",
     "firebase-tools": "^8.16.2",
     "flare-react": "^1.0.7",
-    "google-map-react": "^2.1.9",
     "nodemailer": "^6.4.16",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
