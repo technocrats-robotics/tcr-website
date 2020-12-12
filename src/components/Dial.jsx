@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";
 
+var x = window.matchMedia("(max-width: 728px)")
 export default function Dial() {
     
     const history = useHistory();
@@ -44,6 +45,7 @@ export default function Dial() {
         let zoomDialOver = () => {
             dial.style.zoom = "1.2";  
         }
+        if(!x.matches){
         window.addEventListener("scroll",(event)=>{
 
             if(window.scrollY > 10){
@@ -65,7 +67,8 @@ export default function Dial() {
             dial.removeEventListener("mouseleave",zoomDialLeave);
             dial.style.borderRight = "0px solid grey";
             }
-        });
+        }
+        );}
         }
     )
     return(

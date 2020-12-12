@@ -29,7 +29,7 @@ export default class Page1 extends Component {
                                 <Header className='Title' size='medium'>Technocrats Robotics</Header>
                             </Transition>
                             <div className='arrowDown'>
-                                <Icon className='arrow' color='yellow' size='huge' name='chevron down'></Icon>
+                                <Icon className='angle double down' color='grey' size='huge' name='chevron down'></Icon>
                             </div>    
                         </Grid.Column>
                     <Grid.Column only='computer'  width='4'>
