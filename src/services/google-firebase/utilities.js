@@ -66,6 +66,25 @@ export async function addNewUser(first_name, last_name, registered_email, branch
 };
 
 /**
+ * Change the password of the signed in user
+ * @param {string} new_pwd New password that the user wants
+ * @returns Status of the process in Promise<boolean>
+ */
+export async function changePassword(new_pwd) {
+    return auth.currentUser.updatePassword(new_pwd)
+    .then(() => true)
+    .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.error("Error in changePassword in utilities.js")
+        console.error(errorCode);
+        console.error(errorMessage);
+        return false;
+    });
+}
+
+/**
  * References:
  * https://www.geeksforgeeks.org/how-to-remove-spaces-from-a-string-using-javascript/
+ * https://medium.com/@ericmorgan1/change-user-email-password-in-firebase-and-react-native-d0abc8d21618
  */
