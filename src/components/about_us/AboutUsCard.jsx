@@ -3,22 +3,28 @@ import { Grid, Segment, Header,Image, Icon, Card, Button } from 'semantic-ui-rea
 import './AboutUsCard.css';
 
 export default class AboutUsCard extends Component {
+    constructor(props){
+        super(props);
+        console.log(props.data);
+        console.log("About Us!!")
+    }
   render() {
     return(
             <div class="aboutuscard">
                     <div class="card__face card__face--front">             
-                        <Image className='faceimage' size='small' avatar src='https://react.semantic-ui.com/images/avatar/large/daniel.jpg' />
+                        <Image className='faceimage' size='small' avatar src={this.props.data.dpLink!=null?this.props.data.dpLink:'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'} />
                         <Header inverted>
-                            Daniel
-                            <Header.Subheader>2017 CSE</Header.Subheader>
+                            {this.props.data.name}
+                            <Header.Subheader>
+                            {this.props.data.branch}-{this.props.data.yearOfJoining}</Header.Subheader>
                         </Header>
                     </div>
                     <div class="card__face card__face--back">
                     <Header inverted>
-                            Daniel
-                            <Header.Subheader className='blue'>2017 CSE</Header.Subheader>
+                            {this.props.data.name}
+                            <Header.Subheader className='blue'>{this.props.data.branch}-{this.props.data.yearOfJoining}</Header.Subheader>
                             <Header.Content as={'h6'} >
-                            By the same illusion which lis the horizon of the sea to the level of the spectator on a hil.lside, the sable.
+                            {this.props.data.about.experience}
                             </Header.Content>
                         </Header>
                     </div>
