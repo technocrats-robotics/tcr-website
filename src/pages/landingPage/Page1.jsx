@@ -6,10 +6,22 @@ import FlareComponent from 'flare-react';
 import LogoController from '../../components/landingPage/LogoController'
 
 
+var x = window.matchMedia("(max-width: 728px)")
 export default class Page1 extends Component {
+    constructor(){
+        super();
+        this.handleArrowDown = this.handleArrowDown.bind(this);
+    }
     
     state= {
         visible: false
+    }
+    handleArrowDown(){
+        if(x.matches){
+            window.scrollBy({top:1000, behavior:'smooth'});
+        }else{
+            window.scrollBy({top:850, behavior:'smooth'});
+        }
     }
     componentDidMount(){
         setInterval(()=>{
@@ -28,7 +40,7 @@ export default class Page1 extends Component {
                             <Transition visible={this.state.visible} animation={'fade up'} duration={1000}>
                                 <Header className='Title' size='medium'>Technocrats Robotics</Header>
                             </Transition>
-                            <div className='arrowDown'>
+                            <div className='arrowDown' onClick={this.handleArrowDown}>
                                 <Icon className='angle double down' color='grey' size='huge' name='chevron down'></Icon>
                             </div>    
                         </Grid.Column>

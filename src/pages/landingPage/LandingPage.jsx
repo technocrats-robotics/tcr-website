@@ -6,7 +6,8 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
-import {  Label, Icon } from 'semantic-ui-react';
+import SideNavMob from '../../components/SideNavMob';
+import {  Label, Icon, Button } from 'semantic-ui-react';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 
 import {db} from '../../services/google-firebase/setup'
@@ -16,13 +17,17 @@ export default class LandingPage extends Component {
     constructor(){
         super()
         this.componentDidMount = this.componentDidMount.bind(this);
+        this.toggleSidebarVisibility = this.toggleSidebarVisibility.bind(this);
     }
-    state = { percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
+    state = { visibility:true,percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
     async getPageData(){
         let content = await (await db.collection('content').doc('landing_page').get()).data()
         this.setState({intro: content.intro})
         this.setState({contentAll: content})
 
+    }
+    toggleSidebarVisibility(){
+        this.setState({visibility: !this.state.visibility})
     }
     handleScrollingDown = (e,{calculations}) =>{
         console.log(calculations);
@@ -47,6 +52,11 @@ export default class LandingPage extends Component {
     return(
         <div>
             {/* <Visibility continuous onOnScreen={this.handleScrollingDown}> */}
+            
+            <Button color='red' className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
+                <Icon name='arrow right' />
+            </Button>
+            <SideNavMob visibility={this.state.visibility} visibilityToggle={this.toggleSidebarVisibility}></SideNavMob>
             <Page1></Page1>
             <Page2 content={this.state.contentAll}></Page2>
             <Page3></Page3>
