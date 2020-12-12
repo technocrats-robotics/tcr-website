@@ -75,8 +75,6 @@ function UserProfile() {
 
     const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png';
 
-    const fullDate = new Date();
-
     const roles = (yearly_roles) => {
         let currentRole = Member.getCurrentRole(yearly_roles);
         return (
