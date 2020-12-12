@@ -15,6 +15,7 @@ function Navigation() {
 
 
     const [visible, setVisible] = useState(false);
+    const [visibleChangePassword,setChangePassword] = useState(true);
 
     const handleVisibility = () => {
         setVisible(!visible)
@@ -38,7 +39,6 @@ function Navigation() {
             return false;
         });
     }
-
 
     return (
         <div>
@@ -79,6 +79,11 @@ function Navigation() {
                                         </Menu.Item>
                                     )
                                 }
+                                <Menu.Item as='a'>
+                                    <Icon name='sign out alternate' />
+                                    <NavLink exact className="nav item" to="/userPanel/passwordReset" onClick={handleVisibility}> Change Password </NavLink>
+                                </Menu.Item>
+
                                 <Menu.Item as='a' onClick={handleSignOut}>
                                     <Icon name='sign out alternate' />
                                    Sign Out

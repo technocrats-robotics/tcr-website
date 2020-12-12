@@ -15,6 +15,7 @@ import UserProfile from "./UserProfile";
 import UserLogin from "./UserLogin"
 import MyPosts from "./MyPosts";
 import WritePost from "./WritePost";
+import ChangePassword from './ChangePassword'
 
 const GlobalUser = createContext(null);
 
@@ -60,6 +61,9 @@ function UserPanel() {
                             </Route>
                             <Route exact path="/userPanel/writePost">
                                 <WritePost />
+                            </Route>
+                            <Route exact path="/userPanel/passwordReset">
+                                <ChangePassword />
                             </Route>
                         </Switch>
                     </Router>

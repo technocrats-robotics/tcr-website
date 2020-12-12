@@ -92,7 +92,6 @@ function UserProfile() {
                 (userDetails) ? (
                     <div className="ui grid userProfile__display">
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
-                            <div className="userProfile__messageBottom">* Contact the admin if there is any discrepancy in default fields.</div>
                             <div className="dpBox">
                                 <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
                             </div>
@@ -176,7 +175,6 @@ function UserProfile() {
                                         </div>
                                     </div>
                                     <div className="inputBox">
-
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
                                                 Miscellaneous

@@ -9,6 +9,8 @@ import FullPageLoader from '../components/LoadingScreen/FullPageLoader'
 //waring message hook 
 import Warning from "../components/Messages/Warning" //autmatically disappers the warning after 3000 ms
 
+import "./CSS/UserLogin.css"
+
 
 function UserLogin() {
 
@@ -37,28 +39,32 @@ function UserLogin() {
     }
 
     return (
-        <div>
-            <div className="userLogin__displayMessage">
-            {warning}
+        <div className="userLoginForm">
+            <div className="userLoginform__root">
+                <div className="userLogin__displayMessage">
+                {warning}
+                </div>
+                <form className="ui form" onSubmit={handleSubmission} method="POST">
+                    <img className="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" alt="tcr_logo" />
+                    
+                    <div className="inputBox">
+                        <div className="ui fluid input">
+                            <input type="text" name="userName" placeholder="@tcr.in" onChange={(event) => setUserName(event.target.value)} required />
+                        </div>
+                    </div>
+                    <div className="inputBox">
+                        <div className="ui fluid input">
+                            <input type="password" name="Password" placeholder="********" onChange={(event) => setPassword(event.target.value)} required />
+                        </div>
+                    </div>
+                    
+                    <button className="ui button" type="submit">Login</button>
+                </form>
+                {loadingScreen}
             </div>
-            <form className="ui form" onSubmit={handleSubmission} method="POST">
-                <img className="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" alt="tcr_logo" />
-                
-                <div className="field">
-                    <label>Username</label>
-                    <input type="text" name="userName" placeholder="@tcr.in" onChange={(event) => setUserName(event.target.value)} required />
-                </div>
-                <div className="field">
-                    <label>Password</label>
-                    <input type="password" name="Password" placeholder="********" onChange={(event) => setPassword(event.target.value)} required />
-                </div>
-                
-                <button className="ui button" type="submit">Login</button>
-            </form>
-            {loadingScreen}
         </div>
     )
-}
+} 
 
 
 export default UserLogin
