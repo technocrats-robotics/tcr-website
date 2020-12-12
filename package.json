@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "@tinymce/tinymce-react": "^3.8.1",
     "axios": "^0.21.0",
-    "firebase": "^8.1.1",
+    "firebase": "^8.2.0",
     "firebase-functions": "^3.13.0",
     "firebase-tools": "^8.16.2",
     "flare-react": "^1.0.7",
