@@ -6,6 +6,7 @@ import Page3 from './Page3';
 import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
+import {  Label, Icon } from 'semantic-ui-react';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 
 import {db} from '../../services/google-firebase/setup'

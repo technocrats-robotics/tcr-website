@@ -6,7 +6,7 @@ import Map from './../../components/contact_us/Map';
 export default class Page1 extends Component {
   render() {
     return(
-        <div className='firstPage'>
+        <div className='firstPageContactUs'>
             <Grid stackable inverted divided centered>
                 <GridRow>
                     <GridColumn computer={6}>

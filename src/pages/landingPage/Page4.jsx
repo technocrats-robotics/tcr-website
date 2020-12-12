@@ -174,7 +174,7 @@ export default class Page4 extends Component {
                 <GridColumn>
                 <Header as='h1' icon textAlign='center' inverted color='grey'>
                     <Icon inverted name='users' circular />
-                    <Header.Content >Testimonials</Header.Content>
+                    <Header.Content>Testimonials</Header.Content>
                 </Header>
                 <Carousel />
                 </GridColumn>

@@ -65,3 +65,16 @@ img.ui.small.avatar.image.faceimage {
 .column.justToAlignMemberCards {
         text-align: -webkit-center !important;
     }
+
+@media only screen and (max-width:900px) {
+        .aboutuscard{
+                box-shadow: 0px 2px 4px 0px black !important;
+                /* margin: 10%; */
+                /* padding: 10%!important; */
+                width: 30vh;
+                height: 40vh;
+        }
+        .aboutuscard .card__face{
+                padding: 10%;
+        }
+    } 

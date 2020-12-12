@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Image, Dimmer, Loader, Segment } from 'semantic-ui-react';
+import { Grid, Image, Dimmer, Loader, Segment, Label, Icon } from 'semantic-ui-react';
 import './Gallery.css';
 import ImageGallery from 'react-image-gallery';
 
@@ -39,11 +39,19 @@ export default class Gallery extends Component {
         super(props);
     }
     
+    handleBack = () =>{
+      this.props.history.push('/')
+  }
         
   render() {
     return(
         <div className='galleryDiv'>
+          <Segment inverted>
+          <Label onClick={this.handleBack} as='a' color='red' ribbon='left' attached='top left'>
+                    <Icon name='left arrow' /> Back
+                </Label> 
             <ImageGallery items={images} showFullscreenButton={false} showPlayButton={false} showNav={false} showBullets={true} />;
+          </Segment>
         </div>
     );
     }

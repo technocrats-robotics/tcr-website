@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";
 
 export default function Dial() {
@@ -18,6 +17,15 @@ export default function Dial() {
     }
     let scrollToFour = () => {
         document.getElementsByClassName('fourthPage')[0].scrollIntoView({behavior:'smooth'});
+    }
+    let scrollToTeam = () => {
+        document.getElementsByClassName('secondAboutPage')[0].scrollIntoView({behavior:'smooth'});
+    }
+    let scrollToContactUs = () => {
+        document.getElementsByClassName('firstPageContactUs')[0].scrollIntoView({behavior:'smooth'});
+    }  
+    let scrollToAboutUs = () => {
+        document.getElementsByClassName('firstAboutPage')[0].scrollIntoView({behavior:'smooth'});
     }
     let jumpToBlogs = () => {
         history.push('/blogs');
@@ -42,7 +50,7 @@ export default function Dial() {
             dial.style.position = "fixed";
             dial.style.left = "0";
             dial.style.top = "2";
-            dial.style.marginLeft = "-68px";
+            dial.style.marginLeft = "-25vh";
             dial.style.borderRight = "0px solid grey";
             dial.style.zoom = "1.2";
             dial.addEventListener("mouseover",zoomDialOver)
@@ -96,7 +104,7 @@ export default function Dial() {
                     <div className='subMenus subMenu2'>
                     <List.List>
                     <List.Item as='a' onClick={jumpToBlogs}>
-                        Read
+                        Read <Icon name='external' color='blue'></Icon>
                     </List.Item>
                     <List.Item as='a'>
                         Create
@@ -111,7 +119,7 @@ export default function Dial() {
                     <div className='subMenus subMenu3'>
                         <List.List>
                             <List.Item as='a' onClick={jumpToGallery}>
-                                Gallery
+                                Gallery <Icon name='external' color='blue'></Icon>
                             </List.Item>
                         </List.List>
                     </div>
@@ -122,14 +130,15 @@ export default function Dial() {
                     About Us
                     <div className='subMenus subMenu4'>
                         <List.List>
-                            <List.Item as='a'>
-                                Team
+                            
+                            <List.Item as='a' onClick={scrollToAboutUs}>
+                                About Technocrats
                             </List.Item>
-                            <List.Item as='a'>
-                                Contact Us
+                            <List.Item as='a' onClick={scrollToTeam}>
+                                Team Leads
                             </List.Item>
-                            <List.Item as='a'>
-                                Alumni
+                            <List.Item as='a' onClick={()=>history.push("/Team")}>
+                                Team <Icon name='external' color='blue'></Icon>
                             </List.Item>
                         </List.List>
                     </div>
@@ -141,7 +150,7 @@ export default function Dial() {
                     Contact Us
                     <div className='subMenus subMenu5'>
                         <List.List>
-                            <List.Item as='a'>
+                            <List.Item as='a' onClick={scrollToContactUs}>
                                 Contact
                             </List.Item>
                         </List.List>
