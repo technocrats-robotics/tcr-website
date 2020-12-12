@@ -9,7 +9,7 @@
     "@tinymce/tinymce-react": "^3.8.1",
     "axios": "^0.21.0",
     "firebase": "^8.1.1",
-    "firebase-functions": "^3.11.0",
+    "firebase-functions": "^3.13.0",
     "firebase-tools": "^8.16.2",
     "flare-react": "^1.0.7",
     "pure-react-carousel": "^1.27.6",
