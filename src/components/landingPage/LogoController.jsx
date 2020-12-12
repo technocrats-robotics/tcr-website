@@ -31,3 +31,10 @@ class LogoController extends FlareComponent.Controller
 }
 
 export default LogoController;
+
+/**
+ * References:
+ * https://medium.com/rive/building-a-responsive-house-with-flare-flutter-31af823ba805
+ * https://github.com/2d-inc/Flare-React
+ * https://stackoverflow.com/questions/59737493/how-to-implement-a-class-controller-option-in-flare-react-package
+ */
