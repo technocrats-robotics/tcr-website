@@ -11,7 +11,7 @@ export default class Page2 extends Component {
     return(
         <div className="secondPage">
             <Grid stackable centered>
-                <Grid.Row mobile='16' textAlign='center'>
+                <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
                     <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
                         <IntroCard Introhead={'Technocrats Robotics'} 
                         // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
@@ -19,7 +19,7 @@ export default class Page2 extends Component {
                         //     car seemed to float in the middle of an immense dark sphere, whose
                         //     upper half was strewn with silver.</p>}>
                         mainContent={<p className='IntroContent'>
-                            {this.props.intro}
+                            {this.props.content.intro}
                         </p>}>
                         </IntroCard>
                     </Grid.Column>
@@ -28,7 +28,7 @@ export default class Page2 extends Component {
                     <Grid.Column textAlign='center' width='5'>
                     <Statistic size='large' className='redStats' color='red' inverted>
                             <Statistic.Value>
-                                12
+                                {this.props.content.stats['competitions_participated']}
                             </Statistic.Value>
                             <Statistic.Label>Competitions</Statistic.Label>
                         </Statistic>
@@ -40,7 +40,7 @@ export default class Page2 extends Component {
                     <Grid.Column textAlign='center' width='5'>
                     <Statistic mobile='16' inverted  className='yellowStats' size='large' color='yellow'>
                         <Statistic.Value>
-                            42
+                            {this.props.content.stats['robots-made']}
                         </Statistic.Value>
                         <Statistic.Label>Team Members</Statistic.Label>
                         </Statistic>

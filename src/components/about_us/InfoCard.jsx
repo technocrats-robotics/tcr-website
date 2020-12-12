@@ -52,7 +52,7 @@ export default class InfoCard extends Component {
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row className='aboutCard'>
-                    <Grid.Column width={4}>
+                    <Grid.Column width={4} className='justToAlignImage'>
                         <Image className="thumbnail1" src={'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg'}></Image>
                     </Grid.Column>
                     <Grid.Column width={7}>

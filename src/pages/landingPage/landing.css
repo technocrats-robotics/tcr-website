@@ -31,8 +31,18 @@
 } 
 @media only screen and (max-width: 900px) {
   /* Mobile */
+  .center.aligned.row.IntroRow {
+    width: auto !important;
+}
           .arrowDown{
             padding-top: 80px;
+          }
+          .column.map {
+            text-align: -webkit-center !important;
+          }        
+          .column.IntroRow {
+            text-align: -webkit-center !important;
+
           }
 
           .ui.medium.header.Title {
@@ -48,6 +58,7 @@
             .ui.yellow.large.statistic.yellowStats{
               margin-top: 8vh;
             }
+        
             
 } 
 
@@ -91,7 +102,7 @@
 }
 
 .thirdPage{
-    height: 120vh;
+    height: auto;
     /* background-color: black; */
 }
 .fourthPage{

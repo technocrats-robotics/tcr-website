@@ -7,16 +7,16 @@ export default class Page1 extends Component {
   render() {
     return(
         <div className='firstPage'>
-            <Grid columns={2} inverted divided centered>
+            <Grid stackable inverted divided centered>
                 <GridRow>
-                    <GridColumn>
+                    <GridColumn computer={6}>
                     <Header inverted size='large'>
                     <Icon name='mail'></Icon>
                         Leave us a message
                     </Header>
                         <ContactForm></ContactForm>
                     </GridColumn>
-                    <GridColumn>
+                    <GridColumn className='map' computer={6}>
                     <Header inverted size='large'>Location
                     <Icon name='map marker alternate'></Icon>
                     </Header>

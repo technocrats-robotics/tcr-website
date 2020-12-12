@@ -9,7 +9,7 @@
 } */
 .aboutuscard {
   position: relative;
-  margin-top: 7vh;
+  margin-top: 1vh;
   width: 20vh;
   height: 30vh;
   color: white;
@@ -38,7 +38,7 @@
           backface-visibility: hidden;
   -webkit-transition: 1s ease-in-out;
   transition: 1s ease-in-out;
-  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0));
 }
 .aboutuscard .card__face img {
   width: 240px;
@@ -62,3 +62,6 @@ img.ui.small.avatar.image.faceimage {
 .blue{
         color:  #1875D0;
 }
+.column.justToAlignMemberCards {
+        text-align: -webkit-center !important;
+    }
