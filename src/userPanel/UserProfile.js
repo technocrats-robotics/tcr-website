@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { GlobalUser } from "./UserPanel"
+import { Icon } from 'semantic-ui-react'
 
 import { db } from "../services/google-firebase/setup"
 
@@ -110,61 +111,84 @@ function UserProfile() {
 
                             <div className="ui grid">
                                 <div className="sixteen wide column">
-                                    <div className="userProfile__fields">
-                                        <div className="userProfile__label">Email: </div>
-                                        <div className="userProfile__ans">{userDetails.registeredEmail}</div>
+                                    <div className="ui stackable two column grid">
+                                        <div className="column">
+                                            <div className="userProfile__fields">
+                                                <div className="userProfile__label">Email: </div>
+                                                <div className="userProfile__ans">{userDetails.registeredEmail}</div>
+                                            </div>
+                                        </div>
+                                        <div className="column">
+                                            <div className="userProfile__fields">
+                                                <div className="userProfile__label">Department : </div>
+                                                <div className="userProfile__ans">{userDetails.branch}</div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="userProfile__fields">
-                                        <div className="userProfile__label">Year Of Joining : </div>
-                                        <div className="userProfile__ans">{userDetails.yearOfJoining}</div>
+                                    <div className="ui stackable two column grid">
+                                        <div className="column">
+                                            <div className="userProfile__fields">
+                                                <div className="userProfile__label">Year Of Joining : </div>
+                                                <div className="userProfile__ans">{userDetails.yearOfJoining}</div>
+                                            </div>
+                                        </div>
+                                        <div className="column">
+                                            <div className="userProfile__fields">
+                                                <div className="userProfile__label">Blog Access : </div>
+                                                <div className="userProfile__ans">{(userDetails.blogAccess) ? ("Yes") : ("No")} </div>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="userProfile__fields">
-                                        <div className="userProfile__label">Department : </div>
-                                        <div className="userProfile__ans">{userDetails.branch}</div>
-                                    </div>
-
-                                    <div className="userProfile__fields">
-                                        <div className="userProfile__label">Blog Access : </div>
-                                        <div className="userProfile__ans">{(userDetails.blogAccess) ? ("Yes") : ("No")} </div>
-                                    </div>
 
                                     <div className="inputBox">
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
-                                                DP Link
+                                                <Icon name="picture" size="large" />
                                             </div>
                                             <input type="url" defaultValue={userDetails.dpLink} placeholder="Provide a valid link for your DP." onChange={(event) => setDpLink(event.target.value)} required />
                                         </div>
                                     </div>
 
-                                    <div className="inputBox">
-                                        <div className="ui fluid labeled input">
-                                            <div className="ui label">
-                                                Github Username
+                                    <div className="userProfile__socialMedia">
+                                    <div className="ui stackable three column grid">
+                                        <div className="column">
+                                            <div className="inputBox2">
+                                                <div className="ui fluid labeled input">
+                                                    <div className="ui label">
+                                                        <Icon name="github square" size="large" />
+                                                    </div>
+                                                    <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
+                                                </div>
                                             </div>
-                                            <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
                                         </div>
-                                    </div>
-                                    <div className="inputBox">
 
-                                        <div className="ui fluid labeled input">
-                                            <div className="ui label">
-                                                Instagram Username
+                                        <div className="column">
+                                            <div className="inputBox2">
+                                                <div className="ui fluid labeled input">
+                                                    <div className="ui label">
+                                                        <Icon name="instagram" size="large" />
+                                                    </div>
+                                                    <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
+                                                </div>
                                             </div>
-                                            <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
                                         </div>
-                                    </div>
-                                    <div className="inputBox">
 
-                                        <div className="ui fluid labeled input">
-                                            <div className="ui label">
-                                                LinkedIn Username
+                                        <div className="column">
+                                            <div className="inputBox2">
+                                                <div className="ui fluid labeled input">
+                                                    <div className="ui label">
+                                                        <Icon name="linkedin" size="large" />
+                                                    </div>
+                                                    <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
+                                                </div>
                                             </div>
-                                            <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
                                         </div>
                                     </div>
+
+                                    </div>
+                                    
                                     <div className="inputBox">
 
                                         <div className="ui fluid labeled input">
