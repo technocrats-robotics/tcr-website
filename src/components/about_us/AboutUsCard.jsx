@@ -40,11 +40,11 @@ export default class AboutUsCard extends Component {
                                 }
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.instagram) &&
-                                    (<Button primary onClick={()=>this.openLink("https://github.com/"+this.props.data.social_media.github)} icon='instagram' ></Button>)
+                                    (<Button primary onClick={()=>this.openLink("https://instagram.com/"+this.props.data.social_media.instagram)} icon='instagram' ></Button>)
                                 }
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.linkedIn) &&
-                                    (<Button primary onClick={()=>this.openLink("https://github.com/"+this.props.data.social_media.github)} icon='linkedin'></Button>)
+                                    (<Button primary onClick={()=>this.openLink("https://linkedin.com/"+this.props.data.social_media.github)} icon='linkedin'></Button>)
                                 }
                             </div>
                         }
