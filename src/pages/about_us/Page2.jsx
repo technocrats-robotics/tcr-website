@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header,Image,Menu,Input, Label, Icon, Button } from 'semantic-ui-react';
-import { useHistory, Link } from 'react-router-dom';
+import { Grid, Header, Menu, Button } from 'semantic-ui-react';
+import {  Link } from 'react-router-dom';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
