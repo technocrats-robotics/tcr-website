@@ -13,11 +13,19 @@ import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 import {db} from '../../services/google-firebase/setup'
 import { Visibility } from 'semantic-ui-react';
 
+var x = window.matchMedia("(max-width: 700px)")
 export default class LandingPage extends Component {
     constructor(){
         super()
         this.componentDidMount = this.componentDidMount.bind(this);
         this.toggleSidebarVisibility = this.toggleSidebarVisibility.bind(this);
+        setInterval(()=>{
+            document.getElementsByClassName('loadScreen')[0].style.display='none';
+            
+            setInterval(()=>{
+                document.getElementsByClassName('mainPageContent')[0].style.opacity='1.0';
+            },1000);
+        },2000);
     }
     state = { visibility:false,percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
     async getPageData(){
@@ -38,6 +46,9 @@ export default class LandingPage extends Component {
         // nothing = (pixs > 3000 && pixs<3500 && dir=='down') ? window.scrollBy(0,720) : console.log('none')
     }
     async componentDidMount(){
+        if(x.matches){
+            document.getElementsByClassName('firstPage')[0].style.backgroundImage = "url('/imageBackFirstPage.jpg')"
+        }
         this.getPageData()
         // window.onscroll = () => {
         //     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
@@ -52,7 +63,8 @@ export default class LandingPage extends Component {
     return(
         <div>
             {/* <Visibility continuous onOnScreen={this.handleScrollingDown}> */}
-            
+            <div className='loadScreen'>
+    <Icon size='massive' color='red' loading name='spinner' /></div>
             <Button color='red' className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
                 <Icon name='arrow right' />
             </Button>

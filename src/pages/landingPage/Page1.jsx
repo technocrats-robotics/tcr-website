@@ -18,7 +18,7 @@ export default class Page1 extends Component {
     }
     handleArrowDown(){
         if(x.matches){
-            window.scrollBy({top:1000, behavior:'smooth'});
+            window.scrollBy({top:750, behavior:'smooth'});
         }else{
             window.scrollBy({top:850, behavior:'smooth'});
         }
@@ -34,11 +34,12 @@ export default class Page1 extends Component {
                     {/* <div className='firstpagebackdiv'></div> */}
                     <Grid.Column mobile='12' textAlign='center' className='leftMain' computer='6' >
                             <FlareComponent className="TechLogoMainPage" width={360} height={360} transparent={true} controller={new LogoController()} file="tcr_logo.flr"/>
-                        
+                        <div className='mainPageContent'>
                             <Header className='Title' size='medium'>Technocrats Robotics</Header>
                             <div className='arrowDown' onClick={this.handleArrowDown}>
                                 <Icon className='angle double down' color='grey' size='huge' name='chevron down'></Icon>
-                            </div>    
+                            </div>
+                        </div> 
                         </Grid.Column>
                     <Grid.Column only='computer'  width='4'>
                         <Dial></Dial>
