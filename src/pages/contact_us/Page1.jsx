@@ -23,6 +23,18 @@ export default class Page1 extends Component {
                         <Map></Map>
                     </GridColumn>
                 </GridRow>
+                <GridRow className='landingFooter' columns={16}>
+                <div>
+                    <Segment raised size='massive' color='red' fluid inverted>
+                        <Button circular color='red' icon='facebook' />
+                        <Button circular color='red' icon='twitter' />
+                        <Button circular color='red' icon='linkedin' />
+                        <Button circular color='red' icon='git' />
+                        <Header as='h6'>Are you a member?  
+                         <Button compact> Member Login</Button></Header>
+                    </Segment>
+                </div>
+                </GridRow>
             </Grid>
         </div>
     );

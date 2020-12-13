@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { useHistory, Link } from 'react-router-dom';
 import { Grid, Segment, Header,Image, Icon, Card, Button,Visibility } from 'semantic-ui-react';
 import './InfoCard.css';
 
@@ -65,6 +66,13 @@ export default class InfoCard extends Component {
                             </Header.Subheader>
                         </Header>
                     </Grid.Column>
+                </Grid.Row>                   
+                <Grid.Row>
+                <div>
+                    <Link to="/Gallery">
+                    <Button fluid positive>View all Acheivements</Button>
+                    </Link>
+                </div>
                 </Grid.Row>
             </Grid>
             </Visibility>

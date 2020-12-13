@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import React, { Component } from 'react';
-import {Grid, GridColumn, GridRow, Header, Image, Segment} from 'semantic-ui-react';
+import { useHistory, Link } from 'react-router-dom';
+import {Grid, GridColumn, GridRow, Header, Image, Segment, Button} from 'semantic-ui-react';
 
 /**
 * @author
@@ -141,6 +142,14 @@ export default class Page3 extends Component {
     </ul>
     
     </GridColumn>
+    
+    <Grid.Row>
+      <div>
+        <Link to="/Gallery">
+        <Button positive>Visit Gallery</Button>
+        </Link>
+      </div>
+    </Grid.Row>
     </Grid>
     </div>
    )

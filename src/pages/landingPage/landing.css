@@ -7,6 +7,10 @@
   height: 100vh;
   background-color: #1b1c1d;
 }
+.landingFooter{
+  background-color: #db2828 !important;
+  border-radius: 2rem !important;
+}
 button.ui.icon.button.SideNavMobButton {
   position: fixed;
   right: 0;
@@ -41,6 +45,11 @@ canvas.TechLogoMainPage {
 } 
 @media only screen and (max-width: 728px) {
   /* Mobile */
+  .firstPage{
+    background-image: url('https://farm6.staticflickr.com/5639/24146454675_f471149b4e_o_d.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .six.wide.computer.twelve.wide.mobile.column.leftMain {
     text-align: -webkit-center !important;
 }

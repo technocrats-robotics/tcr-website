@@ -24,9 +24,7 @@ export default class Page1 extends Component {
         }
     }
     componentDidMount(){
-        setInterval(()=>{
-            this.setState({visible:true})
-        },5000);
+
     }
   render() {
     return(
@@ -35,11 +33,9 @@ export default class Page1 extends Component {
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}
                     <Grid.Column mobile='12' textAlign='center' className='leftMain' computer='6' >
-                            <FlareComponent className="TechLogoMainPage" width={360} height={360} controller={new LogoController()} file="tcr_logo.flr"/>
-                            
-                            <Transition visible={this.state.visible} animation={'fade up'} duration={1000}>
-                                <Header className='Title' size='medium'>Technocrats Robotics</Header>
-                            </Transition>
+                            <FlareComponent className="TechLogoMainPage" width={360} height={360} transparent={true} controller={new LogoController()} file="tcr_logo.flr"/>
+                        
+                            <Header className='Title' size='medium'>Technocrats Robotics</Header>
                             <div className='arrowDown' onClick={this.handleArrowDown}>
                                 <Icon className='angle double down' color='grey' size='huge' name='chevron down'></Icon>
                             </div>    

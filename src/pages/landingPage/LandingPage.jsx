@@ -19,7 +19,7 @@ export default class LandingPage extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
         this.toggleSidebarVisibility = this.toggleSidebarVisibility.bind(this);
     }
-    state = { visibility:true,percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
+    state = { visibility:false,percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
     async getPageData(){
         let content = await (await db.collection('content').doc('landing_page').get()).data()
         this.setState({intro: content.intro})
@@ -60,7 +60,7 @@ export default class LandingPage extends Component {
             <Page1></Page1>
             <Page2 content={this.state.contentAll}></Page2>
             <Page3></Page3>
-            <Page4></Page4>
+            {/* <Page4></Page4> */}
             <About></About>
             <ContactUs></ContactUs>
             {/* </Visibility> */}

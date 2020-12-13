@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header,Image } from 'semantic-ui-react';
+import { Grid, Segment, Header,Image,Label, Button } from 'semantic-ui-react';
 
 export default class ImageMat extends Component {
   render() {

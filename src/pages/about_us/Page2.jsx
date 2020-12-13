@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header,Image,Menu,Input, Label, Icon } from 'semantic-ui-react';
+import { Grid, Segment, Header,Image,Menu,Input, Label, Icon, Button } from 'semantic-ui-react';
+import { useHistory, Link } from 'react-router-dom';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
@@ -86,6 +87,14 @@ export default class Page2 extends Component {
                     </Grid.Column>
                 ))
                 }
+                </Grid.Row>
+                                  
+                <Grid.Row>
+                <div>
+                    <Link to="/Gallery">
+                    <Button fluid positive>View Complete Team</Button>
+                    </Link>
+                </div>
                 </Grid.Row>
             </Grid>
         </div>
