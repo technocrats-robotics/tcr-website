@@ -40,7 +40,7 @@ export default class TeamMembers extends Component {
         this.setState({data: tempArray});
     }
     componentDidMount(){
-        // this.getMemberData();
+        this.getMemberData();
         let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
         let tempyearHeaders = [currentYear];
         // console.log(currentYear)
