@@ -1,6 +1,6 @@
 import React, {useEffect,useContext,useState } from 'react'
 import { Menu, Sidebar, Icon } from 'semantic-ui-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 //auth from services/google-firebase
 import { auth } from "../services/google-firebase/setup"
@@ -56,37 +56,44 @@ function Navigation() {
                             width='thin'
                         >
                             <div>
-                                <Menu.Item onClick={handleVisibility} style={{cursor:"pointer"}}>
+                                <Menu.Item style={{cursor:"pointer"}}>
+                                    <Link onClick={handleVisibility}>
                                     <Icon name='x'/>
+                                    </Link>
                                 </Menu.Item>
                                 <Menu.Item>
-                                    <Icon name='user' />
-                                    <NavLink exact className="nav item" to="/userPanel" onClick={handleVisibility}>My Profile</NavLink>
+                                    <NavLink exact className="nav item" to="/userPanel" onClick={handleVisibility}>
+                                    <Icon name='user' />My Profile</NavLink>
                                 </Menu.Item>
                                 {
                                     User && User.blogAccess && (
                                         <Menu.Item >
-                                            <Icon name='folder open' />
-                                            <NavLink exact className="nav item" to="/userPanel/myPosts" onClick={handleVisibility}> My Posts </NavLink>
+                                            <NavLink exact className="nav item" to="/userPanel/myPosts" onClick={handleVisibility}>
+                                            <Icon name='folder open' /> My Posts </NavLink>
                                         </Menu.Item>
                                     )
                                 }
                                 {
                                     User && User.blogAccess && (
                                         <Menu.Item>
-                                            <Icon name='pencil alternate' />
-                                            <NavLink exact className="nav item" to="/userPanel/writePost" onClick={handleVisibility}> New Post </NavLink>
+                                            <NavLink exact className="nav item" to="/userPanel/writePost" onClick={handleVisibility}>
+                                            <Icon name='pencil alternate' /> New Post </NavLink>
                                         </Menu.Item>
                                     )
                                 }
-                                <Menu.Item as='a'>
-                                    <Icon name='sign out alternate' />
-                                    <NavLink exact className="nav item" to="/userPanel/passwordReset" onClick={handleVisibility}> Change Password </NavLink>
+                                <Menu.Item>
+                                    <NavLink exact className="nav item" to="/userPanel/passwordReset" onClick={handleVisibility}> 
+                                    <Icon name='sign out alternate' />Change Password </NavLink>
                                 </Menu.Item>
 
                                 <Menu.Item as='a' onClick={handleSignOut}>
                                     <Icon name='sign out alternate' />
                                    Sign Out
+                                </Menu.Item>
+                                
+                                <Menu.Item>
+                                    <NavLink exact className="nav item" to="/" onClick={handleVisibility}> 
+                                    <Icon name='home' />Home </NavLink>
                                 </Menu.Item>
                             </div>
 

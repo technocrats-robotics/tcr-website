@@ -144,7 +144,7 @@ function UserProfile() {
 
                                     <div className="inputBox">
                                         <div className="ui fluid labeled input">
-                                            <div className="ui label">
+                                            <div className="ui label userSocial">
                                                 <Icon name="picture" size="large" />
                                             </div>
                                             <input type="url" defaultValue={userDetails.dpLink} placeholder="Provide a valid link for your DP." onChange={(event) => setDpLink(event.target.value)} required />
@@ -156,7 +156,7 @@ function UserProfile() {
                                         <div className="column">
                                             <div className="inputBox2">
                                                 <div className="ui fluid labeled input">
-                                                    <div className="ui label">
+                                                    <div className="ui label userSocial">
                                                         <Icon name="github square" size="large" />
                                                     </div>
                                                     <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
@@ -167,7 +167,7 @@ function UserProfile() {
                                         <div className="column">
                                             <div className="inputBox2">
                                                 <div className="ui fluid labeled input">
-                                                    <div className="ui label">
+                                                    <div className="ui label userSocial">
                                                         <Icon name="instagram" size="large" />
                                                     </div>
                                                     <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
@@ -178,7 +178,7 @@ function UserProfile() {
                                         <div className="column">
                                             <div className="inputBox2">
                                                 <div className="ui fluid labeled input">
-                                                    <div className="ui label">
+                                                    <div className="ui label userSocial">
                                                         <Icon name="linkedin" size="large" />
                                                     </div>
                                                     <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
@@ -192,7 +192,7 @@ function UserProfile() {
                                     <div className="inputBox">
 
                                         <div className="ui fluid labeled input">
-                                            <div className="ui label">
+                                            <div className="ui label userSocial">
                                                 Experience
                                             </div>
                                             <input defaultValue={userDetails.about.experience} placeholder="Achievement (if Any)" onChange={(event) => setExperience(event.target.value)} />
@@ -207,7 +207,7 @@ function UserProfile() {
                                         </div>
                                     </div>
 
-                                    <button type="submit" className="ui button" onClick={handleSubmit}>
+                                    <button type="submit" className="ui button basic yellow" onClick={handleSubmit}>
                                         Submit
                                     </button>
                                     <div className="userProfile__message">{success}{warning}</div>

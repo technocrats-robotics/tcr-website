@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Image, Dimmer, Loader, Segment, Label, Icon } from 'semantic-ui-react';
 import './Gallery.css';
 import ImageGallery from 'react-image-gallery';
+import { Breadcrumb } from 'semantic-ui-react';
 
 const images = [
   {
@@ -44,11 +45,18 @@ export default class Gallery extends Component {
   }
         
   render() {
+
+const sections = [
+  { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
+  { key: 'Gallery', content: 'Gallery', active: true },
+]
+
     return(
         <div className='galleryDiv'>
           <Segment inverted>
-          <Label onClick={this.handleBack} as='a' color='red' ribbon='left' attached='top left'>
-                    <Icon name='left arrow' /> Back
+          <Label as='a' color='red' ribbon='left' attached='top left'>
+
+  <Breadcrumb icon='right angle' sections={sections} />
                 </Label> 
             <ImageGallery items={images} showFullscreenButton={false} showPlayButton={false} showNav={false} showBullets={true} />;
           </Segment>
