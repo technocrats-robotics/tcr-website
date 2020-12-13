@@ -36,7 +36,7 @@ export default class Page1 extends Component {
                     </Segment>
                     <Segment inverted>
                         Made with <Icon color='red' name='heart'></Icon>by Technocrats Robotics |
-                        <Link to="/userPanel"><Button basic color='yellow'>Member Login</Button></Link>
+                        <Link to="/userPanel"><Button circular compact basic color='yellow'>Member Login</Button></Link>
                     </Segment>
                 </div>
                 </GridRow>
