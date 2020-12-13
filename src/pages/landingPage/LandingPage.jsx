@@ -20,10 +20,12 @@ export default class LandingPage extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
         this.toggleSidebarVisibility = this.toggleSidebarVisibility.bind(this);
         setInterval(()=>{
+            if(document.getElementsByClassName('loadScreen')[0]){
             document.getElementsByClassName('loadScreen')[0].style.display='none';
-            
+            }
             setInterval(()=>{
-                document.getElementsByClassName('mainPageContent')[0].style.opacity='1.0';
+                    if(document.getElementsByClassName('mainPageContent')[0]){
+                document.getElementsByClassName('mainPageContent')[0].style.opacity='1.0';}
             },1000);
         },2000);
     }
