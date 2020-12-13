@@ -21,26 +21,26 @@ export default class Page2 extends Component {
         this.setState({ activeItem: name }, () => this.getSelectedTeam());
     }
 
-    // async getMemberData(){
-    //     var database = await db.collection(Member.collectionName).get()
-    //     let tempArray = []
-    //     database.forEach((ele)=>{
-    //         let temp = ele.data()
-    //         // console.log(ele.data().roles);
-    //         // console.log(parseInt(this.state.activeItem))
-    //         let person = temp.roles[parseInt(this.state.activeItem)+1];
-    //         if(person === Role.LEAD || person === Role.CAPTAIN){
-    //         tempArray.push(temp)
-    //         console.log('pushed')
-    //     }
-    //     })
-    //     db.collection(Member.collectionName).get()
-    //     .then((documents) => {
-    //         this.documents = documents;
-    //         this.getSelectedTeam();
-    //     });
-    //     // console.log('getMemberData');
-    // }
+    async getMemberData(){
+        var database = await db.collection(Member.collectionName).get()
+        let tempArray = []
+        database.forEach((ele)=>{
+            let temp = ele.data()
+            // console.log(ele.data().roles);
+            // console.log(parseInt(this.state.activeItem))
+            let person = temp.roles[parseInt(this.state.activeItem)+1];
+            if(person === Role.LEAD || person === Role.CAPTAIN){
+            tempArray.push(temp)
+            console.log('pushed')
+        }
+        })
+        db.collection(Member.collectionName).get()
+        .then((documents) => {
+            this.documents = documents;
+            this.getSelectedTeam();
+        });
+        // console.log('getMemberData');
+    }
 
     getSelectedTeam() {
         let tempArray = [];
@@ -63,7 +63,7 @@ export default class Page2 extends Component {
         this.setState({data: tempArray});
     }
     componentDidMount(){
-        // this.getMemberData();
+        this.getMemberData();
         let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
         let tempyearHeaders = [currentYear];
         // console.log(currentYear)
