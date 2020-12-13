@@ -3,7 +3,7 @@ import {Menu,Sidebar,Button,Icon, Image } from 'semantic-ui-react'
 import {NavLink, useHistory} from 'react-router-dom'
 import { render } from '@testing-library/react';
 let scrollToOne = () => {
-    document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});   
+    document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});    
 }
 let scrollToTwo = () => {
     document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'});   
@@ -22,6 +22,7 @@ let scrollToContactUs = () => {
 }  
 let scrollToAboutUs = () => {
     document.getElementsByClassName('firstAboutPage')[0].scrollIntoView({behavior:'smooth'});
+
 }
 let jumpToBlogs = (history) => {
     history.push('/blogs');
@@ -34,16 +35,6 @@ const SideNavMob = (props) => {
   const history = useHistory();
    return(
      <div>
-     <Sidebar
-     as={Menu}
-     direction='left'
-     width=' very wide'
-     inverted
-     color='red'
-     visible={props.visibility}
-     >
-
-     </Sidebar>
     <Sidebar
       as={Menu}
       animation='overlay'
@@ -54,6 +45,7 @@ const SideNavMob = (props) => {
       vertical
       visible={props.visibility}
       width='wide'
+      secondary
     >
       
       <Menu.Item as='a' onClick={scrollToOne}>

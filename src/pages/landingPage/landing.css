@@ -26,6 +26,9 @@ button.ui.icon.button.SideNavMobButton {
   top: 0;
   z-index: 999;
 }
+.ui.inverted.secondary.vertical.labeled.icon.ui.overlay.right.wide.visible.sidebar.sidebarAdminPanel.menu{
+  background-color: #1b1c1d !important;
+}
 .fourteen.column.row.mainRow {
     margin-top: 15vh;
 }
