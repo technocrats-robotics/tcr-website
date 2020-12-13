@@ -79,6 +79,14 @@ input {
   background: #ed1c6f;
 }
 
+.contactForm__successMessage{
+  color: #74c54f !important;
+}
+
+.contactForm__warningMessage{
+  color: #ed1c6f !important;
+}
+
 .screen-header-button.maximize {
   background: #e8e925;
 }
@@ -118,7 +126,7 @@ input {
   flex-direction: column;
   position: relative;
   color: blue;
-  font-size: 26px;
+  font-size: 13px;
 
 }
 

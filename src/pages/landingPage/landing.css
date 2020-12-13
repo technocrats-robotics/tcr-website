@@ -1,10 +1,10 @@
 .firstPage {
-    height: 120vh;
+    /* height: 120vh; */
     background-color: #1b1c1d;
   }
   
 .secondPage {
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #1b1c1d;
 }
 .landingFooter{
@@ -41,6 +41,15 @@ canvas.TechLogoMainPage {
             
             .ui.red.large.statistic.redStats{
               margin-top: 120px; 
+            }
+            .firstPage {
+              height: 120vh;
+            }                       
+            .secondPage {
+              height: 120vh;
+            }
+            .thirdPage {
+              height: 150vh;
             }
 } 
 @media only screen and (max-width: 728px) {
@@ -82,6 +91,13 @@ canvas.TechLogoMainPage {
             }
             .ui.yellow.large.statistic.yellowStats{
               margin-top: 8vh;
+            }
+                              
+            .secondPage {
+              height: auto;
+            }
+            .thirdPage {
+              height: auto;
             }
         
             

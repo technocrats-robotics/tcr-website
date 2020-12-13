@@ -8,6 +8,7 @@ import UserPanel from './userPanel/UserPanel';
 import Gallery from './pages/Gallery/Gallery';
 import Blogs from './pages/blog/Blog';
 import Team from './pages/about_us/TeamMembers'
+import Acheivements from './components/about_us/Acheivements'
 
 // CSS
 import './App.css';
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/Team" component={Team} />
+          <Route exact path="/Acheivements" component={Acheivements} />
           <script src="/node_modules/rive-canvas/rive.js"></script> 
         </Switch>
       </Router>

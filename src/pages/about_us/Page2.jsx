@@ -34,10 +34,11 @@ export default class Page2 extends Component {
         let tempArray = []
         database.forEach((ele)=>{
             let temp = ele.data()
-            console.log(ele.data().roles);
-            console.log(parseInt(this.state.activeItem))
-            if(ele.data().roles[parseInt(this.state.activeItem)+1] == Role.LEAD){
-            tempArray.push(ele.data())
+            // console.log(ele.data().roles);
+            // console.log(parseInt(this.state.activeItem))
+            let person = temp.roles[parseInt(this.state.activeItem)+1];
+            if(person === Role.LEAD || person === Role.CAPTAIN){
+            tempArray.push(temp)
             console.log('pushed')
         }
         })
@@ -91,7 +92,7 @@ export default class Page2 extends Component {
                                   
                 <Grid.Row>
                 <div>
-                    <Link to="/Gallery">
+                    <Link to="/Team">
                     <Button fluid positive>View Complete Team</Button>
                     </Link>
                 </div>
