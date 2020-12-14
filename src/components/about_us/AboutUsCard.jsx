@@ -18,8 +18,8 @@ export default class AboutUsCard extends Component {
 
     render() {
         return (
-            <div class="aboutuscard">
-                <div class="card__face card__face--front">
+            <div className="aboutuscard">
+                <div className="card__face card__face--front">
                     <Image className='faceimage' size='small' avatar src={this.props.data.dpLink != null ? this.props.data.dpLink : 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'} />
                     <Header inverted>
                         {this.props.data.name}
@@ -27,7 +27,7 @@ export default class AboutUsCard extends Component {
                             {this.props.data.currentRole}</Header.Subheader>
                     </Header>
                 </div>
-                <div class="card__face card__face--back">
+                <div className="card__face card__face--back">
                     <Header inverted>
                         {this.props.data.name}
                         <Header.Subheader className='blue'>{this.props.data.branch} - {this.props.data.yearOfJoining}</Header.Subheader>
@@ -47,7 +47,7 @@ export default class AboutUsCard extends Component {
                                 }
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.linkedIn) &&
-                                    (<Button primary onClick={()=>this.openLink(this.props.data.social_media.github)} icon='linkedin'></Button>)
+                                    (<Button primary onClick={()=>this.openLink(this.props.data.social_media.linkedIn)} icon='linkedin'></Button>)
                                 }
                             </div>
                         }
