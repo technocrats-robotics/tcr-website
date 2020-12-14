@@ -1,47 +1,80 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState} from 'react';
+import { useHistory } from "react-router-dom";
 import { Segment, Label } from 'semantic-ui-react';
-import './Gallery.css';
 import ImageGallery from 'react-image-gallery';
 import { Breadcrumb } from 'semantic-ui-react';
+
+//CSS
+import './Gallery.css';
+
+//database from local
 import { db } from '../../services/google-firebase/setup';
 
-export default class Gallery extends Component {
-  state = { images: [], }
+//loading screen (Red Spinner)
+import Loader from '../../components/SpinnerLoadingScreen/Loader'
 
-  componentDidMount() {
+function Gallery() {
+  // state = { images: [], }
+
+  const [all_images, setImages] = useState([])
+
+  const [loader, startLoading, stopLoading] = Loader();
+
+  const history = useHistory();
+
+  useEffect(() => {
+
+    const image_array = []
+
+    startLoading()
+
     db.collection('content/gallery/images').get()
-    .then((images) => {
-      images.forEach((image) => {
-        let galleryImage = { 
-          original: image.data().link,
-          thumbnail: image.data().link,
-        };
-        this.state.images.push(galleryImage);
-        this.setState(this.state);
-      });      
-    });
-  }
-  
-  handleBack = () =>{
-    this.props.history.push('/')
-  }
-        
-  render() {
+      .then((images) => {
+        console.log("Images ", images)
+        images.forEach((image) => {
+          console.log(image.data().link)
 
-    const sections = [
-      { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
-      { key: 'Gallery', content: 'Gallery', active: true },
-    ]
+          let galleryImage = {
+            original: image.data().link,
+            thumbnail: image.data().link,
+          };
 
-    return(
-        <div className='galleryDiv'>
-          <Segment inverted>
-            <Label color='red' attached='top left'>
-              <Breadcrumb icon='right angle' sections={sections} />
-            </Label> 
-            <ImageGallery items={this.state.images} showFullscreenButton={false} showPlayButton={false} showNav={false} showBullets={true} />
-          </Segment>
-        </div>
-    );
-    }
+          image_array.push(galleryImage)
+
+          console.log("All Images array ", all_images)
+
+        });
+        setImages(image_array)
+      });
+  }, [])
+
+  const handleBack = () => {
+    history.push('/')
+    console.log('Handle Back')
+  }
+
+  const sections = [
+    { key: 'Home', content: 'Home', link: true, onClick: handleBack },
+    { key: 'Gallery', content: 'Gallery', active: true },
+  ]
+
+  window.onload = function () {
+    stopLoading()
+  }
+
+  return (
+    <div className='galleryDiv'>
+      {loader}
+      <Segment inverted>
+        <Label color='red' attached='top left'>
+          <Breadcrumb icon='right angle' sections={sections} />
+        </Label>
+        <ImageGallery items={all_images} showFullscreenButton={false} showPlayButton={false} showNav={false} showBullets={true} />
+      </Segment>
+    </div>
+  );
 }
+
+export default Gallery
+
+
