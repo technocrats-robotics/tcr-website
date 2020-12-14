@@ -7,7 +7,7 @@ import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
 import SideNavMob from '../../components/SideNavMob';
-import {  Label, Icon, Button } from 'semantic-ui-react';
+import {  Label, Icon, Button, Divider } from 'semantic-ui-react';
 import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 
 import {db} from '../../services/google-firebase/setup'
@@ -72,10 +72,14 @@ export default class LandingPage extends Component {
             </Button>
             <SideNavMob visibility={this.state.visibility} visibilityToggle={this.toggleSidebarVisibility}></SideNavMob>
             <Page1></Page1>
+            <Divider horizontal inverted>--</Divider>
             <Page2 content={this.state.contentAll}></Page2>
+            <Divider horizontal inverted>--</Divider>
             <Page3></Page3>
+            <Divider horizontal inverted>--</Divider>
             {/* <Page4></Page4> */}
             <About></About>
+            <Divider horizontal inverted>--</Divider>
             <ContactUs></ContactUs>
             {/* </Visibility> */}
         </div>

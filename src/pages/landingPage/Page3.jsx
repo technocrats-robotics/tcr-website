@@ -146,7 +146,7 @@ export default class Page3 extends Component {
     <Grid.Row>
       <div>
         <Link to="/Gallery">
-        <Button positive>Visit Gallery</Button>
+        <Button basic color='yellow'>Visit Gallery</Button>
         </Link>
       </div>
     </Grid.Row>
