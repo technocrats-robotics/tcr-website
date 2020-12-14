@@ -15,6 +15,7 @@
   color: white;
   cursor: pointer;
   border:0px solid gray;
+  margin-bottom: 5vh;
   /* border-style: dashed; */
   text-align: center;
   -webkit-transition: 1s ease-in-out;

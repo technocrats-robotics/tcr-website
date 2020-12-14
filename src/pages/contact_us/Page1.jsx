@@ -13,6 +13,10 @@ export default class Page1 extends Component {
           document.getElementsByClassName('landingFooter')[0].style.boxShadow = "0px 10px 20px black";    
       }
   }
+  
+  openLink = (url) => {
+    window.open(url, '_blank');
+}
   render() {
     return(
         <div className='firstPageContactUs'>
@@ -35,10 +39,10 @@ export default class Page1 extends Component {
                 <GridRow className='landingFooter' columns={16}>
                 <div>
                     <Segment raised size='massive' fluid inverted>
-                        <Button circular color='black' icon='facebook' />
-                        <Button circular color='black' icon='twitter' />
-                        <Button circular color='black' icon='linkedin' />
-                        <Button circular color='black' icon='git' />
+                        <Button onClick={()=>this.openLink('https://www.instagram.com/technocratsrobotics/')} circular color='black' icon='instagram' />
+                        <Button onClick={()=>this.openLink('https://twitter.com/technocratsr')} circular color='black' icon='twitter' />
+                        <Button onClick={()=>this.openLink('https://www.linkedin.com/company/technocrats-robotics-vit')} circular color='black' icon='linkedin' />
+                        <Button onClick={()=>this.openLink('https://www.facebook.com/technocratsrobotics/')} circular color='black' icon='facebook' />
 
                     </Segment>
                     <Visibility onUpdate={this.handleUpdate}>
