@@ -70,13 +70,13 @@ export default class LandingPage extends Component {
             </Button>
             <SideNavMob visibility={this.state.visibility} visibilityToggle={this.toggleSidebarVisibility}></SideNavMob>
             <Page1></Page1>
-            <Divider horizontal inverted>--</Divider>
+            <Divider horizontal inverted>who are we ?</Divider>
             <Page2 content={this.state.contentAll}></Page2>
-            <Divider horizontal inverted>--</Divider>
+            <Divider horizontal inverted>Gallery</Divider>
             <Page3></Page3>
-            <Divider horizontal inverted>--</Divider>
+            <Divider horizontal inverted>About Us</Divider>
             <About></About>
-            <Divider horizontal inverted>--</Divider>
+            <Divider horizontal inverted>Get in Touch</Divider>
             <ContactUs></ContactUs>
         </div>
     );

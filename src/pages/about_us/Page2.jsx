@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header, Menu, Button } from 'semantic-ui-react';
+import { Grid, Menu, Button,Divider } from 'semantic-ui-react';
 import {  Link } from 'react-router-dom';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
@@ -77,7 +77,7 @@ export default class Page2 extends Component {
     const { activeItem } = this.state;
     return(
         <div className='secondAboutPage'>
-            <Header textAlign='center' inverted size='huge'>The Team Leads</Header>
+            <Divider horizontal inverted>Team Leads</Divider>
             <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
             {
                 this.state.yearHeaders.map((year)=>{  

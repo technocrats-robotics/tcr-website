@@ -159,7 +159,7 @@ function UserProfile() {
                                                     <div className="ui label userSocial">
                                                         <Icon name="github square" size="large" />
                                                     </div>
-                                                    <input type="text" defaultValue={userDetails.social_media.github} placeholder="Github Username (optional)" onChange={(event) => setGithub(event.target.value)} />
+                                                    <input type="text" defaultValue={userDetails.social_media.github} placeholder="github profile url" onChange={(event) => setGithub(event.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@ function UserProfile() {
                                                     <div className="ui label userSocial">
                                                         <Icon name="instagram" size="large" />
                                                     </div>
-                                                    <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="Instagram Username (optional)" onChange={(event) => setInstagram(event.target.value)} />
+                                                    <input type="text" defaultValue={userDetails.social_media.instagram} placeholder="instagram profile url" onChange={(event) => setInstagram(event.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -181,7 +181,7 @@ function UserProfile() {
                                                     <div className="ui label userSocial">
                                                         <Icon name="linkedin" size="large" />
                                                     </div>
-                                                    <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="LinkedIn Username (optional)" onChange={(event) => setLinkedIn(event.target.value)} />
+                                                    <input type="text" defaultValue={userDetails.social_media.linkedIn} placeholder="linkedin profile url" onChange={(event) => setLinkedIn(event.target.value)} />
                                                 </div>
                                             </div>
                                         </div>

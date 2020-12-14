@@ -1,7 +1,6 @@
-import React,{useContext, useState} from 'react'
-import {NavLink} from 'react-router-dom'
+import React,{useState} from 'react'
 
-import { Image, Grid, Header, Icon, Menu, Button  } from "semantic-ui-react";
+import { Image, Icon, Button  } from "semantic-ui-react";
 //CSS
 import "./CSS/Navigation.css"
 
@@ -24,7 +23,7 @@ function Navigation() {
     }
     
    return (<div>
-            <div class="ui inverted segment fluid">
+            <div className="ui inverted segment fluid">
             <div className="ui menu inverted secondary">
                 <Image className="admin__tcrLogo" size='small' src={process.env.PUBLIC_URL + '/TCRBanner.png'} />
                 <div className="header item computer only">
