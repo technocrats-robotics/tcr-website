@@ -5,13 +5,7 @@ import './InfoCard.css';
 
 var x = window.matchMedia("(max-width: 900px)");
 export default class InfoCard extends Component {
-    state={visible: false}
-    handleUpdate = (e, { calculations }) => {
-        // console.log(calculations.topPassed)
-        if(calculations.topVisible){
-            this.setState({visible:true})
-        }
-    }
+
     handleOnScreen = (e,{calculations}) => {
         if(x.matches){
         let aboutUsCard = document.getElementsByClassName('row aboutCard');
@@ -22,13 +16,9 @@ export default class InfoCard extends Component {
     }}
   render() {
     return(
+                    
+        <Visibility onUpdate={this.handleOnScreen}>
         <div>  
-            <Visibility onUpdate={this.handleUpdate}>
-        <Transition
-         visible={this.state.visible} 
-        animation='fade up' 
-        duration={1600}
-        >
             <Grid centered stackable columns={12}>
                 <Grid.Row className='aboutCard'>
                     <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
@@ -86,10 +76,9 @@ export default class InfoCard extends Component {
                 </div>
                 </Grid.Row>
             </Grid>
-            
-            </Transition>
-            </Visibility>
         </div>
+        
+        </Visibility>
     );
     }
 }

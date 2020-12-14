@@ -4,12 +4,6 @@ import AboutUsCard from '../../components/about_us/AboutUsCard';
 import InfoCard from '../../components/about_us/InfoCard';
 
 export default class Page1 extends Component {
-    state={visible: false}
-    handleUpdate = (e, { calculations }) => {
-        if(calculations.topVisible){
-            this.setState({visible:true})
-        }
-    }
   render() {
     return(
         <div className='firstAboutPage'>

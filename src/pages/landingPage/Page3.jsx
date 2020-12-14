@@ -24,17 +24,10 @@ export default class Page3 extends Component {
       }); 
     })
   }   
-  handleUpdate = (e, { calculations }) => {
-      if(calculations.topVisible){
-          this.setState({visible:true})
-      }
-  }
 
     render(){
   return(
     <div className="thirdPage">
-    <Visibility onUpdate={this.handleUpdate}>
-    <Transition visible={this.state.visible} animation='fade up' duration={1600}>
     <Grid centered>
         <GridColumn width={14}>
     <ul id="hexGrid">
@@ -65,8 +58,6 @@ export default class Page3 extends Component {
       </div>
     </Grid.Row>
     </Grid>
-    </Transition>
-    </Visibility>
     </div>
    )
   }

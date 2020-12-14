@@ -9,11 +9,12 @@ export default class Page2 extends Component {
         console.log(this.props);
     }
     state={visible: false}
-  handleUpdate = (e, { calculations }) => {
-      if(calculations.topVisible){
-          this.setState({visible:true})
-      }
-  }
+    handleUpdate = (e, { calculations }) => {
+        // console.log(calculations.topPassed)
+        if(calculations.topVisible){
+            this.setState({visible:true})
+    }
+    }
 
   render() {
     return(

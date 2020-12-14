@@ -67,7 +67,7 @@ export default class LandingPage extends Component {
             <div className='loadScreen'>
     <Icon size='massive' color='red' loading name='spinner' /></div>
             <Button color='yellow' basic className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
-                <Icon name='arrow right' />
+                <Icon name={this.state.visibility?'chevron right':'chevron left'} />
             </Button>
             <SideNavMob visibility={this.state.visibility} visibilityToggle={this.toggleSidebarVisibility}></SideNavMob>
             <Page1></Page1>

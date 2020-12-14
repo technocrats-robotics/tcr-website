@@ -55,16 +55,13 @@ const SideNavMob = (props) => {
         Who are we?
       </Menu.Item>
       <Menu.Item as='a' onClick={scrollToThree}>
-        Images Matrix
-      </Menu.Item> 
-      <Menu.Item as='a' onClick={scrollToThree}>
-        Testinomials
+        Gallery
       </Menu.Item>   
       <Menu.Item as='a' onClick={scrollToAboutUs}>
-        About Technocrats
+        About Us
       </Menu.Item>   
       <Menu.Item as='a' onClick={scrollToTeam}>
-        Team Leads
+        Team
       </Menu.Item>  
       <Menu.Item as='a' onClick={()=>history.push("/Team")}>
         Complete Team  <Icon size='mini' name='external' color='blue'></Icon>
