@@ -1,0 +1,94 @@
+.devcard {
+    position: relative;
+    margin-top: 1vh;
+    width: 30vh;
+    height: 40vh;
+    color: white;
+    cursor: pointer;
+    border:0px solid gray;
+    margin-bottom: 5vh;
+    /* border-style: dashed; */
+    text-align: center;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            box-shadow:0px 2px 4px 0px #c1930c;
+            border-radius: 5px;
+            background-color: #c1930c14 !important;
+            
+  
+  }
+  .devcard:hover {
+    -webkit-transform: rotateY(0.5turn);
+            transform: rotateY(0.5turn);
+  
+  }
+  .devcard .dev__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0));
+  }
+  .devcard .dev__face img {
+    width: 240px;
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .devcard .dev__face--back {
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+  
+  }
+  @media only screen and (min-width:728px) {
+  .devpaddingMockBlock{
+          height: 25vh;
+          padding-top: 6vh;
+          padding-left: 2vh;
+          padding-right: 2vh;
+  }
+  }
+  .devsocial_icons {
+          position: fixed;
+          top: 54%;
+          width: 90%;
+          text-align: center !important;
+      }
+  
+  img.ui.small.avatar.image.devfaceimage {
+          padding: 10%;
+  }
+  
+  .column.devjustToAlignMemberCards {
+          text-align: -webkit-center !important;
+      }
+  
+  @media only screen and (max-width:728px) {
+          .devcard{
+                  /* margin: 10%; */
+                  /* padding: 10%!important; */
+                  width: 30vh;
+                  height: 40vh;
+          }
+          .devcard .dev__face{
+                  padding: 10%;
+          }
+  .devsocial_icons {
+          margin-left: -10%;      
+  }
+  .devpaddingMockBlock{
+          height: 20vh;
+          font-size:1.7vh;
+          padding-top: 2vh;
+          padding-left: 2vh;
+          padding-right: 2vh;
+  }
+      } 

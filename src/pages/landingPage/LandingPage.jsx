@@ -13,6 +13,8 @@ import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
 import {db} from '../../services/google-firebase/setup'
 import { Visibility } from 'semantic-ui-react';
 
+import '../../components/Starsbg.css';
+
 var x = window.matchMedia("(max-width: 700px)")
 export default class LandingPage extends Component {
     constructor(){
