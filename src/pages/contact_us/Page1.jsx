@@ -47,7 +47,8 @@ export default class Page1 extends Component {
                     </Segment>
                     <Visibility onUpdate={this.handleUpdate}>
                     <Segment inverted>
-                        Made with <Icon color='red' name='heart'></Icon>by Technocrats Robotics |
+                        Made with <Icon color='red' name='heart'></Icon>by Technocrats Robotics&nbsp;|&nbsp;
+                        <Link to="/developers"><Button circular compact basic color='yellow'>Developer's Space</Button></Link>&nbsp;|&nbsp;
                         <Link to="/userPanel"><Button circular compact basic color='yellow'>Member Login</Button></Link>
                     </Segment>
                     </Visibility>
