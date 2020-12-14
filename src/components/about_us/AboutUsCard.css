@@ -54,6 +54,7 @@
 .aboutuscard .card__face--back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
+          background-color: #c1930c14;
 
 }
 @media only screen and (min-width:728px) {
@@ -84,7 +85,6 @@ img.ui.small.avatar.image.faceimage {
 
 @media only screen and (max-width:728px) {
         .aboutuscard{
-                box-shadow: 0px 2px 4px 0px black !important;
                 /* margin: 10%; */
                 /* padding: 10%!important; */
                 width: 30vh;
