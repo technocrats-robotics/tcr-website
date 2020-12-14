@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Header, Image,Button } from 'semantic-ui-react';
 import './AboutUsCard.css';
 
