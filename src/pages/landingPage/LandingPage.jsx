@@ -48,9 +48,7 @@ export default class LandingPage extends Component {
         // nothing = (pixs > 3000 && pixs<3500 && dir=='down') ? window.scrollBy(0,720) : console.log('none')
     }
     async componentDidMount(){
-        if(x.matches){
             document.getElementsByClassName('firstPage')[0].style.backgroundImage = "url('/imageBackFirstPage.jpg')"
-        }
         this.getPageData()
         // window.onscroll = () => {
         //     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
