@@ -43,7 +43,7 @@ i.red.spinner.massive.loading.icon {
 }
 @media only screen and (min-width: 1080px) {
 canvas.TechLogoMainPage {
-  margin-left: 7vh;
+  /* margin-left: 7vh; */
   zoom: 1.2;
 }
 }
@@ -54,7 +54,6 @@ canvas.TechLogoMainPage {
         } */
         .ui.medium.header.Title {
             font-size: 6vh;
-            margin-left: 10%;
             }
             .ui.yellow.large.statistic.yellowStats{
               margin-top: 120px;
@@ -67,7 +66,8 @@ canvas.TechLogoMainPage {
               height: 120vh;
             }                       
             .secondPage {
-              height: 120vh;
+              height: 100vh;
+              padding: 15vh;
             }
             .thirdPage {
               height: 150vh;
@@ -300,11 +300,7 @@ canvas.TechLogoMainPage {
       animation-direction: alternate;
       animation-delay: 0ms;
       animation-timing-function: ease-in-out;
-      margin-left: 10%;
   }
-img.grey{
-    
-}
 
 * {
     margin: 0;

@@ -70,7 +70,7 @@ export default class InfoCard extends Component {
                 <Grid.Row>
                 <div>
                     <Link to="/Acheivements">
-                    <Button fluid positive>View all Acheivements</Button>
+                    <Button  color='yellow' basic>View all Acheivements</Button>
                     </Link>
                 </div>
                 </Grid.Row>

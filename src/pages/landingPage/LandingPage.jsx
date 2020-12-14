@@ -77,11 +77,9 @@ export default class LandingPage extends Component {
             <Divider horizontal inverted>--</Divider>
             <Page3></Page3>
             <Divider horizontal inverted>--</Divider>
-            {/* <Page4></Page4> */}
             <About></About>
             <Divider horizontal inverted>--</Divider>
             <ContactUs></ContactUs>
-            {/* </Visibility> */}
         </div>
     );
     }

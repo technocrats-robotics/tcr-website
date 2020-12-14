@@ -32,7 +32,7 @@ export default class Page1 extends Component {
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}
-                    <Grid.Column mobile='12' textAlign='center' className='leftMain' computer='6' >
+                    <Grid.Column mobile='16' textAlign='center' className='leftMain' computer='6' >
                             <FlareComponent className="TechLogoMainPage" width={360} height={360} transparent={true} controller={new LogoController()} file="tcr_logo.flr"/>
                         <div className='mainPageContent'>
                             <Header className='Title' size='medium'>Technocrats Robotics</Header>
@@ -41,9 +41,11 @@ export default class Page1 extends Component {
                             </div>
                         </div> 
                         </Grid.Column>
-                    <Grid.Column only='computer'  width='4'>
-                        <Dial></Dial>
-                    </Grid.Column>
+                    {/* THE DIAL/NAV MENU IS PLANNED FOR LATER */}
+                        {/* <Grid.Column only='computer'  width='4'>
+                                <Dial></Dial>
+                        </Grid.Column> */}
+                    {/* ************************************** */}
                 </Grid.Row>
             </Grid>
         </div>

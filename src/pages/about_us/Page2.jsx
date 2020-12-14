@@ -104,7 +104,7 @@ export default class Page2 extends Component {
                 <Grid.Row>
                 <div>
                     <Link to="/Team">
-                    <Button fluid positive>View Complete Team</Button>
+                    <Button color='yellow' basic>View Complete Team</Button>
                     </Link>
                 </div>
                 </Grid.Row>

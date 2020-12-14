@@ -45,7 +45,7 @@ export default class Page2 extends Component {
                     <Grid.Column textAlign='center' width='5'>
                     <Statistic mobile='16' inverted  className='yellowStats' size='large' color='blue'>
                         <Statistic.Value>
-                            {this.props.content.stats['robots-made']}
+                            {this.props.content.stats['robots_made']}
                         </Statistic.Value>
                         <Statistic.Label>Robots Made</Statistic.Label>
                         </Statistic>
