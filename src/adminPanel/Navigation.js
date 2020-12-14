@@ -26,7 +26,7 @@ function Navigation() {
    return (<div>
             <div class="ui inverted segment fluid">
             <div className="ui menu inverted secondary">
-                <Image className="admin__tcrLogo" size='tiny' src="http://www.technocratsrobotics.in/images/logo21.png" />
+                <Image className="admin__tcrLogo" size='small' src={process.env.PUBLIC_URL + '/TCRBanner.png'} />
                 <div className="header item computer only">
                    <h2 className='tcrTitle'>Technocrats Robotics</h2>
                 </div>

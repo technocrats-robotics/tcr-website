@@ -15,7 +15,6 @@ function Navigation() {
 
 
     const [visible, setVisible] = useState(false);
-    const [visibleChangePassword,setChangePassword] = useState(true);
 
     const handleVisibility = () => {
         setVisible(!visible)
@@ -92,7 +91,7 @@ function Navigation() {
                                 </Menu.Item>
                                 
                                 <Menu.Item>
-                                    <NavLink exact className="nav item" to="/" onClick={handleVisibility}> 
+                                    <NavLink className="nav item" to="/" onClick={handleVisibility}> 
                                     <Icon name='home' />Home </NavLink>
                                 </Menu.Item>
                             </div>

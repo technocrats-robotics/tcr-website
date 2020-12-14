@@ -45,7 +45,7 @@ function UserLogin() {
                 {warning}
                 </div>
                 <form className="ui form" onSubmit={handleSubmission} method="POST">
-                    <img className="ui medium centered image" src="http://www.technocratsrobotics.in/images/technocrats.png" alt="tcr_logo" />
+                    <img className="ui medium centered image" src={process.env.PUBLIC_URL + '/TCRBanner.png'} />
                     
                     <div className="inputBox">
                         <div className="ui fluid input">

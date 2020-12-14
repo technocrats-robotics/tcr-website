@@ -5,8 +5,8 @@ function LoadingScreen() {
     return (
         <div className="ui active dimmer">
             <Transition visible={true} animation='scale' duration={500}>
-                    <Image size='large' src='http://www.technocratsrobotics.in/images/technocrats.png' />
-            </Transition>
+                    <Image size='large' src={process.env.PUBLIC_URL + '/TCRBanner.png'} />
+            </Transition> 
         </div>
     )
 }
