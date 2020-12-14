@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { Header, Image,Button, Visibility } from 'semantic-ui-react';
+import { Header, Image,Button} from 'semantic-ui-react';
 import './AboutUsCard.css';
 
 export default class AboutUsCard extends Component {
-    constructor(props) {
-        super(props);
-        // console.log(props.data.social_media);
-        console.log("About Us!!");
-    }
+ 
     openLink = (url) => {
         window.open(url, '_blank');
     }

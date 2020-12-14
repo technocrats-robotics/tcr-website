@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 import {sendFeedback} from '../../services/mail/sendEmail.js'
 
 export default function ContactForm () {
-
-
       /**
        * to send feedback as email on TCR's official mail id 
        * In sendFeeback function send first argument as email(TCR's email in our care)

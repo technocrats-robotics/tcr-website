@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import {Grid, GridColumn, Button} from 'semantic-ui-react';
+import {Grid, GridColumn, Button, Transition, Visibility} from 'semantic-ui-react';
 import { db } from '../../services/google-firebase/setup';
 
 /**
@@ -9,7 +9,7 @@ import { db } from '../../services/google-firebase/setup';
 **/
 
 export default class Page3 extends Component {
-  state = { images: [], }
+  state = { images: [],visible: false }
 
   componentDidMount() {
     db.collection('content').doc('gallery').get()
@@ -23,11 +23,18 @@ export default class Page3 extends Component {
         })
       }); 
     })
+  }   
+  handleUpdate = (e, { calculations }) => {
+      if(calculations.topVisible){
+          this.setState({visible:true})
+      }
   }
 
     render(){
   return(
     <div className="thirdPage">
+    <Visibility onUpdate={this.handleUpdate}>
+    <Transition visible={this.state.visible} animation='fade up' duration={1600}>
     <Grid centered>
         <GridColumn width={14}>
     <ul id="hexGrid">
@@ -58,6 +65,8 @@ export default class Page3 extends Component {
       </div>
     </Grid.Row>
     </Grid>
+    </Transition>
+    </Visibility>
     </div>
    )
   }

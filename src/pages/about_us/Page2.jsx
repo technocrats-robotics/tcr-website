@@ -31,7 +31,7 @@ export default class Page2 extends Component {
             let person = temp.roles[parseInt(this.state.activeItem)+1];
             if(person === Role.LEAD || person === Role.CAPTAIN){
             tempArray.push(temp)
-            console.log('pushed')
+            // console.log('pushed')
         }
         })
         db.collection(Member.collectionName).get()
@@ -62,6 +62,12 @@ export default class Page2 extends Component {
         });
         this.setState({data: tempArray});
     }
+    
+    randomColor = () =>{
+        let colors = ['red','green','blue','yellow'];
+        let num = Math.floor(Math.random() * (4));
+        return colors[num]
+    }
     componentDidMount(){
         this.getMemberData();
         let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
@@ -72,6 +78,15 @@ export default class Page2 extends Component {
         }
         tempyearHeaders = [...new Set(tempyearHeaders)];
         this.setState({yearHeaders:tempyearHeaders});
+        setInterval(()=>{
+            let imgBg = document.getElementsByClassName('faceimage')
+            for(let i =0 ;i < imgBg.length; i++){
+                let color=this.randomColor()
+                if(imgBg[i].style.boxShadow === ""){
+                    imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+                            }
+                        }
+                },1000)
     }
   render() {
     const { activeItem } = this.state;

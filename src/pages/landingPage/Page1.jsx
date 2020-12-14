@@ -48,7 +48,6 @@ export default class Page1 extends Component {
                     {/* ************************************** */}
                 </Grid.Row>
             </Grid>
-        </div>
-    );
+        </div>    );
     }
 }

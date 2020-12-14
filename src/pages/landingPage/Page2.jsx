@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
-import { Grid, Segment, Header,Statistic,Image,Icon } from 'semantic-ui-react';
+import { Grid, Segment, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
 import ImageMat from '../../components/landingPage/ImageMat';
 import IntroCard from '../../components/landingPage/IntroCard';
 
 export default class Page2 extends Component {
+   
     componentDidMount() {
         console.log(this.props);
     }
+    state={visible: false}
+  handleUpdate = (e, { calculations }) => {
+      if(calculations.topVisible){
+          this.setState({visible:true})
+      }
+  }
+
   render() {
     return(
+
         <div className="secondPage">
+        <Visibility onUpdate={this.handleUpdate}>
+        <Transition
+         visible={this.state.visible} 
+        animation='fade up' 
+        duration={1600}
+        >
             <Grid stackable centered>
                 <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
                     <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
@@ -70,6 +85,8 @@ export default class Page2 extends Component {
 
 
             </Grid>
+        </Transition>
+        </Visibility>
         </div>
     );
     }
