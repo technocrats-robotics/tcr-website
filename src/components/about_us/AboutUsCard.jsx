@@ -30,8 +30,8 @@ export default class AboutUsCard extends Component {
                 </div>
                 <div className="card__face card__face--back">
                     <div className='paddingMockBlock'>
-                    <Header as={'h4'} inverted className='afterMockBlock' >
-                            {this.props.data.about.experience}
+                    <Header as={'p'} color='yellow' inverted className='afterMockBlock' >
+                           {this.props.data.about.experience}
                             {
                             <div className="social_icons">
                                 {

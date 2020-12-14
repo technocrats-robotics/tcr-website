@@ -56,14 +56,19 @@
           transform: rotateY(180deg);
 
 }
+@media only screen and (min-width:728px) {
 .paddingMockBlock{
-        height: 20vh;
+        height: 25vh;
+        padding-top: 6vh;
+        padding-left: 2vh;
+        padding-right: 2vh;
+}
 }
 .social_icons {
         position: fixed;
-        top: 42%;
-        width: 100%;
-        /* text-align: center !important; */
+        top: 54%;
+        width: 90%;
+        text-align: center !important;
     }
 
 img.ui.small.avatar.image.faceimage {
@@ -88,8 +93,14 @@ img.ui.small.avatar.image.faceimage {
         .aboutuscard .card__face{
                 padding: 10%;
         }
-        
 .social_icons {
-        margin-left: -10%;        
+        margin-left: -10%;      
+}
+.paddingMockBlock{
+        height: 20vh;
+        font-size:1.7vh;
+        padding-top: 2vh;
+        padding-left: 2vh;
+        padding-right: 2vh;
 }
     } 
