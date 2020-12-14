@@ -55,7 +55,7 @@ export default function ContactForm () {
         // this.setState({data:data})
         return (
             <div className="background">
-            <div className="container">
+            <div className="container-box">
               <div className="screen">
                 <div className="screen-header">
                   <div className="screen-header-left">
