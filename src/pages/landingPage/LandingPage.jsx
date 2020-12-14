@@ -65,7 +65,7 @@ export default class LandingPage extends Component {
             {/* <Visibility continuous onOnScreen={this.handleScrollingDown}> */}
             <div className='loadScreen'>
     <Icon size='massive' color='red' loading name='spinner' /></div>
-            <Button color='red' className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
+            <Button color='yellow' basic className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
                 <Icon name='arrow right' />
             </Button>
             <SideNavMob visibility={this.state.visibility} visibilityToggle={this.toggleSidebarVisibility}></SideNavMob>
