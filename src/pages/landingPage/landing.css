@@ -20,6 +20,7 @@
   background-color: #1b1c1d !important;
   border-radius: 2rem !important;
   color: white;
+  margin-top: 10vh;
   transition: ease-in-out 0.5s;
 }
 button.ui.icon.button.SideNavMobButton {
