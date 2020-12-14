@@ -56,7 +56,7 @@ export default class TeamMembers extends Component {
         }
         tempyearHeaders = [...new Set(tempyearHeaders)]
         this.setState({yearHeaders:tempyearHeaders});
-        // setInterval(()=>{
+        setInterval(()=>{
             let imgBg = document.getElementsByClassName('faceimage')
             for(let i =0 ;i < imgBg.length; i++){
                 let color=this.randomColor()
@@ -64,7 +64,7 @@ export default class TeamMembers extends Component {
         imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
                 }
             }
-        // },1000)
+        },1000)
     }
 
     handleBack = () =>{
