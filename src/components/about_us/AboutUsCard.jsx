@@ -21,13 +21,13 @@ export default class AboutUsCard extends Component {
                     <Header inverted>
                         {this.props.data.name}
                         <Header.Subheader>
-                            {this.props.data.currentRole}-{this.props.data.yearOfJoining}</Header.Subheader>
+                            {this.props.data.currentRole}</Header.Subheader>
                     </Header>
                 </div>
                 <div class="card__face card__face--back">
                     <Header inverted>
                         {this.props.data.name}
-                        <Header.Subheader className='blue'>{this.props.data.branch}-{this.props.data.yearOfJoining}</Header.Subheader>
+                        <Header.Subheader className='blue'>{this.props.data.branch} - {this.props.data.yearOfJoining}</Header.Subheader>
                         <Header.Content as={'h6'} >
                             {this.props.data.about.experience}
                         </Header.Content>
@@ -36,15 +36,15 @@ export default class AboutUsCard extends Component {
                             <div className="social_icons">
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.github) &&
-                                    (<Button primary onClick={()=>this.openLink("https://github.com/"+this.props.data.social_media.github)} icon='git'></Button>)
+                                    (<Button primary onClick={()=>this.openLink(this.props.data.social_media.github)} icon='github'></Button>)
                                 }
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.instagram) &&
-                                    (<Button primary onClick={()=>this.openLink("https://instagram.com/"+this.props.data.social_media.instagram)} icon='instagram' ></Button>)
+                                    (<Button primary onClick={()=>this.openLink(this.props.data.social_media.instagram)} icon='instagram' ></Button>)
                                 }
                                 {
                                     (this.props.data.social_media && this.props.data.social_media.linkedIn) &&
-                                    (<Button primary onClick={()=>this.openLink("https://linkedin.com/"+this.props.data.social_media.github)} icon='linkedin'></Button>)
+                                    (<Button primary onClick={()=>this.openLink(this.props.data.social_media.github)} icon='linkedin'></Button>)
                                 }
                             </div>
                         }
