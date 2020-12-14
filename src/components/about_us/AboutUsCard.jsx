@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Segment, Header, Image, Icon, Card, Button } from 'semantic-ui-react';
+import { Header, Image,Button } from 'semantic-ui-react';
 import './AboutUsCard.css';
 
 export default class AboutUsCard extends Component {
@@ -21,7 +21,7 @@ export default class AboutUsCard extends Component {
                     <Header inverted>
                         {this.props.data.name}
                         <Header.Subheader>
-                            {this.props.data.branch}-{this.props.data.yearOfJoining}</Header.Subheader>
+                            {this.props.data.currentRole}-{this.props.data.yearOfJoining}</Header.Subheader>
                     </Header>
                 </div>
                 <div class="card__face card__face--back">
