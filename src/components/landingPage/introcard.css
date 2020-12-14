@@ -1,9 +1,13 @@
 .postlayer1 {
 }
+.center.aligned.six.wide.computer.sixteen.wide.mobile.six.wide.widescreen.column {
+    text-align: -webkit-center;
+}
+
 .introlayer1 {
     width:50vh;
     position: relative;
-    margin-left: 10vh;
+    /* margin-left: 10vh; */
     height: 25vh;
     transform:rotate(5deg);
     border: 1px solid grey;

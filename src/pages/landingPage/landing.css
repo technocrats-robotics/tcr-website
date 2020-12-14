@@ -10,6 +10,7 @@
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.473);
     display: flex;
+    box-shadow: 0px 10px 20px black;
   }
 .secondPage {
   /* height: 100vh; */
@@ -18,8 +19,8 @@
 .landingFooter{
   background-color: #1b1c1d !important;
   border-radius: 2rem !important;
-  box-shadow: 0px 20px 40px 0px white;
   color: white;
+  transition: ease-in-out 0.5s;
 }
 button.ui.icon.button.SideNavMobButton {
   position: fixed;
@@ -52,6 +53,10 @@ canvas.TechLogoMainPage {
            /* canvas.TechLogoMainPage {
             margin-left: 80px;
         } */
+                
+        .centered.sixteen.column.row {
+          margin-left: -15% !important;
+        }
         .ui.medium.header.Title {
             font-size: 6vh;
             }
@@ -285,6 +290,17 @@ canvas.TechLogoMainPage {
 }
 
 
+@keyframes coinRotate {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
 @keyframes upAndDown {
       0% {
         transform: translate(0,-10px);
