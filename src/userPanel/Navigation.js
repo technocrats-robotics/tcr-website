@@ -1,6 +1,6 @@
 import React, {useEffect,useContext,useState } from 'react'
 import { Menu, Sidebar, Icon } from 'semantic-ui-react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 //auth from services/google-firebase
 import { auth } from "../services/google-firebase/setup"
@@ -54,11 +54,9 @@ function Navigation() {
                             visible={visible}
                             width='thin'
                         >
-                            <div>
+                            
                                 <Menu.Item style={{cursor:"pointer"}}>
-                                    <Link onClick={handleVisibility}>
-                                    <Icon name='x'/>
-                                    </Link>
+                                    <Icon name='x' onClick={handleVisibility}/>
                                 </Menu.Item>
                                 <Menu.Item>
                                     <NavLink exact className="nav item" to="/userPanel" onClick={handleVisibility}>
@@ -85,7 +83,7 @@ function Navigation() {
                                     <Icon name='sign out alternate' />Change Password </NavLink>
                                 </Menu.Item>
 
-                                <Menu.Item as='a' onClick={handleSignOut}>
+                                <Menu.Item onClick={handleSignOut}>
                                     <Icon name='sign out alternate' />
                                    Sign Out
                                 </Menu.Item>
@@ -94,7 +92,6 @@ function Navigation() {
                                     <NavLink className="nav item" to="/" onClick={handleVisibility}> 
                                     <Icon name='home' />Home </NavLink>
                                 </Menu.Item>
-                            </div>
 
                         </Sidebar>
                     </div>

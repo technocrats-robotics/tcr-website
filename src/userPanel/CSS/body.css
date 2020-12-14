@@ -1,7 +1,9 @@
 
 /* for UserPanel (main component) */
+
+
 .userPanel__root{
-    background-image: url("https://i.pinimg.com/originals/10/69/a7/1069a7113c399a9a9ca3185769c59134.gif");
+    background-image: url('../Images/userPanel_bg.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
