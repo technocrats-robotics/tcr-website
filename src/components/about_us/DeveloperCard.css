@@ -24,6 +24,11 @@
             transform: rotateY(0.5turn);
   
   }
+  .ui.inverted.header.devNameHeading {
+    color: yellow;
+    font-family: Consolas;
+    font-weight: lighter;
+}
   .devcard .dev__face {
     position: absolute;
     top: 0;

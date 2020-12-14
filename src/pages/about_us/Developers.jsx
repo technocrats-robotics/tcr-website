@@ -58,14 +58,14 @@ export default class TeamMembers extends Component {
     const { activeItem } = this.state;
     const sections = [
         { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
-        { key: 'Team', content: 'Gallery', active: true },
+        { key: 'Developers', content: 'Developers', active: true },
       ]
     return(
-        <div className='secondAboutPage'><Segment inverted>
-            <Header textAlign='center' inverted size='huge'>The Team</Header>
-                <Label as='a' color='red' attached='top left'>
-  <Breadcrumb icon='right angle' sections={sections} />
-                </Label>        
+        <div className='secondAboutPage'><Segment inverted><Label as='a' color='red' attached='top left'>
+        <Breadcrumb icon='right angle' sections={sections} />
+                      </Label>  
+            <Header color='yellow' textAlign='center' inverted size='huge'>Developers</Header>
+                      
             <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
                         {
                         this.state.yearHeaders.map((year)=>{  

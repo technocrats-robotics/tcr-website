@@ -39,6 +39,13 @@ export default class TeamMembers extends Component {
         })
         this.setState({data: tempArray});
     }
+
+    randomColor = () =>{
+        let colors = ['red','green','blue','yellow'];
+        let num = Math.floor(Math.random() * (4));
+        return colors[num]
+    }
+
     componentDidMount(){
         this.getMemberData();
         let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
@@ -49,6 +56,7 @@ export default class TeamMembers extends Component {
         }
         tempyearHeaders = [...new Set(tempyearHeaders)]
         this.setState({yearHeaders:tempyearHeaders});
+        console.log(this.randomColor())
     }
 
     handleBack = () =>{

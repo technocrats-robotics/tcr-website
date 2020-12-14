@@ -6,12 +6,12 @@ export default class DeveloperCard extends Component {
     constructor(props) {
         super(props);
         // console.log(props.data.social_media);
-        console.log("About Us!!");
+        console.log("About Us!!");        
     }
     openLink = (url) => {
         window.open(url, '_blank');
     }
-
+    
     handleUpdate = (e, { calculations }) => {
   
     } 
@@ -22,7 +22,7 @@ export default class DeveloperCard extends Component {
                 <div className="dev__face dev__face--front">
                     <Image className='devfaceimage' size='small' avatar src={this.props.data.dpLink != null ? this.props.data.dpLink : 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'} />
                     <Header inverted className='devNameHeading'>
-                        {this.props.data.name}
+                        $ {this.props.data.name}
                         <Header.Subheader>
                             {this.props.data.currentRole}</Header.Subheader>
                     </Header>
