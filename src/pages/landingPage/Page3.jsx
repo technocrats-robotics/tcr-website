@@ -37,7 +37,7 @@ export default class Page3 extends Component {
             <li className="hex">
               <div className="hexIn">
                 <span className="hexLink">
-                  <img className='grey' src={image.link} alt="" />
+                  <img loading="lazy" className='grey' src={image.link} alt="" />
                   <h1>{image.title}</h1>
                   <p>{image.desc ?? ""}</p>
                 </span>

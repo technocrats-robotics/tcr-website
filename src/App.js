@@ -13,11 +13,15 @@ import Developers from './pages/about_us/Developers'
 // CSS
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
+import {Icon} from 'semantic-ui-react';
 
 
 function App() {
   return (
     <div className="App">
+       <div className='loadScreen'>
+    <Icon size='massive' color='red' loading name='spinner' />
+    </div>
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />

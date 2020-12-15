@@ -3,32 +3,32 @@ import './landing.css';
 import Page1 from './Page1';
 import Page2 from './Page2';
 import Page3 from './Page3';
-import Page4 from './Page4';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
 import SideNavMob from '../../components/SideNavMob';
-import {  Label, Icon, Button, Divider } from 'semantic-ui-react';
-import ScrollProgress from '../../components/ScrollProgress/ScrollProgress'
+import {  Icon, Button, Divider } from 'semantic-ui-react';
 
 import {db} from '../../services/google-firebase/setup'
-import { Visibility } from 'semantic-ui-react';
 
 
 var x = window.matchMedia("(max-width: 700px)")
+document.addEventListener("DOMContentLoaded", ()=>{
+    setInterval(()=>{
+        if(document.getElementsByClassName('loadScreen')[0]){
+        document.getElementsByClassName('loadScreen')[0].style.display='none';
+        }
+        setInterval(()=>{
+                if(document.getElementsByClassName('mainPageContent')[0]){
+            document.getElementsByClassName('mainPageContent')[0].style.opacity='1.0';}
+        },1000);
+    },2000);
+});
 export default class LandingPage extends Component {
     constructor(){
         super()
         this.componentDidMount = this.componentDidMount.bind(this);
         this.toggleSidebarVisibility = this.toggleSidebarVisibility.bind(this);
-        setInterval(()=>{
-            if(document.getElementsByClassName('loadScreen')[0]){
-            document.getElementsByClassName('loadScreen')[0].style.display='none';
-            }
-            setInterval(()=>{
-                    if(document.getElementsByClassName('mainPageContent')[0]){
-                document.getElementsByClassName('mainPageContent')[0].style.opacity='1.0';}
-            },1000);
-        },2000);
+  
     }
     state = { visibility:false,percent: 0 ,intro: ' ', contentAll: {stats:{'competitions_participated':'12', 'robots-made':"7"}}}
     async getPageData(){
@@ -64,8 +64,6 @@ export default class LandingPage extends Component {
     return(
         <div>
             {/* <Visibility continuous onOnScreen={this.handleScrollingDown}> */}
-            <div className='loadScreen'>
-    <Icon size='massive' color='red' loading name='spinner' /></div>
             <Button color='yellow' basic className='SideNavMobButton' onClick={this.toggleSidebarVisibility} icon>
                 <Icon name={this.state.visibility?'chevron right':'chevron left'} />
             </Button>

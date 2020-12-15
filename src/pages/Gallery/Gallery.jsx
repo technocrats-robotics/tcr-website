@@ -1,28 +1,27 @@
 import React, { useEffect, useState} from 'react';
 import { useHistory } from "react-router-dom";
-import { Segment, Label } from 'semantic-ui-react';
+import { Segment, Label, Icon, Breadcrumb, } from 'semantic-ui-react';
 import ImageGallery from 'react-image-gallery';
-import { Breadcrumb } from 'semantic-ui-react';
 
 //CSS
 import './Gallery.css';
 
-//loading screen (Red Spinner)
-import Loader from '../../components/SpinnerLoadingScreen/Loader'
-
 const axios=require('axios')
-
+document.addEventListener("DOMContentLoaded", ()=>{
+  setInterval(()=>{
+      if(document.getElementsByClassName('loadScreenGallery')[0]){
+      document.getElementsByClassName('loadScreenGallery')[0].style.display='none';
+      }
+  },2000);
+});
 function Gallery() {
 
   const [images, setImages] = useState(null)
-
-  const [loader, startLoading, stopLoading] = Loader();
 
   const history = useHistory();
 
   useEffect(async() => {
 
-    startLoading();
 
     let shouldCancel = false
     
@@ -34,7 +33,6 @@ function Gallery() {
         original: `${url}=w1024`,
         thumbnail: `${url}=w100`
       })))
-      stopLoading();
     }
 
     return () => shouldCancel = true;
@@ -53,7 +51,9 @@ function Gallery() {
 
   return (
     <div className='galleryDiv'>
-      {loader}
+        <div className='loadScreenGallery'>
+      <Icon size='massive' color='red' loading name='spinner' />
+      </div>
       <Segment inverted>
         <Label color='red' attached='top left'>
           <Breadcrumb icon='right angle' sections={sections} />

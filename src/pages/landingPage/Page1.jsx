@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
-import { Image, Grid, Header, Icon, Transition  } from "semantic-ui-react";
-import Dial from "../../components/Dial.jsx";
+import { Grid, Header, Icon,} from "semantic-ui-react";
 import FlareComponent from 'flare-react';
 import LogoController from '../../components/landingPage/LogoController'
 
@@ -22,9 +21,6 @@ export default class Page1 extends Component {
         }else{
             window.scrollBy({top:850, behavior:'smooth'});
         }
-    }
-    componentDidMount(){
-
     }
   render() {
     return(
