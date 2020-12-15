@@ -6,7 +6,8 @@ export default class DeveloperCard extends Component {
     constructor(props) {
         super(props);
         // console.log(props.data.social_media);
-        console.log("About Us!!");        
+        console.log(props.data); 
+        console.log("Dev Card");       
     }
     openLink = (url) => {
         window.open(url, '_blank');
