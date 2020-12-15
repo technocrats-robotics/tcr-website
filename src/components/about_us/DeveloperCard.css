@@ -1,5 +1,4 @@
 .devcard {
-    position: relative;
     margin-top: 1vh;
     width: 30vh;
     height: 40vh;
@@ -99,6 +98,9 @@
       } 
       
 .techStack {
+        
+  position: absolute;
+  top:100%;
     width: 100%;
     background-color: #c1930c47;
     box-shadow: 0px -2px 4px 0px #c1930c;
@@ -111,6 +113,10 @@
         background-position: 0 0, 50px 50px;
         
   image-rendering: pixelated;
+}
+
+.techStack:active {
+    box-shadow: 0px 0px 0px 0px #c1930c;
 }
 i.icon.techIcons {
         padding: 11vh;
@@ -131,4 +137,8 @@ i.icon.techIcons {
                 background-color: #c1930c47;
         }
 }
-
+.disclaim{
+        text-align: left;
+        color: yellow;
+        font-family: monospace;
+}
