@@ -35,6 +35,13 @@ export default class TeamMembers extends Component {
     }
     componentDidMount(){
         this.getMemberData();
+        setInterval(() => {
+            document.getElementsByClassName('techStack')[0].style.height = "50vh";
+            let techIcons = document.getElementsByClassName('techIcons')
+            for(let i = 0; i< techIcons.length; i++){
+            document.getElementsByClassName('techIcons')[i].style.opacity = '1.0';
+        }
+        }, 1000);
     }
 
     handleBack = () =>{
@@ -62,6 +69,17 @@ export default class TeamMembers extends Component {
                 ))
             }
                 </Grid.Row>
+                <div className='techStack'>
+                        <Icon color='yellow' className='techIcons' name='node' size='huge' />
+                        <Icon color='yellow' className='techIcons' name='react' size='huge' />
+                        <Icon color='yellow' className='techIcons' name='fire' size='huge' />
+                        <Icon color='yellow' className='techIcons' name='html5' size='huge' />
+                        <Icon color='yellow' className='techIcons' name='css3 alternate' size='huge' />
+                        <Icon color='yellow' className='techIcons' name='js' size='huge' />
+                <div>
+
+                </div>
+                </div>
             </Grid>
             </Segment>
         </div>

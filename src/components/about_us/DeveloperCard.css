@@ -97,3 +97,38 @@
           padding-right: 2vh;
   }
       } 
+      
+.techStack {
+    width: 100%;
+    background-color: #c1930c47;
+    box-shadow: 0px -2px 4px 0px #c1930c;
+    height: 0vh;
+    transition:linear 2s;
+    font-family: Consolas;
+    font-weight: lighter;
+    animation: flicker 1s infinite linear normal;
+     background-size:100px 100px;
+        background-position: 0 0, 50px 50px;
+        
+  image-rendering: pixelated;
+}
+i.icon.techIcons {
+        padding: 11vh;
+        opacity: 0;
+        transition: linear 2s;
+        
+  image-rendering: pixelated;
+    }
+    
+@keyframes flicker{
+        0%{                
+                background-color: #c1930c47;
+        }
+        50%{
+                background-color: #c1940c31;
+        }
+        100%{
+                background-color: #c1930c47;
+        }
+}
+
