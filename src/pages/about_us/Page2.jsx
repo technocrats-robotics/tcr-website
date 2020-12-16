@@ -54,6 +54,20 @@ export default class Page2 extends Component {
         return colors[num]
     }
 
+    addShadow() {
+        let imgBg = document.getElementsByClassName('faceimage')
+        for(let i =0 ;i < imgBg.length; i++){
+            let color=this.randomColor()
+            if(imgBg[i].style.boxShadow === ""){
+                imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+            }
+        }
+    }
+
+    componentDidUpdate(){
+        this.addShadow();
+    }
+
     componentDidMount(){
         this.getMemberData();
         let currentYear = getCurrentTeamYear();
@@ -64,16 +78,8 @@ export default class Page2 extends Component {
         }
         tempyearHeaders = [...new Set(tempyearHeaders)];
         this.setState({yearHeaders:tempyearHeaders});
-        setInterval(()=>{
-            let imgBg = document.getElementsByClassName('faceimage')
-            for(let i =0 ;i < imgBg.length; i++){
-                let color=this.randomColor()
-                if(imgBg[i].style.boxShadow === ""){
-                    imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
-                }
-            }
-        },1000);
     }
+
     render() {
         const { activeItem } = this.state;
         return(
@@ -94,11 +100,11 @@ export default class Page2 extends Component {
                 <Grid centered doubling stackable>
                     <Grid.Row columns={6}>
                     {
-                    this.state.data.map((member)=>(
-                        <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
-                        <AboutUsCard data={member}></AboutUsCard>
-                        </Grid.Column>
-                    ))
+                        this.state.data.map((member)=>(
+                            <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                            <AboutUsCard data={member}></AboutUsCard>
+                            </Grid.Column>
+                        ))
                     }
                     </Grid.Row>
                                     
