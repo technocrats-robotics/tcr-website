@@ -47,6 +47,16 @@ export default class TeamMembers extends Component {
         return colors[num]
     }
 
+    addShadow() {
+        let imgBg = document.getElementsByClassName('faceimage')
+        for(let i =0 ;i < imgBg.length; i++){
+            let color=this.randomColor()
+            if(imgBg[i].style.boxShadow === ""){
+                imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+            }
+        }
+    }
+
     componentDidMount(){
         this.getMemberData();
         let currentYear = getCurrentTeamYear();
@@ -57,34 +67,29 @@ export default class TeamMembers extends Component {
         }
         tempyearHeaders = [...new Set(tempyearHeaders)]
         this.setState({yearHeaders:tempyearHeaders});
-        setInterval(()=>{
-            let imgBg = document.getElementsByClassName('faceimage')
-            for(let i =0 ;i < imgBg.length; i++){
-                let color=this.randomColor()
-                if(imgBg[i].style.boxShadow === ""){
-                    imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
-                }
-            }
-        },1000);
+    }
+
+    componentDidUpdate(){
+        this.addShadow();
     }
 
     handleBack = () =>{
         this.props.history.push('/');
     }
-  render() {
-    const { activeItem } = this.state;
-    const sections = [
-        { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
-        { key: 'Team', content: 'Gallery', active: true },
-      ]
-    return(
-        <div className='secondAboutPage'><Segment inverted>
-            <Header textAlign='center' inverted size='huge'>The Team</Header>
-                <Label as='a' color='red' attached='top left'>
-                    <Breadcrumb icon='right angle' sections={sections} />
-                </Label>        
-            <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
-                        {
+    render() {
+        const { activeItem } = this.state;
+        const sections = [
+            { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
+            { key: 'Team', content: 'Gallery', active: true },
+        ]
+        return(
+            <div className='secondAboutPage'><Segment inverted>
+                <Header textAlign='center' inverted size='huge'>The Team</Header>
+                    <Label color='red' attached='top left'>
+                        <Breadcrumb icon='right angle' sections={sections} />
+                    </Label>        
+                <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
+                    {
                         this.state.yearHeaders.map((year)=>{  
                             return(<Menu.Item inverted="true"
                                 name={year.toString()}
@@ -93,21 +98,21 @@ export default class TeamMembers extends Component {
                                 onClick={this.handleItemClick}
                             />)
                         })
-                        }
-            </Menu>
-            <Grid centered doubling stackable>
-                <Grid.Row columns={6}>
-                {
-                this.state.data.map((member)=>(
-                    <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
-                    <AboutUsCard data={member}></AboutUsCard>
-                    </Grid.Column>
-                ))
-                }
-                </Grid.Row>
-            </Grid>
-            </Segment>
-        </div>
-    );
+                    }
+                </Menu>
+                <Grid centered doubling stackable>
+                    <Grid.Row columns={6}>
+                    {
+                    this.state.data.map((member)=>(
+                        <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                        <AboutUsCard data={member}></AboutUsCard>
+                        </Grid.Column>
+                    ))
+                    }
+                    </Grid.Row>
+                </Grid>
+                </Segment>
+            </div>
+        );
     }
 }
