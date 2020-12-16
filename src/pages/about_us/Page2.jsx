@@ -5,15 +5,12 @@ import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
 import Role from '../../services/google-firebase/models/members/role'
+import { getCurrentTeamYear } from '../../constants';
 
 
-var time = new Date();
 export default class Page2 extends Component {
     state = { 
-        activeItem: 
-            (time.getMonth() > 2)? 
-            (time.getFullYear()+1).toString(): 
-            time.getFullYear().toString(), 
+        activeItem: getCurrentTeamYear(), 
         data:[], yearHeaders: [] 
     };
     
@@ -59,8 +56,8 @@ export default class Page2 extends Component {
 
     componentDidMount(){
         this.getMemberData();
-        let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
-        let tempyearHeaders = [currentYear];
+        let currentYear = getCurrentTeamYear();
+        let tempyearHeaders = [];
         // console.log(currentYear)
         for(let i = currentYear ;i>2013;i--){
             tempyearHeaders.push(i);

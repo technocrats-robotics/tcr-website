@@ -4,12 +4,13 @@ import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
 import Role from '../../services/google-firebase/models/members/role'
+import { getCurrentTeamYear } from '../../constants';
 
 
 var time = new Date();
 export default class TeamMembers extends Component {
     state = { 
-        activeItem: (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear(), 
+        activeItem: getCurrentTeamYear(), 
         data:[], yearHeaders:[] 
     }
     
@@ -48,8 +49,8 @@ export default class TeamMembers extends Component {
 
     componentDidMount(){
         this.getMemberData();
-        let currentYear = (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear();
-        let tempyearHeaders = [currentYear];
+        let currentYear = getCurrentTeamYear();
+        let tempyearHeaders = [];
         // console.log(currentYear)
         for(let i = currentYear ;i>2013;i--){
             tempyearHeaders.push(i);
@@ -61,10 +62,10 @@ export default class TeamMembers extends Component {
             for(let i =0 ;i < imgBg.length; i++){
                 let color=this.randomColor()
                 if(imgBg[i].style.boxShadow === ""){
-        imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+                    imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
                 }
             }
-        },1000)
+        },1000);
     }
 
     handleBack = () =>{
@@ -80,7 +81,7 @@ export default class TeamMembers extends Component {
         <div className='secondAboutPage'><Segment inverted>
             <Header textAlign='center' inverted size='huge'>The Team</Header>
                 <Label as='a' color='red' attached='top left'>
-  <Breadcrumb icon='right angle' sections={sections} />
+                    <Breadcrumb icon='right angle' sections={sections} />
                 </Label>        
             <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
                         {
