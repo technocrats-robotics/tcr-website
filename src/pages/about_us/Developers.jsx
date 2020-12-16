@@ -48,7 +48,6 @@ function dragElement(elmnt) {
 }
 export default class TeamMembers extends Component {
     state = { 
-        activeItem: (time.getMonth() > 2)? time.getFullYear()+1: time.getFullYear(), 
         data:[], yearHeaders:[] 
     }
 
