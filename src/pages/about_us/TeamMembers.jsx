@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Header,Menu, Label, Segment, Icon, Breadcrumb } from 'semantic-ui-react';
+import { Grid, Header,Menu, Segment  } from 'semantic-ui-react';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
@@ -78,16 +78,16 @@ export default class TeamMembers extends Component {
     }
     render() {
         const { activeItem } = this.state;
-        const sections = [
-            { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
-            { key: 'Team', content: 'Gallery', active: true },
-        ]
+        // const sections = [
+        //     { key: 'Home', content: 'Home', link: true, onClick:this.handleBack },
+        //     { key: 'Team', content: 'Gallery', active: true },
+        // ]
         return(
             <div className='secondAboutPage'><Segment inverted>
                 <Header textAlign='center' inverted size='huge'>The Team</Header>
-                    <Label color='red' attached='top left'>
+                    {/* <Label color='red' attached='top left'>
                         <Breadcrumb icon='right angle' sections={sections} />
-                    </Label>        
+                    </Label>         */}
                 <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
                     {
                         this.state.yearHeaders.map((year)=>{  
