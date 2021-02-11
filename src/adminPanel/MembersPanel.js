@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Button, Header, Modal, Table, Dropdown } from 'semantic-ui-react'
+import { Button, Header, Modal, Table, Dropdown, Popup } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
@@ -88,6 +88,35 @@ function Memberdivel() {
         );
     };
 
+    var CopyUID = (props) => {
+        return (
+            <Popup
+                trigger={
+                    <Button 
+                        circular 
+                        basic 
+                        icon='copy outline' 
+                        onClick={
+                            ()=>{
+                                navigator.permissions.query({name: "clipboard-write"}).then(result => {
+                                    if (result.state == "granted" || result.state == "prompt") {
+                                        navigator.clipboard.writeText(props.uid).then(function() {
+                                            /* clipboard successfully set */
+                                        }, function() {
+                                            alert("Couldn't copy!");
+                                        });
+                                    }
+                                });
+                            }
+                        } 
+                    />
+                }
+                content='Click to copy Member UID'
+                hideOnScroll
+            />
+        );
+    };
+
     return (
         <div className="admin__memberdivel">
             <table className="ui definition table" key="table">
@@ -113,7 +142,13 @@ function Memberdivel() {
                         return(    
                             <tr className='cardMainBody' key={index+1}>
                                 <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index+1}</div></td>
-                                <td className='cardData'><div className='captions'>Name</div><div className='captionContent'>{member.name}</div></td>
+                                <td className='cardData'>
+                                    <div className='captions'>Name</div>
+                                    <div className='captionContent'>
+                                        <CopyUID uid={detail.id} />
+                                        {member.name}
+                                    </div>
+                                </td>
                                 <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
                                 <td className='cardData'><div className='captions'>Branch</div><div className='captionContent'>{member.branch}</div></td>
                                 <td className='cardData'><div className='captions'>Department</div><div className='captionContent'>{member.username}</div></td>
@@ -171,4 +206,5 @@ export default Memberdivel;
 /**
  * References:
  * https://stackoverflow.com/questions/13751166/javascript-uncaught-referenceerror-keys-is-not-defined
+ * Interact with Clipboard: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
  */
