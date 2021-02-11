@@ -6,7 +6,7 @@ import './InfoCard.css';
 var x = window.matchMedia("(max-width: 900px)");
 export default class Acheivements extends Component {
     
-    Acheivements = [
+    achievements = [
         {
             imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
             acheiveHeader:'What are we striving towards',
@@ -53,7 +53,7 @@ export default class Acheivements extends Component {
                         </Header>
                         </Segment>
                 </Grid.Row>
-                {this.Acheivements.map((ele)=>{return(
+                {this.achievements.map((ele)=>{return(
                 <Grid.Row className='aboutCard' >
                     <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                         <Image className="thumbnail1" src={ele.imageLink}></Image>
