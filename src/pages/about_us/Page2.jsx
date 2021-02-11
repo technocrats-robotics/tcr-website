@@ -88,12 +88,16 @@ export default class Page2 extends Component {
                 <Menu attached='top' tabular inverted pointing secondary className='blogMenuTop' size='huge' fluid>
                 {
                     this.state.yearHeaders.map((year)=>{  
-                            return(<Menu.Item inverted="true"
+                            return(
+                            <div className='TeamsYears'>
+                            <Menu.Item inverted="true" style={{overflowX:'visible'}}
                             name={year.toString()}
                             key={year.toString()}
                             active={activeItem.toString() === year.toString()}
                             onClick={this.handleItemClick}
-                        />)
+                        />
+                        </div>
+                        )
                     })
                 }
                 </Menu>

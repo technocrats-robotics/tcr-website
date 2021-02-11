@@ -25,3 +25,7 @@ text-align: center;
         padding-bottom:20vh !important;
         }  
 }
+.ui.tabular.blogMenuTop.menu {
+    overflow-x: scroll;
+    overflow-y: hidden;
+}

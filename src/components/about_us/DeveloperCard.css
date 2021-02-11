@@ -1,7 +1,7 @@
 .devcard {
     margin-top: 1vh;
     width: 30vh;
-    height: 40vh;
+    min-height: 40vh;
     color: white;
     cursor: pointer;
     border:0px solid gray;
