@@ -19,7 +19,7 @@ export default class TeamMembers extends Component {
     }
 
     async getMemberData(){
-        db.collection(Member.collectionName).get()
+        db.collection(Member.collectionName).orderBy('name', 'asc').get()
         .then((documents) => {
             this.documents = documents;
             this.getSelectedTeam();
