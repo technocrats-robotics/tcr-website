@@ -1,7 +1,7 @@
 
 @import "~react-image-gallery/styles/css/image-gallery.css";
 .galleryDiv {
-    height: 100vh;
+    min-height: 50vh;
     width: 100%;
     z-index: 999;
     background-color: #1b1c1d;
