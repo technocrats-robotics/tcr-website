@@ -47,6 +47,8 @@
 .aboutuscard .card__face {
   -o-object-fit: cover;
      object-fit: cover;
+     background-color: #c1930c14;
+     box-shadow:0px 2px 4px 0px #c1930c;
 }
 
 img.ui.small.avatar.image.faceimage {
@@ -75,6 +77,7 @@ img.ui.small.avatar.image.faceimage {
 
 img.ui.small.avatar.image.faceimage {
         padding: 10%;
+        min-height: 10vh;
 }
 
 .blue{
