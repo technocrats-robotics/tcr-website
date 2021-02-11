@@ -23,7 +23,7 @@ function Memberdivel() {
     useEffect(() => {
         document.title="Admin Panel | Manage Members"
 
-        admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
+        admin_db.collection(Member.collectionName).orderBy('yearOfJoining','desc').orderBy('name').onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;
             }))
