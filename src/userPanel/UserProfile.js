@@ -195,7 +195,7 @@ function UserProfile() {
                                             <div className="ui label userSocial">
                                                 Experience
                                             </div>
-                                            <input defaultValue={userDetails.about.experience} placeholder="Achievement (if Any)" onChange={(event) => setExperience(event.target.value)} />
+                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the team" onChange={(event) => setExperience(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="inputBox">
