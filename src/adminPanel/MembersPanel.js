@@ -7,6 +7,7 @@ import "./CSS/Body.css"
 import { admin_db } from '../services/google-firebase/setup'
 import Member from '../services/google-firebase/models/members/member';
 import Role from '../services/google-firebase/models/members/role'
+import Department from '../services/google-firebase/models/members/department'
 
 import Success from '../components/Messages/Success'
 import Warning from '../components/Messages/Warning'
@@ -15,20 +16,20 @@ function Memberdivel() {
 
     // State variables
     const [details, setDetails] = useState([]);
-    
+
     //messages
-    const[success,showSuccess]=Success();
-    const[warning,showWarning]=Warning();
+    const [success, showSuccess] = Success();
+    const [warning, showWarning] = Warning();
 
     useEffect(() => {
-        document.title="Admin Panel | Manage Members"
+        document.title = "Admin Panel | Manage Members"
 
         admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;
             }))
         })
-    },[]);
+    }, []);
 
     /**
      * Generates a table for Role modification
@@ -50,19 +51,19 @@ function Memberdivel() {
                     <Table.Cell>{year}</Table.Cell>
                     <Table.Cell>
                         <Dropdown
-                            options={roleOptions} 
+                            options={roleOptions}
                             placeholder='Select Role'
                             defaultValue={yearly_roles[year]}
-                            onChange={(e,data) => {
+                            onChange={(e, data) => {
                                 // console.log(data.value); // Debugging
                                 // Modify role in database
                                 let selectedMember = new Member(props.mid);
-                                selectedMember.updateMemberDetail('roles.'+year,data.value)
-                                .then((status) => {
-                                    // TODO: Remove console logs & replace with messages
-                                    if(status) showSuccess('Role Modified');
-                                    else showWarning('Something went wrong!');
-                                });
+                                selectedMember.updateMemberDetail('roles.' + year, data.value)
+                                    .then((status) => {
+                                        // TODO: Remove console logs & replace with messages
+                                        if (status) showSuccess('Role Modified');
+                                        else showWarning('Something went wrong!');
+                                    });
                             }}
                         />
                     </Table.Cell>
@@ -76,17 +77,76 @@ function Memberdivel() {
                 {success}
                 {warning}
                 <Table unstackable>
-                <Table.Header>
-                    <Table.Row>
-                    <Table.HeaderCell>Team Year</Table.HeaderCell>
-                    <Table.HeaderCell>Role</Table.HeaderCell>
-                    </Table.Row>
-                </Table.Header>
-                <Table.Body>{rows}</Table.Body>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Team Year</Table.HeaderCell>
+                            <Table.HeaderCell>Role</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>{rows}</Table.Body>
                 </Table>
             </div>
         );
     };
+
+
+    /**
+  * Generates a table for Department modification
+  */
+    var DepartmentTable = (props) => {
+        let rows = [];
+        let department = props.department;
+        let departmentOptions = [];
+
+        Object.values(Department).forEach(department => {
+            departmentOptions.push({
+                key: department,
+                text: department,
+                value: department,
+            });
+        });
+
+        
+        rows.push(
+            <Table.Row key={props.department}>
+                <Table.Cell>
+                    <Dropdown
+                        options={departmentOptions}
+                        placeholder='Select Department'
+                        defaultValue={props.department}
+                        onChange={(e, data) => {
+                            // console.log(data.value); // Debugging
+                            // Modify department in database
+                            let selectedMember = new Member(props.mid);
+                            selectedMember.updateMemberDetail('branch', data.value)
+                                .then((status) => {
+                                    if (status) showSuccess('Department Modified');
+                                    else showWarning('Something went wrong!');
+                                });
+                        }}
+                    />
+                </Table.Cell>
+            </Table.Row>
+        );
+       
+
+        // Generate the table
+        return (
+            <div>
+                {success}
+                {warning}
+                <Table unstackable>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Department</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>{rows}</Table.Body>
+                </Table>
+            </div>
+        );
+    };
+
 
     return (
         <div className="admin__memberdivel">
@@ -105,61 +165,79 @@ function Memberdivel() {
                     </tr>
                 </thead>
                 <tbody key="tbody">
-                {
-                    details.map((detail,index)=>{
-                        let member = detail.data();
-                        // Get only of the current role of the member
-                        let currentRole = Member.getCurrentRole(member.roles)[1];
-                        return(    
-                            <tr className='cardMainBody' key={index+1}>
-                                <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index+1}</div></td>
-                                <td className='cardData'><div className='captions'>Name</div><div className='captionContent'>{member.name}</div></td>
-                                <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
-                                <td className='cardData'><div className='captions'>Branch</div><div className='captionContent'>{member.branch}</div></td>
-                                <td className='cardData'><div className='captions'>Department</div><div className='captionContent'>{member.username}</div></td>
-                                <td className='cardData'><div className='captions'>Email</div><div className='captionContent'>{member.registeredEmail}</div></td>
-                                <td><div className='captions'>Role</div>
-                                <div className='captionContent'>
-                                    <Modal
-                                        className='adminPanelModal'
-                                        closeIcon
-                                        trigger={<Button basic circular icon='edit outline'/>}
-                                        dimmer='blurring'
-                                    >
-                                        <Header icon='universal access' content='Modify Yearly Roles' />
-                                        <Modal.Content>
-                                            <YearlyRolesTable yearly_roles={member.roles} mid={detail.id}/>
-                                        </Modal.Content>
-                                    </Modal>
-                                    {currentRole}
-                                    </div>
-                                </td>
-                                <td className="collapsing">
-                                <div className='captions'>Blog Access</div>
-                                    <div className="ui fitted slider checkbox">
-                                        <input type="checkbox" checked={
-                                            (member.blogAccess)?(true):(false)
-                                        } onChange={()=>{
-                                            let selectedMember = new Member(detail.id);
-                                            selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
-                                        }}/> <label></label>
-                                    </div>
-                                </td>
-                                <td className="collapsing">
-                                <div className='captions'>Profile Status</div>
-                                <div className="ui fitted slider checkbox">
-                                    <input type="checkbox" checked={
-                                        (member.isActive)?(true):(false)
-                                    } onChange={()=>{
-                                        let selectedMember = new Member(detail.id);
-                                        selectedMember.updateMemberDetail('isActive', !member.isActive);
-                                    }} /> <label></label>
-                                </div>
-                                </td>
-                            </tr>
-                        )
-                    })
-                }
+                    {
+                        details.map((detail, index) => {
+                            let member = detail.data();
+                            // Get only of the current role of the member
+                            let currentRole = Member.getCurrentRole(member.roles)[1];
+                            return (
+                                <tr className='cardMainBody' key={index + 1}>
+                                    <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index + 1}</div></td>
+                                    <td className='cardData'><div className='captions'>Name</div><div className='captionContent'>{member.name}</div></td>
+                                    <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
+
+                                    <td><div className='captions'>Branch</div>
+                                        <div className='captionContent'>
+                                            <Modal
+                                                className='adminPanelModal'
+                                                closeIcon
+                                                trigger={<Button basic circular icon='edit outline' />}
+                                                dimmer='blurring'
+                                            >
+                                                <Header icon='universal access' content='Modify Department' />
+                                                <Modal.Content>
+                                                    <DepartmentTable department={member.branch} mid={detail.id} />
+                                                </Modal.Content>
+                                            </Modal>
+                                            {member.branch}
+                                        </div>
+                                    </td>
+
+                                    <td className='cardData'><div className='captions'>User Name @tcr.in</div><div className='captionContent'>{member.username}</div></td>
+
+                                    <td className='cardData'><div className='captions'>Email</div><div className='captionContent'>{member.registeredEmail}</div></td>
+                                    <td><div className='captions'>Role</div>
+                                        <div className='captionContent'>
+                                            <Modal
+                                                className='adminPanelModal'
+                                                closeIcon
+                                                trigger={<Button basic circular icon='edit outline' />}
+                                                dimmer='blurring'
+                                            >
+                                                <Header icon='universal access' content='Modify Yearly Roles' />
+                                                <Modal.Content>
+                                                    <YearlyRolesTable yearly_roles={member.roles} mid={detail.id} />
+                                                </Modal.Content>
+                                            </Modal>
+                                            {currentRole}
+                                        </div>
+                                    </td>
+                                    <td className="collapsing">
+                                        <div className='captions'>Blog Access</div>
+                                        <div className="ui fitted slider checkbox">
+                                            <input type="checkbox" checked={
+                                                (member.blogAccess) ? (true) : (false)
+                                            } onChange={() => {
+                                                let selectedMember = new Member(detail.id);
+                                                selectedMember.updateMemberDetail('blogAccess', !member.blogAccess);
+                                            }} /> <label></label>
+                                        </div>
+                                    </td>
+                                    <td className="collapsing">
+                                        <div className='captions'>Profile Status</div>
+                                        <div className="ui fitted slider checkbox">
+                                            <input type="checkbox" checked={
+                                                (member.isActive) ? (true) : (false)
+                                            } onChange={() => {
+                                                let selectedMember = new Member(detail.id);
+                                                selectedMember.updateMemberDetail('isActive', !member.isActive);
+                                            }} /> <label></label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            )
+                        })
+                    }
                 </tbody>
             </table>
         </div>
