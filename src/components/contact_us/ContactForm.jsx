@@ -42,8 +42,8 @@ export default function ContactForm () {
         event.preventDefault();
         event.target.reset();
         if(name && email && contact && message){
-          let api_msg = await sendFeedback('karan124d@gmail.com', data);
-          if(api_msg) setSuccess('Thankyou for submitting your feedback!!')
+          let api_msg = await sendFeedback(data);
+          if(api_msg) setSuccess('Thank you for submitting your feedback!!')
           else setWarning('Some Error Occured !!')
         } else setWarning('Please fill all the fields !!')
         

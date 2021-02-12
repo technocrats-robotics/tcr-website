@@ -31,9 +31,8 @@ async function sendEmail(email,data) {
      
 }
 
-async function sendFeedback(email,data) {
+async function sendFeedback(data) {
   return axios.post('https://tcr-mail-utility.herokuapp.com/sendFeedback',{
-        email:email,
         data:data
       }).then(function (response) {
       // console.log("Response",response);
