@@ -103,11 +103,13 @@ export default class TeamMembers extends Component {
                 <Grid centered doubling stackable>
                     <Grid.Row columns={6}>
                     {
-                    this.state.data.map((member)=>(
-                        <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
-                        <AboutUsCard data={member}></AboutUsCard>
-                        </Grid.Column>
-                    ))
+                        this.state.data.map((member)=>(
+                            member.isActive?(
+                                <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                                    <AboutUsCard data={member}></AboutUsCard>
+                                </Grid.Column>
+                            ):(null)
+                        ))
                     }
                     </Grid.Row>
                 </Grid>
