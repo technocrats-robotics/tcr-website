@@ -51,9 +51,6 @@
      box-shadow:0px 2px 4px 0px #c1930c;
 }
 
-img.ui.small.avatar.image.faceimage {
-        /* box-shadow:0px 5px 4px 0px blue; */
-}
 .aboutuscard .card__face--back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
@@ -75,10 +72,6 @@ img.ui.small.avatar.image.faceimage {
         text-align: center !important;
     }
 
-img.ui.small.avatar.image.faceimage {
-        padding: 10%;
-        min-height: 100px;
-}
 
 .blue{
         color:  #1875D0;

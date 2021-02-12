@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Header, Image,Button} from 'semantic-ui-react';
+import { Header, Button} from 'semantic-ui-react';
 import './AboutUsCard.css';
+import ProfilePic from './ProfilePic';
 
 export default class AboutUsCard extends Component {
  
@@ -15,9 +16,8 @@ export default class AboutUsCard extends Component {
     render() {
         return (
             <div className="aboutuscard">
-                
                 <div className="card__face card__face--front">
-                    <Image className='faceimage' size='small' avatar src={this.props.data.dpLink != null ? this.props.data.dpLink : 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg'} />
+                    <ProfilePic dpLink={this.props.data.dpLink} uname={this.props.data.username} />
                     <Header inverted className='NameHeading'>
                         {this.props.data.name}
                         <Header.Subheader>
