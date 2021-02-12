@@ -1,31 +1,31 @@
 .firstAboutPage{
-height: 120vh;
+min-height: 80vh;
 /* background-color: black; */
 }
 
 .secondAboutPage{
-min-height: 120vh;
+min-height: 50vh;
 /* background-color: black; */
-padding: 8%;
+padding: 2%;
 text-align: center;
 }
 
 @media only screen and (max-width: 900px) {
+    .ui.tabular.blogMenuTop.menu {
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
     .firstAboutPage{
         height: auto;
         /* background-color: black; */
-        padding-bottom:20vh !important;
+        /* padding-bottom:20vh !important; */
         }
         
         .secondAboutPage{
         height: auto;
         /* background-color: black; */
-        padding: 8%;
+        padding: 2%;
         text-align: center;
-        padding-bottom:20vh !important;
+        /* padding-bottom:20vh !important; */
         }  
-}
-.ui.tabular.blogMenuTop.menu {
-    overflow-x: scroll;
-    overflow-y: hidden;
 }

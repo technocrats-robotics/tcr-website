@@ -77,7 +77,7 @@ img.ui.small.avatar.image.faceimage {
 
 img.ui.small.avatar.image.faceimage {
         padding: 10%;
-        min-height: 10vh;
+        min-height: 100px;
 }
 
 .blue{

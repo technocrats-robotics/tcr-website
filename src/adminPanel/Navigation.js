@@ -8,7 +8,7 @@ import { admin_auth } from "../services/google-firebase/setup"
 import SideNav from './SideNav';
 
 function Navigation() { 
-    const [sidebarVisibility, setsidebarVisibility] = useState(0);
+    const [sidebarVisibility, setsidebarVisibility] = useState(false);
     
 
     const handleSignOut=()=>{

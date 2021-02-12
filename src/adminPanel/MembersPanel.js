@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { Button, Header, Modal, Table, Dropdown } from 'semantic-ui-react'
+import { Button, Header, Modal, Table, Dropdown, Popup } from 'semantic-ui-react'
 import "./CSS/Body.css"
 
 //database (firestore) from services
@@ -24,7 +24,7 @@ function Memberdivel() {
     useEffect(() => {
         document.title = "Admin Panel | Manage Members"
 
-        admin_db.collection(Member.collectionName).onSnapshot(snapshot => {
+        admin_db.collection(Member.collectionName).orderBy('yearOfJoining', 'desc').orderBy('name').onSnapshot(snapshot => {
             setDetails(snapshot.docs.map(doc => {
                 return doc;
             }))
@@ -89,10 +89,38 @@ function Memberdivel() {
         );
     };
 
+    var CopyUID = (props) => {
+        return (
+            <Popup
+                trigger={
+                    <Button
+                        circular
+                        basic
+                        icon='copy outline'
+                        onClick={
+                            () => {
+                                navigator.permissions.query({ name: "clipboard-write" }).then(result => {
+                                    if (result.state == "granted" || result.state == "prompt") {
+                                        navigator.clipboard.writeText(props.uid).then(function () {
+                                            /* clipboard successfully set */
+                                        }, function () {
+                                            alert("Couldn't copy!");
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    />
+                }
+                content='Click to copy Member UID'
+                hideOnScroll
+            />
+        );
+    };
 
     /**
-  * Generates a table for Department modification
-  */
+* Generates a table for Department modification
+*/
     var DepartmentTable = (props) => {
         let rows = [];
         let department = props.department;
@@ -106,7 +134,7 @@ function Memberdivel() {
             });
         });
 
-        
+
         rows.push(
             <Table.Row key={props.department}>
                 <Table.Cell>
@@ -128,7 +156,7 @@ function Memberdivel() {
                 </Table.Cell>
             </Table.Row>
         );
-       
+
 
         // Generate the table
         return (
@@ -165,6 +193,7 @@ function Memberdivel() {
                     </tr>
                 </thead>
                 <tbody key="tbody">
+
                     {
                         details.map((detail, index) => {
                             let member = detail.data();
@@ -173,9 +202,15 @@ function Memberdivel() {
                             return (
                                 <tr className='cardMainBody' key={index + 1}>
                                     <td className='cardCount'><div className='captions'>Sno</div><div className='captionContent'>{index + 1}</div></td>
-                                    <td className='cardData'><div className='captions'>Name</div><div className='captionContent'>{member.name}</div></td>
+                                    <td className='cardData'>
+                                        <div className='captions'>Name</div>
+                                        <div className='captionContent'>
+                                            <CopyUID uid={detail.id} />
+                                            {member.name}
+                                        </div>
+                                    </td>
                                     <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
-
+                                    
                                     <td><div className='captions'>Branch</div>
                                         <div className='captionContent'>
                                             <Modal
@@ -193,8 +228,7 @@ function Memberdivel() {
                                         </div>
                                     </td>
 
-                                    <td className='cardData'><div className='captions'>User Name @tcr.in</div><div className='captionContent'>{member.username}</div></td>
-
+                                    <td className='cardData'><div className='captions'>Department</div><div className='captionContent'>{member.username}</div></td>
                                     <td className='cardData'><div className='captions'>Email</div><div className='captionContent'>{member.registeredEmail}</div></td>
                                     <td><div className='captions'>Role</div>
                                         <div className='captionContent'>
@@ -249,4 +283,5 @@ export default Memberdivel;
 /**
  * References:
  * https://stackoverflow.com/questions/13751166/javascript-uncaught-referenceerror-keys-is-not-defined
+ * Interact with Clipboard: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
  */

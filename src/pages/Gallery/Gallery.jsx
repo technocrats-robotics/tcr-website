@@ -7,13 +7,13 @@ import ImageGallery from 'react-image-gallery';
 import './Gallery.css';
 
 const axios=require('axios')
-document.addEventListener("DOMContentLoaded", ()=>{
-  setInterval(()=>{
-      if(document.getElementsByClassName('loadScreenGallery')[0]){
-      document.getElementsByClassName('loadScreenGallery')[0].style.display='none';
-      }
-  },2000);
-});
+// document.addEventListener("DOMContentLoaded", ()=>{
+//   setInterval(()=>{
+//       if(document.getElementsByClassName('loadScreenGallery')[0]){
+//       document.getElementsByClassName('loadScreenGallery')[0].style.display='none';
+//       }
+//   },2000);
+// });
 function Gallery() {
 
   const [images, setImages] = useState(null)
@@ -51,13 +51,13 @@ function Gallery() {
 
   return (
     <div className='galleryDiv'>
-        <div className='loadScreenGallery'>
+        {/* <div className='loadScreenGallery'>
       <Icon size='massive' color='red' loading name='spinner' />
-      </div>
+      </div> */}
       <Segment inverted>
-        <Label color='red' attached='top left'>
+        {/* <Label color='red' attached='top left'>
           <Breadcrumb icon='right angle' sections={sections} />
-        </Label>
+        </Label> */}
         {
           images ? <ImageGallery items={images} showFullscreenButton={true} showPlayButton={true} showNav={true} showBullets={true} /> : null
         }
