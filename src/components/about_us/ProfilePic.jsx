@@ -9,7 +9,7 @@ var ProfilePic = (props) => {
             <Identicon className='faceimage' size='128' string={props.uname} />
         )
     else 
-        return (<Image className='faceimage' size='small' avatar src={props.dpLink} /> );
+        return (<Image className='faceimage' size={props.size!=null?props.size:'small'} avatar src={props.dpLink} /> );
 };
 
 export default ProfilePic;
