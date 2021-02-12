@@ -70,8 +70,18 @@
 
 .dpBox{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.dpBox__dp{
+    margin: 7vh;
+}
+
+.dpBox__preview{
+    margin: 7vh;
+    margin-top: 9vh;
 }
 
 .ui.label{

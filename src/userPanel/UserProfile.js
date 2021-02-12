@@ -12,6 +12,9 @@ import Success from '../components/Messages/Success'
 import Warning from '../components/Messages/Success'
 import Member from '../services/google-firebase/models/members/member'
 
+//member card
+import AboutUsCard from '../components/about_us/AboutUsCard'
+
 function UserProfile() {
 
     // global user
@@ -74,7 +77,7 @@ function UserProfile() {
     }
 
 
-    const defaultDpLink = 'https://wordsmith.org/words/images/avatar2_large.png';
+    const defaultDpLink = 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg';
 
     const roles = (yearly_roles) => {
         let currentRole = Member.getCurrentRole(yearly_roles);
@@ -94,7 +97,16 @@ function UserProfile() {
                     <div className="ui grid userProfile__display">
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                             <div className="dpBox">
-                                <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
+                                    <div className="dpBox__dp">
+                                        <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
+                                    </div>
+                                    <div  className="dpBox__preview">
+                                        {
+                                            
+                                            userDetails?<AboutUsCard data={{...userDetails,currentRole:Member.getCurrentRole(userDetails.roles)[1]}}/>:null
+                                        }
+                                    </div>
+                               
                             </div>
 
                             <div className="inputBox userProfile__displayText">
@@ -106,6 +118,7 @@ function UserProfile() {
                             </div>
 
                         </div>
+                        
 
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
 
