@@ -93,7 +93,7 @@ function UserProfile() {
         <div className="userProfile">
 
             {
-                (userDetails) ? (
+                (userDetails && userDetails.isActive) ? (
                     <div className="ui grid userProfile__display">
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                             <div className="dpBox">
@@ -230,7 +230,13 @@ function UserProfile() {
 
                         </div>
                     </div>
-                ) : (<h1>Loading..</h1>)
+                ) : (
+                    <div className="userProfile__blockMessage">
+                        <h1>Your Profile has been blocked.</h1>
+                        <h3>Contact the Team if you think that this is by mistake.</h3>
+                        <h4>Or feel free to write us at: <u>tcrvitcc@gmail.com</u></h4>
+                    </div>
+                )
             }
         </div >
     )
