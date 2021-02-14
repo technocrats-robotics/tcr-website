@@ -1,10 +1,10 @@
 .firstAboutPage{
-min-height: 80vh;
+min-height: 50vh;
 /* background-color: black; */
 }
 
 .secondAboutPage{
-min-height: 50vh;
+min-height: 100vh;
 /* background-color: black; */
 padding: 2%;
 text-align: center;
