@@ -31,6 +31,8 @@ function Memberdivel() {
         })
     }, []);
 
+
+
     /**
      * Generates a table for Role modification
      */
@@ -175,6 +177,57 @@ function Memberdivel() {
         );
     };
 
+    let downloadBackup = () => {
+
+        // JSON string as array of objects
+
+        let jsonDetails = "["
+
+        details.map((detail) => {
+            jsonDetails += JSON.stringify(detail.data(), null, "\t") + ","
+        })
+
+        // remove last ','
+        jsonDetails = jsonDetails.slice(0, -1);
+
+        jsonDetails += "]"
+
+        // download 
+        let dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(jsonDetails);
+
+        let date = new Date().toLocaleDateString();
+
+        let downloadAnchorNode = document.createElement('a');
+        downloadAnchorNode.setAttribute("href", dataStr);
+        downloadAnchorNode.setAttribute("download", "Technocrats_backup_" + date + ".json");
+        document.body.appendChild(downloadAnchorNode); // required for firefox
+        downloadAnchorNode.click();
+        downloadAnchorNode.remove();
+
+    }
+
+    let uploadBackup = () => {
+
+        function handleFileLoad(event){
+            let details = event.target.result 
+
+            let detailsJSON = JSON.parse(details)
+
+            console.log(detailsJSON)
+
+        }
+
+        function handleFileSelect(event){
+            const reader = new FileReader()
+            reader.onload = handleFileLoad;
+            reader.readAsText(event.target.files[0])
+        }
+
+        document.getElementById('uploadBackup').addEventListener('change', handleFileSelect, false); 
+
+        document.getElementById('uploadBackup').click()
+
+    }
 
     return (
         <div className="admin__memberdivel">
@@ -182,7 +235,11 @@ function Memberdivel() {
                 <thead className="full-width cardMainHead" key="thead">
                     <tr>
                         <th>Count</th>
-                        <th>Name</th>
+                        <th>Name<div className="ui small basic icon buttons" style={{ margin: "5px" }}>
+                            <input id="uploadBackup" type="file" style={{display:"none"}} />
+                            <button className="ui button" data-tooltip="Upload Backup" onClick={uploadBackup}><i className="upload icon"></i></button>
+                            <button className="ui button" data-tooltip="Download Backup"  onClick={downloadBackup} ><i className="download icon"></i></button>
+                        </div> </th>
                         <th>Y.O.J</th>
                         <th>Department</th>
                         <th>User Name @tcr.in</th>
@@ -210,7 +267,7 @@ function Memberdivel() {
                                         </div>
                                     </td>
                                     <td className='cardData'><div className='captions'>Year Of Joining</div><div className='captionContent'>{member.yearOfJoining}</div></td>
-                                    
+
                                     <td><div className='captions'>Branch</div>
                                         <div className='captionContent'>
                                             <Modal
@@ -284,4 +341,7 @@ export default Memberdivel;
  * References:
  * https://stackoverflow.com/questions/13751166/javascript-uncaught-referenceerror-keys-is-not-defined
  * Interact with Clipboard: https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Interact_with_the_clipboard
+ *
+ * Download JSON: https://stackoverflow.com/questions/19721439/download-json-object-as-a-file-from-browser
+ * Upload File: https://stackoverflow.com/questions/16505333/get-the-data-of-uploaded-file-in-javascript
  */
