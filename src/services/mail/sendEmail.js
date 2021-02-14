@@ -1,7 +1,7 @@
 /* using tcr-mail-utility hosted on heroku 
 
-url: https://tcr-mail-utility.herokuapp.com/sendMail
-   : https://tcr-mail-utility.herokuapp.com/sendFeedback
+url: https://quiet-caverns-98688.herokuapp.com/sendMail
+   : https://quiet-caverns-98688.herokuapp.com/sendFeedback
 
 endPoints: 
 
@@ -15,7 +15,7 @@ endPoints:
 import axios from 'axios'
 
 async function sendEmail(email,data) {
-  return axios.post('https://tcr-mail-utility.herokuapp.com/sendMail',{
+  return axios.post('https://quiet-caverns-98688.herokuapp.com/sendMail',{
         email:email,
         data:data
       }).then(function (response) {
@@ -32,7 +32,7 @@ async function sendEmail(email,data) {
 }
 
 async function sendFeedback(data) {
-  return axios.post('https://tcr-mail-utility.herokuapp.com/sendFeedback',{
+  return axios.post('https://quiet-caverns-98688.herokuapp.com/sendFeedback',{
         data:data
       }).then(function (response) {
       // console.log("Response",response);
