@@ -211,9 +211,14 @@ function Memberdivel() {
         function handleFileLoad(event){
             let details = event.target.result 
 
-            let detailsJSON = JSON.parse(details)
+            try{
+                
+                let detailsJSON = JSON.parse(details)
+                console.log(detailsJSON)
 
-            console.log(detailsJSON)
+            } catch(err){
+                console.log(err)
+            }
 
         }
 
