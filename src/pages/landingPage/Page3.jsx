@@ -45,11 +45,16 @@ handleExpand = ()=> {
     //     }
 }
 
+handleOnScreen = (e, { calculations }) => this.setState({ calculations })
     render(){
+      
   return(
     <div className="thirdPage">
     <Grid centered>
         <GridColumn width={14}>
+          
+        <Visibility fireOnMount onOnScreen={this.handleOnScreen}>
+          <div>
                     <ul id="hexGrid">
                       { (this.state.activeItem==='collapse')&&
                         this.state.images.map((image) => {
@@ -69,13 +74,18 @@ handleExpand = ()=> {
                         })
                       }        
                     </ul>
-                    
+                   </div>
+                   
+                   </Visibility> 
       </GridColumn>
                       {
-                        this.state.activeItem==='expand'?<div>
-                        <Gallery></Gallery>
-                        <Button style={{position:'fixed',top:0,right:40}} onClick={this.handleCollapse} color='yellow' basic>Collapse Gallery</Button></div>
-                            :
+                        this.state.activeItem==='expand'
+                        ?
+                          <div>
+                            <Gallery></Gallery>
+                            <Button style={{position:'fixed',top:0,right:40}} onClick={this.handleCollapse} color='yellow' basic>Collapse Gallery</Button>
+                          </div>
+                        :
                             <Grid.Row columns={16}>
                               <Button style={{}} onClick={this.handleExpand} color='yellow' basic>Expand Gallery</Button>
                             </Grid.Row>                       

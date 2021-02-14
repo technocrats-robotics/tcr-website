@@ -10,13 +10,13 @@ export default class Page1 extends Component {
            
             <Grid centered stackable>
                 <GridRow>
-                <Header as='h1' size='huge' inverted textAlign='left'>
+                {/* <Header as='h1' size='huge' inverted textAlign='left'>
                 <Icon name='hand spock' />
                 <Header.Content>
                 About Us
                 <Header.Subheader>What our team stands for</Header.Subheader>
                 </Header.Content>
-            </Header>
+            </Header> */}
                 </GridRow>
                 <GridRow centered>
                     <InfoCard></InfoCard>
