@@ -63,7 +63,7 @@ export default class InfoCard extends Component {
         }
             ,1000)
         this.setState({i:this.state.i-3})
-        this.setState({activeCards: this.achievements.slice(this.state.i-3,this.state.i)})
+        this.setState({activeCards: this.achievements.slice(this.state.i-6,this.state.i-3)})
         console.log(this.state.i)
     }
     state = {
