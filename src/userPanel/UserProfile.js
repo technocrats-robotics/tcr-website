@@ -14,6 +14,7 @@ import Member from '../services/google-firebase/models/members/member'
 
 //member card
 import AboutUsCard from '../components/about_us/AboutUsCard'
+import ProfilePic from '../components/about_us/ProfilePic'
 
 function UserProfile() {
 
@@ -77,7 +78,6 @@ function UserProfile() {
     }
 
 
-    const defaultDpLink = 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg';
 
     const roles = (yearly_roles) => {
         let currentRole = Member.getCurrentRole(yearly_roles);
@@ -98,7 +98,7 @@ function UserProfile() {
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                             <div className="dpBox">
                                     <div className="dpBox__dp">
-                                        <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
+                                        <ProfilePic dpLink={userDetails.dpLink} uname={userDetails.username} size='medium'/>
                                     </div>
                                     <div  className="dpBox__preview">
                                         {
