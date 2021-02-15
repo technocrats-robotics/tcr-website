@@ -105,7 +105,7 @@ export default class TeamMembers extends Component {
                     {
                         this.state.data.map((member)=>(
                             member.isActive?(
-                                <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                                <Grid.Column key={member.username} computer= {4} mobile={4} className='justToAlignMemberCards'>
                                     <AboutUsCard data={member}></AboutUsCard>
                                 </Grid.Column>
                             ):(null)
