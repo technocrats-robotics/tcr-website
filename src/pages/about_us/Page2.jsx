@@ -114,12 +114,12 @@ export default class Page2 extends Component {
                             </Grid.Column>
                         ))
                     }
+                            <AboutUsCard data={this.faculty} />
+                      
                     </Grid.Row>
                     
                     <Grid.Row centered columns={3}>
-                        <Grid.Column centered width={3}>
-                            <AboutUsCard style={{marginLeft:'2% !important'}} data={this.faculty} />
-                        </Grid.Column>
+                        
                     </Grid.Row>
                 </Grid>
             </div>

@@ -42,7 +42,7 @@ export default class About extends Component {
                     <div>
                         <Page1 />;
                         <Page2 />;
-                        <Button className='ExpandAboutButton' onClick={this.handleExpand} color='yellow' basic>Expand</Button>
+                        <Button style={{marginBottom:'3%'}} className='ExpandAboutButton' onClick={this.handleExpand} color='yellow' basic>Expand</Button>
                     </div>
                     )
             }

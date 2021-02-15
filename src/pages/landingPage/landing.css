@@ -3,6 +3,11 @@
     /* background-color: #1b1c1d; */
     overflow:hidden !important;
   }
+  .firstPage:hover {
+    /* height: 100vh; */
+    box-shadow: 0px 0px 80px -20px #74c54f;
+  }
+  
   .firstPageMain {
     height: 100vh;
     /* background-color: #1b1c1d; */
@@ -11,8 +16,15 @@
 
 .secondPage {
   /* height: 100vh; */
+  transition: 0.5s;
   background-color: #1b1c1d;
 }
+.secondPage:hover {
+  /* height: 100vh; */
+  background-color: #1b1c1d;
+  box-shadow: 0px 0px 80px -20px #74c54f;
+}
+
 .landingFooter{
   background-color: #1b1c1d !important;
   border-radius: 2rem !important;

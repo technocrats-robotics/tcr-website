@@ -1,7 +1,13 @@
 .firstAboutPage{
 min-height: 80vh;
+transition: 0.5s;
 /* background-color: black; */
 }
+.firstAboutPage:hover {
+    /* height: 100vh; */
+    background-color: #1b1c1d;
+    box-shadow: 0px 0px 80px -20px #74c54f;
+  }
 
 .secondAboutPage{
 min-height: 100vh;
