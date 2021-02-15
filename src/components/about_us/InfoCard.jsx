@@ -51,8 +51,8 @@ export default class InfoCard extends Component {
             this.setState({visible:true})
         }
             ,1000)
-        this.setState({i:this.state.i+3})
-        this.setState({activeCards: this.achievements.slice(this.state.i,this.state.i+3)})
+        this.setState({i:this.state.i+2})
+        this.setState({activeCards: this.achievements.slice(this.state.i,this.state.i+2)})
         console.log(this.state.i)
     }
     prevCards = () => {
@@ -62,13 +62,13 @@ export default class InfoCard extends Component {
             this.setState({visible:true})
         }
             ,1000)
-        this.setState({i:this.state.i-3})
-        this.setState({activeCards: this.achievements.slice(this.state.i-6,this.state.i-3)})
+        this.setState({i:this.state.i-2})
+        this.setState({activeCards: this.achievements.slice(this.state.i-4,this.state.i-2)})
         console.log(this.state.i)
     }
     state = {
         i:3,
-        activeCards:this.achievements.slice(0,3),
+        activeCards:this.achievements.slice(0,2),
         visible:true
     }
     handleOnScreen = (e,{calculations}) => {
@@ -93,7 +93,6 @@ export default class InfoCard extends Component {
         <Visibility onUpdate={this.handleOnScreen}>
         <div>  
             <Grid centered stackable columns={12}>
-
             <Transition.Group animation={'fade right'} duration={1000}>
 
             
@@ -135,7 +134,16 @@ export default class InfoCard extends Component {
                 </Grid.Row>)
                 }
                 
-                {this.state.activeCards[2]&& this.state.visible &&(
+            <Grid.Row>
+                <Button.Group>
+                
+                    <Button labelPosition='left' attached='left' icon='left chevron' content='Prev' disabled={this.achievements[this.state.i-3] == null} className='nextPrevBtns' onClick={this.prevCards} color='yellow' basic />
+                
+                    <Button  labelPosition='right' attached='right' icon='right chevron' content='Next' disabled={this.achievements[this.state.i] == null} className='nextPrevBtns' onClick={this.nextCards} color='yellow' basic />
+                </Button.Group>
+                </Grid.Row>
+                
+                {/* {this.state.activeCards[2]&& this.state.visible &&(
                 <Grid.Row className='aboutCard'>
                     <Grid.Column width={4} className='justToAlignImage'>
                         <Image className="thumbnail1" src={this.state.activeCards[2].imageLink}></Image>
@@ -150,22 +158,12 @@ export default class InfoCard extends Component {
                             </Header.Subheader>
                         </Header>
                     </Grid.Column>
-                </Grid.Row>       )}         
+                </Grid.Row>        
+                    )}         */}
  
                 </Transition.Group>     
 
-                <Grid.Row>
-                {this.achievements[this.state.i-4] &&(
-                <div>
-                    <Button onClick={this.prevCards} color='yellow' basic>Back</Button>
-                </div>)}
-                {this.achievements[this.state.i] &&(
-                <div>
-                    <Button onClick={this.nextCards} color='yellow' basic>Next</Button>
-                </div>
-                )
-                }
-                </Grid.Row>
+              
             </Grid>
         </div>
         

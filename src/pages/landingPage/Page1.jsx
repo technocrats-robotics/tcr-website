@@ -24,7 +24,7 @@ export default class Page1 extends Component {
     }
   render() {
     return(
-        <div className="firstPage">
+        <div className="firstPageMain">
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}

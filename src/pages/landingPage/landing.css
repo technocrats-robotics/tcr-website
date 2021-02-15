@@ -3,6 +3,11 @@
     /* background-color: #1b1c1d; */
     overflow:hidden !important;
   }
+  .firstPageMain {
+    height: 100vh;
+    /* background-color: #1b1c1d; */
+    overflow:hidden !important;
+  }
 
 .secondPage {
   /* height: 100vh; */

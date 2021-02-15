@@ -42,8 +42,11 @@
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transition: 1s ease-in-out;
+  -webkit-transition: 2s ease-in-out;
   transition: 1s ease-in-out;
+  transition-delay: 1000ms;
+  -webkit-transition-delay: 1s; /* for Safari & Chrome */
+
   -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, rgba(0, 0, 0, 0));
 }
 .aboutuscard .card__face {

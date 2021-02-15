@@ -1,5 +1,5 @@
 .firstAboutPage{
-min-height: 50vh;
+min-height: 80vh;
 /* background-color: black; */
 }
 
@@ -8,6 +8,16 @@ min-height: 100vh;
 /* background-color: black; */
 padding: 2%;
 text-align: center;
+}
+.spotlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(
+        circle,
+        transparent 160px,
+        rgba(0, 0, 0, 0.85) 200px
+    );
 }
 
 @media only screen and (max-width: 900px) {

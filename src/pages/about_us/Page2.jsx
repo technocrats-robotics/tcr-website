@@ -13,7 +13,11 @@ export default class Page2 extends Component {
         activeItem: getCurrentTeamYear(), 
         data:[], yearHeaders: [] 
     };
-    
+    faculty = {
+        name:'Dr. Arockia Selvakumar',
+        dpLink:'https://media-exp1.licdn.com/dms/image/C5603AQFkwcLsiX_qxA/profile-displayphoto-shrink_400_400/0/1604218973010?e=1619049600&v=beta&t=8Ra6VMH0JZr4JPRSHOLouqoRVPQh76gvlsZDm88M-NE',
+        about:{experience:'Faculty Coordinator,Technocrats',}
+    }
     handleItemClick = (e, { name }) => {
         this.setState({ activeItem: name }, () => this.getSelectedTeam());
     }
@@ -102,14 +106,20 @@ export default class Page2 extends Component {
                 }
                 </Menu>
                 <Grid centered doubling stackable>
-                    <Grid.Row columns={6}>
+                    <Grid.Row columns={3}>
                     {
                         this.state.data.map((member)=>(
-                            <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                            <Grid.Column key={member.username} computer= {3} className='justToAlignMemberCards'>
                             <AboutUsCard data={member}></AboutUsCard>
                             </Grid.Column>
                         ))
                     }
+                    </Grid.Row>
+                    
+                    <Grid.Row centered columns={3}>
+                        <Grid.Column centered width={3}>
+                            <AboutUsCard style={{marginLeft:'2% !important'}} data={this.faculty} />
+                        </Grid.Column>
                     </Grid.Row>
                 </Grid>
             </div>
