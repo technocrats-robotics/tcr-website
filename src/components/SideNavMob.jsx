@@ -3,7 +3,7 @@ import {Menu,Sidebar,Button,Icon, Image } from 'semantic-ui-react'
 import {NavLink, useHistory} from 'react-router-dom'
 import { render } from '@testing-library/react';
 let scrollToOne = () => {
-    document.getElementsByClassName('firstPage')[0].scrollIntoView({behavior:'smooth'});    
+    document.getElementsByClassName('firstPageMain')[0].scrollIntoView({behavior:'smooth'});    
 }
 let scrollToTwo = () => {
     document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'});   
