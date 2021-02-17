@@ -217,7 +217,7 @@ function UserProfile() {
                                             <div className="ui label">
                                                 Experience
                                             </div>
-                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the Team (under 50 characters; don't fill unless an Alumni)" onChange={(event) => setExperience(event.target.value)} />
+                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the Team (under 50 characters; don't fill unless an Alumnus/Alumna)" onChange={(event) => setExperience(event.target.value)} />
                                         </div>
                                     </div>
 
@@ -248,4 +248,10 @@ export default UserProfile
 /**
  * Fun Fact:
  *  The word 'Tagline' was suggested by 'Rohini Bera'
+ * Did you know?
+ *  For a male, “I am an alumnus” is correct, 
+ *  and “I am an alum” would be an acceptable short alternative. 
+ *  A male is an alumnus; a female is an alumna; 
+ *  two or more males a combination of males and females are alumni; 
+ *  and two or more females are alumnae.
  */
