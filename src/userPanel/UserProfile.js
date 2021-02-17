@@ -58,15 +58,15 @@ function UserProfile() {
 
         db.collection('members').doc(user).update(
             {
-                dpLink: dpLink || userDetails.dpLink,
+                dpLink: dpLink ?? userDetails.dpLink,
                 social_media: {
-                    github: github || userDetails.social_media.github,
-                    instagram: instagram || userDetails.social_media.instagram,
-                    linkedIn: linkedIn || userDetails.social_media.linkedIn
+                    github: github ?? userDetails.social_media.github,
+                    instagram: instagram ?? userDetails.social_media.instagram,
+                    linkedIn: linkedIn ?? userDetails.social_media.linkedIn
                 },
                 about: {
-                    experience: experience || userDetails.about.experience,
-                    misc: misc || userDetails.about.misc
+                    experience: experience ?? userDetails.about.experience,
+                    misc: misc ?? userDetails.about.misc
                 }
             }).then(
                 // display success message 
