@@ -202,21 +202,22 @@ function UserProfile() {
 
                                     </div>
                                     
-                                    <div className="inputBox">
 
+                                    <div className="inputBox">
                                         <div className="ui fluid labeled input">
                                             <div className="ui label userSocial">
-                                                Experience
+                                                Tagline
                                             </div>
-                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the team" onChange={(event) => setExperience(event.target.value)} />
+                                            <input defaultValue={userDetails.about.misc} placeholder="Personal Tagline (under 50 characters)" onChange={(event) => setMisc(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="inputBox">
+
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
-                                                Miscellaneous
+                                                Experience
                                             </div>
-                                            <input defaultValue={userDetails.about.misc} placeholder="Miscellaneous (if Any)" onChange={(event) => setMisc(event.target.value)} />
+                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the Team (under 50 characters; don't fill unless an Alumni)" onChange={(event) => setExperience(event.target.value)} />
                                         </div>
                                     </div>
 
@@ -243,3 +244,8 @@ function UserProfile() {
 }
 
 export default UserProfile
+
+/**
+ * Fun Fact:
+ *  The word 'Tagline' was suggested by 'Rohini Bera'
+ */
