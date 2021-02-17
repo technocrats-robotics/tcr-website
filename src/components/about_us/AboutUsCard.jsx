@@ -27,7 +27,7 @@ export default class AboutUsCard extends Component {
                 <div className="card__face card__face--back">
                     <div className='paddingMockBlock'>
                     <Header color='yellow' inverted className='afterMockBlock' >
-                           {this.props.data.about.experience}
+                           {this.props.data.about.experience || this.props.data.about.misc}
                             {
                             <div className="social_icons">
                                 {
