@@ -5,7 +5,7 @@ import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
 import Role from '../../services/google-firebase/models/members/role'
-import { getCurrentTeamYear } from '../../constants';
+import { getCurrentTeamYear, faculty_details } from '../../constants';
 
 
 export default class Page2 extends Component {
@@ -13,11 +13,7 @@ export default class Page2 extends Component {
         activeItem: getCurrentTeamYear(), 
         data:[], yearHeaders: [] 
     };
-    faculty = {
-        name:'Dr. Arockia Selvakumar',
-        dpLink:'https://media-exp1.licdn.com/dms/image/C5603AQFkwcLsiX_qxA/profile-displayphoto-shrink_400_400/0/1604218973010?e=1619049600&v=beta&t=8Ra6VMH0JZr4JPRSHOLouqoRVPQh76gvlsZDm88M-NE',
-        about:{experience:'Faculty Coordinator,Technocrats',}
-    }
+    
     handleItemClick = (e, { name }) => {
         this.setState({ activeItem: name }, () => this.getSelectedTeam());
     }
@@ -107,19 +103,16 @@ export default class Page2 extends Component {
                 </Menu>
                 <Grid centered doubling stackable>
                     <Grid.Row columns={3}>
-                    {
-                        this.state.data.map((member)=>(
-                            <Grid.Column key={member.username} computer= {3} className='justToAlignMemberCards'>
-                            <AboutUsCard data={member}></AboutUsCard>
-                            </Grid.Column>
-                        ))
-                    }
-                            <AboutUsCard data={this.faculty} />
-                      
-                    </Grid.Row>
-                    
-                    <Grid.Row centered columns={3}>
-                        
+                        <Grid.Column key={faculty_details.username} computer= {3} className='justToAlignMemberCards'>
+                            <AboutUsCard data={faculty_details} />
+                        </Grid.Column>
+                        {
+                            this.state.data.map((member)=>(
+                                <Grid.Column key={member.username} computer= {3} className='justToAlignMemberCards'>
+                                    <AboutUsCard data={member}></AboutUsCard>
+                                </Grid.Column>
+                            ))
+                        }
                     </Grid.Row>
                 </Grid>
             </div>
