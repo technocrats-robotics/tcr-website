@@ -49,8 +49,8 @@ export default class Page2 extends Component {
                             <Statistic.Label>Competitions</Statistic.Label>
                         </Statistic>
                     <Statistic size='large' className='redStats' color='green' inverted>
-                    <Statistic.Value>
-                            200
+                        <Statistic.Value>
+                            {this.props.content.stats['total_members']}
                         </Statistic.Value>
                         <Statistic.Label>Members</Statistic.Label>
                     </Statistic>
@@ -68,7 +68,9 @@ export default class Page2 extends Component {
                         <Statistic.Label>Robots Made</Statistic.Label>
                         </Statistic>
                         <Statistic mobile='16' inverted  className='yellowStats' size='large' color='yellow'>                       
-                        <Statistic.Value>♾</Statistic.Value>
+                        <Statistic.Value>
+                            {this.props.content.stats['memories']}
+                        </Statistic.Value>
                         <Statistic.Label>Memories Made</Statistic.Label>
                         </Statistic>
                     </Grid.Column>
