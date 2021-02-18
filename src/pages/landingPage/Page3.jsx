@@ -13,36 +13,25 @@ var x = window.matchMedia("(max-width: 700px)")
 **/
 
 export default class Page3 extends Component {
-  state = { images: [
-    {
-      title:'',
-      desc:'',
-      link:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/5%20(1).JPG?alt=media&token=0ee3d4bb-6318-47bd-bac0-ea1725718e0f'
-    },
-    {
-      title:'',
-      desc:'',
-      link:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/dragking.jpeg?alt=media&token=76ca47a9-66da-4027-a478-9f8319282726'
-    },
-    {
-      title:'',
-      desc:'',
-      link:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/IMG_5945.JPG?alt=media&token=ebb5708c-ec31-4f91-9522-559e912d8a8c'
-    },
-    {
-      title:'',
-      desc:'',
-      link:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/IMG_4232.JPG?alt=media&token=7f1daeb6-427b-4d8c-80b9-3369c2414f34'
-    },
-    {
-      title:'',
-      desc:'',
-      link:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/1-2.jpg?alt=media&token=9ce1ce57-1908-4dd6-89f4-603b145680fa'
-    }
+  state = { 
+    images: [],
+    visible: false,
+    activeItem: 'collapse', 
+  };
 
-  ],
-            visible: false,
-            activeItem: 'collapse', }    
+  componentDidMount() {
+    db.collection('content').doc('gallery').get()
+    .then((doc) => {
+      let imageIDs = doc.data().matrix;
+      imageIDs.forEach(imageID => {
+        db.collection('content/gallery/images').doc(imageID).get()
+        .then((image) => {
+          this.state.images.push(image.data());
+          this.setState(this.state);
+        })
+      }); 
+    })
+  }
 
   handleCollapse = ()=> {
     document.getElementsByClassName('thirdPage')[0].scrollIntoView({behavior:'smooth'});
