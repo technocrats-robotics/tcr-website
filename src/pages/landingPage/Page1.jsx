@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 
 import { Grid, Header, Icon,} from "semantic-ui-react";
-import FlareComponent from 'flare-react';
 import LogoController from '../../components/landingPage/LogoController'
 
 
 var x = window.matchMedia("(max-width: 728px)")
+// import  from 'flare-react';
+const FlareComponent = React.lazy(()=>import('flare-react'))
 export default class Page1 extends Component {
     constructor(){
         super();
@@ -29,7 +30,11 @@ export default class Page1 extends Component {
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}
                     <Grid.Column mobile='16' textAlign='center' className='leftMain' computer='6' >
+                        <Suspense fallback={<div className='loadScreen'>
+                    <Icon size='massive' color='red' loading name='spinner' />
+                </div>}>
                             <FlareComponent className="TechLogoMainPage" width={360} height={360} transparent={true} controller={new LogoController()} file="tcr_logo.flr"/>
+                        </Suspense>
                         <div className='mainPageContent'>
                             <Header className='Title' size='medium'>Technocrats Robotics</Header>
                             <div className='arrowDown' onClick={this.handleArrowDown}>

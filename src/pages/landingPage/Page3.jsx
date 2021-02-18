@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import {Grid, GridColumn, Button, Transition, Visibility} from 'semantic-ui-react';
+import {Grid, GridColumn, Button, Transition, Visibility, Icon, Segment} from 'semantic-ui-react';
 
-import Gallery from '../Gallery/Gallery';
+// import Gallery from '../Gallery/Gallery';
+
 
 import { db } from '../../services/google-firebase/setup';
 var x = window.matchMedia("(max-width: 700px)")
@@ -12,6 +13,7 @@ var x = window.matchMedia("(max-width: 700px)")
 * @function Page3
 **/
 
+const Gallery = React.lazy(() => import('../Gallery/Gallery'));
 export default class Page3 extends Component {
   state = { 
     images: [],
@@ -85,7 +87,9 @@ handleOnScreen = (e, { calculations }) => this.setState({ calculations })
                         this.state.activeItem==='expand'
                         ?
                           <div>
+                            <Suspense fallback={<Icon size='huge' color='red' loading name='spinner' />}>
                             <Gallery></Gallery>
+                            </Suspense>
                             <Button style={{position:'fixed',top:0,right:40}} onClick={this.handleCollapse} color='yellow' basic>Collapse Gallery</Button>
                           </div>
                         :
