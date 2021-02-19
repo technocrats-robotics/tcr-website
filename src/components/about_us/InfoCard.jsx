@@ -4,44 +4,45 @@ import { Grid, Segment, Header,Image, Icon, Card, Button,Visibility, Transition 
 import './InfoCard.css';
 
 var x = window.matchMedia("(max-width: 900px)");
+var maxAchievementCards = 2;
 
 export default class InfoCard extends Component {
     achievements = [
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards0',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://firebasestorage.googleapis.com/v0/b/technocrats-website.appspot.com/o/rover_lifting_heavy_load.jpg?alt=media&token=e6b42669-279d-4762-af2f-070033a6fc5f',
+            header:'What are we striving towards0',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards1',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards1',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards2',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards2',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards3',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards3',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards4',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards4',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards5',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards5',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
         {
-            imageLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
-            acheiveHeader:'What are we striving towards6',
-            Desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
+            posterLink:'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg',
+            header:'What are we striving towards6',
+            desc:'Magnesium is one of the six essential macro-minerals that is required by the body for energy production and synthesis of protein and enzymes. It contributes to the development of bones and most importantly it is responsible for synthesis of your DNA and RNA. A new report that has appeared in theBritish Journal of Cancer, gives you another reason to add more magnesium to your diet...'
         },
     ]
     nextCards = () => {
@@ -51,8 +52,8 @@ export default class InfoCard extends Component {
             this.setState({visible:true})
         }
             ,1000)
-        this.setState({i:this.state.i+2})
-        this.setState({activeCards: this.achievements.slice(this.state.i,this.state.i+2)})
+        this.setState({i:this.state.i+maxAchievementCards})
+        this.setState({activeCards: this.achievements.slice(this.state.i,this.state.i+maxAchievementCards)})
         console.log(this.state.i)
     }
     prevCards = () => {
@@ -67,8 +68,8 @@ export default class InfoCard extends Component {
         console.log(this.state.i)
     }
     state = {
-        i:3,
-        activeCards:this.achievements.slice(0,2),
+        i:maxAchievementCards,
+        activeCards:this.achievements.slice(0,maxAchievementCards),
         visible:true
     }
     handleOnScreen = (e,{calculations}) => {
@@ -104,10 +105,10 @@ export default class InfoCard extends Component {
                 <Grid.Column width={7}>
                         <Header>
                             <div className='title1'>
-                               {this.state.activeCards[0].acheiveHeader}
+                               {this.state.activeCards[0].header}
                             </div>
                             <Header.Subheader className='paraCard'>
-                                {this.state.activeCards[0].Desc}      
+                                {this.state.activeCards[0].desc}      
                             </Header.Subheader>
                         </Header>
                 </Grid.Column>
@@ -115,21 +116,21 @@ export default class InfoCard extends Component {
                 {this.state.activeCards[1]&&  this.state.visible &&(
                 <Grid.Row className='aboutCard'>
                     <Grid.Column width={4} only={'mobile'} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[0].imageLink}></Image>
+                        <Image className="thumbnail1" src={this.state.activeCards[0].posterLink}></Image>
                     </Grid.Column>
 
                     <Grid.Column width={7}>
                         <Header>
                             <div className='title1'>
-                               {this.state.activeCards[1].acheiveHeader}
+                               {this.state.activeCards[1].header}
                             </div>
                             <Header.Subheader className='paraCard'>
-                               {this.state.activeCards[1].Desc}
+                               {this.state.activeCards[1].desc}
                             </Header.Subheader>
                         </Header>
                     </Grid.Column>
                     <Grid.Column width={4} only={'computer'} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[1].imageLink}></Image>
+                        <Image className="thumbnail1" src={this.state.activeCards[1].posterLink}></Image>
                     </Grid.Column>
                 </Grid.Row>)
                 }
@@ -141,20 +142,20 @@ export default class InfoCard extends Component {
                 
                     <Button  labelPosition='right' attached='right' icon='right chevron' content='Next' disabled={this.achievements[this.state.i] == null} className='nextPrevBtns' onClick={this.nextCards} color='yellow' basic />
                 </Button.Group>
-                </Grid.Row>
+            </Grid.Row>
                 
                 {/* {this.state.activeCards[2]&& this.state.visible &&(
                 <Grid.Row className='aboutCard'>
                     <Grid.Column width={4} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[2].imageLink}></Image>
+                        <Image className="thumbnail1" src={this.state.activeCards[2].posterLink}></Image>
                     </Grid.Column>
                     <Grid.Column width={7}>
                         <Header>
                             <div className='title1'>
-                               {this.state.activeCards[2].acheiveHeader}
+                               {this.state.activeCards[2].header}
                             </div>
                             <Header.Subheader className='paraCard'>
-                                {this.state.activeCards[2].Desc}
+                                {this.state.activeCards[2].desc}
                             </Header.Subheader>
                         </Header>
                     </Grid.Column>
