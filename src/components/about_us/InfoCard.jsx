@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { useHistory, Link } from 'react-router-dom';
-import { Grid, Segment, Header,Image, Icon, Card, Button,Visibility, Transition } from 'semantic-ui-react';
+import { Grid, Header,Image, Button,Visibility, Transition } from 'semantic-ui-react';
 import Achievements from '../../services/google-firebase/models/achievements/achievements';
 import './InfoCard.css';
 
@@ -9,6 +8,12 @@ var maxAchievementCards = 2;
 var cardIndex = (slide_index) => maxAchievementCards * slide_index;
 
 export default class InfoCard extends Component {
+    state = {
+        achievements: [],
+        slide_idx: 0,
+        visible: true
+    }
+
     nextCards = () => {
         
         this.setState({
@@ -20,6 +25,7 @@ export default class InfoCard extends Component {
             },1000
         );
     }
+
     prevCards = () => {
         
         this.setState({
@@ -31,35 +37,36 @@ export default class InfoCard extends Component {
             },1000
         );
     }
-    state = {
-        achievements: [],
-        slide_idx: 0,
-        visible: true
-    }
+
     handleOnScreen = (e,{calculations}) => {
         if(x.matches){
-        let aboutUsCard = document.getElementsByClassName('row aboutCard');
-        
-        try {
-            let passed = calculations.percentagePassed;
-            aboutUsCard[0].style.boxShadow = (passed < 0.02 &&  passed < 0.4) ? "0px 2px 6px 0px blue" : "0px 0px 0px 0px blue" ;
-            aboutUsCard[1].style.boxShadow = (passed > 0.3 && passed < 0.6 ) ? "0px 2px 6px 0px yellow" : "0px 0px 0px 0px yellow" ;
-            aboutUsCard[2].style.boxShadow = (passed > 0.5 && passed < 0.9) ? "0px 2px 6px 0px green" : "0px 0px 0px 0px green" ;
-        }
-         catch (error) {
+            let aboutUsCard = document.getElementsByClassName('row aboutCard');
+            
+            try {
+                let passed = calculations.percentagePassed;
+                aboutUsCard[0].style.boxShadow = (passed < 0.02 &&  passed < 0.4) ? "0px 2px 6px 0px blue" : "0px 0px 0px 0px blue" ;
+                aboutUsCard[1].style.boxShadow = (passed > 0.3 && passed < 0.6 ) ? "0px 2px 6px 0px yellow" : "0px 0px 0px 0px yellow" ;
+                aboutUsCard[2].style.boxShadow = (passed > 0.5 && passed < 0.9) ? "0px 2px 6px 0px green" : "0px 0px 0px 0px green" ;
+            }
+            catch (error) {
+            }
         }
     }
-     
-}
 
     componentDidMount() {
+        // Fetch the snapshot of documents in the 'achievements' collection
         Achievements.getAllAchievements()
         .then((documents) => {
-            let temp = [];
-            documents.forEach((achievement) => temp.push(achievement.data()));
+
+            // Create a temporary data array for assigning it to 'achievements' state variable
+            let temp_data = [];
+            // Push the data in each document fetch to the temporary array
+            documents.forEach((achievement) => temp_data.push(achievement.data()));
             // console.log(temp);   // Debugging
+
+            // Set 'achievements' variable
             this.setState({
-                achievements: temp,
+                achievements: temp_data,
             })
         })
         .catch((error) => {
@@ -79,7 +86,9 @@ export default class InfoCard extends Component {
             <Grid centered stackable columns={12}>
             <Transition.Group animation={'fade right'} duration={1000}>
                 {
+                    // Check if the cards should be visible
                     this.state.visible &&
+                    // Map the sliced cards to create an array of rendered components
                     this.state.achievements
                     .slice(cardIndex(this.state.slide_idx), cardIndex(this.state.slide_idx + 1))
                     .map((card, card_index) => (
@@ -111,58 +120,37 @@ export default class InfoCard extends Component {
                 }
 
                 
-            <Grid.Row>
-                <Button.Group>
-                    <Button 
-                        labelPosition='left' 
-                        attached='left' 
-                        icon='left chevron' 
-                        content='Prev' 
-                        disabled={this.state.achievements[cardIndex(this.state.slide_idx - 1)] == null} 
-                        className='nextPrevBtns' 
-                        onClick={this.prevCards} 
-                        color='yellow' 
-                        basic 
-                    />
-                
-                    <Button  
-                        labelPosition='right' 
-                        attached='right' 
-                        icon='right chevron' 
-                        content='Next' 
-                        disabled={this.state.achievements[cardIndex(this.state.slide_idx + 1)] == null} 
-                        className='nextPrevBtns' 
-                        onClick={this.nextCards} 
-                        color='yellow' 
-                        basic 
-                    />
-                </Button.Group>
-            </Grid.Row>
-                
-                {/* {this.state.activeCards[2]&& this.state.visible &&(
-                <Grid.Row className='aboutCard'>
-                    <Grid.Column width={4} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[2].posterLink}></Image>
-                    </Grid.Column>
-                    <Grid.Column width={7}>
-                        <Header>
-                            <div className='title1'>
-                               {this.state.activeCards[2].header}
-                            </div>
-                            <Header.Subheader className='paraCard'>
-                                {this.state.activeCards[2].desc}
-                            </Header.Subheader>
-                        </Header>
-                    </Grid.Column>
-                </Grid.Row>        
-                    )}         */}
+                <Grid.Row>
+                    <Button.Group>
+                        <Button 
+                            labelPosition='left' 
+                            attached='left' 
+                            icon='left chevron' 
+                            content='Prev' 
+                            disabled={this.state.achievements[cardIndex(this.state.slide_idx - 1)] == null} 
+                            className='nextPrevBtns' 
+                            onClick={this.prevCards} 
+                            color='yellow' 
+                            basic 
+                        />
+                    
+                        <Button  
+                            labelPosition='right' 
+                            attached='right' 
+                            icon='right chevron' 
+                            content='Next' 
+                            disabled={this.state.achievements[cardIndex(this.state.slide_idx + 1)] == null} 
+                            className='nextPrevBtns' 
+                            onClick={this.nextCards} 
+                            color='yellow' 
+                            basic 
+                        />
+                    </Button.Group>
+                </Grid.Row>
  
-                </Transition.Group>     
-
-              
+            </Transition.Group> 
             </Grid>
         </div>
-        
         </Visibility>
     );
     }
