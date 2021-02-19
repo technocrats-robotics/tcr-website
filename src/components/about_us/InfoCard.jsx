@@ -108,9 +108,12 @@ export default class InfoCard extends Component {
                     this.state.visible &&
                     this.state.activeCards.map((card, card_index) => (
                         <Grid.Row className='aboutCard'>
-                            <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
+                            {card_index%2==0 ? 
+                                (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Image className="thumbnail1" src={card.posterLink} />
-                                </Grid.Column>
+                                </Grid.Column>)
+                                : (null)
+                            }
                             <Grid.Column width={7}>
                                 <Header>
                                     <div className='title1'>
@@ -121,6 +124,12 @@ export default class InfoCard extends Component {
                                     </Header.Subheader>
                                 </Header>
                             </Grid.Column>
+                            {card_index%2!=0 ? 
+                                (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
+                                    <Image className="thumbnail1" src={card.posterLink} />
+                                </Grid.Column>)
+                                : (null)
+                            }
                         </Grid.Row>
                     ))
                 }
