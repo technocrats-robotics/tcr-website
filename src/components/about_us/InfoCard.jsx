@@ -5,6 +5,7 @@ import './InfoCard.css';
 
 var x = window.matchMedia("(max-width: 900px)");
 var maxAchievementCards = 2;
+var cardIndex = (slide_index) => maxAchievementCards * slide_index;
 
 export default class InfoCard extends Component {
     achievements = [
@@ -47,30 +48,38 @@ export default class InfoCard extends Component {
     ]
     nextCards = () => {
         
-        this.setState({visible:false})
+        this.setState({
+            visible:false,
+            slide_idx: this.state.slide_idx + 1, 
+            activeCards: this.achievements.slice(
+                cardIndex(this.state.slide_idx + 1), 
+                cardIndex(this.state.slide_idx + 2)
+            )
+        });
         setTimeout(()=>{
-            this.setState({visible:true})
-        }
-            ,1000)
-        this.setState({i:this.state.i+maxAchievementCards})
-        this.setState({activeCards: this.achievements.slice(this.state.i,this.state.i+maxAchievementCards)})
-        console.log(this.state.i)
+                this.setState({visible:true})
+            },1000
+        );
     }
     prevCards = () => {
         
-        this.setState({visible:false})
+        this.setState({
+            visible:false,
+            slide_idx: this.state.slide_idx - 1, 
+            activeCards: this.achievements.slice(
+                cardIndex(this.state.slide_idx - 1), 
+                cardIndex(this.state.slide_idx)
+            )
+        });
         setTimeout(()=>{
-            this.setState({visible:true})
-        }
-            ,1000)
-        this.setState({i:this.state.i-2})
-        this.setState({activeCards: this.achievements.slice(this.state.i-4,this.state.i-2)})
-        console.log(this.state.i)
+                this.setState({visible:true})
+            },1000
+        );
     }
     state = {
-        i:maxAchievementCards,
-        activeCards:this.achievements.slice(0,maxAchievementCards),
-        visible:true
+        slide_idx: 0,
+        activeCards: this.achievements.slice(0, maxAchievementCards),
+        visible: true
     }
     handleOnScreen = (e,{calculations}) => {
         if(x.matches){
@@ -116,7 +125,7 @@ export default class InfoCard extends Component {
                 {this.state.activeCards[1]&&  this.state.visible &&(
                 <Grid.Row className='aboutCard'>
                     <Grid.Column width={4} only={'mobile'} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[0].posterLink}></Image>
+                        <Image className="thumbnail1" src={this.state.activeCards[1].posterLink}></Image>
                     </Grid.Column>
 
                     <Grid.Column width={7}>
@@ -137,10 +146,29 @@ export default class InfoCard extends Component {
                 
             <Grid.Row>
                 <Button.Group>
+                    <Button 
+                        labelPosition='left' 
+                        attached='left' 
+                        icon='left chevron' 
+                        content='Prev' 
+                        disabled={this.achievements[cardIndex(this.state.slide_idx - 1)] == null} 
+                        className='nextPrevBtns' 
+                        onClick={this.prevCards} 
+                        color='yellow' 
+                        basic 
+                    />
                 
-                    <Button labelPosition='left' attached='left' icon='left chevron' content='Prev' disabled={this.achievements[this.state.i-3] == null} className='nextPrevBtns' onClick={this.prevCards} color='yellow' basic />
-                
-                    <Button  labelPosition='right' attached='right' icon='right chevron' content='Next' disabled={this.achievements[this.state.i] == null} className='nextPrevBtns' onClick={this.nextCards} color='yellow' basic />
+                    <Button  
+                        labelPosition='right' 
+                        attached='right' 
+                        icon='right chevron' 
+                        content='Next' 
+                        disabled={this.achievements[cardIndex(this.state.slide_idx + 1)] == null} 
+                        className='nextPrevBtns' 
+                        onClick={this.nextCards} 
+                        color='yellow' 
+                        basic 
+                    />
                 </Button.Group>
             </Grid.Row>
                 
