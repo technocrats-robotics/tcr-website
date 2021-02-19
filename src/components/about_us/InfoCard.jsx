@@ -104,45 +104,27 @@ export default class InfoCard extends Component {
         <div>  
             <Grid centered stackable columns={12}>
             <Transition.Group animation={'fade right'} duration={1000}>
-
-            
-            {this.state.activeCards[0] && this.state.visible&&(
-                <Grid.Row className='aboutCard'>
-                    <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
-                        <Image className="thumbnail1" src={'https://cdn2.hubspot.net/hubfs/322787/Mychefcom/images/BLOG/Header-Blog/photo-culinaire-pexels.jpg'}></Image>
-                    </Grid.Column>
-                <Grid.Column width={7}>
-                        <Header>
-                            <div className='title1'>
-                               {this.state.activeCards[0].header}
-                            </div>
-                            <Header.Subheader className='paraCard'>
-                                {this.state.activeCards[0].desc}      
-                            </Header.Subheader>
-                        </Header>
-                </Grid.Column>
-                </Grid.Row>)}
-                {this.state.activeCards[1]&&  this.state.visible &&(
-                <Grid.Row className='aboutCard'>
-                    <Grid.Column width={4} only={'mobile'} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[1].posterLink}></Image>
-                    </Grid.Column>
-
-                    <Grid.Column width={7}>
-                        <Header>
-                            <div className='title1'>
-                               {this.state.activeCards[1].header}
-                            </div>
-                            <Header.Subheader className='paraCard'>
-                               {this.state.activeCards[1].desc}
-                            </Header.Subheader>
-                        </Header>
-                    </Grid.Column>
-                    <Grid.Column width={4} only={'computer'} className='justToAlignImage'>
-                        <Image className="thumbnail1" src={this.state.activeCards[1].posterLink}></Image>
-                    </Grid.Column>
-                </Grid.Row>)
+                {
+                    this.state.visible &&
+                    this.state.activeCards.map((card, card_index) => (
+                        <Grid.Row className='aboutCard'>
+                            <Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
+                                    <Image className="thumbnail1" src={card.posterLink} />
+                                </Grid.Column>
+                            <Grid.Column width={7}>
+                                <Header>
+                                    <div className='title1'>
+                                    {card.header}
+                                    </div>
+                                    <Header.Subheader className='paraCard'>
+                                        {card.desc}
+                                    </Header.Subheader>
+                                </Header>
+                            </Grid.Column>
+                        </Grid.Row>
+                    ))
                 }
+
                 
             <Grid.Row>
                 <Button.Group>
