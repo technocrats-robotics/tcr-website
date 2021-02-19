@@ -93,7 +93,7 @@ export default class InfoCard extends Component {
                     .slice(cardIndex(this.state.slide_idx), cardIndex(this.state.slide_idx + 1))
                     .map((card, card_index) => (
                         <Grid.Row className='aboutCard'>
-                            {card_index%2==0 ? 
+                            {card.posterLink && card_index%2==0? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Image className="thumbnail1" src={card.posterLink} />
                                 </Grid.Column>)
@@ -109,7 +109,7 @@ export default class InfoCard extends Component {
                                     </Header.Subheader>
                                 </Header>
                             </Grid.Column>
-                            {card_index%2!=0 ? 
+                            {card.posterLink && card_index%2!=0 ? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Image className="thumbnail1" src={card.posterLink} />
                                 </Grid.Column>)
