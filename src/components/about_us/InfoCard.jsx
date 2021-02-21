@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Grid, Header,Image, Button,Visibility, Transition } from 'semantic-ui-react';
+import React, { Component, Suspense } from 'react';
+import { Grid, Header,Image, Button,Visibility, Transition, Placeholder, Card } from 'semantic-ui-react';
 import Achievements from '../../services/google-firebase/models/achievements/achievements';
 import './InfoCard.css';
 
@@ -95,7 +95,9 @@ export default class InfoCard extends Component {
                         <Grid.Row className='aboutCard'>
                             {card.posterLink && card_index%2==0? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
-                                    <Image className="thumbnail1" src={card.posterLink} />
+                                    <Suspense fallback={<Placeholder />}>
+                                        <Image className="thumbnail1" src={card.posterLink} />
+                                    </Suspense>
                                 </Grid.Column>)
                                 : (null)
                             }
@@ -111,7 +113,9 @@ export default class InfoCard extends Component {
                             </Grid.Column>
                             {card.posterLink && card_index%2!=0 ? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
-                                    <Image className="thumbnail1" src={card.posterLink} />
+                                    <Suspense fallback={<Placeholder />}>
+                                        <Image className="thumbnail1" src={card.posterLink} />
+                                    </Suspense>
                                 </Grid.Column>)
                                 : (null)
                             }
