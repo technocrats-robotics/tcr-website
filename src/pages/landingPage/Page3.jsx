@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import {Grid, GridColumn, Button, Transition, Visibility, Icon, Segment} from 'semantic-ui-react';
+import {Grid, GridColumn, Button, Transition, Visibility, Icon, Segment, Placeholder} from 'semantic-ui-react';
 
 // import Gallery from '../Gallery/Gallery';
 
@@ -58,7 +58,10 @@ handleOnScreen = (e, { calculations }) => this.setState({ calculations })
     <Grid centered>
         <GridColumn width={14}>
           
-        <Visibility fireOnMount onOnScreen={this.handleOnScreen}>
+        <Suspense fallback={<Placeholder>
+    <Placeholder.Line /></Placeholder>}>
+
+  <Visibility fireOnMount onOnScreen={this.handleOnScreen}>
           <div>
                     <ul id="hexGrid">
                       { (this.state.activeItem==='collapse')&&
@@ -80,8 +83,8 @@ handleOnScreen = (e, { calculations }) => this.setState({ calculations })
                       }        
                     </ul>
                    </div>
-                   
-                   </Visibility> 
+                   </Visibility>
+                   </Suspense> 
       </GridColumn>
                       {
                         this.state.activeItem==='expand'

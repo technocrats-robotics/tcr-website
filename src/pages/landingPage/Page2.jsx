@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import { Grid, Segment, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
-import ImageMat from '../../components/landingPage/ImageMat';
-import IntroCard from '../../components/landingPage/IntroCard';
+
+const IntroCard = React.lazy(()=>import('../../components/landingPage/IntroCard'))
+const ImageMat = React.lazy(()=>import('../../components/landingPage/ImageMat'))
 
 export default class Page2 extends Component {
    
@@ -29,6 +30,7 @@ export default class Page2 extends Component {
             <Grid stackable centered>
                 <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
                     <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
+                        <Suspense fallback={<p>Loading</p>}>
                         <IntroCard Introhead={'Technocrats Robotics'} 
                         // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
                         //     spectator on a hillside, the sable cloud beneath was dished out, and the
@@ -38,6 +40,7 @@ export default class Page2 extends Component {
                             {this.props.content.intro}
                         </p>}>
                         </IntroCard>
+                        </Suspense>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row stackable mobile='15'>
@@ -57,8 +60,10 @@ export default class Page2 extends Component {
                     </Grid.Column>
       
                     <Grid.Column width='5'>
-                        
+                    <Suspense fallback={<p>Loading</p>}>
+
                     <ImageMat></ImageMat>
+                    </Suspense>
                     </Grid.Column>
                     <Grid.Column textAlign='center' width='5'>
                     <Statistic mobile='16' inverted  className='yellowStats' size='large' color='blue'>

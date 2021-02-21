@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react';
 
-import { Grid, Header, Icon,} from "semantic-ui-react";
+import { Grid, Header, Icon} from "semantic-ui-react";
 import LogoController from '../../components/landingPage/LogoController'
 
 

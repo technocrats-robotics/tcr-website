@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense } from 'react';
 import './landing.css';
 import Page1 from './Page1';
 import Page2 from './Page2';
-import Page3 from './Page3';
 import About from './../about_us/About';
 import ContactUs from '../contact_us/ContactUs';
 import SideNavMob from '../../components/SideNavMob';
@@ -10,6 +9,7 @@ import {  Icon, Button, Divider } from 'semantic-ui-react';
 
 import {db} from '../../services/google-firebase/setup'
 
+import Page3 from './Page3';
 
 var x = window.matchMedia("(max-width: 700px)")
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -72,6 +72,7 @@ export default class LandingPage extends Component {
             <Divider horizontal inverted>who are we ?</Divider>
             <Page2 content={this.state.contentAll}></Page2>
             <Divider horizontal inverted>Gallery</Divider>
+            
             <Page3></Page3>
             <Divider horizontal inverted>About Us</Divider>
             <About></About>
