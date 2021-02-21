@@ -52,8 +52,8 @@
 .aboutuscard .card__face {
   -o-object-fit: cover;
      object-fit: cover;
-     background-color: #c1930c14;
-     box-shadow:0px 2px 4px 0px #c1930c;
+     /* background-color: #c1930c14;
+     box-shadow:0px 2px 4px 0px #c1930c; */
 }
 
 .aboutuscard .card__face--back {
@@ -96,6 +96,8 @@
         }
         .aboutuscard .card__face{
                 padding: 10%;
+                background-color: #c1930c14;
+                box-shadow:0px 2px 4px 0px #c1930c;
         }
 .social_icons {
         margin-left: -10%;      

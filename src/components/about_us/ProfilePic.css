@@ -1,9 +1,9 @@
 img.ui.small.avatar.image.faceimage {
-    padding: 10%;
+    padding: 2%;
     min-height: 100px;
 }
 
 canvas.faceimage {
     border-radius: 10vh;
-    padding: 2vh;
+    padding: 2%;
 }

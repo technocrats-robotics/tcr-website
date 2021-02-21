@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Menu, Button,Divider } from 'semantic-ui-react';
+import { Grid, Menu, Button,Divider,Segment, Header } from 'semantic-ui-react';
 import {  Link } from 'react-router-dom';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
@@ -113,6 +113,13 @@ export default class Page2 extends Component {
                                 </Grid.Column>
                             ))
                         }
+                        
+                    <Segment inverted raised size='medium'>
+                        <Header as={'h1'} style={{textAlign:'justiy'}} >
+                        "Many ideas grow better, <br></br> <pre></pre> when transplanted into another mind than the one where<br></br> they sprang up." – Oliver Wendell...
+                        </Header>
+                    </Segment>
+                    <br></br>
                     </Grid.Row>
                 </Grid>
             </div>
