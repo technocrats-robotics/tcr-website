@@ -235,7 +235,7 @@ function UserProfile() {
                     <div className="userProfile__blockMessage">
                         <h1>Your Profile has been blocked.</h1>
                         <h3>Contact the Team if you think that this is by mistake.</h3>
-                        <h4>Or feel free to write us at: <u>tcrvitcc@gmail.com</u></h4>
+                        <h4>Or feel free to write us at: <u>technocratsroboticsvit@gmail.com</u></h4>
                     </div>
                 )
             }
