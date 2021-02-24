@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #1b1c1d;
+  background-color: #1B1C1D;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
@@ -55,7 +55,7 @@
   transition: 1s ease-in-out;
   height: 100vh;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.473);
+  background-color: #1B1C1D;
   display: flex;
   box-shadow: 0px 10px 20px black;
 }

@@ -1,0 +1,13 @@
+.recruitInfo{
+    height: 100vh;
+    background-color: #1B1C1D;
+}
+.recruitDiv1{
+    height: 80vh;
+    background-color: #1B1C1D;   
+}
+.recruitDiv2{
+    height: 20vh;
+    background-color: rgba(238, 238, 40, 0.863); 
+    box-shadow: 0px -2px 20px black;  
+}
