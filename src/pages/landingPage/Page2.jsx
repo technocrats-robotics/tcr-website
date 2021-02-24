@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { Grid, Segment, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
+import { Grid, Segment,Label, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
 
 const IntroCard = React.lazy(()=>import('../../components/landingPage/IntroCard'))
 const ImageMat = React.lazy(()=>import('../../components/landingPage/ImageMat'))
@@ -30,6 +30,8 @@ export default class Page2 extends Component {
             <Grid stackable centered>
                 <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
                     <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
+                        
+                        <br></br>
                         <Suspense fallback={<p>Loading</p>}>
                         <IntroCard Introhead={'Technocrats Robotics'} 
                         // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the

@@ -78,6 +78,7 @@ export default class LandingPage extends Component {
             <About></About>
             <Divider horizontal inverted>Get in Touch</Divider>
             <ContactUs></ContactUs>
+            
         </div>
     );
     }

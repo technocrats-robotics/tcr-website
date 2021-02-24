@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react';
 import { Link } from 'react-router-dom';
-import {Grid, GridColumn, Button, Transition, Visibility, Icon, Segment, Placeholder} from 'semantic-ui-react';
+import {Grid, GridColumn, Button,Label, Transition, Visibility, Icon, Segment, Placeholder} from 'semantic-ui-react';
 
 // import Gallery from '../Gallery/Gallery';
 
@@ -100,6 +100,7 @@ handleOnScreen = (e, { calculations }) => this.setState({ calculations })
                               <Button style={{}} onClick={this.handleExpand} color='yellow' basic>Expand Gallery</Button>
                             </Grid.Row>                       
                       }
+                      
     </Grid>
 
     </div>

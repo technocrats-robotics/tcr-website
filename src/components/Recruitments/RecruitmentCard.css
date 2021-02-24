@@ -1,0 +1,26 @@
+.recruitmentCards{
+    box-shadow: 0px 2px 4px black;
+    /* width: 40%; */
+    padding: 0.5%;
+    margin-bottom: 1%;
+}
+.recruitmentCards:hover{
+    box-shadow: 0px 0px 4px yellow;
+}
+.recruitmentCards:hover #applyBtn{
+    opacity: 1;
+}
+.recruitText{
+    height: 10vh;
+    display:none;
+    margin-top: 8vh;
+    font-size: 15px;
+    /* border-left:2px solid yellow; */
+    background-color: rgba(255, 255, 0, 0.075);
+    color:yellow;
+    font-family: monospace;
+    text-align: left;
+    padding-left: 10vh;
+    padding-top: 1vh;
+    box-shadow: inset 0px 2px 10px black;
+}

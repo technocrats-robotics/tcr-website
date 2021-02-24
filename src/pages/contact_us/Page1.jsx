@@ -1,5 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { Grid, Segment, Header,Image, GridRow, GridColumn,Form,Button,Icon, Visibility, Placeholder } from 'semantic-ui-react';
+import { Grid, Segment,Label, Header,Image, GridRow, GridColumn,Form,Button,Icon, Visibility, Placeholder } from 'semantic-ui-react';
 
 import {Link} from 'react-router-dom';
 const ContactForm = React.lazy(()=>import('./../../components/contact_us/ContactForm'));
@@ -44,11 +44,17 @@ export default class Page1 extends Component {
           <Placeholder.Image rectangular />
         </Placeholder>}>
                         <Map></Map>
+                        
                         </Suspense>
                     </GridColumn>
+                    
                 </GridRow>
+                    <Label style={{position:"static",width:"100%",zIndex:999}} size="big" as='div' color="black" image>
+                        <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="yellow" classic><img src='./TcrLogoClean.png' />Now Recruiting!</Button>
+                    </Label>
                 <GridRow className='landingFooter' columns={16}>
                 <div>
+                    
                     <Segment raised size='massive' fluid inverted>
                         <Button onClick={()=>this.openLink('https://www.instagram.com/technocratsrobotics/')} circular color='black' icon='instagram' />
                         <Button onClick={()=>this.openLink('https://twitter.com/technocratsr')} circular color='black' icon='twitter' />
@@ -63,6 +69,7 @@ export default class Page1 extends Component {
                         <Link to="/userPanel"><Button circular compact basic color='yellow'>Member Login</Button></Link>
                     </Segment>
                     </Visibility>
+                    
                 </div>
                 </GridRow>
             </Grid>
