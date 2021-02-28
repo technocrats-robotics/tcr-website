@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { useHistory, Link } from 'react-router-dom';
-import { Grid, Segment, Header,Image, Icon, Card, Button,Visibility, Transition } from 'semantic-ui-react';
+import { Grid, Segment, Header,Image,Label, Icon, Card, Button,Visibility, Transition } from 'semantic-ui-react';
 import './Recruitments.css';
 import RecruitmentCards from '../../components/Recruitments/RecruitmentCards'
 
@@ -18,6 +18,10 @@ export default class Recruitments extends Component {
     return(
         <div className='recruitInfo'>
            <div className='recruitDiv1'>
+             
+          <Label as='a' href={'/#'} left color='red'>
+            Back to Home Page
+          </Label>
            <Image inverted centered size="medium" src="./TCRFullLogo.png"></Image>
            <br></br>
             <RecruitmentCards title={"Our Dates "} text={"This will have the information"}></RecruitmentCards>
