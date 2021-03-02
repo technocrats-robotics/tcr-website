@@ -64,6 +64,7 @@ export default class Page1 extends Component {
                         Made with <Icon color='red' name='heart'></Icon>by Technocrats Robotics&nbsp;|&nbsp;
                         <Link to="/developers"><Button circular compact basic color='yellow'>Developer's Space</Button></Link>&nbsp;|&nbsp;
                         <Link to="/userPanel"><Button circular compact basic color='yellow'>Member Login</Button></Link>
+                        <br></br><br></br>
                     </Segment>
                     </Visibility>
                     
