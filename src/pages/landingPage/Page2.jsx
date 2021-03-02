@@ -5,7 +5,16 @@ const IntroCard = React.lazy(()=>import('../../components/landingPage/IntroCard'
 const ImageMat = React.lazy(()=>import('../../components/landingPage/ImageMat'))
 
 export default class Page2 extends Component {
-   
+    yearSince = () => {
+        var dateobj = new Date(); 
+        var dateObject = dateobj.getFullYear(); 
+        return dateObject-2014;
+    }
+    aboutTCR = [
+        "Team Technocrats Robotics is the official Robotics team under the aegis of VIT University, Chennai, comprising of the most driven, focused, and technologically inclined individuals belonging to a multitude of engineering backgrounds, whose common passion and expertise for robotics and automation brings them together. ",
+        "Technocrats Robotics’ work is an amalgamation of the multidisciplinary engineering approach that harbours consistence, excellence, perseverance and eventual success in all our endeavours so far.Having received prestigious accolades on the National and International level over the span of "+this.yearSince()+" years, our brief but prosperous history is testimony of our future. ",
+        " We have been part of a plethora of national and international robotics competitions, regularly winning awards in most of them, starting from the Asia-Pacific International Robotics competition – “Robocon” in 2013. Having been a regular participant since then, the team has reached a level of success that few others can, especially considering a team this young."
+    ]
     componentDidMount() {
         console.log(this.props);
     }
@@ -28,18 +37,33 @@ export default class Page2 extends Component {
         duration={1600}
         >
             <Grid stackable centered>
-                <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
-                    <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
+                <Grid.Row columns={3} mobile='16' className='IntroRow' centered>
+                    <Grid.Column textAlign='center'>
                         
                         <br></br>
                         <Suspense fallback={<p>Loading</p>}>
                         <IntroCard Introhead={'Technocrats Robotics'} 
-                        // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
-                        //     spectator on a hillside, the sable cloud beneath was dished out, and the
-                        //     car seemed to float in the middle of an immense dark sphere, whose
-                        //     upper half was strewn with silver.</p>}>
                         mainContent={<p className='IntroContent'>
-                            {this.props.content.intro}
+                            {this.aboutTCR[0]}
+                        </p>}>
+                        </IntroCard>
+                        </Suspense>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Suspense fallback={<p>Loading</p>}>
+                        <IntroCard Introhead={'Technocrats Robotics'} 
+                        mainContent={<p className='IntroContent'>
+                            {this.aboutTCR[1]}
+                        </p>}>
+                        </IntroCard>
+                        </Suspense>
+                    </Grid.Column>
+                    <Grid.Column>
+                    
+                        <Suspense fallback={<p>Loading</p>}>
+                        <IntroCard Introhead={'Technocrats Robotics'} 
+                        mainContent={<p className='IntroContent'>
+                            {this.aboutTCR[2]}
                         </p>}>
                         </IntroCard>
                         </Suspense>

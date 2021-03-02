@@ -28,10 +28,18 @@
     border: 1px solid grey;
     
 }
+
+p.IntroContent {
+    /* font-size: 15px;
+    font-size: 3vw; */
+    font-size: auto;
+    text-align: center;
+  }
+  
 .mainintrolayer {
     padding: 5%;
     text-align: center;
-    font-size: auto;
+    transform:rotate(-2deg);
 }
 @media only screen and (max-width: 900px) {
     /* Mobile */
@@ -39,6 +47,6 @@
          width: 44vh;
      }
     .introlayer1 {
-        margin-left: 0vh;
+        margin-left: 1vh;
     }
 }

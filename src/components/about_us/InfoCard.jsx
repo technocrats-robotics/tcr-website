@@ -96,7 +96,7 @@ export default class InfoCard extends Component {
                             {card.posterLink && card_index%2==0? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Suspense fallback={<Placeholder />}>
-                                        <Image className="thumbnail1" src={card.posterLink} />
+                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink} />
                                     </Suspense>
                                 </Grid.Column>)
                                 : (null)
@@ -114,7 +114,7 @@ export default class InfoCard extends Component {
                             {card.posterLink && card_index%2!=0 ? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Suspense fallback={<Placeholder />}>
-                                        <Image className="thumbnail1" src={card.posterLink} />
+                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink} />
                                     </Suspense>
                                 </Grid.Column>)
                                 : (null)
