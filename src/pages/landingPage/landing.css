@@ -502,28 +502,29 @@ canvas.TechLogoMainPage {
 }
 
 .recruitmentRibbon{
-  width: 97%;
+  width:50%;
+  margin-left: 25%;
+  margin-top: 20vh;
+  height: 40vh;
+  /* border-bottom-right-radius: 100% !important; */
   text-align: center;
-  /* background-color: rgba(170, 255, 0, 0.678); */
-  border: 2px solid rgba(227, 172, 9, 0.562);
-  height:4.2vh;
-  border-radius: 2px;
+  background-color: #1b1c1d79;
+  box-shadow: 0px 2px 4px white;
+  /* border: 2px solid rgba(227, 172, 9, 0.562); */
   position: absolute;
-  top: 0;
-  transition: 1s linear;
+  align-self: center;
+  transition: 0.2s linear;
   color: rgb(227,171,9);
-  font-size: auto;
+  font-size: 2vh;
   z-index: 999;
 }
 .recruitmentRibbon:hover {
-    background-color: rgba(255, 255, 0, 0.322);
-    height: 10vh;
+    background-color: #1b1c1d;
 }
 .recruitmentRibbon:hover .ui.black.big.image.label.recruitLabel{
-    display: block;
+    display: inline-block;
 }
 .ui.black.big.image.label.recruitLabel{
-  display: none;
+  /* display: none; */
   background-color: transparent !important;
-  border: none !important;
 }

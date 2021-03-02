@@ -26,14 +26,19 @@ export default class Page1 extends Component {
             window.scrollBy({top:850, behavior:'smooth'});
         }
     }
+    closePopup = () => {
+        document.getElementsByClassName("recruitmentRibbon")[0].style.display = "none";
+    }
   render() {
     return(
         <div className="firstPageMain">
             <div className="recruitmentRibbon">
-                <marquee>Now Recruiting! Hover to know more</marquee>
-                
+                <br></br><br></br>
+                Technocrats Robotics is Recruiting, Click below to know more!                    <Button onClick={this.closePopup} color="black" icon="close"></Button>
+
+                <br></br><br></br><br></br><br></br>
                 <Label className="recruitLabel" size="big" as='div' color="black" image>
-                        <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="yellow" classic><img src='./TcrLogoClean.png' />Now Recruiting!</Button>
+                        <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="black" classic><img src='./TcrLogoClean.png' />Recruitment</Button>
                     </Label>
             </div>
             <Grid centered>
