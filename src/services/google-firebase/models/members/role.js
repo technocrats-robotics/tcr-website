@@ -5,6 +5,7 @@ const Role = {
     HOD: 'HOD',
     LEAD: 'Team Lead',
     CAPTAIN: 'Captain',
+    MANAGER: 'Manager',
     MENTOR: 'Mentor',
     ALUMNI: 'Alumni',
  };
