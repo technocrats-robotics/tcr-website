@@ -93,10 +93,10 @@ export default class InfoCard extends Component {
                     .slice(cardIndex(this.state.slide_idx), cardIndex(this.state.slide_idx + 1))
                     .map((card, card_index) => (
                         <Grid.Row className='aboutCard'>
-                            {card.posterLink && card_index%2==0? 
+                            {card_index%2==0? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Suspense fallback={<Placeholder />}>
-                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink} />
+                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink?card.posterLink:"./TcrLogoClean.png"} />
                                     </Suspense>
                                 </Grid.Column>)
                                 : (null)
@@ -111,10 +111,10 @@ export default class InfoCard extends Component {
                                     </Header.Subheader>
                                 </Header>
                             </Grid.Column>
-                            {card.posterLink && card_index%2!=0 ? 
+                            {card_index%2!=0 ? 
                                 (<Grid.Column textAlign='center' className='justToAlignImage' mobile={8} computer={4}>
                                     <Suspense fallback={<Placeholder />}>
-                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink} />
+                                        <Image style={{objectFit:"contain"}} className="thumbnail1" src={card.posterLink?card.posterLink:"./TcrLogoClean.png"} />
                                     </Suspense>
                                 </Grid.Column>)
                                 : (null)

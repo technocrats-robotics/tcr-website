@@ -502,14 +502,17 @@ canvas.TechLogoMainPage {
 }
 
 .recruitmentRibbon{
-  width: 100%;
+  width: 97%;
   text-align: center;
   /* background-color: rgba(170, 255, 0, 0.678); */
-  border: 2px solid rgba(255, 255, 0, 0.322);
+  border: 2px solid rgba(227, 172, 9, 0.562);
+  height:4.2vh;
+  border-radius: 2px;
   position: absolute;
   top: 0;
   transition: 1s linear;
-  color: white;
+  color: rgb(227,171,9);
+  font-size: auto;
   z-index: 999;
 }
 .recruitmentRibbon:hover {
