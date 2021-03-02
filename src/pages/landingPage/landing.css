@@ -510,11 +510,11 @@ canvas.TechLogoMainPage {
   top: 0;
   transition: 1s linear;
   color: white;
+  z-index: 999;
 }
 .recruitmentRibbon:hover {
     background-color: rgba(255, 255, 0, 0.322);
     height: 10vh;
-    z-index: 999;
 }
 .recruitmentRibbon:hover .ui.black.big.image.label.recruitLabel{
     display: block;
