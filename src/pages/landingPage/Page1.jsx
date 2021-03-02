@@ -8,6 +8,9 @@ var x = window.matchMedia("(max-width: 728px)")
 // import  from 'flare-react';
 const FlareComponent = React.lazy(()=>import('flare-react'))
 export default class Page1 extends Component {
+    openLink = (url) => {
+        window.open(url, '_blank');
+    }
     constructor(){
         super();
         this.handleArrowDown = this.handleArrowDown.bind(this);
