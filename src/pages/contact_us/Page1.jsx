@@ -49,9 +49,6 @@ export default class Page1 extends Component {
                     </GridColumn>
                     
                 </GridRow>
-                    <Label style={{position:"static",width:"100%",zIndex:999}} size="big" as='div' color="black" image>
-                        <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="yellow" classic><img src='./TcrLogoClean.png' />Now Recruiting!</Button>
-                    </Label>
                 <GridRow className='landingFooter' columns={16}>
                 <div>
                     

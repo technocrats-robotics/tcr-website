@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from 'react';
 
-import { Grid, Header, Icon} from "semantic-ui-react";
+import { Grid, Header, Icon,Label, Button} from "semantic-ui-react";
 import LogoController from '../../components/landingPage/LogoController'
 
 
@@ -26,6 +26,13 @@ export default class Page1 extends Component {
   render() {
     return(
         <div className="firstPageMain">
+            <div className="recruitmentRibbon">
+                <marquee>Now Recruiting! Hover to know more</marquee>
+                
+                <Label className="recruitLabel" size="big" as='div' color="black" image>
+                        <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="yellow" classic><img src='./TcrLogoClean.png' />Now Recruiting!</Button>
+                    </Label>
+            </div>
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}
