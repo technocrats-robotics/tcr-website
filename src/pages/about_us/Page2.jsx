@@ -127,7 +127,7 @@ export default class Page2 extends Component {
                         
                     <Segment inverted raised size='medium'>
                         <Header as={'h1'} style={{textAlign:'justiy'}} >
-                        "Many ideas grow better, <br></br> <pre></pre> when transplanted into another mind than the one where<br></br> they sprang up." – Oliver Wendell...
+                        "Many ideas grow better, <br></br> <pre></pre> when transplanted into another mind than the one where<br></br> they sprang up." ~ Oliver Wendell
                         </Header>
                     </Segment>
                     <br></br>
