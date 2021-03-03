@@ -89,8 +89,8 @@ function Navigation() {
                                 </Menu.Item>
                                 
                                 <Menu.Item>
-                                    <NavLink className="nav item" to="/" onClick={handleVisibility}> 
-                                    <Icon name='home' />Home </NavLink>
+                                    <a className="nav item" href="https://technocratsrobotics.in/" target="_blank" onClick={handleVisibility} > 
+                                    <Icon name='home' />Home </a>
                                 </Menu.Item>
 
                         </Sidebar>
