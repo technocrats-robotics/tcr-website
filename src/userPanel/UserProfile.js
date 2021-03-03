@@ -16,6 +16,21 @@ import Member from '../services/google-firebase/models/members/member'
 import AboutUsCard from '../components/about_us/AboutUsCard'
 import ProfilePic from '../components/about_us/ProfilePic'
 
+function addCardListenter(){
+    console.log(document.getElementsByClassName('aboutuscard'));
+    document.getElementsByClassName('aboutuscard')[0].addEventListener("click",(e)=>{
+        if(document.getElementsByClassName('aboutuscard')[0].style.webkitTransform === "rotateY(0.5turn)"){
+            document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+        }
+        else{
+        document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0.5turn);transform: rotateY(0.5turn);box-shadow:0px 2px 4px 0px #c1930c;border-radius: 5px;";
+        setTimeout(()=>{
+            document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+        },3000)
+        }
+    });
+}
+
 function UserProfile() {
 
     // global user
@@ -23,7 +38,8 @@ function UserProfile() {
 
     useEffect(() => {
         // change title of document on loading page
-        document.title = "User Panel | User Profile"
+        document.title = "User Panel | User Profile";
+
 
         //fetch details of current user from firestore
         db.collection('members').doc(user)
@@ -105,6 +121,7 @@ function UserProfile() {
                                             
                                             userDetails?<AboutUsCard data={{...userDetails,currentRole:Member.getCurrentRole(userDetails.roles)[1]}}/>:null
                                         }
+                                        {setTimeout(addCardListenter, 1000)}
                                     </div>
                                
                             </div>
