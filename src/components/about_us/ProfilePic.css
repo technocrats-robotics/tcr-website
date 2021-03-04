@@ -2,6 +2,7 @@ img.ui.small.avatar.image.faceimage {
     padding: 2%;
     min-height: 17vh !important;
     min-width: 17vh !important;
+    object-fit:cover;
 }
 
 canvas.faceimage {
