@@ -28,7 +28,7 @@ const examDetails=(
 const modeOfConduct = (
   <List>
     <List.Item as='li' value='*'>
-    Exams will be conducted through google forms for electrical, mechanical departments, and for the computer science department <strong>Hackerrank</strong> platform will be utilized.
+    Exams will be conducted through google forms for electrical, mechanical departments, and for the computer science department <strong>HackerRank</strong> platform will be utilized.
     </List.Item>
   </List>
 )
