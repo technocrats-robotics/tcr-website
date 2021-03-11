@@ -4,15 +4,12 @@
     padding: 0.5%;
     margin-bottom: 1%;
 }
-.recruitmentCards:hover{
-    box-shadow: 0px 0px 4px yellow;
-}
 .recruitmentCards:hover #applyBtn{
     opacity: 1;
 }
 .recruitText{
     min-height: 10vh;
-    display:none;
+    display:block;
     margin-top: 8vh;
     font-size: 15px;
     /* border-left:2px solid yellow; */
