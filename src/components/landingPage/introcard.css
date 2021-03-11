@@ -32,7 +32,7 @@
 p.IntroContent {
     /* font-size: 15px;
     font-size: 3vw; */
-    font-size: auto;
+    font-size: 1.5vh !important;
     text-align: center;
   }
   

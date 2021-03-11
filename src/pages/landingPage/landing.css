@@ -135,7 +135,6 @@ canvas.TechLogoMainPage {
             .thirdPage {
               height: auto;
             }
-        
             
 } 
 
@@ -500,18 +499,33 @@ canvas.TechLogoMainPage {
 .carousel{
     background-color: #1b1c1d;
 }
-
+@media only screen and (max-width: 500px) {
+  
 .recruitmentRibbon{
-  width:50%;
-  margin-left: 25%;
-  margin-top: 20vh;
-  height: 40vh;
+  margin:20vh 2vh 2vh 2vh;
+}
+}
+@media only screen and (min-width: 500px) and (max-width: 720px){
+  
+  .recruitmentRibbon{
+    margin:20vh 8vh 8vh 8vh;
+  }
+  }
+  
+@media only screen and (min-width: 720px) {
+  
+  .recruitmentRibbon{
+    margin:20vh 70vh 70vh 70vh;
+  }
+  }
+.recruitmentRibbon{
   /* border-bottom-right-radius: 100% !important; */
   text-align: center;
+  padding: 2vh;
   background-color: #1b1c1d79;
-  box-shadow: 0px 2px 4px white;
+  box-shadow: 0px 2px 10px -2px white;
   /* border: 2px solid rgba(227, 172, 9, 0.562); */
-  position: absolute;
+  position: fixed;
   align-self: center;
   transition: 0.2s linear;
   color: rgb(227,171,9);
@@ -520,9 +534,6 @@ canvas.TechLogoMainPage {
 }
 .recruitmentRibbon:hover {
     background-color: #1b1c1d;
-}
-.recruitmentRibbon:hover .ui.black.big.image.label.recruitLabel{
-    display: inline-block;
 }
 .ui.black.big.image.label.recruitLabel{
   /* display: none; */
