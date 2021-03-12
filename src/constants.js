@@ -25,7 +25,7 @@ export var getCurrentTeamYear = () => {
  */
 export var faculty_details = {
     username: 'dr.arockia.selvakumar2013',
-    dpLink: null,
+    dpLink: "https://technocratsrobotics.in/faculty.jpg",
     name: 'Dr. Arockia Selvakumar',
     yearOfJoining: 2013,
     isActive: true,

@@ -93,11 +93,11 @@ handleOnScreen = (e, { calculations }) => this.setState({ calculations })
                             <Suspense fallback={<Icon size='huge' color='red' loading name='spinner' />}>
                             <Gallery></Gallery>
                             </Suspense>
-                            <Button style={{position:'fixed',top:0,right:40}} onClick={this.handleCollapse} color='yellow' basic>Collapse Gallery</Button>
+                            <Button style={{position:'fixed',top:0,right:40}} onClick={this.handleCollapse} color='yellow' basic>Hide Gallery</Button>
                           </div>
                         :
                             <Grid.Row columns={16}>
-                              <Button style={{}} onClick={this.handleExpand} color='yellow' basic>Expand Gallery</Button>
+                              <Button style={{}} onClick={this.handleExpand} color='yellow' basic>View Gallery</Button>
                             </Grid.Row>                       
                       }
                       

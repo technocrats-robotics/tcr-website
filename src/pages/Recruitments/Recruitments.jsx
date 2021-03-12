@@ -21,7 +21,7 @@ const examDetails=(
     Students can take the test from the safe and secure environment of his/her home, with a desktop/laptop/smartphone (with a webcam) and an internet connection (un-interrupted internet speed is desirable). 
     </List.Item>
     <List.Item as='li' value='*'>
-    The examination does not require any special preparation, it would be an open book/open internet with video proctoring. It's compulsory to turn on your webcam during the examination. Any mode of mischievous act would not be entertained.
+    The examination does not require any special preparation, it would be an open book/open internet test. Any mode of mischievous act would not be entertained.
     </List.Item>
     </List>
 )

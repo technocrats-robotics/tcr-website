@@ -1,7 +1,8 @@
 import React from 'react'
-import {Menu,Sidebar,Button,Icon, Image } from 'semantic-ui-react'
+import {Menu,Sidebar,Button,Icon, Image,Label } from 'semantic-ui-react'
 import {NavLink, useHistory} from 'react-router-dom'
 import { render } from '@testing-library/react';
+
 let scrollToOne = () => {
     document.getElementsByClassName('firstPageMain')[0].scrollIntoView({behavior:'smooth'});    
 }
@@ -30,7 +31,9 @@ let jumpToBlogs = (history) => {
 let jumpToGallery = (history) => {
     history.push('/gallery');
 }
-
+let openLink = (url) => {
+  window.open(url, '_blank');
+}
 const SideNavMob = (props) => {
   const history = useHistory();
    return(
@@ -65,7 +68,10 @@ const SideNavMob = (props) => {
       </Menu.Item>    
       <Menu.Item as='a' onClick={scrollToContactUs}>
         Contact Us
-      </Menu.Item>     
+      </Menu.Item>   
+      <Label className="recruitLabel" size="big" as='div' color="black" image>
+                        <Button onClick={()=>{openLink("./recruitments")}} inverted color="black" classic><img src='./TcrLogoClean.png' />Recruitment</Button>
+                    </Label>   
     </Sidebar>
     </div>
     )
