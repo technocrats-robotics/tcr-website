@@ -7,7 +7,7 @@
     background-color: #1B1C1D;   
 }
 .recruitDiv2{
-    height: 20vh;
+    height: 40vh;
     background-color: rgba(238, 238, 40, 0.863); 
     box-shadow: 0px -2px 20px black;  
     animation: topToBtm 2s linear 3s normal;
