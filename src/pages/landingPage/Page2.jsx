@@ -15,9 +15,6 @@ export default class Page2 extends Component {
         "'Technocrats Robotics’ work is an amalgamation of the multidisciplinary engineering approach that harbours consistence, excellence, perseverance and eventual success in all our endeavours so far.Having received prestigious accolades on the National and International level over the span of "+this.yearSince()+" years, our brief but prosperous history is testimony of our future. ",
         " We have been part of a plethora of national and international robotics competitions, regularly winning awards in most of them, starting from the Asia-Pacific International Robotics competition – “Robocon” in 2013. Having been a regular participant since then, the team has reached a level of success that few others can, especially considering a team this young."
     ]
-    componentDidMount() {
-        console.log(this.props);
-    }
     state={visible: false}
     handleUpdate = (e, { calculations }) => {
         // console.log(calculations.topPassed)

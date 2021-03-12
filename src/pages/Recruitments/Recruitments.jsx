@@ -153,7 +153,7 @@ export default class Recruitments extends Component {
               <Header as='h1' size='huge'>NOW RECRUITING!</Header>
 
               </Transition>
-              <Button inverted size="large" fluid classic color="green" onClick={()=>this.setState({formVisible:true})}>Apply</Button>
+              <Button className="applyBtn" inverted size="large" classic color="green" onClick={()=>this.setState({formVisible:true})}>Apply</Button>
 
               </Segment>
               <Image centered src={"https://th.bing.com/th/id/Rf3653071ce965a14d71d0ad600c6f98e?rik=9GogL0q6oSXreg&riu=http%3a%2f%2f4.bp.blogspot.com%2f-y_SOxhY8_Zk%2fTWYZNwW8r1I%2fAAAAAAAAABY%2f7Oo7NscWtAo%2fs1600%2fgear.gif&ehk=sBaeQvoHSBCajVPiEgAGYnivHTctc0I9qfBLiduibNA%3d&risl=&pid=ImgRaw"}></Image>
