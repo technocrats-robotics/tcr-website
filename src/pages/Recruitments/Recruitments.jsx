@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import { Grid, Segment, Header,Image,Label, Transition,List, Table } from 'semantic-ui-react';
 import './Recruitments.css';
 import RecruitmentCards from '../../components/Recruitments/RecruitmentCards'
+import RecruitmentForm from './RecruitmentForm';
 
 var x = window.matchMedia("(max-width: 900px)");
 const examDetails=(
@@ -109,6 +110,7 @@ const examCalender = (
 export default class Recruitments extends Component {
   state={
     visible:true,
+    formVisible:true,
   }
   componentDidMount(){
     setInterval(()=>{
@@ -118,19 +120,21 @@ export default class Recruitments extends Component {
   render() {
     return(
         <div className='recruitInfo'>
-           <div className='recruitDiv1'>
-             
-          <Label as='a' href={'/#'} left color='red'>
-            Back to Home Page
-          </Label>
-           <Image inverted centered size="medium" src="./TCRFullLogo.png"></Image>
-           <br></br>
-            <RecruitmentCards title={"Our Dates "} text={dates}></RecruitmentCards>
-            <RecruitmentCards title={"Exam details"} text={examDetails}></RecruitmentCards>
-            <RecruitmentCards title={"Mode of Conduct"} text={modeOfConduct}></RecruitmentCards>
-            <RecruitmentCards title={"Exam Calender"} text={examCalender}></RecruitmentCards>
-           </div>
-           <div className='recruitDiv2'> 
+          {
+          !this.state.formVisible ? (
+                  <div className='recruitDiv1'>
+                    <Label as='a' href={'/#'} left color='red'>
+                      Back to Home Page
+                    </Label>
+                      <Image inverted centered size="medium" src="./TCRFullLogo.png"></Image>
+                      <br></br>
+                      <RecruitmentCards title={"Our Dates "} text={dates}></RecruitmentCards>
+                      <RecruitmentCards title={"Exam details"} text={examDetails}></RecruitmentCards>
+                      <RecruitmentCards title={"Mode of Conduct"} text={modeOfConduct}></RecruitmentCards>
+                      <RecruitmentCards title={"Exam Calender"} text={examCalender}></RecruitmentCards>
+                  </div>): <RecruitmentForm/>
+           }
+                      <div className='recruitDiv2'> 
              <Segment inverted raised>
              <Transition
             animation={'flash'}
