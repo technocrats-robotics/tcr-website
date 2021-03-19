@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "@tinymce/tinymce-react": "^3.10.3",
     "axios": "^0.21.1",
-    "firebase": "^8.2.9",
+    "firebase": "^8.3.1",
     "firebase-tools": "^9.5.0",
     "flare-react": "^1.0.7",
     "pure-react-carousel": "^1.27.6",
