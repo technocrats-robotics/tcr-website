@@ -18,7 +18,10 @@ const examDetails=(
     Students are requested to choose only one slot and if interested may apply for more than one department. Students from every branch can apply for exam including mechatronics.
     </List.Item>
     <List.Item as='li' value='*'>
-    Students can take the test from the safe and secure environment of his/her home, with a desktop/laptop/smartphone (with a webcam) and an internet connection (un-interrupted internet speed is desirable). 
+    Students can take the test from the safe and secure environment of his/her home, with a desktop/laptop/smartphone and an internet connection (un-interrupted internet speed is desirable). 
+    </List.Item>
+    <List.Item as='li' value='*'>
+    Written test will be non video proctored. But for interview round, students will be required to turn on their cameras and have a valid photo ID proof.
     </List.Item>
     <List.Item as='li' value='*'>
     The examination does not require any special preparation, it would be an open book/open internet test. Any mode of mischievous act would not be entertained.
@@ -40,7 +43,15 @@ const dates=(
           Orientation Program
         </Table.Cell>
         <Table.Cell>
-          21st March 
+          21st March (11am to 12pm)
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>
+          Orientation Program(Gmeet link)
+        </Table.Cell>
+        <Table.Cell>
+          will be uploaded soon
         </Table.Cell>
       </Table.Row>
       <Table.Row>
@@ -102,6 +113,28 @@ const examCalender = (
         </Table.Cell>
         <Table.Cell>
           7:00 pm - 8:00 pm
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>
+          Slot - 4
+        </Table.Cell>
+        <Table.Cell>
+          22<super>nd</super> March
+        </Table.Cell>
+        <Table.Cell>
+          12:00 pm - 1:00 pm
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>
+          Slot - 5
+        </Table.Cell>
+        <Table.Cell>
+          22<super>nd</super> March
+        </Table.Cell>
+        <Table.Cell>
+          9:00 pm - 10:00 pm
         </Table.Cell>
       </Table.Row>
   </Table>
