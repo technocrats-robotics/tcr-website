@@ -51,7 +51,7 @@ const dates=(
           Orientation Program(Gmeet link)
         </Table.Cell>
         <Table.Cell>
-          will be uploaded soon
+          <a href='https://meet.google.com/dsg-itrv-qjb' >Orientation Meet Link</a>
         </Table.Cell>
       </Table.Row>
       <Table.Row>
@@ -90,7 +90,7 @@ const examCalender = (
           21<super>st</super> March
         </Table.Cell>
         <Table.Cell>
-          7:00 pm - 8:00 pm
+          4:00 pm - 5:00 pm
         </Table.Cell>
       </Table.Row>
       <Table.Row>
