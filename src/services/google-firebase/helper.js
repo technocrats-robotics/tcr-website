@@ -1,6 +1,10 @@
 // Helper functions for Google Firebase Utilities
 
+let passwordGenerator = require('generate-password');
+
 /**
+ * version 1
+ * 
  * A password generator function that uses the makemeapassord API.
  * {@link https://makemeapassword.ligos.net/api Make me a Passord API}
  * The generated password also contains special symbols.
@@ -10,13 +14,29 @@
  * ```
  * @param {number} length Define the desired length of the password (default=12).
  */
+// export async function generatePassword(length=12){
+//     const apiURL = 
+//         'https://makemeapassword.ligos.net/api/v1/alphanumeric/plain?l='
+//         + length.toString() + '&sym=T';
+//     return fetch(apiURL)    // Async function
+//         .then((resp) => resp.text()) // API returns the data in Plain text
+//         .then((data) => data.substr(0, length)); // Sliced, coz the API returns with \n at end
+// }
+
+/**
+ * version 2
+ * @docs https://www.npmjs.com/package/generate-password
+ * @returns string
+ */
+
+
 export async function generatePassword(length=12){
-    const apiURL = 
-        'https://makemeapassword.ligos.net/api/v1/alphanumeric/plain?l='
-        + length.toString() + '&sym=T';
-    return fetch(apiURL)    // Async function
-        .then((resp) => resp.text()) // API returns the data in Plain text
-        .then((data) => data.substr(0, length)); // Sliced, coz the API returns with \n at end
+    return passwordGenerator.generate({
+        length: length,
+        numbers: true,
+        symbols: true,
+        lowercase: true
+    })
 }
 
 

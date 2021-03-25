@@ -11,6 +11,7 @@
     "firebase": "^8.2.9",
     "firebase-tools": "^9.5.0",
     "flare-react": "^1.0.7",
+    "generate-password": "^1.6.0",
     "pure-react-carousel": "^1.27.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
