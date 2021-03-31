@@ -1,5 +1,7 @@
 export var admin_email = 'the.mortal.god@tcr.in';
 
+export var API_TOKEN = 'technocrats-robotics-batch-of-2021'
+
 /**
  * Get the team year in string
  * 
