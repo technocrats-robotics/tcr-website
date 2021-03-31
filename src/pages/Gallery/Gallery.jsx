@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { Segment, Label, Icon, Breadcrumb, } from 'semantic-ui-react';
 import ImageGallery from 'react-image-gallery';
@@ -6,7 +6,10 @@ import ImageGallery from 'react-image-gallery';
 //CSS
 import './Gallery.css';
 
-const axios=require('axios')
+// API TOKEN
+import { API_TOKEN } from '../../constants'
+
+const axios = require('axios')
 // document.addEventListener("DOMContentLoaded", ()=>{
 //   setInterval(()=>{
 //       if(document.getElementsByClassName('loadScreenGallery')[0]){
@@ -20,14 +23,22 @@ function Gallery() {
 
   const history = useHistory();
 
-  useEffect(async() => {
+  useEffect(async () => {
 
 
     let shouldCancel = false
-    
-    const response = await axios.get(
-      'https://tcr-mail-utility.herokuapp.com/gallery'
-    );
+
+    let token = API_TOKEN
+
+    const response = await axios.get('https://quiet-caverns-98688.herokuapp.com/gallery', {
+      headers: { 'Authorization': token ? `Bearer ${token}` : '', 'Content-Type': 'application/json' }
+    }).then((response) => {
+      return response
+    }).catch((err) => {
+      console.log(err)
+    })
+
+
     if (!shouldCancel && response.data && response.data.length > 0) {
       setImages(response.data.map(url => ({
         original: `${url}=w1024`,
@@ -37,7 +48,7 @@ function Gallery() {
 
     return () => shouldCancel = true;
 
-    }, [])
+  }, [])
 
 
   const handleBack = () => {
@@ -51,7 +62,7 @@ function Gallery() {
 
   return (
     <div className='galleryDiv'>
-        {/* <div className='loadScreenGallery'>
+      {/* <div className='loadScreenGallery'>
       <Icon size='massive' color='red' loading name='spinner' />
       </div> */}
       <Segment inverted>
@@ -61,7 +72,7 @@ function Gallery() {
         {
           images ? <ImageGallery items={images} showFullscreenButton={true} showPlayButton={true} showNav={true} showBullets={true} /> : null
         }
-        
+
       </Segment>
     </div>
   );
