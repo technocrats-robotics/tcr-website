@@ -11,6 +11,9 @@
 # production
 /build
 
+#constants
+src/constants.js
+
 # misc
 .DS_Store
 .env.local
@@ -24,4 +27,3 @@ yarn-error.log*
 src/services/google-firebase/firebase_config.json
 .eslintcache
 .firebase 
-/src/constants.js
