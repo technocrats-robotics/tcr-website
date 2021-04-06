@@ -70,7 +70,7 @@ const SideNavMob = (props) => {
         Contact Us
       </Menu.Item>   
       <Label className="recruitLabel" size="big" as='div' color="black" image>
-                        <Button onClick={()=>{openLink("./recruitments")}} inverted color="black" classic><img src='./TcrLogoClean.png' />Recruitment</Button>
+                        <Button disabled={true} onClick={()=>{openLink("./recruitments")}} inverted color="black" classic><img src='./TcrLogoClean.png' />Recruitment Closed</Button>
                     </Label>   
     </Sidebar>
     </div>
