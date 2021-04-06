@@ -32,7 +32,7 @@ export default class Page1 extends Component {
   render() {
     return(
         <div className="firstPageMain">
-            <div className="recruitmentRibbon">
+            {/* <div className="recruitmentRibbon">
                 <br></br><br></br>
                 Technocrats Robotics is Recruiting, Click below to know more!                    <Button onClick={this.closePopup} color="black" icon="close"></Button>
 
@@ -40,7 +40,7 @@ export default class Page1 extends Component {
                 <Label className="recruitLabel" size="big" as='div' color="black" image>
                         <Button onClick={()=>{this.openLink("./recruitments")}} inverted color="black" classic><img src='./TcrLogoClean.png' />Recruitment</Button>
                     </Label>
-            </div>
+            </div> */}
             <Grid centered>
                 <Grid.Row className='mainRow' columns='14'>
                     {/* <div className='firstpagebackdiv'></div> */}

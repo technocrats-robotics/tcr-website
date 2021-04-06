@@ -33,7 +33,7 @@ function App() {
           <Route exact path="/blogs" component={Blogs} />
           <Route exact path="/team" component={Team} />
           <Route exact path="/acheivements" component={Acheivements} />
-          <Route exact path="/recruitments" component={Recruitments} />
+          {/* <Route exact path="/recruitments" component={Recruitments} /> */}
           <script src="/node_modules/rive-canvas/rive.js"></script> 
         </Switch>
       </Router>
