@@ -40,12 +40,6 @@ function AddMembers() {
     const [department, setDepartment] = useState(Departments[0]);
     const [yoj, setYoj] = useState(currentYear);
 
-
-    //alert appears after form submission
-    function showStatus(status) {
-        alert(status);
-    }
-
     //form submit handling
     const handleFormSubmit = async (event) => {
         event.preventDefault();
