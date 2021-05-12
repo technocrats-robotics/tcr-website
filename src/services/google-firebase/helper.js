@@ -32,7 +32,7 @@ export async function generatePassword(length=12){
     return passwordGenerator.generate({
         length: length,
         numbers: true,
-        symbols: true,
+        symbols: false,
         lowercase: true
     })
 }
