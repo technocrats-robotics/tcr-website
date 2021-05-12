@@ -53,6 +53,17 @@ export default class TeamMembers extends Component {
             let color=this.randomColor()
             if(imgBg[i].style.boxShadow === ""){
                 imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+                document.getElementsByClassName('aboutuscard')[i].addEventListener("click",(e)=>{
+                    if(document.getElementsByClassName('aboutuscard')[i].style.webkitTransform === "rotateY(0.5turn)"){
+                        document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+                    }
+                    else{
+                    document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0.5turn);transform: rotateY(0.5turn);box-shadow:0px 2px 4px 0px #c1930c;border-radius: 5px;";
+                    setTimeout(()=>{
+                        document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+                    },3000)
+                    }
+                })
             }
         }
     }
@@ -105,12 +116,13 @@ export default class TeamMembers extends Component {
                     {
                         this.state.data.map((member)=>(
                             member.isActive?(
-                                <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
+                                <Grid.Column key={member.username} computer= {3} mobile={4} className='justToAlignMemberCards'>
                                     <AboutUsCard data={member}></AboutUsCard>
                                 </Grid.Column>
                             ):(null)
                         ))
                     }
+                    
                     </Grid.Row>
                 </Grid>
                 </Segment>

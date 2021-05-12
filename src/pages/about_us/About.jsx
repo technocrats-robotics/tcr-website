@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Button} from 'semantic-ui-react';
+import React, { Component, Suspense } from 'react';
+import { Button, Icon} from 'semantic-ui-react';
 import Page1 from './Page1';
-import Page2 from './Page2';
 import TeamMembers from './TeamMembers';
 import './About.css';
 var x = window.matchMedia("(max-width: 700px)")
+const Page2 = React.lazy(()=>import('./Page2'));
 
 
 export default class About extends Component {
@@ -41,8 +41,12 @@ export default class About extends Component {
                     return(
                     <div>
                         <Page1 />;
+                        <Suspense fallback={<div className='loadScreen'>
+                    <Icon size='massive' color='red' loading name='spinner' />
+                </div>}>
                         <Page2 />;
-                        <Button className='ExpandAboutButton' onClick={this.handleExpand} color='yellow' basic>Expand</Button>
+                        </Suspense>
+                        <Button style={{marginBottom:'3%'}} className='ExpandAboutButton' onClick={this.handleExpand} color='yellow' basic>Expand</Button>
                     </div>
                     )
             }

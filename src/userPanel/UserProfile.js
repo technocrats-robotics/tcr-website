@@ -14,6 +14,22 @@ import Member from '../services/google-firebase/models/members/member'
 
 //member card
 import AboutUsCard from '../components/about_us/AboutUsCard'
+import ProfilePic from '../components/about_us/ProfilePic'
+
+function addCardListenter(){
+    console.log(document.getElementsByClassName('aboutuscard'));
+    document.getElementsByClassName('aboutuscard')[0].addEventListener("click",(e)=>{
+        if(document.getElementsByClassName('aboutuscard')[0].style.webkitTransform === "rotateY(0.5turn)"){
+            document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+        }
+        else{
+        document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0.5turn);transform: rotateY(0.5turn);box-shadow:0px 2px 4px 0px #c1930c;border-radius: 5px;";
+        setTimeout(()=>{
+            document.getElementsByClassName('aboutuscard')[0].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+        },3000)
+        }
+    });
+}
 
 function UserProfile() {
 
@@ -22,7 +38,8 @@ function UserProfile() {
 
     useEffect(() => {
         // change title of document on loading page
-        document.title = "User Panel | User Profile"
+        document.title = "User Panel | User Profile";
+
 
         //fetch details of current user from firestore
         db.collection('members').doc(user)
@@ -57,15 +74,15 @@ function UserProfile() {
 
         db.collection('members').doc(user).update(
             {
-                dpLink: dpLink || userDetails.dpLink,
+                dpLink: dpLink ?? userDetails.dpLink,
                 social_media: {
-                    github: github || userDetails.social_media.github,
-                    instagram: instagram || userDetails.social_media.instagram,
-                    linkedIn: linkedIn || userDetails.social_media.linkedIn
+                    github: github ?? userDetails.social_media.github,
+                    instagram: instagram ?? userDetails.social_media.instagram,
+                    linkedIn: linkedIn ?? userDetails.social_media.linkedIn
                 },
                 about: {
-                    experience: experience || userDetails.about.experience,
-                    misc: misc || userDetails.about.misc
+                    experience: experience ?? userDetails.about.experience,
+                    misc: misc ?? userDetails.about.misc
                 }
             }).then(
                 // display success message 
@@ -77,7 +94,6 @@ function UserProfile() {
     }
 
 
-    const defaultDpLink = 'https://react.semantic-ui.com/images/avatar/large/daniel.jpg';
 
     const roles = (yearly_roles) => {
         let currentRole = Member.getCurrentRole(yearly_roles);
@@ -98,13 +114,14 @@ function UserProfile() {
                         <div className="sixteen wide mobile sixteen wide tablet sixteen wide computer column">
                             <div className="dpBox">
                                     <div className="dpBox__dp">
-                                        <img className="medium ui circular image" src={userDetails.dpLink || defaultDpLink} alt={defaultDpLink} />
+                                        <ProfilePic dpLink={userDetails.dpLink} uname={userDetails.username} size='medium'/>
                                     </div>
                                     <div  className="dpBox__preview">
                                         {
                                             
                                             userDetails?<AboutUsCard data={{...userDetails,currentRole:Member.getCurrentRole(userDetails.roles)[1]}}/>:null
                                         }
+                                        {setTimeout(addCardListenter, 1000)}
                                     </div>
                                
                             </div>
@@ -202,21 +219,22 @@ function UserProfile() {
 
                                     </div>
                                     
-                                    <div className="inputBox">
 
+                                    <div className="inputBox">
                                         <div className="ui fluid labeled input">
                                             <div className="ui label userSocial">
-                                                Experience
+                                                Tagline
                                             </div>
-                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the team" onChange={(event) => setExperience(event.target.value)} />
+                                            <input defaultValue={userDetails.about.misc} placeholder="Personal Tagline (under 50 characters)" onChange={(event) => setMisc(event.target.value)} />
                                         </div>
                                     </div>
                                     <div className="inputBox">
+
                                         <div className="ui fluid labeled input">
                                             <div className="ui label">
-                                                Miscellaneous
+                                                Experience
                                             </div>
-                                            <input defaultValue={userDetails.about.misc} placeholder="Miscellaneous (if Any)" onChange={(event) => setMisc(event.target.value)} />
+                                            <input defaultValue={userDetails.about.experience} placeholder="Experience with the Team (under 50 characters; don't fill unless an Alumnus/Alumna)" onChange={(event) => setExperience(event.target.value)} />
                                         </div>
                                     </div>
 
@@ -234,7 +252,7 @@ function UserProfile() {
                     <div className="userProfile__blockMessage">
                         <h1>Your Profile has been blocked.</h1>
                         <h3>Contact the Team if you think that this is by mistake.</h3>
-                        <h4>Or feel free to write us at: <u>tcrvitcc@gmail.com</u></h4>
+                        <h4>Or feel free to write us at: <u>technocratsroboticsvit@gmail.com</u></h4>
                     </div>
                 )
             }
@@ -243,3 +261,14 @@ function UserProfile() {
 }
 
 export default UserProfile
+
+/**
+ * Fun Fact:
+ *  The word 'Tagline' was suggested by 'Rohini Bera'
+ * Did you know?
+ *  For a male, “I am an alumnus” is correct, 
+ *  and “I am an alum” would be an acceptable short alternative. 
+ *  A male is an alumnus; a female is an alumna; 
+ *  two or more males a combination of males and females are alumni; 
+ *  and two or more females are alumnae.
+ */

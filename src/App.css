@@ -1,9 +1,19 @@
 .App {
   text-align: center;
-  background-color: #1b1c1d;
+  background-color: #1B1C1D;
   overflow: hidden;
-  
-}
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+/* https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+                              }
+
 
 .App-logo {
   height: 40vmin;
@@ -44,8 +54,9 @@
   width: 100%;
   transition: 1s ease-in-out;
   height: 100vh;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.473);
+  z-index: 1000;
+  position: fixed;
+  background-color: #1B1C1D;
   display: flex;
   box-shadow: 0px 10px 20px black;
 }

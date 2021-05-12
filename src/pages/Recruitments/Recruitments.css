@@ -1,0 +1,48 @@
+.recruitInfo{
+    min-height: 100vh;
+    background-color: #1B1C1D;
+}
+.recruitDiv1{
+    min-height: 80vh;
+    background-color: #1B1C1D;   
+}
+.recruitDiv2{
+    background-color: rgba(238, 238, 40, 0.863); 
+    box-shadow: 0px -2px 20px black;  
+    animation: topToBtm 2s linear 3s normal;
+    animation-iteration-count: 1;
+    transition: 1s;
+}
+
+.recruitDiv2:hover {
+background-color: #1B1C1D;
+}
+@keyframes topToBtm{
+    0%{
+        margin-top: -100vh;
+    }
+    100%{
+        margin-top: 0vh;
+    }
+}
+@media screen and (max-width: 500px) {
+    .button.applyBtn {
+        width: 100%;
+    }
+    
+.recruitDiv2{
+    height: 40vh;
+}
+
+}
+
+@media screen and (min-width: 500px) {
+    .button.applyBtn {
+        width: 70%;
+    }
+    
+.recruitDiv2{
+    height: 30vh;
+}
+
+}

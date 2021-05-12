@@ -82,17 +82,16 @@ img.left1 {
 .sub.header.paraCard {
   text-align: justify;
   /* padding-top: 2vh; */
-  font-size: 2vh !important;
+  font-size: 1.5vh !important;
   line-height: 150%;
   color: white !important;
   padding-top:4vh !important;
   padding-left:1vh !important;
   padding-right:8vh !important;
 }
-
 @media only screen and (max-width: 700px) {
   .row.aboutCard {
-    
+    font-size: 1.5vh !important;
     text-align-last: center;
     /* padding-top: 4vh !important; */
     /* box-shadow: 0px 2px 6px 0px blue; */
@@ -138,4 +137,7 @@ img.left1 {
   overflow: hidden;
   border-radius: 10px;
 }
+}
+.nextPrevBtns{
+  margin-bottom: 10%;
 }

@@ -8,6 +8,7 @@ import Gallery from './pages/Gallery/Gallery';
 import Blogs from './pages/blog/Blog';
 import Team from './pages/about_us/TeamMembers'
 import Acheivements from './components/about_us/Acheivements'
+import Recruitments from './pages/Recruitments/Recruitments'
 import Developers from './pages/about_us/Developers'
 
 // CSS
@@ -30,8 +31,9 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/developers" component={Developers} />
           <Route exact path="/blogs" component={Blogs} />
-          <Route exact path="/Team" component={Team} />
-          <Route exact path="/Acheivements" component={Acheivements} />
+          <Route exact path="/team" component={Team} />
+          <Route exact path="/acheivements" component={Acheivements} />
+          {/* <Route exact path="/recruitments" component={Recruitments} /> */}
           <script src="/node_modules/rive-canvas/rive.js"></script> 
         </Switch>
       </Router>

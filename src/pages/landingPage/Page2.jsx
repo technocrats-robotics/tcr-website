@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
-import { Grid, Segment, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
-import ImageMat from '../../components/landingPage/ImageMat';
-import IntroCard from '../../components/landingPage/IntroCard';
+import React, { Component, Suspense } from 'react';
+import { Grid, Segment,Label, Header,Statistic,Image,Icon, Transition, Visibility } from 'semantic-ui-react';
+
+const IntroCard = React.lazy(()=>import('../../components/landingPage/IntroCard'))
+const ImageMat = React.lazy(()=>import('../../components/landingPage/ImageMat'))
 
 export default class Page2 extends Component {
-   
-    componentDidMount() {
-        console.log(this.props);
+    yearSince = () => {
+        var dateobj = new Date(); 
+        var dateObject = dateobj.getFullYear(); 
+        return dateObject-2014;
     }
+    aboutTCR = [
+        "Team Technocrats Robotics is the official Robotics team under the aegis of VIT University, Chennai, comprising of the most driven, focused, and technologically inclined individuals belonging to a multitude of engineering backgrounds, whose common passion and expertise for robotics and automation brings them together. ",
+        "'Technocrats Robotics’ work is an amalgamation of the multidisciplinary engineering approach that harbours consistence, excellence, perseverance and eventual success in all our endeavours so far.Having received prestigious accolades on the National and International level over the span of "+this.yearSince()+" years, our brief but prosperous history is testimony of our future. ",
+        " We have been part of a plethora of national and international robotics competitions, regularly winning awards in most of them, starting from the Asia-Pacific International Robotics competition – “Robocon” in 2013. Having been a regular participant since then, the team has reached a level of success that few others can, especially considering a team this young."
+    ]
     state={visible: false}
     handleUpdate = (e, { calculations }) => {
         // console.log(calculations.topPassed)
@@ -27,17 +34,36 @@ export default class Page2 extends Component {
         duration={1600}
         >
             <Grid stackable centered>
-                <Grid.Row mobile='16' className='IntroRow' textAlign='center'>
-                    <Grid.Column textAlign='center' widescreen='6' computer='6' mobile='16'>
-                        <IntroCard Introhead={'Technocrats Robotics'} 
-                        // mainContent={<p className='IntroContent'>By the same illusion which lis the horizon of the sea to the level of the
-                        //     spectator on a hillside, the sable cloud beneath was dished out, and the
-                        //     car seemed to float in the middle of an immense dark sphere, whose
-                        //     upper half was strewn with silver.</p>}>
+                <Grid.Row columns={3} mobile='16' className='IntroRow' centered>
+                    <Grid.Column textAlign='center'>
+                        
+                        <br></br>
+                        <Suspense fallback={<p>Loading</p>}>
+                        <IntroCard Introhead={'WHO'} 
                         mainContent={<p className='IntroContent'>
-                            {this.props.content.intro}
+                            {this.aboutTCR[0]}
                         </p>}>
                         </IntroCard>
+                        </Suspense>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Suspense fallback={<p>Loading</p>}>
+                        <IntroCard Introhead={'ARE'} 
+                        mainContent={<p className='IntroContent'>
+                            {this.aboutTCR[1]}
+                        </p>}>
+                        </IntroCard>
+                        </Suspense>
+                    </Grid.Column>
+                    <Grid.Column>
+                    
+                        <Suspense fallback={<p>Loading</p>}>
+                        <IntroCard Introhead={'WE'} 
+                        mainContent={<p className='IntroContent'>
+                            {this.aboutTCR[2]}
+                        </p>}>
+                        </IntroCard>
+                        </Suspense>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row stackable mobile='15'>
@@ -49,16 +75,18 @@ export default class Page2 extends Component {
                             <Statistic.Label>Competitions</Statistic.Label>
                         </Statistic>
                     <Statistic size='large' className='redStats' color='green' inverted>
-                    <Statistic.Value>
-                            200
+                        <Statistic.Value>
+                            {this.props.content.stats['total_members']}
                         </Statistic.Value>
                         <Statistic.Label>Members</Statistic.Label>
                     </Statistic>
                     </Grid.Column>
       
                     <Grid.Column width='5'>
-                        
+                    <Suspense fallback={<p>Loading</p>}>
+
                     <ImageMat></ImageMat>
+                    </Suspense>
                     </Grid.Column>
                     <Grid.Column textAlign='center' width='5'>
                     <Statistic mobile='16' inverted  className='yellowStats' size='large' color='blue'>
@@ -68,7 +96,9 @@ export default class Page2 extends Component {
                         <Statistic.Label>Robots Made</Statistic.Label>
                         </Statistic>
                         <Statistic mobile='16' inverted  className='yellowStats' size='large' color='yellow'>                       
-                        <Statistic.Value>♾</Statistic.Value>
+                        <Statistic.Value>
+                            {this.props.content.stats['memories']}
+                        </Statistic.Value>
                         <Statistic.Label>Memories Made</Statistic.Label>
                         </Statistic>
                     </Grid.Column>

@@ -1,3 +1,4 @@
+//PROBABLY BE THE PART OF FUTURE DEVELOPMENT 
 import React, { Component } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Image, Grid, Header, Icon, List  } from "semantic-ui-react";

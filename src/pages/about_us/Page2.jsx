@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Grid, Menu, Button,Divider } from 'semantic-ui-react';
+import { Grid, Menu, Button,Divider,Segment, Header } from 'semantic-ui-react';
 import {  Link } from 'react-router-dom';
 import AboutUsCard from '../../components/about_us/AboutUsCard';
 import {db} from '../../services/google-firebase/setup';
 import Member from '../../services/google-firebase/models/members/member'
 import Role from '../../services/google-firebase/models/members/role'
-import { getCurrentTeamYear } from '../../constants';
+import { getCurrentTeamYear, faculty_details } from '../../constants';
 
 
 export default class Page2 extends Component {
@@ -60,6 +60,17 @@ export default class Page2 extends Component {
             let color=this.randomColor()
             if(imgBg[i].style.boxShadow === ""){
                 imgBg[i].style.boxShadow = "0px 5px 4px 0px "+ color;
+                document.getElementsByClassName('aboutuscard')[i].addEventListener("click",(e)=>{
+                    if(document.getElementsByClassName('aboutuscard')[i].style.webkitTransform === "rotateY(0.5turn)"){
+                        document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+                    }
+                    else{
+                    document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0.5turn);transform: rotateY(0.5turn);box-shadow:0px 2px 4px 0px #c1930c;border-radius: 5px;";
+                    setTimeout(()=>{
+                        document.getElementsByClassName('aboutuscard')[i].style.cssText = "-webkit-transform: rotateY(0turn);transform: rotateY(0turn);box-shadow:0px 0px 0px 0px #c1930c;border-radius: 5px;";
+                    },3000)
+                    }
+                })
             }
         }
     }
@@ -102,14 +113,24 @@ export default class Page2 extends Component {
                 }
                 </Menu>
                 <Grid centered doubling stackable>
-                    <Grid.Row columns={6}>
-                    {
-                        this.state.data.map((member)=>(
-                            <Grid.Column key={member.username} computer= {4} className='justToAlignMemberCards'>
-                            <AboutUsCard data={member}></AboutUsCard>
-                            </Grid.Column>
-                        ))
-                    }
+                    <Grid.Row columns={3}>
+                        <Grid.Column key={faculty_details.username} computer= {3} className='justToAlignMemberCards'>
+                            <AboutUsCard data={faculty_details} />
+                        </Grid.Column>
+                        {
+                            this.state.data.map((member)=>(
+                                <Grid.Column key={member.username} computer= {3} className='justToAlignMemberCards'>
+                                    <AboutUsCard data={member}></AboutUsCard>
+                                </Grid.Column>
+                            ))
+                        }
+                        
+                    <Segment inverted raised size='medium'>
+                        <Header as={'h1'} style={{textAlign:'justiy'}} >
+                        "Many ideas grow better, <br></br> <pre></pre> when transplanted into another mind than the one where<br></br> they sprang up." ~ Oliver Wendell
+                        </Header>
+                    </Segment>
+                    <br></br>
                     </Grid.Row>
                 </Grid>
             </div>

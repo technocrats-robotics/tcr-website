@@ -1,5 +1,7 @@
 export var admin_email = 'the.mortal.god@tcr.in';
 
+export var API_TOKEN = 'technocrats-robotics-batch-of-2021'
+
 /**
  * Get the team year in string
  * 
@@ -19,3 +21,26 @@ export var getCurrentTeamYear = () => {
         (time.getFullYear()+1).toString(): 
         time.getFullYear().toString();
 }
+
+/**
+ * Faculty Coordinator Details
+ */
+export var faculty_details = {
+    username: 'dr.arockia.selvakumar2013',
+    dpLink: "https://technocratsrobotics.in/faculty.jpg",
+    name: 'Dr. Arockia Selvakumar',
+    yearOfJoining: 2013,
+    isActive: true,
+    blogAccess: false,
+    currentRole: 'Faculty',
+    branch: 'Coordinator',
+    social_media: {
+        linkedIn: null,
+        instagram: null,
+        github: null,
+    },
+    about: {
+        experience: null,
+        misc: 'Faculty Coordinator',
+    }
+};
