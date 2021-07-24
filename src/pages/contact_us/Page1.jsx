@@ -49,7 +49,11 @@ export default class Page1 extends Component {
                     </GridColumn>
                     
                 </GridRow>
+                <GridRow>
+                </GridRow>
                 <GridRow className='landingFooter' columns={16}>
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Hcefsl9rqZwuud" async> </script> </form>
+
                 <div>
                     
                     <Segment raised size='massive' fluid inverted>
@@ -57,6 +61,7 @@ export default class Page1 extends Component {
                         <Button onClick={()=>this.openLink('https://twitter.com/technocratsr')} circular color='black' icon='twitter' />
                         <Button onClick={()=>this.openLink('https://www.linkedin.com/company/technocrats-robotics-vit')} circular color='black' icon='linkedin' />
                         <Button onClick={()=>this.openLink('https://www.facebook.com/technocratsrobotics/')} circular color='black' icon='facebook' />
+                        <Button onClick={()=>this.openLink('https://rzp.io/i/7AIk4rV')} circular color='red' icon='facebook' >Donate Us</Button>
 
                     </Segment>
                     <Visibility onUpdate={this.handleUpdate}>
