@@ -61,7 +61,7 @@ export default class Page1 extends Component {
                         <Button onClick={()=>this.openLink('https://twitter.com/technocratsr')} circular color='black' icon='twitter' />
                         <Button onClick={()=>this.openLink('https://www.linkedin.com/company/technocrats-robotics-vit')} circular color='black' icon='linkedin' />
                         <Button onClick={()=>this.openLink('https://www.facebook.com/technocratsrobotics/')} circular color='black' icon='facebook' />
-                        <Button onClick={()=>this.openLink('https://rzp.io/i/7AIk4rV')} circular color='red' icon='facebook' >Donate Us</Button>
+                        <Button onClick={()=>this.openLink('https://www.buymeacoffee.com/technocratsR')} circular color='red' icon='facebook' >Donate Us</Button>
 
                     </Segment>
                     <Visibility onUpdate={this.handleUpdate}>
