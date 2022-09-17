@@ -1,33 +1,42 @@
-import FlareComponent from 'flare-react';
+import FlareComponent from "flare-react";
 
-class LogoController extends FlareComponent.Controller
-{
-	constructor() {
-		super();
-        this._LogoTime = 0;
-        this._Mount = null;
-        this._RotateDelay = null;
-        this._Rotate = null;
-	}
+class LogoController extends FlareComponent.Controller {
+  constructor() {
+    super();
+    this._LogoTime = 0;
+    this._Mount = null;
+    this._RotateDelay = null;
+    this._Rotate = null;
+  }
 
-	initialize(artboard) {
-        this._Mount = artboard.getAnimation("mount_logo");
-        this._RotateDelay = artboard.getAnimation("rotate_logo_13s");
-        this._Rotate = artboard.getAnimation("rotate_logo_10s");
-	}
+  initialize(artboard) {
+    this._Mount = artboard.getAnimation("mount_logo");
+    this._RotateDelay = artboard.getAnimation("rotate_logo_13s");
+    this._Rotate = artboard.getAnimation("rotate_logo_10s");
+  }
 
-	advance(artboard, elapsed) {
-		// advance the Logo time
-		this._LogoTime += elapsed;
-        const { _Mount: mount, _RotateDelay: rotateDelay, _Rotate: rotate, _LogoTime: logoTime } = this;
-        // Play the mount logo animation first
-        if(logoTime < mount.duration) mount.apply(logoTime, artboard, 1.0);
-        // When the mount logo animation is finished, play the rotate logo animation
-        else rotate.apply((logoTime-mount.duration)%rotate.duration, artboard, 1.0);
+  advance(artboard, elapsed) {
+    // advance the Logo time
+    this._LogoTime += elapsed;
+    const {
+      _Mount: mount,
+      _RotateDelay: rotateDelay,
+      _Rotate: rotate,
+      _LogoTime: logoTime,
+    } = this;
+    // Play the mount logo animation first
+    if (logoTime < mount.duration) mount.apply(logoTime, artboard, 1.0);
+    // When the mount logo animation is finished, play the rotate logo animation
+    else
+      rotate.apply(
+        (logoTime - mount.duration) % rotate.duration,
+        artboard,
+        1.0
+      );
 
-		// keep rendering
-		return true;
-	}
+    // keep rendering
+    return true;
+  }
 }
 
 export default LogoController;

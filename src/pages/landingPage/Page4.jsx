@@ -154,35 +154,41 @@ const  Page3  = () => {
 export  default  Page3;
 */
 
-import { render } from '@testing-library/react'
-import React, { Component } from 'react';
-import Carousel from '../../components/Carousel';
+import { render } from "@testing-library/react";
+import React, { Component } from "react";
+import Carousel from "../../components/Carousel";
 import CustomDotGroup from "./../../components/CustomDotGroup";
-import {Grid, GridColumn, GridRow,Card,Icon, Image,Header} from 'semantic-ui-react';
+import {
+  Grid,
+  GridColumn,
+  GridRow,
+  Card,
+  Icon,
+  Image,
+  Header,
+} from "semantic-ui-react";
 
 /**
-* @author
-* @function Page4
-**/
+ * @author
+ * @function Page4
+ **/
 
 export default class Page4 extends Component {
-    render(){
-  return(
-    <div className="fourthPage">
+  render() {
+    return (
+      <div className="fourthPage">
         <Grid>
-            <GridRow>
-                <GridColumn>
-                <Header as='h1' icon textAlign='center' inverted color='grey'>
-                    <Icon inverted name='users' circular />
-                    <Header.Content>Testimonials</Header.Content>
-                </Header>
-                <Carousel />
-                </GridColumn>
-            </GridRow>
+          <GridRow>
+            <GridColumn>
+              <Header as="h1" icon textAlign="center" inverted color="grey">
+                <Icon inverted name="users" circular />
+                <Header.Content>Testimonials</Header.Content>
+              </Header>
+              <Carousel />
+            </GridColumn>
+          </GridRow>
         </Grid>
-    </div>
-    
-   )
+      </div>
+    );
   }
 }
-

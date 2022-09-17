@@ -151,69 +151,80 @@ const  Page3  = () => {
 export  default  Page3;
 */
 
-import { render } from '@testing-library/react'
-import React, { Component } from 'react';
-import Carousel from '../../components/Carousel';
-import {Grid, GridColumn, GridRow,Card,Icon, Image,Header} from 'semantic-ui-react';
+import { render } from "@testing-library/react";
+import React, { Component } from "react";
+import Carousel from "../../components/Carousel";
+import {
+  Grid,
+  GridColumn,
+  GridRow,
+  Card,
+  Icon,
+  Image,
+  Header,
+} from "semantic-ui-react";
 
 /**
-* @author
-* @function Page3
-**/
+ * @author
+ * @function Page3
+ **/
 
 export default class Page3 extends Component {
-    render(){
-  return(
-    <div className="fourthPage">
+  render() {
+    return (
+      <div className="fourthPage">
         <Grid>
-            <Grid.Row>
-                <Grid.Column>
-                    <Header as='h1' icon textAlign='center' inverted color='grey'>
-                        <Icon inverted name='users' circular />
-                        <Header.Content >Testimonials</Header.Content>
-                    </Header>
-                    <Carousel />
-                </Grid.Column>
-            </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <Header as="h1" icon textAlign="center" inverted color="grey">
+                <Icon inverted name="users" circular />
+                <Header.Content>Testimonials</Header.Content>
+              </Header>
+              <Carousel />
+            </Grid.Column>
+          </Grid.Row>
         </Grid>
-                <Carousel>
-                <div>
-                <Segment fluid inverted color='black'>
-                    <Grid stackable>
-                    <GridRow>
-                    <GridColumn mobile={16} tablet={8} computer={4} color='red'>
-                        <Image size='big' />
-                        <Header style={{color: 'white'}}></Header>
-                    </GridColumn>
-                    <GridColumn mobile={16} tablet={8} computer={4} color='pink'>
-                    </GridColumn>
-                    </GridRow>
-                    </Grid>
-                </Segment>
-                </div>
-                <div>
-                    <img src="assets/2.jpeg" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div>
-                    <img src="assets/3.jpeg" />
-                    <p className="legend">Legend 3</p>
-                </div>
-                <div>
-                    <img src="assets/4.jpeg" />
-                    <p className="legend">Legend 4</p>
-                </div>
-                <div>
-                    <img src="assets/5.jpeg" />
-                    <p className="legend">Legend 5</p>
-                </div>
-                <div>
-                    <img src="assets/6.jpeg" />
-                    <p className="legend">Legend 6</p>
-                </div>
-            </Carousel>
-    </div>
-    
-   )
+        <Carousel>
+          <div>
+            <Segment fluid inverted color="black">
+              <Grid stackable>
+                <GridRow>
+                  <GridColumn mobile={16} tablet={8} computer={4} color="red">
+                    <Image size="big" />
+                    <Header style={{ color: "white" }}></Header>
+                  </GridColumn>
+                  <GridColumn
+                    mobile={16}
+                    tablet={8}
+                    computer={4}
+                    color="pink"
+                  ></GridColumn>
+                </GridRow>
+              </Grid>
+            </Segment>
+          </div>
+          <div>
+            <img src="assets/2.jpeg" />
+            <p className="legend">Legend 2</p>
+          </div>
+          <div>
+            <img src="assets/3.jpeg" />
+            <p className="legend">Legend 3</p>
+          </div>
+          <div>
+            <img src="assets/4.jpeg" />
+            <p className="legend">Legend 4</p>
+          </div>
+          <div>
+            <img src="assets/5.jpeg" />
+            <p className="legend">Legend 5</p>
+          </div>
+          <div>
+            <img src="assets/6.jpeg" />
+            <p className="legend">Legend 6</p>
+          </div>
+        </Carousel>
+      </div>
+    );
   }
 }
