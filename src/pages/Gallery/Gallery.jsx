@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import { useHistory } from "react-router-dom";
 import { Segment } from "semantic-ui-react";
 import ImageGallery from "react-image-gallery";
 import { useAsyncEffect } from "use-async-effect";
@@ -19,6 +20,8 @@ const axios = require("axios");
 // });
 function Gallery() {
   const [images, setImages] = useState(null);
+
+  // const history = useHistory();
 
   useAsyncEffect(async () => {
     let shouldCancel = false;
@@ -51,15 +54,18 @@ function Gallery() {
     return () => (shouldCancel = true);
   }, []);
 
+  // const handleBack = () => {
+  //   history.push("/");
+  // };
+
+  // const sections = [
+  //   { key: "Home", content: "Home", link: true, onClick: handleBack },
+  //   { key: "Gallery", content: "Gallery", active: true },
+  // ];
+
   return (
     <div className="galleryDiv">
-      {/* <div className='loadScreenGallery'>
-      <Icon size='massive' color='red' loading name='spinner' />
-      </div> */}
       <Segment inverted>
-        {/* <Label color='red' attached='top left'>
-          <Breadcrumb icon='right angle' sections={sections} />
-        </Label> */}
         {images ? (
           <ImageGallery
             items={images}

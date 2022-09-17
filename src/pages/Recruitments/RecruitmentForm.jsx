@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { Grid, Segment, Header, Image, Label, Embed } from "semantic-ui-react";
 import "./Recruitments.css";
-import RecruitmentCards from "../../components/Recruitments/RecruitmentCards";
-
-var x = window.matchMedia("(max-width: 900px)");
 
 export default class RecruitmentForm extends Component {
   state = {
@@ -24,12 +19,13 @@ export default class RecruitmentForm extends Component {
           </Label>
           <br></br>
           <iframe
+            title="recruitmentForm"
             width="100%"
             height="640px"
             src="https://flzu5mig2qj.typeform.com/to/ejsxYIah"
-            frameborder="0"
-            marginwidth="0"
-            marginheight="0"
+            frameBorder="0"
+            marginWidth="0"
+            marginHeight="0"
             style={{
               border: "0px",
               scrollbarWidth: "0px",
@@ -39,7 +35,6 @@ export default class RecruitmentForm extends Component {
             allowfullscreen
             webkitallowfullscreen
             mozallowfullscreen
-            msallowfullscreen
           >
             {" "}
           </iframe>

@@ -1,16 +1,5 @@
 import React, { Component } from "react";
-import { useHistory, Link } from "react-router-dom";
-import {
-  Grid,
-  Segment,
-  Header,
-  Image,
-  Icon,
-  Card,
-  Button,
-  Visibility,
-  Transition,
-} from "semantic-ui-react";
+import { Grid, Header, Icon } from "semantic-ui-react";
 import "./RecruitmentCard.css";
 
 var x = window.matchMedia("(max-width: 900px)");
