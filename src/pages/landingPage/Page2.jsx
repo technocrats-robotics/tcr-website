@@ -1,12 +1,7 @@
 import React, { Component, Suspense } from "react";
 import {
   Grid,
-  Segment,
-  Label,
-  Header,
   Statistic,
-  Image,
-  Icon,
   Transition,
   Visibility,
 } from "semantic-ui-react";
@@ -32,7 +27,7 @@ export default class Page2 extends Component {
     " We have been part of a plethora of national and international robotics competitions, regularly winning awards in most of them, starting from the Asia-Pacific International Robotics competition – “Robocon” in 2013. Having been a regular participant since then, the team has reached a level of success that few others can, especially considering a team this young.",
   ];
   state = { visible: false };
-  handleUpdate = (e, { calculations }) => {
+  handleUpdate = (_e, { calculations }) => {
     // console.log(calculations.topPassed)
     if (calculations.topVisible) {
       this.setState({ visible: true });

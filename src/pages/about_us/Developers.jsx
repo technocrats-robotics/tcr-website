@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {
   Grid,
   Header,
-  Menu,
   Label,
   Segment,
   Icon,
@@ -12,7 +11,6 @@ import { db } from "../../services/google-firebase/setup";
 import Member from "../../services/google-firebase/models/members/member";
 import DeveloperCard from "../../components/about_us/DeveloperCard";
 
-var time = new Date();
 function dragElement(elmnt) {
   var pos1 = 0,
     pos2 = 0,
@@ -126,7 +124,7 @@ export default class TeamMembers extends Component {
                 </Grid.Column>
               ))}
             </Grid.Row>
-            <div className="techStack" stackable>
+            <div className="techStack">
               <div className="disclaim">Handle With Care[Draggable]</div>
               <Icon
                 color="yellow"

@@ -1,11 +1,12 @@
+/* eslint-disable no-multi-str */
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 //editor
 import { Editor } from "@tinymce/tinymce-react";
 
 function EditorPlugin() {
-  const [postContent, setPostContent] = useState("");
+  // const [postContent, setPostContent] = useState("");
 
   function handleChange(content) {
     console.log(content);

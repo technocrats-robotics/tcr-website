@@ -1,21 +1,18 @@
 import React, { Component } from "react";
 import {
   Grid,
-  Segment,
   Header,
-  Image,
   Label,
   GridColumn,
   Menu,
   GridRow,
   Icon,
-  Input,
 } from "semantic-ui-react";
 import BlogCards from "../../components/blog/BlogCards";
 import BlogMenuTop from "../../components/blog/BlogMenuTop";
 export default class ImageMat extends Component {
   state = { activeItem: "home" };
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
+  handleItemClick = (_e, { name }) => this.setState({ activeItem: name });
 
   handleBack = () => {
     this.props.history.push("/");

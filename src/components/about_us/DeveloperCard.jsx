@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Header, Image, Button, Visibility } from "semantic-ui-react";
+import { Header, Image, Button } from "semantic-ui-react";
 import "./DeveloperCard.css";
 
 export default class DeveloperCard extends Component {

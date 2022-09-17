@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import * as React from "react";
 
 // components
 import LandingPage from "./pages/landingPage/LandingPage.jsx";
@@ -8,7 +9,7 @@ import Gallery from "./pages/Gallery/Gallery";
 import Blogs from "./pages/blog/Blog";
 import Team from "./pages/about_us/TeamMembers";
 import Acheivements from "./components/about_us/Acheivements";
-import Recruitments from "./pages/Recruitments/Recruitments";
+// import Recruitments from "./pages/Recruitments/Recruitments";
 import Developers from "./pages/about_us/Developers";
 
 // CSS

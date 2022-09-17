@@ -115,7 +115,7 @@ function Navigation() {
                 className="nav item"
                 href="https://technocratsrobotics.in/"
                 target="_blank"
-                onClick={handleVisibility}
+                onClick={handleVisibility} rel="noreferrer"
               >
                 <Icon name="home" />
                 Home{" "}

@@ -1,7 +1,5 @@
 import React from "react";
-import { Menu, Sidebar, Button, Icon, Image, Label } from "semantic-ui-react";
-import { NavLink, useHistory } from "react-router-dom";
-import { render } from "@testing-library/react";
+import { Menu, Sidebar, Button, Label } from "semantic-ui-react";
 
 let scrollToOne = () => {
   document
@@ -16,11 +14,6 @@ let scrollToTwo = () => {
 let scrollToThree = () => {
   document
     .getElementsByClassName("thirdPage")[0]
-    .scrollIntoView({ behavior: "smooth" });
-};
-let scrollToFour = () => {
-  document
-    .getElementsByClassName("fourthPage")[0]
     .scrollIntoView({ behavior: "smooth" });
 };
 let scrollToTeam = () => {
@@ -38,17 +31,17 @@ let scrollToAboutUs = () => {
     .getElementsByClassName("firstAboutPage")[0]
     .scrollIntoView({ behavior: "smooth" });
 };
-let jumpToBlogs = (history) => {
-  history.push("/blogs");
-};
-let jumpToGallery = (history) => {
-  history.push("/gallery");
-};
+// TODO
+// let jumpToBlogs = (history) => {
+//   history.push("/blogs");
+// };
+// let jumpToGallery = (history) => {
+//   history.push("/gallery");
+// };
 let openLink = (url) => {
   window.open(url, "_blank");
 };
 const SideNavMob = (props) => {
-  const history = useHistory();
   return (
     <div>
       <Sidebar
@@ -91,7 +84,7 @@ const SideNavMob = (props) => {
             color="black"
             classic
           >
-            <img src="./TcrLogoClean.png" />
+            <img alt="tcr logo" src="./TcrLogoClean.png" />
             Recruitment Closed
           </Button>
         </Label>

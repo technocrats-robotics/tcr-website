@@ -1,16 +1,8 @@
 import React, { Component } from "react";
 import {
   Grid,
-  Segment,
-  Header,
-  Image,
   GridRow,
-  GridColumn,
-  Icon,
-  Transition,
-  Visibility,
 } from "semantic-ui-react";
-import AboutUsCard from "../../components/about_us/AboutUsCard";
 import InfoCard from "../../components/about_us/InfoCard";
 
 export default class Page1 extends Component {

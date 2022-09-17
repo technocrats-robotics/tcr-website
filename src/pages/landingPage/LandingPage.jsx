@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from "react";
+import React, { Component } from "react";
 import "./landing.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
@@ -11,7 +11,6 @@ import { db } from "../../services/google-firebase/setup";
 
 import Page3 from "./Page3";
 
-var x = window.matchMedia("(max-width: 700px)");
 document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     if (document.getElementsByClassName("loadScreen")[0]) {
@@ -51,8 +50,6 @@ export default class LandingPage extends Component {
   }
   handleScrollingDown = (e, { calculations }) => {
     console.log(calculations);
-    let pixs = calculations.pixelsPassed;
-    let dir = calculations.direction;
     // let nothing = (pixs > 5 && pixs<700 && dir=='down') ? document.getElementsByClassName('secondPage')[0].scrollIntoView({behavior:'smooth'})  : console.log('none')
     // nothing = (pixs > 1300 && pixs<1500 && dir=='down') ? window.scrollBy(0,300) : console.log('none')
     // nothing = (pixs > 3000 && pixs<3500 && dir=='down') ? window.scrollBy(0,720) : console.log('none')

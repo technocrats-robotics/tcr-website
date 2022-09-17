@@ -20,7 +20,6 @@ class LogoController extends FlareComponent.Controller {
     this._LogoTime += elapsed;
     const {
       _Mount: mount,
-      _RotateDelay: rotateDelay,
       _Rotate: rotate,
       _LogoTime: logoTime,
     } = this;

@@ -1,18 +1,15 @@
 import React, { Component } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   Grid,
   Segment,
   Header,
   Image,
   Icon,
-  Card,
   Button,
-  Visibility,
 } from "semantic-ui-react";
 import "./InfoCard.css";
 
-var x = window.matchMedia("(max-width: 900px)");
 export default class Acheivements extends Component {
   achievements = [
     {
@@ -68,7 +65,7 @@ export default class Acheivements extends Component {
           </Grid.Row>
           {this.achievements.map((ele) => {
             return (
-              <Grid.Row className="aboutCard">
+              <Grid.Row key={Math.random()} className="aboutCard">
                 <Grid.Column
                   textAlign="center"
                   className="justToAlignImage"

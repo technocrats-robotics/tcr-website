@@ -1,3 +1,4 @@
+import React from "react"
 import { Image } from "semantic-ui-react";
 import Identicon from "react-identicons";
 import "./ProfilePic.css";

@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import {
-  Grid,
-  Segment,
-  Header,
   Image,
-  Icon,
   Card,
   Button,
   Reveal,
@@ -18,7 +14,6 @@ export default class MiscCard extends Component {
   }
   buttonHandler(e) {
     console.log("clicked");
-    const cardContent = e.target.parentElement.parentElement.parentElement;
     console.log(e.target.parentElement.parentElement.parentElement);
     console.log(this.props.mainData);
   }

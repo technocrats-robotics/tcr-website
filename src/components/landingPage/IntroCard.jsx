@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Segment, Header, Image, Icon } from "semantic-ui-react";
+import { Header } from "semantic-ui-react";
 import "./introcard.css";
 
 export default class introCard extends Component {

@@ -3,7 +3,6 @@ import { Button, Icon } from "semantic-ui-react";
 import Page1 from "./Page1";
 import TeamMembers from "./TeamMembers";
 import "./About.css";
-var x = window.matchMedia("(max-width: 700px)");
 const Page2 = React.lazy(() => import("./Page2"));
 
 export default class About extends Component {

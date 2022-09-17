@@ -1,6 +1,6 @@
 import React, { Component, Suspense } from "react";
 
-import { Grid, Header, Icon, Label, Button } from "semantic-ui-react";
+import { Grid, Header, Icon } from "semantic-ui-react";
 import LogoController from "../../components/landingPage/LogoController";
 
 var x = window.matchMedia("(max-width: 728px)");

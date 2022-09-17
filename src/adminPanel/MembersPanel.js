@@ -114,7 +114,7 @@ function Memberdivel() {
               navigator.permissions
                 .query({ name: "clipboard-write" })
                 .then((result) => {
-                  if (result.state == "granted" || result.state == "prompt") {
+                  if (result.state === "granted" || result.state === "prompt") {
                     navigator.clipboard.writeText(props.uid).then(
                       function () {
                         /* clipboard successfully set */
@@ -139,7 +139,6 @@ function Memberdivel() {
    */
   var DepartmentTable = (props) => {
     let rows = [];
-    let department = props.department;
     let departmentOptions = [];
 
     Object.values(Department).forEach((department) => {
@@ -195,7 +194,7 @@ function Memberdivel() {
 
     let jsonDetails = "[";
 
-    details.map((detail) => {
+    details.forEach((detail) => {
       jsonDetails += JSON.stringify(detail.data(), null, "\t") + ",";
     });
 

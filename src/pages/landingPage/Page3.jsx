@@ -1,21 +1,16 @@
 import React, { Component, Suspense } from "react";
-import { Link } from "react-router-dom";
 import {
   Grid,
   GridColumn,
   Button,
-  Label,
-  Transition,
   Visibility,
-  Icon,
-  Segment,
   Placeholder,
+  Icon,
 } from "semantic-ui-react";
 
 // import Gallery from '../Gallery/Gallery';
 
 import { db } from "../../services/google-firebase/setup";
-var x = window.matchMedia("(max-width: 700px)");
 
 /**
  * @author
@@ -86,7 +81,7 @@ export default class Page3 extends Component {
                     {this.state.activeItem === "collapse" &&
                       this.state.images.map((image) => {
                         return (
-                          <li className="hex">
+                          <li key={Math.random()} className="hex">
                             <div className="hexIn">
                               <span className="hexLink">
                                 <img

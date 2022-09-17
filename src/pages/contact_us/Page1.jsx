@@ -2,12 +2,9 @@ import React, { Component, Suspense } from "react";
 import {
   Grid,
   Segment,
-  Label,
   Header,
-  Image,
   GridRow,
   GridColumn,
-  Form,
   Button,
   Icon,
   Visibility,
@@ -20,7 +17,7 @@ const ContactForm = React.lazy(() =>
 );
 const Map = React.lazy(() => import("./../../components/contact_us/Map"));
 export default class Page1 extends Component {
-  handleUpdate = (e, { calculations }) => {
+  handleUpdate = (_e, { calculations }) => {
     if (calculations.topVisible) {
       document.getElementsByClassName("landingFooter")[0].style.boxShadow =
         "0px 20px 40px yellow";
@@ -137,7 +134,7 @@ export default class Page1 extends Component {
                   Robotics&nbsp;|&nbsp;
                   <Link to="/developers">
                     <Button circular compact basic color="yellow">
-                      Developer's Space
+                      Developer&apos;s Space
                     </Button>
                   </Link>
                   &nbsp;|&nbsp;

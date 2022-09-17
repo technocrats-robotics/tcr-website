@@ -37,6 +37,7 @@ function WritePost() {
   const categories = ["Computer Science", "Robotics", "General"];
 
   const [title, setTitle] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [category, setCategory] = useState(categories[0]);
 
   function handleSubmit(event) {

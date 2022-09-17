@@ -7,7 +7,6 @@ import {
   Visibility,
   Transition,
   Placeholder,
-  Card,
 } from "semantic-ui-react";
 import Achievements from "../../services/google-firebase/models/achievements/achievements";
 import "./InfoCard.css";
@@ -61,7 +60,9 @@ export default class InfoCard extends Component {
           passed > 0.5 && passed < 0.9
             ? "0px 2px 6px 0px green"
             : "0px 0px 0px 0px green";
-      } catch (error) {}
+      } catch (error) {
+        console.log("Some error occured",e)
+      }
     }
   };
 
@@ -105,8 +106,8 @@ export default class InfoCard extends Component {
                       cardIndex(this.state.slide_idx + 1)
                     )
                     .map((card, card_index) => (
-                      <Grid.Row className="aboutCard">
-                        {card_index % 2 == 0 ? (
+                      <Grid.Row key={Math.random()} className="aboutCard">
+                        {card_index % 2 === 0 ? (
                           <Grid.Column
                             textAlign="center"
                             className="justToAlignImage"
@@ -134,7 +135,7 @@ export default class InfoCard extends Component {
                             </Header.Subheader>
                           </Header>
                         </Grid.Column>
-                        {card_index % 2 != 0 ? (
+                        {card_index % 2 !== 0 ? (
                           <Grid.Column
                             textAlign="center"
                             className="justToAlignImage"

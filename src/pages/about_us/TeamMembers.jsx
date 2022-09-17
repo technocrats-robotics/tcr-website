@@ -6,7 +6,6 @@ import Member from "../../services/google-firebase/models/members/member";
 import Role from "../../services/google-firebase/models/members/role";
 import { getCurrentTeamYear } from "../../constants";
 
-var time = new Date();
 export default class TeamMembers extends Component {
   state = {
     activeItem: getCurrentTeamYear(),

@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import {
   Grid,
   Menu,
-  Button,
   Divider,
   Segment,
   Header,
 } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 import AboutUsCard from "../../components/about_us/AboutUsCard";
 import { db } from "../../services/google-firebase/setup";
 import Member from "../../services/google-firebase/models/members/member";
@@ -57,7 +55,7 @@ export default class Page2 extends Component {
 
   randomColor = () => {
     let colors = ["red", "green", "blue", "yellow"];
-    let num = Math.floor(Math.random() * 4);
+    let num = Math.floor(Math.random()*4);
     return colors[num];
   };
 
@@ -68,8 +66,7 @@ export default class Page2 extends Component {
       if (imgBg[i].style.boxShadow === "") {
         imgBg[i].style.boxShadow = "0px 5px 4px 0px " + color;
         document
-          .getElementsByClassName("aboutuscard")
-          [i].addEventListener("click", (e) => {
+          .getElementsByClassName("aboutuscard")[i].addEventListener("click", (e) => {
             if (
               document.getElementsByClassName("aboutuscard")[i].style
                 .webkitTransform === "rotateY(0.5turn)"
@@ -126,7 +123,7 @@ export default class Page2 extends Component {
         >
           {this.state.yearHeaders.map((year) => {
             return (
-              <div className="TeamsYears">
+              <div key={Math.random()} className="TeamsYears">
                 <Menu.Item
                   inverted="true"
                   style={{ overflowX: "visible" }}
@@ -160,8 +157,8 @@ export default class Page2 extends Component {
 
             <Segment inverted raised size="medium">
               <Header as={"h1"} style={{ textAlign: "justiy" }}>
-                "Many ideas grow better, <br></br> <pre></pre> when transplanted
-                into another mind than the one where<br></br> they sprang up." ~
+              &quot;Many ideas grow better, <br></br> <pre></pre> when transplanted
+                into another mind than the one where<br></br> they sprang up. &quot; ~
                 Oliver Wendell
               </Header>
             </Segment>
