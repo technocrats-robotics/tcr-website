@@ -7,7 +7,7 @@ import { auth } from "../services/google-firebase/setup";
 import FullPageLoader from "../components/LoadingScreen/FullPageLoader";
 
 //waring message hook
-import Warning from "../components/Messages/Warning"; //autmatically disappers the warning after 3000 ms
+import Warning from "../components/messages/Warning"; //autmatically disappers the warning after 3000 ms
 
 import "./CSS/UserLogin.css";
 

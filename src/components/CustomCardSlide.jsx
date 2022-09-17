@@ -2,13 +2,10 @@ import PropTypes from "prop-types";
 import { Slide } from "pure-react-carousel";
 import React from "react";
 import {
-  Card,
   Image,
   Grid,
   GridColumn,
-  CardContent,
   Segment,
-  GridRow,
   Header,
 } from "semantic-ui-react";
 

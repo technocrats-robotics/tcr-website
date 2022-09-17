@@ -2,15 +2,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import * as React from "react";
 
 // components
-import LandingPage from "./pages/landingPage/LandingPage.jsx";
-import AdminPanel from "./adminPanel/AdminPanel";
+import LandingPage from "./pages/LandingPage.jsx";
+import AdminPanel from "./adminPanel/AdminPanel.jsx";
 import UserPanel from "./userPanel/UserPanel";
-import Gallery from "./pages/Gallery/Gallery";
-import Blogs from "./pages/blog/Blog";
-import Team from "./pages/about_us/TeamMembers";
-import Acheivements from "./components/about_us/Acheivements";
+import Blogs from "./pages/Blog";
+import TeamMembers from "./pages/TeamMembers";
+import Acheivements from "./components/Acheivements";
+import Developers from "./pages/Developers";
 // import Recruitments from "./pages/Recruitments/Recruitments";
-import Developers from "./pages/about_us/Developers";
 
 // CSS
 import "./App.css";
@@ -28,10 +27,9 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route path="/adminPanel" component={AdminPanel} />
           <Route path="/userPanel" component={UserPanel} />
-          <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/developers" component={Developers} />
           <Route exact path="/blogs" component={Blogs} />
-          <Route exact path="/team" component={Team} />
+          <Route exact path="/team" component={TeamMembers} />
           <Route exact path="/acheivements" component={Acheivements} />
           {/* <Route exact path="/recruitments" component={Recruitments} /> */}
           <script src="/node_modules/rive-canvas/rive.js"></script>

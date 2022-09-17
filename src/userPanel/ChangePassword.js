@@ -5,10 +5,10 @@ import "./CSS/changePassword.css";
 import { changePassword } from "../services/google-firebase/utilities";
 
 //success message hook
-import Success from "../components/Messages/Success";
+import Success from "../components/messages/Success";
 
 //warning message hook
-import Warning from "../components/Messages/Warning";
+import Warning from "../components/messages/Warning";
 
 //loading screen hook
 import FullPageLoader from "../components/LoadingScreen/FullPageLoader";

@@ -8,13 +8,13 @@ import { db } from "../services/google-firebase/setup";
 import "./CSS/UserProfile.css";
 
 //success Message
-import Success from "../components/Messages/Success";
-import Warning from "../components/Messages/Success";
+import { Warning, Success } from "../components";
+
 import Member from "../services/google-firebase/models/members/member";
 
 //member card
-import AboutUsCard from "../components/about_us/AboutUsCard";
-import ProfilePic from "../components/about_us/ProfilePic";
+import MemberCard from "../components/MemberCard";
+import ProfilePic from "../components/ProfilePic";
 
 function addCardListenter() {
   console.log(document.getElementsByClassName("aboutuscard"));
@@ -130,7 +130,7 @@ function UserProfile() {
               </div>
               <div className="dpBox__preview">
                 {userDetails ? (
-                  <AboutUsCard
+                  <MemberCard
                     data={{
                       ...userDetails,
                       currentRole: Member.getCurrentRole(userDetails.roles)[1],
