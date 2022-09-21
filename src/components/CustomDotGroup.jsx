@@ -6,20 +6,20 @@ import { Button, Container } from "semantic-ui-react";
 const CustomDotGroup = ({ slides, size }) => (
   <Container textAlign="center" inverted>
     <Button.Group size={size} inverted>
-      {[...Array(slides).keys()].map(slide => (
-        <Button as={Dot} key={slide} icon="circle" slide={slide} inverted/>
+      {[...Array(slides).keys()].map((slide) => (
+        <Button as={Dot} key={slide} icon="circle" slide={slide} inverted />
       ))}
     </Button.Group>
   </Container>
 );
 
 CustomDotGroup.defaultProps = {
-  size: "mini"
+  size: "mini",
 };
 
 CustomDotGroup.propTypes = {
   slides: PropTypes.number.isRequired,
-  size: PropTypes.string
+  size: PropTypes.string,
 };
 
 export default CustomDotGroup;

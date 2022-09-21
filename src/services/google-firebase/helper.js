@@ -1,9 +1,9 @@
 // Helper functions for Google Firebase Utilities
-let passwordGenerator = require('generate-password');
+let passwordGenerator = require("generate-password");
 
 /**
  * version 1
- * 
+ *
  * A password generator function that uses the makemeapassord API.
  * {@link https://makemeapassword.ligos.net/api Make me a Passord API}
  * The generated password also contains special symbols.
@@ -14,7 +14,7 @@ let passwordGenerator = require('generate-password');
  * @param {number} length Define the desired length of the password (default=12).
  */
 // export async function generatePassword(length=12){
-//     const apiURL = 
+//     const apiURL =
 //         'https://makemeapassword.ligos.net/api/v1/alphanumeric/plain?l='
 //         + length.toString() + '&sym=T';
 //     return fetch(apiURL)    // Async function
@@ -28,15 +28,14 @@ let passwordGenerator = require('generate-password');
  * @returns string
  */
 
-export async function generatePassword(length=12){
-    return passwordGenerator.generate({
-        length: length,
-        numbers: true,
-        symbols: false,
-        lowercase: true
-    })
+export async function generatePassword(length = 12) {
+  return passwordGenerator.generate({
+    length: length,
+    numbers: true,
+    symbols: false,
+    lowercase: true,
+  });
 }
-
 
 /**
  * Convert an integer to a custom base 26.
@@ -44,32 +43,34 @@ export async function generatePassword(length=12){
  * @example
  * ```1 => b | 26 => ba```
  * @param {number} number Positive integer
-*/
-export function convertDec2CustomBase26(number){
-    if(number===0) return 'a';
-    var res = '';
-    while (number > 0){
-        res += String.fromCharCode((number%26)+97);
-        number = (number / 26)>>0;
-    }
-    res = [...res].reverse().join('');
-    return res;
+ */
+export function convertDec2CustomBase26(number) {
+  if (number === 0) return "a";
+  var res = "";
+  while (number > 0) {
+    res += String.fromCharCode((number % 26) + 97);
+    number = (number / 26) >> 0;
+  }
+  res = [...res].reverse().join("");
+  return res;
 }
-
 
 /**
  * Convert given string to title case
  * @param {string} str The string to be converted to Title Case
  */
 export function titleCase(str) {
-    return str.toLowerCase().split(' ').map(function(word) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(function (word) {
       return word.replace(word[0], word[0].toUpperCase());
-    }).join(' ');
+    })
+    .join(" ");
 }
 
-
 /*
-** References:
+ ** References:
  * Password Generator:
  * https://makemeapassword.ligos.net/api
  * https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
@@ -81,4 +82,4 @@ export function titleCase(str) {
  * https://www.geeksforgeeks.org/reverse-a-string-in-javascript/
  * Title Case:
  * https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
-*/
+ */
