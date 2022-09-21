@@ -7,7 +7,7 @@
     "@sideway/address": "^5.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^13.1.9",
+    "@testing-library/user-event": "^14.4.3",
     "@tinymce/tinymce-react": "^3.12.6",
     "axios": "^0.21.1",
     "caniuse-lite": "^1.0.30001402",
