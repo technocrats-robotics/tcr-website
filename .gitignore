@@ -25,3 +25,5 @@ src/services/google-firebase/firebase_config.json
 .eslintcache
 .firebase 
 
+.vscode
+debug.log
