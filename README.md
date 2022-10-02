@@ -10,14 +10,28 @@
   🚀 Website of Team Technocrats Robotics - VIT Chennai
 </p>
 
+<p align="center">
+  Made with ❤️ by technocrats robotics. 
+  <br>
+  #GoTCR
+</p>
+
 ## Architecture
 coming soon....
 
+On a high level this website is divided into three parts
+- <b>Team Portfolio:</b> This sections contains general information about our team like our achievements, team members, faculty coordinator, team's gallery, location of our garage, contact us form, our social media handles etc.
+- <b>User Panel:</b> This panel is used by our team members to manage their profile display badge in the team's portfolio.
+- <b>Admin Panel:</b> This section is used by our management department to create accounts for new recruits, manage roles of all the team members.
+
 ## Developers
-<p>🚀 Rahul Bera</p>
-<p>🚀 Karan Yuvraj Singh</p>
-<p>🚀 Ishika Naik</p>
-<p>🚀 Shivansh Goel</p>
+### Batch of 2021
+- <p>🚀 Rahul Bera</p>
+- <p>🚀 Karan Yuvraj Singh</p>
+- <p>🚀 Ishika Naik</p>
+- <p>🚀 Shivansh Goel</p>
+
+<i>Juniors, keep adding your names here</i>
 
 ## Development 
 
