@@ -10,7 +10,7 @@ import { admin_email } from "../constants";
 import FullPageLoader from "../components/LoadingScreen/FullPageLoader";
 
 //waring message hook
-import Warning from "../components/messages/Warning"; //(autmatically disappers after 3000 ms)
+import Warning from "../components/Messages/Warning"; //(autmatically disappers after 3000 ms)
 
 function AdminLogin() {
   //state variables

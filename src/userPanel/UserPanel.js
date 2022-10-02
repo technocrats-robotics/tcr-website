@@ -12,8 +12,6 @@ import { auth } from "../services/google-firebase/setup";
 import Navigation from "./Navigation";
 import UserProfile from "./UserProfile";
 import UserLogin from "./UserLogin";
-import MyPosts from "./MyPosts";
-import WritePost from "./WritePost";
 import ChangePassword from "./ChangePassword";
 
 const GlobalUser = createContext(null);
@@ -52,12 +50,6 @@ function UserPanel() {
             <Switch>
               <Route exact path="/userPanel">
                 <UserProfile />
-              </Route>
-              <Route exact path="/userPanel/myPosts">
-                <MyPosts />
-              </Route>
-              <Route exact path="/userPanel/writePost">
-                <WritePost />
               </Route>
               <Route exact path="/userPanel/passwordReset">
                 <ChangePassword />
