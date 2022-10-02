@@ -1,5 +1,5 @@
-export { Success } from "./messages"
-export { Warning } from "./messages"
+export { Success } from "./Messages"
+export { Warning } from "./Messages"
 // export { default as Loader } from "./Loader"
 export { default as Acheivements } from "./Acheivements"
 export { default as BlogCards } from "./BlogCards"
