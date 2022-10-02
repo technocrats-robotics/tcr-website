@@ -12,18 +12,26 @@ endPoints:
                     else ===> some error occured (maybe Login issue with gmail id or wrong email id. was given)
 */
 
-import axios from 'axios'
+import axios from "axios";
 
-import { API_TOKEN } from '../../constants'
+import { API_TOKEN } from "../../constants";
 
 async function sendEmail(email, data) {
-  let token = API_TOKEN
-  return axios.post('https://quiet-caverns-98688.herokuapp.com/sendMail', {
-    email: email,
-    data: data
-  }, {
-    headers: { 'Authorization': token ? `Bearer ${token}` : '', 'Content-Type': 'application/json' }
-  })
+  let token = API_TOKEN;
+  return axios
+    .post(
+      "https://quiet-caverns-98688.herokuapp.com/sendMail",
+      {
+        email: email,
+        data: data,
+      },
+      {
+        headers: {
+          Authorization: token ? `Bearer ${token}` : "",
+          "Content-Type": "application/json",
+        },
+      }
+    )
     .then(function (response) {
       // console.log("Response",response);
       return response.data.message;
@@ -34,26 +42,33 @@ async function sendEmail(email, data) {
       console.error(error.message);
       return false;
     });
-
 }
 
 async function sendFeedback(data) {
-  let token = API_TOKEN
-  return axios.post('https://quiet-caverns-98688.herokuapp.com/sendFeedback', {
-    data: data
-  }, {
-    headers: { 'Authorization': token ? `Bearer ${token}` : '', 'Content-Type': 'application/json' }
-  }).then(function (response) {
-    // console.log("Response",response);
-    return response.data.message;
-  })
+  let token = API_TOKEN;
+  return axios
+    .post(
+      "https://quiet-caverns-98688.herokuapp.com/sendFeedback",
+      {
+        data: data,
+      },
+      {
+        headers: {
+          Authorization: token ? `Bearer ${token}` : "",
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then(function (response) {
+      // console.log("Response",response);
+      return response.data.message;
+    })
     .catch(function (error) {
       console.error("Error occured in sendEmail");
       console.error(error.code);
       console.error(error.message);
       return false;
     });
-
 }
 
-export { sendEmail, sendFeedback }
+export { sendEmail, sendFeedback };

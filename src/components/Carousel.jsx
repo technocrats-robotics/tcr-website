@@ -1,41 +1,39 @@
 import { CarouselProvider, Slider } from "pure-react-carousel";
 import React from "react";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import CustomDotGroup from './CustomDotGroup';
+import CustomDotGroup from "./CustomDotGroup";
 
 import CustomCardSlide from "./CustomCardSlide";
 
-
 const Carousel = () => (
   <div>
-  <CarouselProvider
-    naturalSlideWidth={1}
-    naturalSlideHeight={2}
-    totalSlides={3}
-  >
-    <CustomDotGroup slides={3} />
-    <Slider>
-      <CustomCardSlide
-        image="https://place-hold.it/800x800&text=Matthew&fontsize=32"
-        index={0}
-        header="Matthew House"
-        meta="Friend"
-      />
-      <CustomCardSlide
-        header="Elliot Baker"
-        image="https://place-hold.it/800x800&text=Elliot&fontsize=32"
-        index={1}
-        meta="Friend"
-      />
-      <CustomCardSlide
-        header="Steve Sanders"
-        image="https://place-hold.it/800x800&text=Steve&fontsize=32"
-        index={2}
-        meta="Friend"
-      />
-    </Slider>
-  </CarouselProvider>
-  
+    <CarouselProvider
+      naturalSlideWidth={1}
+      naturalSlideHeight={2}
+      totalSlides={3}
+    >
+      <CustomDotGroup slides={3} />
+      <Slider>
+        <CustomCardSlide
+          image="https://place-hold.it/800x800&text=Matthew&fontsize=32"
+          index={0}
+          header="Matthew House"
+          meta="Friend"
+        />
+        <CustomCardSlide
+          header="Elliot Baker"
+          image="https://place-hold.it/800x800&text=Elliot&fontsize=32"
+          index={1}
+          meta="Friend"
+        />
+        <CustomCardSlide
+          header="Steve Sanders"
+          image="https://place-hold.it/800x800&text=Steve&fontsize=32"
+          index={2}
+          meta="Friend"
+        />
+      </Slider>
+    </CarouselProvider>
   </div>
 );
 
