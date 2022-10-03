@@ -21,12 +21,16 @@
 
 
 ## Architecture
-<img src="https://github.com/ishivanshgoel/tcr-website/blob/main/docs/docs_1.png"/>
+<img src="https://github.com/technocrats-robotics/tcr-website/blob/main/docs/docs_1.png"/>
 
 On a high level, this website is divided into three parts
 - <b>Team Portfolio:</b> This section contains general information about our team like our achievements, team members, faculty coordinator, team's gallery, location of our garage, contact us form, our social media handles etc.
 - <b>User Panel:</b> This panel is used by our team members to manage their profile display badge in the team's portfolio.
 - <b>Admin Panel:</b> This section is used by our management department to create accounts for new recruits, manage roles of all the team members.
+
+### Detailed Diagram
+
+<img src="https://github.com/ishivanshgoel/tcr-website/blob/main/docs/architecture_diagram.jpg"/>
 
 ## Developers
 ### Batch of 2021
