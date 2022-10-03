@@ -30,7 +30,7 @@ On a high level, this website is divided into three parts
 
 ### Detailed Diagram
 
-<img src="https://github.com/ishivanshgoel/tcr-website/blob/main/docs/architecture_diagram.jpg"/>
+<img src="https://github.com/technocrats-robotics/tcr-website/blob/main/docs/architecture_diagram.jpg"/>
 
 ## Developers
 ### Batch of 2021
