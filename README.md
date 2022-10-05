@@ -28,9 +28,9 @@ On a high level, this website is divided into three parts
 - <b>User Panel:</b> This panel is used by our team members to manage their profile display badge in the team's portfolio.
 - <b>Admin Panel:</b> This section is used by our management department to create accounts for new recruits, manage roles of all the team members.
 
-### Detailed Diagram
+### Detailed Architecture Diagram
 
-<img src="https://github.com/technocrats-robotics/tcr-website/blob/main/docs/architecture_diagram.jpg"/>
+<img src="https://github.com/technocrats-robotics/tcr-website/blob/main/docs/architecture_diagram_updated.jpg"/>
 
 ## Developers
 ### Batch of 2021
